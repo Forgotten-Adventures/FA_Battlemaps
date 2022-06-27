@@ -5,8 +5,8 @@ This Module contains battlemaps from Forgotten Adventures, fully integrated for 
 ## Installation:
 1. Copy & paste this link in Foundrys Module Manager to install the Module
 
-    > https://raw.githubusercontent.com/stryxin/FA_Battlemaps/main/module.json
-
+    > https://raw.githubusercontent.com/Forgotten-Adventures/FA_Battlemaps/main/module.json
+    
 ![Install1](Installation.jpg)
 
 2. Enable the Module + the dependency modules (Monk's Active Tile Triggers & Tagger) in your worlds Module Settings
