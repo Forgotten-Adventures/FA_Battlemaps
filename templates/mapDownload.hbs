@@ -1,0 +1,59 @@
+<section class="u-clearfix u-section" data-fa-id="{{battlemap.id}}">
+    <form autocomplete="off">
+        {{#unless authorised}}
+            {{#unless loggedIn}}
+                <h4 class="u-align-center u-text-default">{{localize "FABattlemaps.NoAccessTitle"}}</h4>
+                <div class="u-spacer"></div>
+                <div>
+                    <p>{{localize "FABattlemaps.NoAccessDetail"}}</p>
+                </div>
+            {{else}}
+                <h4 class="u-align-center u-text-default">{{localize "FABattlemaps.WrongAccessTitle"}}</h4>
+                <div class="u-spacer"></div>
+                <div>
+                    <p>{{{localize "FABattlemaps.WrongAccessDetail" link="<a href='https://www.patreon.com/FA_Battlemaps' target='_blank'>FA Battlemaps</a>"}}}</p>
+                </div>
+            {{/unless}}
+        {{else}}
+            <h4 class="u-align-center u-text-default">{{battlemap.name}}</h4>
+            <div class="u-spacer"></div>
+            {{#unless battlemap.files}}
+            <div class="u-align-center">
+                {{#if error}}
+                    <p class="u-text-default">{{localize "FABattlemaps.DownloaderStatusGenericError"}}</p>
+                {{else}}
+                    <p class="u-text-default">{{localize "FABattlemaps.DownloaderStatusLoading"}}</p>
+                {{/if}}
+            </div>
+            {{else}}
+            <div class="u-files">
+                {{#each battlemap.files as |file|}}
+                    <div class="u-file" data-status="{{file.status}}">
+                        <div class="u-file-status u-file-status-{{#slugify file.status}}{{/slugify}}">
+                            {{#ifeq file.status 'Pending'}}
+                                <i class="fa fa-hourglass"></i>
+                            {{else ifeq file.status 'Processing'}}
+                                <i class="fa fa-spinner fa-spin"></i>
+                            {{else ifeq file.status 'Downloaded'}}
+                                <i class="fa fa-check"></i>
+                            {{else ifeq file.status 'Errored'}}
+                                <i class="fa fa-times"></i>
+                            {{/ifeq}}
+                        </div>
+                        <div class="u-file-name">{{file.path}}</div>
+                        <div class="u-file-size">{{#HumanFileSize bytes=file.size}}{{/HumanFileSize}}</div>
+                        <div class="u-progress-bar">
+                            <div class="u-progress-bar-inner" style="width:{{file.percentComplete}}%"></div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            {{/unless}}
+        {{/unless}}
+    </form>
+</section>
+
+<footer class="u-align-center u-clearfix u-footer">
+    <p class="u-download-status">{{status}}</p>
+    <p><a class="u-strip" href="https://www.forgotten-adventures.net/" target="_blank" title="{{localize "FABattlemaps.Title"}}"></a></p>
+</footer>

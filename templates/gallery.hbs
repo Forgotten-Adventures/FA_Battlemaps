@@ -1,0 +1,22 @@
+<div class="u-text-header u-align-center">
+    <h4 class="u-text-default">{{localize "FABattlemaps.NewReleases"}}</h4>
+</div>
+<div class="u-gallery">
+    <div class="u-gallery-inner">
+        {{#each maps}}
+            {{#facontains tags ../state.selectedTags}}
+                <div class="u-gallery-item" data-name="{{name}}" data-tags="{{tags}}"  data-keywords="{{keywords}}" data-fa-id="{{id}}">
+                    <div class="u-tier {{slugify access}}">{{access}}</div>
+                    <div class="u-gallery-back-slide" style="background-image: url('{{thumbnail}}')"></div>
+                    <div class="u-actions">
+                        <div class="u-action u-preview">{{localize "FABattlemaps.Preview"}}</div>
+                        <div class="u-action u-download">{{localize "FABattlemaps.Download"}}</div>
+                    </div>
+                </div>
+            {{/facontains}}
+            {{#ifeq @index 3}}
+                <div class="u-spacer"></div>
+            {{/ifeq}}
+        {{/each}}
+    </div>
+</div>

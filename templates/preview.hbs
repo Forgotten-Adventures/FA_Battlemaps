@@ -1,0 +1,45 @@
+<div class="u-text-header u-align-center">
+    <h4 class="u-text-default">{{data.name}}</h4>
+</div>
+<div class="u-preview">
+    <div class="u-actions">
+        <button class="u-action u-back-gallery">{{localize "FABattlemaps.BackToGallery"}}</button>
+        {{#ifeq data.access "Free"}}
+        <button class="u-action u-download free" data-fa-id="{{data.id}}">{{localize "FABattlemaps.FreeDownload"}}</button>
+        {{else}}
+        <button class="u-action u-download premium" data-fa-id="{{data.id}}">{{localize "FABattlemaps.PremiumDownload"}}</button>
+        {{/ifeq}}
+    </div>
+    <div class="u-description">
+        <p>{{data.description}}</p>
+    </div>
+    <div class="u-preview-image">
+        <a href="{{data.previewImage}}" target="_blank">
+            <img src="{{data.previewImage}}" alt="{{data.name}}" width="800" height="800">
+        </a>
+    </div>
+</div>
+{{#if data.hasOverlayPreviews}}
+<div class="u-text-header u-align-center">
+    <h4 class="u-text-default">{{localize "FABattlemaps.OverlayTiles"}}</h4>
+</div>
+<div class="u-preview-overlay-tiles">
+    {{#each data.overlayPreviews as |preview|}}
+    <div class="u-tile">
+        <a href="{{preview}}" target="_blank">
+            <img src="{{preview}}" width="300" height="300">
+        </a>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+<div class="u-preview">
+    <div class="u-actions">
+        <button class="u-action u-back-gallery">{{localize "FABattlemaps.BackToGallery"}}</button>
+        {{#ifeq data.access "Free"}}
+            <button class="u-action u-download free" data-fa-id="{{data.id}}">{{localize "FABattlemaps.FreeDownload"}}</button>
+        {{else}}
+            <button class="u-action u-download premium" data-fa-id="{{data.id}}">{{localize "FABattlemaps.PremiumDownload"}}</button>
+        {{/ifeq}}
+    </div>
+</div>
