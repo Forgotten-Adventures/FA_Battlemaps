@@ -13,7 +13,7 @@ This Module contains battlemaps from Forgotten Adventures, fully integrated for 
 
 ![Install2](Installation2.jpg)
 
-## Usage
+## How to Use
 
 To open the module interface click the "FA Battlemaps" button at the bottom of the Scenes panel. You can also open the interface in the module settings and disable this button if you wish.
 
@@ -24,7 +24,7 @@ To open the module interface click the "FA Battlemaps" button at the bottom of t
 
 1. Choose a map you would like to import and click the "Download" button. 
 
-2. Wait until the loading and download of all assosicated assets is finished and you see a "[Map name] has been imported successfully." popup.
+2. Wait until the loading and download of all associated  assets is finished and you see a "[Map name] has been imported successfully." popup.
 	
 3. Enjoy!
 
