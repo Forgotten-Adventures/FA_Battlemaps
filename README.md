@@ -63,6 +63,11 @@ _________________
 
 Many thanks Blair#9056 for picking up the project and helping us get it through the finish line - amazing work! and also DarkestHour111#2731 for early development  ^_^
 
+Our module utilizes these awesome modules:
+ Monks Active Tile Triggers by IronMonk https://github.com/ironmonk88/monks-active-tiles - https://www.patreon.com/ironmonk
+ Tagger by Wasp - https://github.com/fantasycalendar/FoundryVTT-Tagger - https://ko-fi.com/fantasycomputerworks
+
+
 ## Support
 
 You can support the creation of our battlemaps on [Patreon!](https://www.patreon.com/FA_Battlemaps)
