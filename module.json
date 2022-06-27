@@ -1,0 +1,59 @@
+{
+  "name": "fa-battlemaps",
+  "title": "Forgotten Adventures Battlemaps",
+  "description": "<p>This Module contains battlemaps from Forgotten Adventures, fully integrated for use with Foundry VTT. Featuring extra capabilities using Monk's Active Tile Triggers and Tagger for truly dynamic scenes!</p><p>You can support the creation of our battlemaps on <a href=\"https://www.patreon.com/FA_Battlemaps\">Patreon!</a> </p><p>A gallery of our work can be found on the <a href=\"https://www.forgotten-adventures.net/battlemaps\">website</a>.</p><p> Join our <a href=\"https://discord.gg/6KSJz6p\">Discord server</a> for any further questions.</p>",
+  "authors": [
+    {
+      "name": "Forgotten Adventures"
+    }
+  ],
+  "url": "https://www.forgotten-adventures.net/",
+  "flags": {},
+  "version": "1.0.0",
+  "minimumCoreVersion": "9",
+  "compatibleCoreVersion": "10",
+  "scripts": [],
+  "esmodules": [
+    "./scripts/shim.js",
+    "./scripts/fa-battlemaps.js"
+  ],
+  "styles": [
+    "styles/main.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "maps",
+      "label": "Forgotten Adventures Battlemaps",
+      "path": "/packs/maps.db",
+      "type": "Scene",
+      "entity": "Scene",
+      "private": false
+    }
+  ],
+  "system": [],
+  "dependencies": [
+    {
+      "name": "tagger",
+      "manifest": "https://github.com/fantasycalendar/FoundryVTT-Tagger/releases/latest/download/module.json",
+      "type": "module"
+    },
+    {
+      "name": "monks-active-tiles",
+      "manifest": "https://github.com/ironmonk88/monks-active-tiles/releases/latest/download/module.json",
+      "type": "module"
+    }
+  ],
+  "socket": false,
+  "manifest": "https://raw.githubusercontent.com/Forgotten-Adventures/FA_Battlemaps/main/module.json",
+  "download": "https://github.com/Forgotten-Adventures/FA_Battlemaps/raw/main/fa-battlemaps.zip",
+  "protected": false,
+  "coreTranslation": false,
+  "library": false
+}
