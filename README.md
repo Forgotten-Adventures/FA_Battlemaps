@@ -54,6 +54,13 @@ Module Settings allow you to
 ![ModuleSettings2](ModuleSettings2.jpg)
 
 ## Changelog:
+_____________
+v1.0.2
+* Small Fixes
+_____________
+v1.0.1
+* Added new Maps
+* Fixed issues with new versions of Monk's Tile Triggers and Tagger
 _________________
 v1.0.0
 * Launch!
