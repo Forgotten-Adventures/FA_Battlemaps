@@ -9,9 +9,14 @@
   ],
   "url": "https://www.forgotten-adventures.net/",
   "flags": {},
-  "version": "1.0.5",
+  "version": "1.0.6",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "10",
+  "compatibility": {
+    "minimum": "9",
+    "verified": "10",
+    "maximum": "10"
+  },
   "scripts": [],
   "esmodules": [
     "./scripts/shim.js",
@@ -33,23 +38,38 @@
       "label": "Forgotten Adventures Battlemaps",
       "path": "/packs/maps.db",
       "type": "Scene",
-      "entity": "Scene",
       "private": false
     }
   ],
   "system": [],
   "dependencies": [
     {
+      "id": "tagger",
       "name": "tagger",
       "manifest": "https://github.com/fantasycalendar/FoundryVTT-Tagger/releases/latest/download/module.json",
       "type": "module"
     },
     {
+      "id": "monks-active-tiles",
       "name": "monks-active-tiles",
       "manifest": "https://github.com/ironmonk88/monks-active-tiles/releases/latest/download/module.json",
       "type": "module"
     }
   ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "tagger",
+        "manifest": "https://github.com/fantasycalendar/FoundryVTT-Tagger/releases/latest/download/module.json",
+        "type": "module"
+      },
+      {
+        "id": "monks-active-tiles",
+        "manifest": "https://github.com/ironmonk88/monks-active-tiles/releases/latest/download/module.json",
+        "type": "module"
+      }
+    ]
+  },
   "socket": false,
   "manifest": "https://raw.githubusercontent.com/Forgotten-Adventures/FA_Battlemaps/main/module.json",
   "download": "https://github.com/Forgotten-Adventures/FA_Battlemaps/raw/main/fa-battlemaps.zip",

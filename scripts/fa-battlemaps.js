@@ -260,6 +260,7 @@ class FABattlemaps extends FormApplication {
     game.settings.register(FABattlemaps.ID, 'user-id', {
       scope: 'client',
       type: String,
+      default: '',
     });
 
     game.settings.register(FABattlemaps.ID, 'hq', {
