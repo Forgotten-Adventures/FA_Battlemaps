@@ -55,6 +55,12 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.6
+* Fixed v10 setting validation issue
+_____________
+v1.0.5
+* Added new Maps
+_____________
 v1.0.4
 * Added new Maps
 _____________
