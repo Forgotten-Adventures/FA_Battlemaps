@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.8
+* Bug Fixing
+_____________
 v1.0.7
 * Added new Maps
 * Fixed couple of bugs for Foundry v10
