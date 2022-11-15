@@ -55,6 +55,12 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.10
+* Added New Maps
+* Fixes to overhead tiles due to changes in the most recent Foundry version
+* Some maps changed from 200 grid scale to 100
+* Other small fixes
+_____________
 v1.0.9
 * Added New Maps
 _____________
