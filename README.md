@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.11
+* Added option to remove the Knight statue from the Forest Glade map (double click on the statue)
+_____________
 v1.0.10
 * Added New Maps
 * Fixes to overhead tiles due to changes in the most recent Foundry version
