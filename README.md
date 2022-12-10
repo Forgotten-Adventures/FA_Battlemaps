@@ -58,6 +58,7 @@ _____________
 v1.0.12
 * Added New Maps
 * All maps moving forward are created only for Foundry v10 !  Compatibility with older versions is not guaranteed. 
+* Due to changes for scene packaging in v10, thumbnails are not part of the scene imports, you'll have to right click and regenerate thumbnail.
 _____________
 v1.0.11
 * Added option to remove the Knight statue from the Forest Glade map (double click on the statue)
