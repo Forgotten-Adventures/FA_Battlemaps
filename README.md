@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.13
+* WEC fix for Foundry v10.287
+_____________
 v1.0.12
 * Added New Maps
 * All maps moving forward are created only for Foundry v10 !  Compatibility with older versions is not guaranteed. 
