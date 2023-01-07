@@ -55,6 +55,11 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.14
+* Drop support for v9 of Foundry 
+* Added new maps
+* Fixes for new version of [Monk's Active Tile Triggers]
+_____________
 v1.0.13
 * WEC fix for Foundry v10.287
 _____________
