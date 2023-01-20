@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.15
+* Added new maps
+_____________
 v1.0.14
 * Drop support for v9 of Foundry 
 * Added new maps
