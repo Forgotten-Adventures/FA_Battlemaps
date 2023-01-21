@@ -828,6 +828,9 @@ class FADownloader extends FormApplication {
     for (const file of audioFiles.concat(imageFiles)) {
       file.status = FADownloader.FILE_STATUS_PENDING;
       file.percentComplete = 0;
+      if (!file.size) {
+        continue;
+      }
       mergedFiles.set(file.path, file);
     }
 
