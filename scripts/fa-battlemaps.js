@@ -753,6 +753,12 @@ class FADownloader extends FormApplication {
 
     await FADownloader.handleExistingScene(this.battlemap.name, '', async (sceneId, sceneName) => {
       await game.scenes.importFromCompendium(game.packs.get('fa-battlemaps.maps'), sceneId, {}, { keepId: true });
+      const scene = game.scenes.get(sceneId);
+      if (scene) {
+        // Generate thumbnail
+        const thumb = await scene.createThumbnail();
+        await scene.update({"thumb": thumb.thumb});
+      }
       setTimeout(() => {
         this.close({ force: true });
         ui.sidebar.activateTab('scenes');
