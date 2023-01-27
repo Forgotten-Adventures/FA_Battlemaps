@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.18
+* Hotfix update
+_____________
 v1.0.17
 * Hotfix update
 _____________
