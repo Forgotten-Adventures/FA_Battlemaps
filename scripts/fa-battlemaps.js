@@ -587,6 +587,14 @@ class FADownloader extends FormApplication {
       return;
     }
 
+    const moduleVersion = game.modules.get(FABattlemaps.ID).version ?? game.modules.get(FABattlemaps.ID).data.version;
+    const mapVersion = this.battlemap.version || '1.0.18';
+    if (isNewerVersion(mapVersion, moduleVersion)) {
+      this.wrongVersion = game.i18n.format('FABattlemaps.DownloaderStatusWrongVersion', {version: mapVersion});
+      this.status = game.i18n.localize('FABattlemaps.DownloaderStatusWrongVersionShort');
+      return;
+    }
+
     this.downloader = new ConcurrentDownloader({
       onDownloaded: (data) => {
         if (!data.fileDetails?.file?.path) {
@@ -801,6 +809,7 @@ class FADownloader extends FormApplication {
       error: this.error,
       status: this.status,
       authorised: this.authorised,
+      wrongVersion: this.wrongVersion,
       loggedIn: this.loggedIn,
     };
   }
