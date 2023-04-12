@@ -828,13 +828,14 @@ class FADownloader extends FormApplication {
     const battlemapFiles = await FADownloader.getBattlemapFiles(this.battlemap.id);
     const mergedFiles = new Map();
 
+    const animationFiles = battlemapFiles?.files?.animations || [];
     const audioFiles = battlemapFiles?.files?.audio || [];
     const imageFiles = battlemapFiles?.files?.images || [];
-    if (!audioFiles.length || !imageFiles.length) {
+    if (!animationFiles.length || !audioFiles.length || !imageFiles.length) {
       console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.BattlemapsListFailed')}`, battlemapFiles);
       return mergedFiles;
     }
-    for (const file of audioFiles.concat(imageFiles)) {
+    for (const file of animationFiles.concat(audioFiles.concat(imageFiles))) {
       file.status = FADownloader.FILE_STATUS_PENDING;
       file.percentComplete = 0;
       if (!file.size) {
