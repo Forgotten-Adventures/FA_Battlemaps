@@ -46,6 +46,11 @@ Handlebars.registerHelper('slugify', function (value) {
 Handlebars.registerHelper('faFindById', function (needle, haystack) {
   return haystack.find(val => val.id === needle);
 });
+Handlebars.registerHelper('breaklines', function(text) {
+  text = Handlebars.Utils.escapeExpression(text);
+  text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
+  return new Handlebars.SafeString(text);
+});
 
 /**
  * Format bytes as human-readable text.
