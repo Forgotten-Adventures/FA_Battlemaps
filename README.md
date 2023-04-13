@@ -54,7 +54,10 @@ Module Settings allow you to
 ![ModuleSettings2](ModuleSettings2.jpg)
 
 ## Changelog:
-
+_____________
+v1.0.25
+* Added new maps
+* Added animations
 _____________
 v1.0.24
 * Hotfix update
