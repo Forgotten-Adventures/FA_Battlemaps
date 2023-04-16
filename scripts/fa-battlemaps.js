@@ -836,7 +836,7 @@ class FADownloader extends FormApplication {
     const animationFiles = battlemapFiles?.files?.animations || [];
     const audioFiles = battlemapFiles?.files?.audio || [];
     const imageFiles = battlemapFiles?.files?.images || [];
-    if (!animationFiles.length || !audioFiles.length || !imageFiles.length) {
+    if (!animationFiles.length && !audioFiles.length && !imageFiles.length) {
       console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.BattlemapsListFailed')}`, battlemapFiles);
       return mergedFiles;
     }
