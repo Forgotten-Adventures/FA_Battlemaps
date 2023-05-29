@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.29
+* Hotfix update
+_____________
 v1.0.28
 * Added new maps
 * Module now supports Foundry v11 - We are aware of the release of v11 for Foundry and while maps are downloadable through our module, they will not behave as expected. For now we recommend staying on v10 until we are able to provide proper compatibility.
