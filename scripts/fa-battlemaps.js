@@ -152,7 +152,7 @@ Hooks.on('preCreateScene', (scene, data, options) => {
   }
 });
 Hooks.on('renderSidebarTab', async (app, html) => {
-  if (game.user.isGM && app?.options?.id === 'scenes' && game.settings.get(FABattlemaps.ID, 'sidebar-button')) {
+  if (game.user.isGM && (app?.id ?? app?.options?.id) === 'scenes' && game.settings.get(FABattlemaps.ID, 'sidebar-button')) {
     html.find('.fa-battlemaps')
       .remove();
     const button = $('<button class="fa-battlemaps"><i class="fas fa-battlemaps"></i> FA Battlemaps</button>');
