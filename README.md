@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.32
+* Added new maps
+_____________
 v1.0.31
 * Improvements to the module and downloader, which should result in much faster speed for both
 _____________
