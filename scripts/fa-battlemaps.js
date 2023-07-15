@@ -605,7 +605,7 @@ class FADownloader extends FormApplication {
     }
 
     this.downloader = new ConcurrentDownloader({
-      onDownloaded: (data) => {
+      onDownloaded: async (data) => {
         if (!data.fileDetails?.file?.path) {
           return;
         }
@@ -631,7 +631,7 @@ class FADownloader extends FormApplication {
           }
           const folder = data.fileDetails.file.path.substring(0, data.fileDetails.file.path.lastIndexOf('/'));
           const filename = data.fileDetails.file.path.split('/').pop();
-          FADownloader.uploadFile(new File([data.blob], filename, {
+          await FADownloader.uploadFile(new File([data.blob], filename, {
             type: data.blob.type,
             lastModified: lastModified,
           }), folder);
@@ -985,7 +985,7 @@ class ConcurrentDownloader {
    */
   constructor({
     concurrency = 5,
-    onDownloaded = () => {
+    onDownloaded = async () => {
     },
     onFileExists = () => {
     },
@@ -1034,30 +1034,6 @@ class ConcurrentDownloader {
    * @property {boolean} complete - Whether the download has completed.
    */
 
-  async AddFiles(battlemapId, files) {
-    const existingFiles = [];
-    for (const file of files) {
-      if (await FADownloader.fileExists(file)) {
-        console.log(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.UploadAlreadyExists', {
-          file: file.path.replace(/ /g, '%20'),
-        })}`);
-        file.status = FADownloader.FILE_STATUS_DOWNLOADED;
-        file.percentComplete = 100;
-        existingFiles.push(file);
-        continue;
-      }
-      const fileDetails = await FADownloader.getFileDetails(battlemapId, file);
-      if (fileDetails?.url) {
-        this.files.push(fileDetails);
-      } else {
-        file.status = FADownloader.FILE_STATUS_ERRORED;
-        file.percentComplete = 0;
-        existingFiles.push(file);
-      }
-    }
-    return existingFiles;
-  }
-
   /**
    * Process the pending urls. Be sure to add all the URLs prior to calling Process.
    * @param {string} battlemapId - The id of the battlemap.
@@ -1098,7 +1074,7 @@ class ConcurrentDownloader {
           }
           const blob = await this._download(fileDetails);
           if (blob) {
-            this.onDownloaded({
+            await this.onDownloaded({
               fileDetails,
               blob,
             });
