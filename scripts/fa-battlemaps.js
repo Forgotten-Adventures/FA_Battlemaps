@@ -135,6 +135,9 @@ Hooks.once('init', () => {
     ...args
   ) {
     const contextOptions = wrapped(...args);
+    if (!game.user.isGM) {
+      return contextOptions;
+    }
     const i = contextOptions.findIndex(c => c.name === 'COMPENDIUM.ImportAll');
     // Limit importAll to only work for compendiums that do not belong to FA Battlemaps
     contextOptions[i].condition = li => {
