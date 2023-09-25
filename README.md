@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.40
+* Added new maps
+_____________
 v1.0.39
 * Added new maps
 * compendium fix for players
