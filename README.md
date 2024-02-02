@@ -55,6 +55,10 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.53
+* Added new maps
+* Fixes for the following maps - Yuletide Lodge, Cult Sanctuary
+_____________
 v1.0.52
 * Added new maps
 _____________
