@@ -55,6 +55,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.57
+* Added new maps
+_____________
 v1.0.56
 * Added new maps
 _____________
