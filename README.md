@@ -50,10 +50,16 @@ Module Settings allow you to
 1. Open the interface 
 2. Disable the "FA Battlemaps" button at the bottom of the scenes panel
 3. To activate "Download High Quality Maps"
+4. Modify where the map assets are downloaded to
 
 ![ModuleSettings2](ModuleSettings2.jpg)
 
 ## Changelog:
+
+_____________
+v1.1.0
+* Added ability to modify the download path for map assets
+* Marked compatible with Foundry VTT v12
 _____________
 v1.0.60
 * Added new maps
@@ -259,3 +265,23 @@ You can support the creation of our battlemaps on [Patreon!](https://www.patreon
 A gallery of our work can be found on the [website](https://www.forgotten-adventures.net/battlemaps).
 	
 Join our [Discord server](https://discord.gg/6KSJz6p) for any further questions or bug reports.
+
+## Contributing
+
+This section is for mapmakers who contribute to the module.
+
+Since v1.1.0 of the module, the database has moved to levelDB. This means that the JSON files are no longer directly viewable.
+To assist with maintaining visibility of changes, an `npm` script exists to convert the levelDB database to a JSON file.
+
+- You must have [Node.js](https://nodejs.org/) installed as a prerequisite to the following.
+- Run `npm install` to install the required dependencies.
+
+Prior to committing changes to git, you should run the following commands:
+
+1. `npm run build:json` to export the database to JSON files.
+2. The JSON files will be output to the `packs/_source` directory.
+3. You can then compare the changes in the JSON files to ensure that the changes are as expected using something like `git diff`.
+
+Building the database from JSON files is also possible (for example: you accidentally broke something locally, or wanted to make a change to the raw JSON) using the following command:
+
+1. `npm run build:db` to import the JSON files back into the database.

@@ -191,6 +191,8 @@ class FABattlemaps extends FormApplication {
 
   static SETTINGS = {
     clientID: 'NKDhTqQyf4i2ylsM6JQ1JFxNmjGFShGSwe5wHqbeypvI0JnNt-WcbFLrLDLj6-ey',
+    defaultDownloadPath: 'fa_battlemaps',
+    downloadPath: 'fa_battlemaps',
   };
   STATE = {
     selectedTags: ['all'],
@@ -294,10 +296,41 @@ class FABattlemaps extends FormApplication {
       default: true,
     });
 
+    game.settings.register(FABattlemaps.ID, 'download-path', {
+      name: game.i18n.localize('FABattlemaps.DownloadPath'),
+      hint: game.i18n.localize('FABattlemaps.DownloadPathHint'),
+      scope: 'world',
+      type: String,
+      default: FABattlemaps.SETTINGS.defaultDownloadPath,
+      config: true,
+      restricted: true,
+      onChange: value => {
+        if (!value) {
+          value = FABattlemaps.SETTINGS.defaultDownloadPath;
+          game.settings.set(FABattlemaps.ID, 'download-path', value);
+        }
+
+        if (value !== FABattlemaps.SETTINGS.defaultDownloadPath) {
+          // Replace any backslashes with forward slashes
+          value = value.replace(/\\/g, '/');
+          // Trim any leading or trailing slashes
+          value = value.replace(/^\/|\/$/g, '');
+
+          if (value !== game.settings.get(FABattlemaps.ID, 'download-path')) {
+            game.settings.set(FABattlemaps.ID, 'download-path', value);
+          }
+        }
+
+        FABattlemaps.SETTINGS.downloadPath = value;
+      }
+    });
+
     let uuiDv4 = game.settings.get(FABattlemaps.ID, 'user-id');
     if (!uuiDv4) {
       game.settings.set(FABattlemaps.ID, 'user-id', FABattlemaps.UUIDv4());
     }
+
+    FABattlemaps.SETTINGS.downloadPath = game.settings.get(FABattlemaps.ID, 'download-path');
 
     game.faBattlemaps = {
       battlemaps: [],
@@ -587,6 +620,7 @@ class FADownloader extends FormApplication {
     this.hq = game.settings.get(FABattlemaps.ID, 'hq');
     this.status = game.i18n.localize('FABattlemaps.DownloaderStatusLoading');
     this.files = new Map();
+    this.remappedFiles = new Map();
     this.error = null;
     this.loggedIn = !!game.settings.get(FABattlemaps.ID, 'user-id') && (game.faBattlemaps.user.expires_in || 0) > 0;
     this.authorised = !!game.settings.get(FABattlemaps.ID, 'user-id') && (
@@ -632,6 +666,12 @@ class FADownloader extends FormApplication {
             // Rename the file to the standard one so that the maps still work
             data.fileDetails.file.path = data.fileDetails.file.path.replace('/Maps_HQ/', '/Maps/');
           }
+
+          if (FABattlemaps.SETTINGS.downloadPath !== FABattlemaps.SETTINGS.defaultDownloadPath) {
+            data.fileDetails.file.path = this.remapFilePath(data.fileDetails.file.path);
+            data.fileDetails.filePath = this.remapFilePath(data.fileDetails.filePath);
+          }
+
           const folder = data.fileDetails.file.path.substring(0, data.fileDetails.file.path.lastIndexOf('/'));
           const filename = data.fileDetails.file.path.split('/').pop();
           await FADownloader.uploadFile(new File([data.blob], filename, {
@@ -683,7 +723,7 @@ class FADownloader extends FormApplication {
         this.status = game.i18n.format('FABattlemaps.DownloaderStatusDownloading', {
           count: files?.size,
         });
-        this.downloader.Process(battlemapId, Array.from(files.values()))
+        this.downloader.Process(battlemapId, Array.from(files.values()), this.remappedFiles)
           .then(() => {
             this.onComplete();
           });
@@ -765,7 +805,18 @@ class FADownloader extends FormApplication {
     }, 0);
 
     await FADownloader.handleExistingScene(this.battlemap.name, '', async (sceneId, sceneName) => {
-      await game.scenes.importFromCompendium(game.packs.get('fa-battlemaps.maps'), sceneId, {}, { keepId: true });
+      let diff = {};
+      if (FABattlemaps.SETTINGS.downloadPath !== FABattlemaps.SETTINGS.defaultDownloadPath && this.remappedFiles.size) {
+        // Replace the download path in the scene data
+        const compendiumScene = await game.packs.get('fa-battlemaps.maps').getDocument(sceneId);
+        const original = compendiumScene.toJSON();
+        let replacementData = JSON.stringify(original);
+        for (const [originalPath, newPath] of this.remappedFiles) {
+          replacementData = replacementData.replaceAll(originalPath, newPath);
+        }
+        diff = foundry.utils.diffObject(original, JSON.parse(replacementData));
+      }
+      await game.scenes.importFromCompendium(game.packs.get('fa-battlemaps.maps'), sceneId, diff, { keepId: true });
       const scene = game.scenes.get(sceneId);
       if (scene) {
         // Generate thumbnail
@@ -977,6 +1028,28 @@ class FADownloader extends FormApplication {
 
     return options;
   }
+
+  /**
+   * Remap the default download path with the user's download path.
+   * @param {string} path - The path to replace.
+   * @return {string}
+   */
+  remapFilePath(path) {
+    const newPath = FADownloader.ReplaceFilePath(path);
+    if (newPath !== path) {
+      this.remappedFiles.set(path, newPath);
+    }
+    return newPath;
+  }
+
+  /**
+   * Replace the default download path with the user's download path.
+   * @param {string} path - The path to replace.
+   * @return {string}
+   */
+  static ReplaceFilePath(path) {
+    return path.replace(new RegExp(`^${FABattlemaps.SETTINGS.defaultDownloadPath}\/`), `${FABattlemaps.SETTINGS.downloadPath}/`);
+  }
 }
 
 class ConcurrentDownloader {
@@ -1041,9 +1114,10 @@ class ConcurrentDownloader {
    * Process the pending urls. Be sure to add all the URLs prior to calling Process.
    * @param {string} battlemapId - The id of the battlemap.
    * @param {Array.<object>} files - The files to download.
+   * @param {Map.<string, string>} remappedFiles - The files which are remapped.
    * @return {Promise<void>}
    */
-  async Process(battlemapId, files) {
+  async Process(battlemapId, files, remappedFiles) {
     return new Promise((resolve, reject) => {
       this.resolve = resolve;
       this.reject = reject;
@@ -1055,6 +1129,23 @@ class ConcurrentDownloader {
 
       const resolveAsset = async (iterator) => {
         for (let [, file] of iterator) {
+          // Check both the modified path, and also the original path
+          if (FABattlemaps.SETTINGS.downloadPath !== FABattlemaps.SETTINGS.defaultDownloadPath) {
+            const alternateFile = foundry.utils.deepClone(file);
+            alternateFile.path = FADownloader.ReplaceFilePath(file.path);
+            if (await FADownloader.fileExists(alternateFile)) {
+              console.log(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.UploadAlreadyExists', {
+                file: alternateFile.path.replace(/ /g, '%20'),
+              })}`);
+              remappedFiles.set(file.path, alternateFile.path);
+              this.onFileExists({
+                path: file.path,
+                percentComplete: 100,
+                status: FADownloader.FILE_STATUS_DOWNLOADED,
+              });
+              continue;
+            }
+          }
           if (await FADownloader.fileExists(file)) {
             console.log(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.UploadAlreadyExists', {
               file: file.path.replace(/ /g, '%20'),
