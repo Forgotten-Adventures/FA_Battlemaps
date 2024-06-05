@@ -959,6 +959,11 @@ class FADownloader extends FormApplication {
 
   static async createFolderRecursive(path) {
     const source = FADownloader.getFilePickerSource(path);
+    if (source === 's3') {
+      // No need to create folders on S3 as they are automatically created.
+      return;
+    }
+
     const options = FADownloader.getFilePickerOptions(path);
     const folders = path.split('/');
     let curFolder = '';
@@ -983,6 +988,12 @@ class FADownloader extends FormApplication {
     const source = FADownloader.getFilePickerSource(folderPath);
     options = Object.assign(FADownloader.getFilePickerOptions(folderPath), options);
     await FADownloader.createFolderRecursive(folderPath);
+
+    const { bucket, keyPrefix } = foundry.utils.parseS3URL(folderPath);
+    if (bucket && keyPrefix) {
+      // Replace the S3 folder path to just the portion that needs to be uploaded. Otherwise, we create folders starting with "https" etc.
+      folderPath = keyPrefix;
+    }
 
     if (typeof ForgeVTT != 'undefined' && ForgeVTT.usingTheForge) {
       return await ForgeVTT_FilePicker.upload(source, folderPath, file, options, { notify: false });
