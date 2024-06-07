@@ -606,6 +606,9 @@ class FADownloader extends FormApplication {
   static FILE_STATUS_PROCESSING = 'Processing';
   static FILE_STATUS_ERRORED = 'Errored';
 
+  // Track whether the media optimizer filename slugify setting should be enabled after the downloads are complete.
+  shouldEnableMediaOptimizerSlugify = false;
+
   constructor(battlemapId, object = {}, options = {}) {
     super(object, options);
 
@@ -723,11 +726,41 @@ class FADownloader extends FormApplication {
         this.status = game.i18n.format('FABattlemaps.DownloaderStatusDownloading', {
           count: files?.size,
         });
-        this.downloader.Process(battlemapId, Array.from(files.values()), this.remappedFiles)
-          .then(() => {
-            this.onComplete();
-          });
+        this.disableMediaOptimizerSlugify().then(() => {
+          this.downloader.Process(battlemapId, Array.from(files.values()), this.remappedFiles)
+            .then(() => {
+              this.onComplete();
+            });
+        });
       });
+  }
+
+  /**
+   * Disable the media optimizer filename slugify setting if it is enabled.
+   * We don't want the files to be renamed when they are uploaded.
+   */
+  async disableMediaOptimizerSlugify() {
+    if (!game.modules.get('media-optimizer')?.active) {
+      return;
+    }
+
+    if (game.settings.get("media-optimizer", "slugifyFileNames")) {
+      this.shouldEnableMediaOptimizerSlugify = true;
+      await game.settings.set("media-optimizer", "slugifyFileNames", false);
+    }
+  }
+
+  /**
+   * Enable the media optimizer filename slugify setting if it was disabled by this module.
+   */
+  async enableMediaOptimizerSlugify() {
+    if (!game.modules.get('media-optimizer')?.active) {
+      return;
+    }
+
+    if (this.shouldEnableMediaOptimizerSlugify) {
+      await game.settings.set("media-optimizer", "slugifyFileNames", true);
+    }
   }
 
   /**
@@ -803,6 +836,8 @@ class FADownloader extends FormApplication {
     setTimeout(() => {
       this.render(false);
     }, 0);
+
+    await this.enableMediaOptimizerSlugify();
 
     await FADownloader.handleExistingScene(this.battlemap.name, '', async (sceneId, sceneName) => {
       let diff = {};

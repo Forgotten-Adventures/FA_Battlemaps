@@ -58,8 +58,9 @@ Module Settings allow you to
 
 _____________
 v1.1.0
-* Added ability to modify the download path for map assets
-* Marked compatible with Foundry VTT v12
+* Added ability to modify the download path for map assets.
+* Fixed compatibility with TheRipper93's [Media Optimizer](https://theripper93.com/module/media-optimizer).
+* Marked compatible with Foundry VTT v12.
 _____________
 v1.0.60
 * Added new maps
