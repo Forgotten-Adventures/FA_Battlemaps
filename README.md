@@ -57,7 +57,7 @@ Module Settings allow you to
 _____________
 v1.0.61
 * Added new maps
-* added basic support to Foundry v12
+* Added basic support to Foundry v12
 _____________
 v1.0.60
 * Added new maps
