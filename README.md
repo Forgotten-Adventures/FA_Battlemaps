@@ -55,6 +55,10 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.0.62
+* Added new maps
+* Fix for v12 conflicting function names and preventing the map search from working
+_____________
 v1.0.61
 * Added new maps
 * Added basic support to Foundry v12
