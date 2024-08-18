@@ -60,7 +60,7 @@ _____________
 v1.1.0
 * Added ability to modify the download path for map assets.
 * Fixed compatibility with TheRipper93's [Media Optimizer](https://theripper93.com/module/media-optimizer).
-* Marked compatible with Foundry VTT v12.
+* Removed compatibility with Foundry VTT v10.
 _____________
 v1.0.66
 * Added new maps
