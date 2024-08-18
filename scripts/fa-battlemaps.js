@@ -876,7 +876,7 @@ class FADownloader extends FormApplication {
   }
 
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       id: `fa-battlemaps-downloader-${Math.floor(Math.random() * 1000)}`,
       classes: ['fa-battlemaps'],
       width: 700,
@@ -895,7 +895,7 @@ class FADownloader extends FormApplication {
    */
   async getData(options) {
     return {
-      battlemap: mergeObject(this.battlemap, {
+      battlemap: foundry.utils.mergeObject(this.battlemap, {
         files: Array.from(this.files.values()),
       }),
       error: this.error,
@@ -972,7 +972,7 @@ class FADownloader extends FormApplication {
   }
 
   static async fileExists(file) {
-    const path = file.path.replace(/ /g, '%20');
+    const path = foundry.utils.encodeURL(file.path);
     try {
       const parentFolder = await FilePicker.browse(
         FADownloader.getFilePickerSource(path),
