@@ -14,21 +14,18 @@
     "y": 2950,
     "scale": 0.34
   },
-  "backgroundColor": "#999999",
+  "backgroundColor": "#000000",
   "grid": {
     "size": 100,
     "type": 1,
     "color": "#000000",
     "alpha": 0.2,
     "distance": 5,
-    "units": "ft"
+    "units": "ft",
+    "style": "solidLines",
+    "thickness": 1
   },
   "tokenVision": true,
-  "fogExploration": true,
-  "fogReset": 1664319642893,
-  "globalLight": true,
-  "globalLightThreshold": null,
-  "darkness": 0,
   "drawings": [],
   "tokens": [],
   "lights": [
@@ -60,7 +57,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -68,6 +67,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.8AAYe7qiEqMPHwIn"
     },
     {
@@ -98,7 +98,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -106,6 +108,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.ZZYlTkAayw26XZaz"
     },
     {
@@ -136,7 +139,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -144,6 +149,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.HN0TyXZ6UdfahZ9z"
     },
     {
@@ -174,7 +180,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -182,6 +190,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.fa9hdpIMqD3qV8nM"
     },
     {
@@ -212,7 +221,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -220,6 +231,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.8K9aw39zqzJVhSsy"
     },
     {
@@ -250,7 +262,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -258,6 +272,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.k6hHXBjX55QzOwsr"
     },
     {
@@ -288,7 +303,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -296,6 +313,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.Qi1O2wAnkQLS5I1m"
     },
     {
@@ -326,7 +344,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -334,6 +354,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.UXf4uCVCO1RAKkCR"
     },
     {
@@ -364,7 +385,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -372,6 +395,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.sTFYJLOyAh7NqOKj"
     },
     {
@@ -402,7 +426,9 @@
           "max": 1
         },
         "color": "#878787",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
@@ -410,6 +436,7 @@
           "tags": ""
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!qcuBND7YkXXIJhPj.GX90ehYhBDDADbMc"
     }
   ],
@@ -435,6 +462,15 @@
           "tags": ""
         }
       },
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
       "_key": "!scenes.sounds!qcuBND7YkXXIJhPj.IU23HpUYzJi1tCy7"
     },
     {
@@ -455,6 +491,15 @@
       "flags": {
         "tagger": {
           "tags": ""
+        }
+      },
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
         }
       },
       "_key": "!scenes.sounds!qcuBND7YkXXIJhPj.THgI5PP5XAa2LUur"
@@ -481,6 +526,15 @@
           ]
         }
       },
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
       "_key": "!scenes.sounds!qcuBND7YkXXIJhPj.AIt8fIw1bOnyTXH5"
     }
   ],
@@ -492,16 +546,13 @@
       "height": 3900,
       "x": 700,
       "y": 1000,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -544,14 +595,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Maps/ShipwreckBG.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.eOdDw0HaR5iB0E34"
     },
     {
@@ -560,16 +620,13 @@
       "height": 1000,
       "x": 700,
       "y": 1000,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -599,14 +656,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Maps/ShipwreckFG.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.oAYfwdTpcpvO2dsc"
     },
     {
@@ -615,16 +681,13 @@
       "height": 2300,
       "x": 900,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -656,14 +719,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Shipwreck.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.Mz4DXfrA2Qp84z8A"
     },
     {
@@ -672,16 +744,13 @@
       "height": 1100,
       "x": 1700,
       "y": 1200,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -730,14 +799,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Shiphull1.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.JusJ9xzN1h0i0eni"
     },
     {
@@ -746,16 +824,13 @@
       "height": 700,
       "x": 1400,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -804,14 +879,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat1.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.OlpUwoOBd2yqsVp7"
     },
     {
@@ -820,16 +904,13 @@
       "height": 600,
       "x": 1000,
       "y": 2300,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -873,14 +954,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat4.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.nLlQ125rdWRK79Jp"
     },
     {
@@ -889,16 +979,13 @@
       "height": 500,
       "x": 1000,
       "y": 1500,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -941,14 +1028,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Chest.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.1Zx7SoYgyXUaHMr0"
     },
     {
@@ -957,16 +1053,13 @@
       "height": 50,
       "x": 3200,
       "y": 1050,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1116,9 +1209,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.62TytoFTs8yGUY7M"
     },
     {
@@ -1127,16 +1229,13 @@
       "height": 50,
       "x": 3200,
       "y": 1250,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1286,9 +1385,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.IADSDrmcpJmynv7D"
     },
     {
@@ -1297,16 +1405,13 @@
       "height": 50,
       "x": 3200,
       "y": 1150,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1458,9 +1563,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.frWrvuzwfbPoDWVG"
     },
     {
@@ -1469,16 +1583,13 @@
       "height": 50,
       "x": 3200,
       "y": 1450,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1580,9 +1691,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.EGHokhEzRNl1Kuxh"
     },
     {
@@ -1591,16 +1711,13 @@
       "height": 50,
       "x": 3200,
       "y": 1550,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1702,9 +1819,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.HUheLTaJZBUW6RXS"
     },
     {
@@ -1713,16 +1839,13 @@
       "height": 50,
       "x": 3200,
       "y": 1650,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1824,9 +1947,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.5YpgoILhNiJxRrh6"
     },
     {
@@ -1835,16 +1967,13 @@
       "height": 50,
       "x": 3204,
       "y": 1753,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1946,9 +2075,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.pwGORnPLffiZIztJ"
     },
     {
@@ -1957,16 +2095,13 @@
       "height": 50,
       "x": 3200,
       "y": 1850,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2057,9 +2192,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.ARq8mhbhw6IoIcsZ"
     },
     {
@@ -2068,16 +2212,13 @@
       "height": 1117.3,
       "x": 3176,
       "y": 928,
-      "z": 99,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2092,9 +2233,18 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 99,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.maJelnOearzgpNv7"
     },
     {
@@ -2103,16 +2253,13 @@
       "height": 5.5,
       "x": 3266,
       "y": 1826,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2127,9 +2274,18 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.Z611VybRT17eU73e"
     },
     {
@@ -2138,16 +2294,13 @@
       "height": 5.5,
       "x": 3263,
       "y": 1423,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2162,9 +2315,18 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.8I9oAtglV8fwRE4R"
     },
     {
@@ -2173,16 +2335,13 @@
       "height": 5.5,
       "x": 3268,
       "y": 1621,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2197,9 +2356,18 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.zuZVLtb0piF027Zz"
     },
     {
@@ -2208,16 +2376,13 @@
       "height": 5.5,
       "x": 3265,
       "y": 1311,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2232,9 +2397,18 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.GE9mZ3iufXhzfMkG"
     },
     {
@@ -2243,16 +2417,13 @@
       "height": 50,
       "x": 3202,
       "y": 1347,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2343,9 +2514,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.oG1aReBv1xmEZIde"
     },
     {
@@ -2354,16 +2534,13 @@
       "height": 700,
       "x": 1400,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2412,14 +2589,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat1.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.LGwbOodrMhWveXfU"
     },
     {
@@ -2428,16 +2614,13 @@
       "height": 600,
       "x": 1000,
       "y": 2300,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2481,14 +2664,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat4.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.1XufbYSa7zSFIsFb"
     },
     {
@@ -2497,16 +2689,13 @@
       "height": 102,
       "x": 1129,
       "y": 1635,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": true,
       "occlusion": {
         "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2568,14 +2757,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!qcuBND7YkXXIJhPj.7OgujlKXxQ232xyQ"
     }
   ],
@@ -2596,6 +2794,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.Kus3vnUGfhmw2WQJ"
     },
     {
@@ -2614,6 +2818,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.PNqDI5z0Bbcnckg9"
     },
     {
@@ -2632,6 +2842,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.K6YsYwvSn1hEbG3j"
     },
     {
@@ -2650,6 +2866,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.iMSBKD8IYXE2nAYZ"
     },
     {
@@ -2679,6 +2901,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.fzDRRWHlkS4b27IB"
     },
@@ -2710,6 +2938,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.HOQ5vxZfIJ50U0IT"
     },
     {
@@ -2739,6 +2973,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.He4huMtS5iu0KMDU"
     },
@@ -2770,6 +3010,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.jQOVGwXtfUFqOV9a"
     },
     {
@@ -2799,6 +3045,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.DhvN8hm7wEEHHycq"
     },
@@ -2830,6 +3082,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.DQuSx3YF3EPk3nyn"
     },
     {
@@ -2859,6 +3117,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.nlQKBbhRrOGyZJmD"
     },
@@ -2890,6 +3154,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.AdYS0GvC5LJ5zha2"
     },
     {
@@ -2919,6 +3189,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.soxt9Qh0AHucceh0"
     },
@@ -2950,6 +3226,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.bBQM3Fyh6VgODQrx"
     },
     {
@@ -2979,6 +3261,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.izy1pXiY4FQY0THn"
     },
@@ -3010,6 +3298,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.QSOGLegTU70MtSel"
     },
     {
@@ -3039,6 +3333,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.SyvDzDJOQ2mN92Wj"
     },
@@ -3070,6 +3370,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.nEXZovjC5kPUeKEu"
     },
     {
@@ -3099,6 +3405,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.t938MGmsWtALmODR"
     },
@@ -3130,6 +3442,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.PdV8Ox29cEIk4dX8"
     },
     {
@@ -3159,6 +3477,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.StbuyJvB5fpEimwl"
     },
@@ -3190,6 +3514,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.yqI23vZRxX61lYwf"
     },
     {
@@ -3219,6 +3549,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.L8m5Xd9MUzGhOnox"
     },
@@ -3250,6 +3586,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.WLU9bxmlnJtf6cir"
     },
     {
@@ -3279,6 +3621,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.86Vuqm2EYFjBGRku"
     },
@@ -3310,6 +3658,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.txQe3u5p34aZPtD3"
     },
     {
@@ -3339,6 +3693,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.qdCAZTHUbAOQrVjm"
     },
@@ -3370,6 +3730,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.iwLzyA0eiooV87Ag"
     },
     {
@@ -3399,6 +3765,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.cLyH5XkAe67s8okw"
     },
@@ -3430,6 +3802,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.Z2EoeyaCZHMbyHJB"
     },
     {
@@ -3459,6 +3837,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.9OhQySSWKamWeRn0"
     },
@@ -3490,6 +3874,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.KZKb6mY0Qnyp9Sjy"
     },
     {
@@ -3519,6 +3909,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.dGak6uZoEnz5ippg"
     },
@@ -3550,6 +3946,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.qw9amdu19D70Sktm"
     },
     {
@@ -3579,6 +3981,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.KsAnDEzlFvwn1Eya"
     },
@@ -3610,6 +4018,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!qcuBND7YkXXIJhPj.T7LopZ6ZN1dDjdUJ"
     }
   ],
@@ -3625,26 +4039,73 @@
     "scaleX": 1,
     "scaleY": 1,
     "rotation": 0,
-    "tint": null
+    "tint": "#ffffff",
+    "anchorX": 0,
+    "anchorY": 0,
+    "fit": "fill",
+    "alphaThreshold": 0
   },
-  "foregroundElevation": null,
-  "fogOverlay": null,
-  "fogExploredColor": null,
-  "fogUnexploredColor": null,
+  "foregroundElevation": 20,
   "journalEntryPage": null,
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "2.1.5",
-    "coreVersion": "10.291",
+    "systemVersion": "2.4.1",
+    "coreVersion": "12.330",
     "createdTime": 1672873155931,
-    "modifiedTime": 1680968020876,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "modifiedTime": 1718542208298,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "compendiumSource": "Compendium.fa-battlemaps.maps.qcuBND7YkXXIJhPj",
+    "duplicateSource": null
   },
   "active": false,
   "folder": null,
   "sort": 0,
   "ownership": {
     "default": 0
+  },
+  "regions": [],
+  "environment": {
+    "globalLight": {
+      "luminosity": 0,
+      "enabled": true,
+      "darkness": {
+        "max": 1,
+        "min": 0
+      },
+      "alpha": 0.5,
+      "bright": false,
+      "color": null,
+      "coloration": 1,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0
+    },
+    "darknessLevel": 0,
+    "darknessLock": false,
+    "cycle": true,
+    "base": {
+      "hue": 0,
+      "intensity": 0,
+      "luminosity": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "dark": {
+      "hue": 0.7138888888888889,
+      "intensity": 0,
+      "luminosity": -0.25,
+      "saturation": 0,
+      "shadows": 0
+    }
+  },
+  "fog": {
+    "exploration": true,
+    "reset": 1664319642893,
+    "overlay": null,
+    "colors": {
+      "explored": null,
+      "unexplored": null
+    }
   },
   "_key": "!scenes!qcuBND7YkXXIJhPj"
 }

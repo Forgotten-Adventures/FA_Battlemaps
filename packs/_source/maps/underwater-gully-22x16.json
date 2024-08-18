@@ -10,7 +10,11 @@
     "offsetX": 0,
     "offsetY": 0,
     "rotation": 0,
-    "tint": null
+    "tint": "#ffffff",
+    "anchorX": 0,
+    "anchorY": 0,
+    "fit": "fill",
+    "alphaThreshold": 0
   },
   "foreground": null,
   "foregroundElevation": 20,
@@ -23,24 +27,18 @@
     "y": 1571,
     "scale": 0.6929760598037895
   },
-  "backgroundColor": "#6c8499",
+  "backgroundColor": "#000000",
   "grid": {
     "type": 1,
     "size": 100,
     "color": "#000000",
     "alpha": 0.2,
     "distance": 5,
-    "units": "ft"
+    "units": "ft",
+    "style": "solidLines",
+    "thickness": 1
   },
   "tokenVision": true,
-  "fogExploration": true,
-  "fogReset": 1675813116039,
-  "globalLight": true,
-  "globalLightThreshold": null,
-  "darkness": 0,
-  "fogOverlay": null,
-  "fogExploredColor": null,
-  "fogUnexploredColor": null,
   "drawings": [],
   "tokens": [],
   "lights": [
@@ -57,7 +55,7 @@
         "bright": 100,
         "color": "#365d78",
         "coloration": 10,
-        "dim": null,
+        "dim": 0,
         "attenuation": 0.5,
         "luminosity": 0.4,
         "saturation": 0.45,
@@ -72,12 +70,15 @@
         "darkness": {
           "min": 0,
           "max": 1
-        }
+        },
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
         "tagger": {}
       },
+      "elevation": 0,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.05oZY5GiBo2HWA8A"
     },
     {
@@ -92,7 +93,7 @@
         "bright": 100,
         "color": "#94c2ae",
         "coloration": 1,
-        "dim": null,
+        "dim": 0,
         "attenuation": 0.25,
         "luminosity": 0,
         "saturation": 0.1,
@@ -107,13 +108,16 @@
         "darkness": {
           "min": 0,
           "max": 1
-        }
+        },
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
         "tagger": {}
       },
       "_id": "yL0pUPPHV7IuEohi",
+      "elevation": 0,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.yL0pUPPHV7IuEohi"
     },
     {
@@ -129,7 +133,7 @@
         "bright": 82.67,
         "color": "#487ea5",
         "coloration": 1,
-        "dim": null,
+        "dim": 0,
         "attenuation": 0.5,
         "luminosity": 0.05,
         "saturation": 0.2,
@@ -144,12 +148,15 @@
         "darkness": {
           "min": 0,
           "max": 1
-        }
+        },
+        "negative": false,
+        "priority": 0
       },
       "hidden": false,
       "flags": {
         "tagger": {}
       },
+      "elevation": 0,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.nzRcPCb2H3g6xXqf"
     },
     {
@@ -180,12 +187,15 @@
         "darkness": {
           "min": 0,
           "max": 1
-        }
+        },
+        "negative": false,
+        "priority": 0
       },
       "hidden": true,
       "flags": {
         "tagger": {}
       },
+      "elevation": 0,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.Ex6SreA7F0rH6TcA"
     }
   ],
@@ -211,6 +221,15 @@
       "_id": "oCfvV0X7MpCcNA7I",
       "repeat": false,
       "hidden": false,
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
       "_key": "!scenes.sounds!vjVUQQQ6JewIXlBv.oCfvV0X7MpCcNA7I"
     }
   ],
@@ -233,6 +252,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.tRwcmRfTR2dlhY75"
     },
     {
@@ -251,6 +276,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.CVG6orFBETlkV46Z"
     },
     {
@@ -269,6 +300,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.dG1wF5c31guV3BE5"
     },
     {
@@ -287,6 +324,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.ZdgLnC3isNlaHBeY"
     }
   ],
@@ -304,11 +347,13 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "2.1.5",
-    "coreVersion": "10.291",
+    "systemVersion": "2.4.1",
+    "coreVersion": "12.330",
     "createdTime": 1675813116043,
-    "modifiedTime": 1680968020889,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "modifiedTime": 1718542231526,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "compendiumSource": "Compendium.fa-battlemaps.maps.vjVUQQQ6JewIXlBv",
+    "duplicateSource": null
   },
   "_id": "vjVUQQQ6JewIXlBv",
   "active": false,
@@ -316,6 +361,50 @@
   "sort": 0,
   "ownership": {
     "default": 0
+  },
+  "regions": [],
+  "environment": {
+    "globalLight": {
+      "luminosity": 0,
+      "enabled": true,
+      "darkness": {
+        "max": 1,
+        "min": 0
+      },
+      "alpha": 0.5,
+      "bright": false,
+      "color": null,
+      "coloration": 1,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0
+    },
+    "darknessLevel": 0,
+    "darknessLock": false,
+    "cycle": true,
+    "base": {
+      "hue": 0,
+      "intensity": 0,
+      "luminosity": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "dark": {
+      "hue": 0.7138888888888889,
+      "intensity": 0,
+      "luminosity": -0.25,
+      "saturation": 0,
+      "shadows": 0
+    }
+  },
+  "fog": {
+    "exploration": true,
+    "reset": 1675813116039,
+    "overlay": null,
+    "colors": {
+      "explored": null,
+      "unexplored": null
+    }
   },
   "_key": "!scenes!vjVUQQQ6JewIXlBv"
 }

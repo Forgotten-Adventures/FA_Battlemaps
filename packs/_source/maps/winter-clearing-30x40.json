@@ -14,21 +14,18 @@
     "y": 3035,
     "scale": 0.34
   },
-  "backgroundColor": "#666c75",
+  "backgroundColor": "#000000",
   "grid": {
     "size": 100,
     "type": 1,
     "color": "#000000",
     "alpha": 0.2,
     "distance": 5,
-    "units": "ft"
+    "units": "ft",
+    "style": "solidLines",
+    "thickness": 1
   },
   "tokenVision": true,
-  "fogExploration": false,
-  "fogReset": 1662829946444,
-  "globalLight": true,
-  "globalLightThreshold": null,
-  "darkness": 0,
   "drawings": [],
   "tokens": [],
   "lights": [
@@ -60,7 +57,9 @@
           "max": 1
         },
         "color": "#4d2f05",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": true,
       "flags": {
@@ -72,6 +71,7 @@
           ]
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!GfMZpcn5L27dH2fW.VLV1ZFIiR0mnaO6y"
     },
     {
@@ -102,7 +102,9 @@
           "max": 1
         },
         "color": "#7f4a14",
-        "attenuation": 0.5
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
       },
       "hidden": true,
       "flags": {
@@ -114,6 +116,7 @@
           ]
         }
       },
+      "elevation": 0,
       "_key": "!scenes.lights!GfMZpcn5L27dH2fW.7Qccf017EV1E4w4h"
     }
   ],
@@ -143,6 +146,15 @@
           ]
         }
       },
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
       "_key": "!scenes.sounds!GfMZpcn5L27dH2fW.eI4l1oMuINYxuUzK"
     },
     {
@@ -169,6 +181,15 @@
           ]
         }
       },
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
       "_key": "!scenes.sounds!GfMZpcn5L27dH2fW.eptIDy3ZYIOUfgan"
     },
     {
@@ -191,6 +212,15 @@
           "tags": ""
         }
       },
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
       "_key": "!scenes.sounds!GfMZpcn5L27dH2fW.mTRX2XNVDF5IEC7B"
     }
   ],
@@ -202,16 +232,13 @@
       "height": 4000,
       "x": 800,
       "y": 1000,
-      "z": 96,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -241,14 +268,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Map/TreeShadow.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 96,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.bYiLbgBnbeXmdxZ3"
     },
     {
@@ -257,16 +293,13 @@
       "height": 4000,
       "x": 800,
       "y": 1000,
-      "z": 97,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 0.3
       },
       "video": {
         "loop": true,
@@ -282,28 +315,44 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 50,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
           "files": []
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Map/Canopy.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 97,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.95UYLGngEF6aSmWy"
     },
     {
@@ -312,16 +361,13 @@
       "height": 2300,
       "x": 1200,
       "y": 2000,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -364,14 +410,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/Tarrasque.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.UyspJ05ksZ0Gdq40"
     },
     {
@@ -380,16 +435,13 @@
       "height": 850,
       "x": 3800,
       "y": 1000,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -404,9 +456,18 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.8PY62CZWYQAIQXuC"
     },
     {
@@ -415,16 +476,13 @@
       "height": 50,
       "x": 3850,
       "y": 1250,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1110,9 +1168,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.nOnuYvuHdn3x7ywO"
     },
     {
@@ -1121,16 +1188,13 @@
       "height": 50,
       "x": 3850,
       "y": 1450,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -1957,9 +2021,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.rvgnUpq5BhAvCmje"
     },
     {
@@ -1968,16 +2041,13 @@
       "height": 50,
       "x": 3850,
       "y": 1350,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -2733,9 +2803,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.jxypvPQksuSKMVJD"
     },
     {
@@ -2744,16 +2823,13 @@
       "height": 50,
       "x": 3850,
       "y": 1550,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -3302,9 +3378,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.wbdM43LrTVvnjLOG"
     },
     {
@@ -3313,16 +3398,13 @@
       "height": 50,
       "x": 3850,
       "y": 1650,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -3855,9 +3937,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.UTxeJDTPrXUl0YHc"
     },
     {
@@ -3866,16 +3957,13 @@
       "height": 200,
       "x": 1800,
       "y": 2800,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -3923,14 +4011,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.kc92L0omZQ5piqeA"
     },
     {
@@ -3939,16 +4036,13 @@
       "height": 600,
       "x": 1600,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -3996,14 +4090,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.HoYsVYWJAb6Z53xu"
     },
     {
@@ -4012,16 +4115,13 @@
       "height": 500,
       "x": 1700,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 0
       },
       "video": {
         "loop": true,
@@ -4043,7 +4143,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -4056,7 +4158,7 @@
             {
               "id": "e43q3bt4tOYxAkXS",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/MausoleumRoof.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "SzANlycGNF4v8BqL",
@@ -4066,7 +4168,7 @@
           ]
         },
         "betterroofs": {
-          "brMode": 1,
+          "brMode": true,
           "manualPoly": "pBrMdPFqIGUieWy0,SFhPdL8dv4C5OXE1,w7fZiBhd3fcVXqvt,50tLxBIK3erQtXDt,UcbqYlPQVueK8cvC,0skvqr9xvGvBJBa6,",
           "occlusionLinkId": "",
           "occlusionLinkSource": false
@@ -4077,14 +4179,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.W6BLOZl5itgvhPZH"
     },
     {
@@ -4093,16 +4204,13 @@
       "height": 300,
       "x": 1800,
       "y": 2200,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -4134,14 +4242,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/grave.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.UpdPXE2m9d0Ac8Z5"
     },
     {
@@ -4150,16 +4267,13 @@
       "height": 200,
       "x": 1900,
       "y": 2200,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -4222,14 +4336,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.n0CERZ0EhU3ZVK9M"
     },
     {
@@ -4238,16 +4361,13 @@
       "height": 50,
       "x": 3850,
       "y": 1150,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -4766,9 +4886,18 @@
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.Zof4Dgl4yyMsams9"
     },
     {
@@ -4777,16 +4906,13 @@
       "height": 1300,
       "x": 1400,
       "y": 1900,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
-        "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "mode": 0,
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -4813,7 +4939,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 2,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -4840,15 +4966,24 @@
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/Tent.webp",
-        "tint": null,
+        "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/HuntersCabin.webp",
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.eBlB0w6mSWgz2J5Q"
     },
     {
@@ -4857,16 +4992,13 @@
       "height": 400,
       "x": 1600,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -4915,14 +5047,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.1zfredcJmsY7EWaN"
     },
     {
@@ -4931,16 +5072,13 @@
       "height": 400,
       "x": 1600,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 0.2
       },
       "video": {
         "loop": true,
@@ -4961,7 +5099,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -4974,7 +5114,7 @@
             {
               "id": "EuUMZNKRPt0kgXYT",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/TentTop.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "RbD6bVIJwrENAj7D",
@@ -4985,18 +5125,32 @@
         },
         "perfect-vision": {
           "lighting": ""
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.MWbiCSiTTkpkXpqJ"
     },
     {
@@ -5005,16 +5159,13 @@
       "height": 700,
       "x": 1400,
       "y": 2100,
-      "z": 98,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5068,14 +5219,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 98,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.immz8rMJCccMZ9rd"
     },
     {
@@ -5084,16 +5244,13 @@
       "height": 1300,
       "x": 1400,
       "y": 1900,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5134,14 +5291,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/TentLight.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.pin5dBoQo6E0rmU0"
     },
     {
@@ -5150,16 +5316,13 @@
       "height": 50,
       "x": 1941,
       "y": 2434,
-      "z": 100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": true,
       "occlusion": {
         "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5243,14 +5406,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.g0mhgTm2R6IHsqHw"
     },
     {
@@ -5259,16 +5431,13 @@
       "height": 50,
       "x": 2021,
       "y": 2170,
-      "z": 101,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
       "locked": false,
-      "overhead": true,
       "occlusion": {
         "mode": 1,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5356,14 +5525,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 101,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.IyEIlHpnPOl742yk"
     },
     {
@@ -5372,16 +5550,13 @@
       "height": 400,
       "x": 1800,
       "y": 2100,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": false,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5414,14 +5589,23 @@
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/HuntersCabinLight.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.C6DHhYtTjZgdDhC1"
     },
     {
@@ -5430,16 +5614,13 @@
       "height": 600,
       "x": 1600,
       "y": 2100,
-      "z": 99,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 0
       },
       "video": {
         "loop": true,
@@ -5462,7 +5643,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -5475,7 +5658,7 @@
             {
               "id": "WMltsvXkbN38yElm",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/CabinRoof.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "erSjbY5jc7nuEDsw",
@@ -5485,7 +5668,7 @@
           ]
         },
         "betterroofs": {
-          "brMode": 1,
+          "brMode": true,
           "manualPoly": "GeY0j8DWT8EciYIs,lxl2yDyAJGaGWOWV,0ohALHGot2anbWar,LhkUmqc6hgTOabs5,lJkNpDufkahvHtab,D5eO9YoVLV1o7JGr,8vAR6nwfwmoFbLNv,HYrlIlzTvPkudWIa,CpzKoOei1gl041wS,Aleeg8aArbXzdAIQ,NYZoMdi6qEH0Rsyn,jee5xEQlHAtwR4yn,bScbBNUw48wFKTsR,",
           "occlusionLinkId": "",
           "occlusionLinkSource": false
@@ -5496,14 +5679,23 @@
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 99,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.Il8K3aJaKdQbGWqe"
     },
     {
@@ -5512,16 +5704,13 @@
       "height": 400,
       "x": 1700,
       "y": 1900,
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": true,
-      "overhead": true,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5542,7 +5731,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -5555,7 +5746,7 @@
             {
               "id": "pU9sEDfxvFZRqFIw",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-clearing/Tiles/ChimneySmoke.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "a46JzN7SMnFPBPUN",
@@ -5566,18 +5757,32 @@
         },
         "perfect-vision": {
           "lighting": ""
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "texture": {
         "src": "modules/fa-battlemaps/images/Transparent.webp",
-        "tint": null,
+        "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
         "offsetY": 0,
-        "rotation": 0
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
-      "roof": false,
+      "elevation": 20,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.ECewVgG9Ak2UGwBi"
     },
     {
@@ -5588,22 +5793,22 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": null
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
       },
       "width": 100,
       "height": 100,
-      "overhead": false,
       "_id": "2xxNZdfGMXsHGe8Z",
-      "z": 100,
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
       "locked": false,
-      "roof": false,
       "occlusion": {
         "mode": 0,
-        "alpha": 0,
-        "radius": null
+        "alpha": 1
       },
       "video": {
         "loop": true,
@@ -5656,6 +5861,12 @@
       },
       "x": 1917,
       "y": 2402,
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
       "_key": "!scenes.tiles!GfMZpcn5L27dH2fW.2xxNZdfGMXsHGe8Z"
     }
   ],
@@ -5693,6 +5904,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.w7fZiBhd3fcVXqvt"
     },
     {
@@ -5727,6 +5944,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.50tLxBIK3erQtXDt"
     },
@@ -5763,6 +5986,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.UcbqYlPQVueK8cvC"
     },
     {
@@ -5798,6 +6027,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.0skvqr9xvGvBJBa6"
     },
     {
@@ -5832,6 +6067,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.pBrMdPFqIGUieWy0"
     },
@@ -5869,6 +6110,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.SFhPdL8dv4C5OXE1"
     },
     {
@@ -5900,6 +6147,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.iTpJFVsNxrcCX63T"
     },
@@ -5933,6 +6186,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.sW4tCA0UaRpbFFzT"
     },
     {
@@ -5964,6 +6223,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.VCuwPySg6wkWlMlz"
     },
@@ -5997,6 +6262,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.meLaeA9keR4HyHGm"
     },
     {
@@ -6028,6 +6299,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.aZkOB1r4Zz3FKuiW"
     },
@@ -6061,6 +6338,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.T3AnNMeTf3Uhcea9"
     },
     {
@@ -6093,6 +6376,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.RjJTp7ztA4U0aZ0d"
     },
     {
@@ -6124,6 +6413,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.onl54d8SkKEtmAZe"
     },
@@ -6158,6 +6453,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.UP4BMpKjRbWxyTFm"
     },
     {
@@ -6190,6 +6491,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.Uwyi8eAolUdxQGof"
     },
@@ -6224,6 +6531,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.JKkT7BqarQnUuigp"
     },
     {
@@ -6256,6 +6569,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.S5ZQFyJEdWQRmeRV"
     },
@@ -6290,6 +6609,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.gdJ6PS2WlwQhQkPX"
     },
     {
@@ -6322,6 +6647,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.EnrjsQpdq7kVoB9p"
     },
@@ -6357,6 +6688,12 @@
           "secret": false
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.465Ohx4WQJQQCcno"
     },
     {
@@ -6390,6 +6727,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.DupjsE02QsXfFxTd"
     },
@@ -6426,6 +6769,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.GeY0j8DWT8EciYIs"
     },
@@ -6464,6 +6813,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.lxl2yDyAJGaGWOWV"
     },
     {
@@ -6500,6 +6855,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.0ohALHGot2anbWar"
     },
     {
@@ -6535,6 +6896,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.LhkUmqc6hgTOabs5"
     },
@@ -6573,6 +6940,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.lJkNpDufkahvHtab"
     },
     {
@@ -6608,6 +6981,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.D5eO9YoVLV1o7JGr"
     },
@@ -6645,6 +7024,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.8vAR6nwfwmoFbLNv"
     },
     {
@@ -6678,6 +7063,12 @@
           "checklock": false,
           "secret": false
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.yaUUQdc1AiJobLCO"
     },
@@ -6715,6 +7106,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.jee5xEQlHAtwR4yn"
     },
     {
@@ -6750,6 +7147,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.bScbBNUw48wFKTsR"
     },
@@ -6787,6 +7190,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.NYZoMdi6qEH0Rsyn"
     },
     {
@@ -6822,6 +7231,12 @@
         "betterroofs": {
           "externalWall": true
         }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
       },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.Aleeg8aArbXzdAIQ"
     },
@@ -6859,6 +7274,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.CpzKoOei1gl041wS"
     },
     {
@@ -6895,6 +7316,12 @@
           "externalWall": true
         }
       },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.HYrlIlzTvPkudWIa"
     },
     {
@@ -6913,6 +7340,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.DtC0lEsviWRD0De3"
     },
     {
@@ -6931,6 +7364,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.X1V9Oisy60R6sLUU"
     },
     {
@@ -6949,6 +7388,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.bxkXtjmESrTYyCdR"
     },
     {
@@ -6967,6 +7412,12 @@
       "door": 0,
       "ds": 0,
       "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
       "_key": "!scenes.walls!GfMZpcn5L27dH2fW.tKokmWKvfTefYxuY"
     }
   ],
@@ -6987,26 +7438,73 @@
     "scaleX": 1,
     "scaleY": 1,
     "rotation": 0,
-    "tint": null
+    "tint": "#ffffff",
+    "anchorX": 0,
+    "anchorY": 0,
+    "fit": "fill",
+    "alphaThreshold": 0
   },
   "foregroundElevation": 20,
-  "fogOverlay": null,
-  "fogExploredColor": null,
-  "fogUnexploredColor": null,
   "journalEntryPage": null,
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "2.1.5",
-    "coreVersion": "10.291",
+    "systemVersion": "2.4.1",
+    "coreVersion": "12.330",
     "createdTime": 1672864193644,
-    "modifiedTime": 1680968020945,
-    "lastModifiedBy": "dnd5ebuilder0000"
+    "modifiedTime": 1718542123203,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "compendiumSource": "Compendium.fa-battlemaps.maps.GfMZpcn5L27dH2fW",
+    "duplicateSource": null
   },
   "active": false,
   "folder": null,
   "sort": 0,
   "ownership": {
     "default": 0
+  },
+  "regions": [],
+  "environment": {
+    "globalLight": {
+      "luminosity": 0,
+      "enabled": true,
+      "darkness": {
+        "max": 1,
+        "min": 0
+      },
+      "alpha": 0.5,
+      "bright": false,
+      "color": null,
+      "coloration": 1,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0
+    },
+    "darknessLevel": 0,
+    "darknessLock": false,
+    "cycle": true,
+    "base": {
+      "hue": 0,
+      "intensity": 0,
+      "luminosity": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "dark": {
+      "hue": 0.7138888888888889,
+      "intensity": 0,
+      "luminosity": -0.25,
+      "saturation": 0,
+      "shadows": 0
+    }
+  },
+  "fog": {
+    "exploration": false,
+    "reset": 1662829946444,
+    "overlay": null,
+    "colors": {
+      "explored": null,
+      "unexplored": null
+    }
   },
   "_key": "!scenes!GfMZpcn5L27dH2fW"
 }
