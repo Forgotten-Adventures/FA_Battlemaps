@@ -62,6 +62,26 @@ v1.1.0
 * Fixed compatibility with TheRipper93's [Media Optimizer](https://theripper93.com/module/media-optimizer).
 * Marked compatible with Foundry VTT v12.
 _____________
+v1.0.66
+* Added new maps
+_____________
+v1.0.65
+* Added new maps
+_____________
+v1.0.64
+* Added new maps
+_____________
+v1.0.63
+* Added new maps
+_____________
+v1.0.62
+* Added new maps
+* Fix for v12 conflicting function names and preventing the map search from working
+_____________
+v1.0.61
+* Added new maps
+* Added basic support to Foundry v12
+_____________
 v1.0.60
 * Added new maps
 _____________
