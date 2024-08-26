@@ -62,6 +62,9 @@ v1.1.0
 * Fixed compatibility with TheRipper93's [Media Optimizer](https://theripper93.com/module/media-optimizer).
 * Removed compatibility with Foundry VTT v10.
 _____________
+v1.0.67
+* Added new maps
+_____________
 v1.0.66
 * Added new maps
 _____________
