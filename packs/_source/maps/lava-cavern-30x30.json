@@ -5,7 +5,7 @@
   "navOrder": 0,
   "navName": "",
   "foreground": "fa_battlemaps/Maps/2022/September/fa_lavacavern/maps/LavaCaveFG.webp",
-  "thumb": "worlds/fatesting/assets/scenes/5lb45bBiSD3uZS5G-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/5lb45bBiSD3uZS5G-thumb.webp",
   "width": 3000,
   "height": 3000,
   "padding": 0.25,
@@ -541,7 +541,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -562,16 +562,21 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -587,7 +592,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 17,
       "restrictions": {
         "light": false,
         "weather": false
@@ -678,7 +683,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -813,7 +818,10 @@
               "id": "E0JRD4upOzOsU3Nu"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -829,7 +837,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 102,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -867,16 +875,21 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -892,7 +905,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -909,7 +922,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -959,13 +972,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.LIXDxwGE4DsPf3f5",
-                  "name": "Tile: LIXDxwGE4DsPf3f5"
+                  "id": "tagger:caveexittrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> caveexittrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Y2kysZGAvGf0dMJd"
             },
@@ -1005,10 +1021,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.LIXDxwGE4DsPf3f5",
-                  "name": "Tile: LIXDxwGE4DsPf3f5"
+                  "id": "tagger:caveexittrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> caveexittrigger"
                 },
-                "activate": "toggle"
+                "activate": "toggle",
+                "collection": "tiles"
               },
               "id": "Bmn377mMGEjEVvzv"
             },
@@ -1106,8 +1125,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.dD3kXQkNu1pVWV4f",
-                  "name": "Tile: dD3kXQkNu1pVWV4f"
+                  "id": "tagger:openingfg",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> openingfg"
                 },
                 "select": "last",
                 "transition": "none",
@@ -1120,18 +1141,24 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.6xx7CtHvBV2JF6cV",
-                  "name": "Tile: 6xx7CtHvBV2JF6cV"
+                  "id": "tagger:opening",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> opening"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "wS98oDoStU7ItlRe"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1147,7 +1174,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1164,7 +1191,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1188,7 +1215,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 99,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1205,7 +1232,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1256,8 +1283,10 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.LIXDxwGE4DsPf3f5",
-                  "name": "Tile: LIXDxwGE4DsPf3f5"
+                  "id": "tagger:caveexittrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> caveexittrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#000000' ? '#dedede' : '#000000'; ='{{entity.data.tint}}' == '#000000' ? '#890101' : '#000000'",
@@ -1267,7 +1296,8 @@
                 "item": {},
                 "actor": {},
                 "token": {},
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "ETZ5tbzXYNS042lL"
             },
@@ -1296,8 +1326,10 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.qHe9Yoy1VVuWeGqj",
-                  "name": "Tile: qHe9Yoy1VVuWeGqj"
+                  "id": "tagger:phasetrigger1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger1"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#000000' ? '#dedede' : '#000000'; ='{{entity.data.tint}}' == '#000000' ? '#890101' : '#000000'",
@@ -1307,7 +1339,8 @@
                 "item": {},
                 "actor": {},
                 "token": {},
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "COEunMR5H90UVwvU"
             },
@@ -1336,13 +1369,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.xTENFU9BqjGUqLJF",
-                  "name": "Tile: xTENFU9BqjGUqLJF"
+                  "id": "tagger:hordetrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> hordetrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Wlq4mOdAc4shl8uw"
             },
@@ -1350,13 +1386,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.gArRyC2tpnXg3Hjh",
-                  "name": "Tile: gArRyC2tpnXg3Hjh"
+                  "id": "tagger:demontrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> demontrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Wcs1wDtq8mPY9c20"
             },
@@ -1404,32 +1443,41 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.NpVXyArylfvpamK6",
-                  "name": "Tile: NpVXyArylfvpamK6"
+                  "id": "tagger:Pedastal",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Pedastal"
                 },
                 "attribute": "alpha",
-                "value": "0",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
-              "id": "WrwTFMCubMsTZ0aQ"
+              "id": "uR927LVt0adri76k"
             },
             {
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.WY59f8Eq71g82oXA",
-                  "name": "Tile: WY59f8Eq71g82oXA"
+                  "id": "tagger:Demon",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Demon"
                 },
                 "attribute": "alpha",
-                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
-              "id": "uR927LVt0adri76k"
+              "id": "WrwTFMCubMsTZ0aQ"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1445,7 +1493,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1484,7 +1532,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": true,
@@ -1513,10 +1563,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientLight.cBAhyN6ED0dqHdLo",
-                  "name": "AmbientLight: cBAhyN6ED0dqHdLo"
+                  "id": "tagger:psl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> psl"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "pWilbVApKXaBuFLd"
             },
@@ -1524,10 +1577,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.ehFK8Uv04sC5k8t3",
-                  "name": "Tile: ehFK8Uv04sC5k8t3"
+                  "id": "tagger:phasetrigger2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger2"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "6k8kS2eucxJmsEtv"
             },
@@ -1543,7 +1599,10 @@
               "id": "yq0PQysqfctLPv4z"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1559,7 +1618,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1576,7 +1635,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1620,7 +1679,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1637,7 +1696,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1681,7 +1740,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1698,7 +1757,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1742,7 +1801,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1759,7 +1818,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1782,7 +1841,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -1795,7 +1856,7 @@
             {
               "id": "RoOkd4RcWlMPRJdA",
               "name": "fa_battlemaps/Maps/2022/September/fa_lavacavern/tiles/demon1.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "F9r8hkklP5iJF6Sy",
@@ -1812,7 +1873,10 @@
               "name": "fa_battlemaps/Maps/2022/September/fa_lavacavern/tiles/demon4.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1828,7 +1892,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1868,7 +1932,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -1898,7 +1964,10 @@
               "name": "fa_battlemaps/Maps/2022/September/fa_lavacavern/tiles/portal4.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1914,7 +1983,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1953,7 +2022,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": true,
@@ -1982,13 +2053,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientLight.cBAhyN6ED0dqHdLo",
-                  "name": "AmbientLight: cBAhyN6ED0dqHdLo"
+                  "id": "tagger:psl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> psl"
                 },
                 "attribute": "config.bright",
                 "value": "12",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "VA8nHReRucOVmEjH"
             },
@@ -1996,10 +2070,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.d38Gr6OsN4j3q5Ok",
-                  "name": "Tile: d38Gr6OsN4j3q5Ok"
+                  "id": "tagger:phasetrigger3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger3"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "cvD138xFTYEqd2Aq"
             },
@@ -2012,7 +2089,10 @@
               "id": "0VE6BZUM56lg5bBw"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2028,7 +2108,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 24,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2067,7 +2147,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": true,
@@ -2101,10 +2183,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientSound.PHwMReUXmmSdpe0s",
-                  "name": "AmbientSound: PHwMReUXmmSdpe0s"
+                  "id": "tagger:psl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> psl"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "L8N2YC6R8xRMFgEG"
             },
@@ -2112,13 +2197,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientLight.cBAhyN6ED0dqHdLo",
-                  "name": "AmbientLight: cBAhyN6ED0dqHdLo"
+                  "id": "tagger:psl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> psl"
                 },
                 "attribute": "config.bright",
                 "value": "20",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "PfUF5PRzkaiuQ6be"
             },
@@ -2126,10 +2214,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.PayFHsNF73fTa3s5",
-                  "name": "Tile: PayFHsNF73fTa3s5"
+                  "id": "tagger:phasetrigger4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger4"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "VhyAIMqZ0uufSqzr"
             },
@@ -2142,7 +2233,10 @@
               "id": "ugiUqRCFM2LKA4bA"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2158,7 +2252,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 23,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2197,7 +2291,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": true,
@@ -2226,13 +2322,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientLight.cBAhyN6ED0dqHdLo",
-                  "name": "AmbientLight: cBAhyN6ED0dqHdLo"
+                  "id": "tagger:psl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> psl"
                 },
                 "attribute": "config.bright",
                 "value": "8",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "7jQsTe5eQZLG0pT9"
             },
@@ -2240,10 +2339,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientLight.cBAhyN6ED0dqHdLo",
-                  "name": "AmbientLight: cBAhyN6ED0dqHdLo"
+                  "id": "tagger:psl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> psl"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "KuhX4nGMZONIyCFI"
             },
@@ -2251,21 +2353,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.AmbientSound.PHwMReUXmmSdpe0s",
-                  "name": "AmbientSound: PHwMReUXmmSdpe0s"
+                  "id": "tagger:phasetrigger1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger1"
                 },
-                "activate": "deactivate"
-              },
-              "id": "5PuF4wsNnF3bufyA"
-            },
-            {
-              "action": "activate",
-              "data": {
-                "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.qHe9Yoy1VVuWeGqj",
-                  "name": "Tile: qHe9Yoy1VVuWeGqj"
-                },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "JsmulFjrXveQcRWC"
             },
@@ -2273,15 +2367,21 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.PayFHsNF73fTa3s5",
-                  "name": "Tile: PayFHsNF73fTa3s5"
+                  "id": "tagger:phasetrigger4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger4"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "vBU9xsLV5JEfMFRX"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2297,7 +2397,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 22,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2314,7 +2414,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2365,8 +2465,10 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.LIXDxwGE4DsPf3f5",
-                  "name": "Tile: LIXDxwGE4DsPf3f5"
+                  "id": "tagger:caveexittrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> caveexittrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#000000' ? '#dedede' : '#000000'; ='{{entity.data.tint}}' == '#000000' ? '#890101' : '#000000'",
@@ -2376,7 +2478,8 @@
                 "item": {},
                 "actor": {},
                 "token": {},
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "EEVlvSjttztTCJub"
             },
@@ -2405,8 +2508,10 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.qHe9Yoy1VVuWeGqj",
-                  "name": "Tile: qHe9Yoy1VVuWeGqj"
+                  "id": "tagger:phasetrigger1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> phasetrigger1"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#000000' ? '#dedede' : '#000000'; ='{{entity.data.tint}}' == '#000000' ? '#890101' : '#000000'",
@@ -2416,7 +2521,8 @@
                 "item": {},
                 "actor": {},
                 "token": {},
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "ETZ5tbzXYNS042lL"
             },
@@ -2445,13 +2551,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.xTENFU9BqjGUqLJF",
-                  "name": "Tile: xTENFU9BqjGUqLJF"
+                  "id": "tagger:hordetrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> hordetrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Wlq4mOdAc4shl8uw"
             },
@@ -2459,13 +2568,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.f1ESVj0h4TYYRlyy",
-                  "name": "Tile: f1ESVj0h4TYYRlyy"
+                  "id": "tagger:portaltrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> portaltrigger"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "WlCO7QoTipdNLi9m"
             },
@@ -2513,13 +2625,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.WY59f8Eq71g82oXA",
-                  "name": "Tile: WY59f8Eq71g82oXA"
+                  "id": "tagger:Pedastal",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Pedastal"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "WrwTFMCubMsTZ0aQ"
             },
@@ -2527,18 +2642,24 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.NpVXyArylfvpamK6",
-                  "name": "Tile: NpVXyArylfvpamK6"
+                  "id": "tagger:Demon",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Demon"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "uR927LVt0adri76k"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2554,7 +2675,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2571,7 +2692,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2602,20 +2723,25 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.5lb45bBiSD3uZS5G.Tile.FQVEByFmWil3y9fZ",
-                  "name": "Tile: FQVEByFmWil3y9fZ"
+                  "id": "tagger:bridge",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> bridge"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "uEXmpXyYhcElfBXC"
             }
           ],
           "active": true,
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "pointer": true,
           "record": false,
           "restriction": "all",
@@ -2625,11 +2751,12 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_lavacavern/text/Bridge.webp",
@@ -2644,7 +2771,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2659,7 +2786,7 @@
       "x": 1500,
       "y": 3000,
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -2671,7 +2798,34 @@
         "autoplay": true,
         "volume": 0
       },
-      "flags": {},
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": -1,
+          "actions": [],
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "bridge"
+          ]
+        }
+      },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/September/fa_lavacavern/tiles/Bridge.webp",
         "scaleX": 1,
@@ -2685,7 +2839,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2713,7 +2867,7 @@
       "rotation": 225,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2762,7 +2916,7 @@
       },
       "x": 950,
       "y": 1150,
-      "sort": 100,
+      "sort": 21,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2790,7 +2944,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2839,7 +2993,7 @@
       },
       "x": 1200,
       "y": 1650,
-      "sort": 100,
+      "sort": 20,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2867,7 +3021,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2916,7 +3070,7 @@
       },
       "x": 1450,
       "y": 1150,
-      "sort": 100,
+      "sort": 19,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2944,7 +3098,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2993,7 +3147,7 @@
       },
       "x": 1500,
       "y": 950,
-      "sort": 100,
+      "sort": 18,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3034,7 +3188,7 @@
       "flags": {},
       "x": 3800,
       "y": 1550,
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3140,7 +3294,7 @@
       },
       "x": 3799,
       "y": 1574,
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6772,9 +6926,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1672871522550,
-    "modifiedTime": 1718542208265,
+    "modifiedTime": 1723946703582,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.5lb45bBiSD3uZS5G",
     "duplicateSource": null

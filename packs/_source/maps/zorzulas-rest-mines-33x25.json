@@ -1,7 +1,7 @@
 {
   "name": "Zorzula's Rest - Mines [33x25]",
   "navigation": false,
-  "navOrder": 150000,
+  "navOrder": 0,
   "navName": "",
   "background": {
     "src": "fa_battlemaps/Maps/2023/November/fa_zorzulamines/Maps/ZorzulaMinesBG.webp",
@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2023/November/fa_zorzulamines/Maps/ZorzulaMinesFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/3ePgwKNiQulo4fss-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/3ePgwKNiQulo4fss-thumb.webp",
   "width": 3300,
   "height": 2500,
   "padding": 0.25,
@@ -964,7 +964,7 @@
         }
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1045,7 +1045,7 @@
         }
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1126,7 +1126,7 @@
         }
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1207,7 +1207,7 @@
         }
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1276,7 +1276,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1346,7 +1346,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1416,7 +1416,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1483,10 +1483,13 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1556,7 +1559,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1619,11 +1622,14 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1663,7 +1669,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1846,7 +1852,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2026,10 +2032,13 @@
               "id": "cAJWfwoA04GlLMU8"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2209,10 +2218,13 @@
               "id": "B2DYGhwcocyv3u2A"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2321,7 +2333,7 @@
             {
               "action": "playsound",
               "data": {
-                "audiofile": "fa_battlemaps/Audio/C-Click.mp3",
+                "audiofile": "fa_battlemaps/Audio/C-Click.ogg",
                 "audiofor": "all",
                 "volume": 1,
                 "loop": false,
@@ -2336,7 +2348,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2419,8 +2431,8 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> Bridge"
                 },
                 "collection": "tokens",
-                "attribute": "overhead",
-                "value": "={{entity.overhead}} == 0 ? 1 : 0",
+                "attribute": "elevation",
+                "value": "={{entity.elevation}} == 0 ? 10 : 0",
                 "chatMessage": false,
                 "rollmode": "roll"
               },
@@ -2438,12 +2450,15 @@
               "name": "icons/svg/up.svg",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "_id": "b9lvIZJid0Kxl2h9",
       "elevation": 20,
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2525,8 +2540,8 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> Scaffold"
                 },
                 "collection": "tokens",
-                "attribute": "overhead",
-                "value": "={{entity.overhead}} == 0 ? 1 : 0",
+                "attribute": "elevation",
+                "value": "={{entity.elevation}} == 0 ? 10 : 0",
                 "chatMessage": false,
                 "rollmode": "roll"
               },
@@ -2544,12 +2559,15 @@
               "name": "icons/svg/up.svg",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "_id": "hWEqR0F2FRVbplFb",
       "elevation": 20,
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -12702,6 +12720,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "magicDoor",
       "_key": "!scenes.walls!3ePgwKNiQulo4fss.jrgbJBUS7qpUBcVF"
     },
     {
@@ -13048,9 +13067,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1701151613393,
-    "modifiedTime": 1718542295206,
+    "modifiedTime": 1723947037793,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.3ePgwKNiQulo4fss",
     "duplicateSource": null

@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2022/December/fa_wec_smeltercavern/Maps/SmelterCavernFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/gj77PbWwzxLBN9K4-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/gj77PbWwzxLBN9K4-thumb.webp",
   "width": 1800,
   "height": 2700,
   "padding": 0.25,
@@ -112,7 +112,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "skeleton"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
@@ -128,9 +130,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "sort": 100,
@@ -195,22 +200,26 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.gj77PbWwzxLBN9K4.Tile.LewEqB6ZqFDlEeVZ",
-                  "name": "Tile: LewEqB6ZqFDlEeVZ"
+                  "id": "tagger:skeleton",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> skeleton"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "rt9sMiRQ7heL1Fbl"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "elevation": 20,
       "sort": 102,
@@ -2776,9 +2785,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1670383714277,
-    "modifiedTime": 1718542221969,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.gj77PbWwzxLBN9K4",
     "duplicateSource": null

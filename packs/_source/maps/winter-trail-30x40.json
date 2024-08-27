@@ -5,7 +5,7 @@
   "navOrder": 0,
   "navName": "",
   "foreground": null,
-  "thumb": "worlds/fatesting/assets/scenes/Rsf9i3GEIDyMkH3r-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/Rsf9i3GEIDyMkH3r-thumb.webp",
   "width": 3000,
   "height": 4000,
   "padding": 0.25,
@@ -346,8 +346,8 @@
       "hidden": false,
       "locked": true,
       "occlusion": {
-        "mode": 0,
-        "alpha": 0
+        "mode": 3,
+        "alpha": 0.5
       },
       "video": {
         "loop": true,
@@ -355,9 +355,7 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "active": false,
           "record": false,
@@ -374,7 +372,10 @@
           "chance": 50,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "betterroofs": {
           "brMode": false,
@@ -396,7 +397,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 2,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -412,7 +413,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -436,7 +437,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 2,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -453,7 +454,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -484,13 +485,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.wbdM43LrTVvnjLOG",
-                  "name": "Tile: wbdM43LrTVvnjLOG"
+                  "id": "tagger:t1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tcdJW8OqNUagZ0K8"
             },
@@ -498,13 +502,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Zof4Dgl4yyMsams9",
-                  "name": "Tile: Zof4Dgl4yyMsams9"
+                  "id": "tagger:t2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t2"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "IUqi3Pc1DcsMkRMb"
             },
@@ -512,13 +519,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.jxypvPQksuSKMVJD",
-                  "name": "Tile: jxypvPQksuSKMVJD"
+                  "id": "tagger:t4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t4"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "g98HwW8iXG0D7ttB"
             },
@@ -526,13 +536,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.rvgnUpq5BhAvCmje",
-                  "name": "Tile: rvgnUpq5BhAvCmje"
+                  "id": "tagger:t5",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t5"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "AvIiWZHULDKaREEO"
             },
@@ -639,34 +652,6 @@
                 "rollmode": "roll"
               },
               "id": "OazLXzcwJ0udWu8J"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Il8K3aJaKdQbGWqe",
-                  "name": "Tile: Il8K3aJaKdQbGWqe"
-                },
-                "attribute": "occlusion.mode",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "Bm4NeSH2aPWDdNsD"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.MWbiCSiTTkpkXpqJ",
-                  "name": "Tile: MWbiCSiTTkpkXpqJ"
-                },
-                "attribute": "occlusion.mode",
-                "value": "3",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "Sh95spn0pvOOOMTk"
             },
             {
               "action": "activate",
@@ -938,13 +923,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "q7g52M9B8NmsBcxW"
             },
@@ -965,27 +953,13 @@
               "id": "jFGOe5oL4gmtLJMp"
             },
             {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:cabinroof",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinroof"
-                },
-                "attribute": "roof",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "hUgsC1XAaFU3Gbzn"
-            },
-            {
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "1",
@@ -1017,10 +991,15 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t3"
+          ]
         },
         "betterroofs": {
           "brMode": 0,
@@ -1045,7 +1024,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 9,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1062,7 +1041,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1099,13 +1078,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.wbdM43LrTVvnjLOG",
-                  "name": "Tile: wbdM43LrTVvnjLOG"
+                  "id": "tagger:t1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tcdJW8OqNUagZ0K8"
             },
@@ -1113,13 +1095,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Zof4Dgl4yyMsams9",
-                  "name": "Tile: Zof4Dgl4yyMsams9"
+                  "id": "tagger:t2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t2"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "a9kkOZR1YclfsvBX"
             },
@@ -1127,13 +1112,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.nOnuYvuHdn3x7ywO",
-                  "name": "Tile: nOnuYvuHdn3x7ywO"
+                  "id": "tagger:t3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t3"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "d55vqdFgvRF8JsGk"
             },
@@ -1141,13 +1129,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.jxypvPQksuSKMVJD",
-                  "name": "Tile: jxypvPQksuSKMVJD"
+                  "id": "tagger:t4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t4"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "sxn87M1f2BVVrmnr"
             },
@@ -1304,34 +1295,6 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.MWbiCSiTTkpkXpqJ",
-                  "name": "Tile: MWbiCSiTTkpkXpqJ"
-                },
-                "attribute": "occlusion.mode",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "wmdzvGKC7MYyGj94"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Il8K3aJaKdQbGWqe",
-                  "name": "Tile: Il8K3aJaKdQbGWqe"
-                },
-                "attribute": "occlusion.mode",
-                "value": "2",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "tSjBAAOnsbViJB99"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
                   "id": "tagger:tentwalls",
                   "match": "all",
                   "scene": "GfMZpcn5L27dH2fW",
@@ -1460,8 +1423,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "1",
@@ -1482,8 +1447,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.immz8rMJCccMZ9rd",
-                  "name": "Tile: immz8rMJCccMZ9rd"
+                  "id": "tagger:cabin",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabin"
                 },
                 "attribute": "alpha",
                 "value": "1",
@@ -1501,16 +1468,43 @@
               "id": "G467iWBZQtDGerfA"
             },
             {
-              "action": "alter",
+              "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:cabinroof",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinroof"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "location": {},
+                "item": {},
+                "actor": {},
+                "token": {},
+                "select": "1",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "yFvJ1cImBDCsanIi"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
+                },
+                "attribute": "alpha",
+                "value": "1",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "GNSsL8A8tYjS5YFo"
             },
@@ -1550,29 +1544,18 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.C6DHhYtTjZgdDhC1",
-                  "name": "Tile: C6DHhYtTjZgdDhC1"
+                  "id": "tagger:cabinl",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinl"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Tm926unkyXGjh0Qz"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.ECewVgG9Ak2UGwBi",
-                  "name": "Tile: ECewVgG9Ak2UGwBi"
-                },
-                "attribute": "alpha",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "ViYspVRJKKa2Gg2p"
             },
             {
               "action": "alter",
@@ -1648,9 +1631,10 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> window"
                 },
                 "attribute": "sight",
-                "value": "0",
+                "value": "30",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "BHkexObXgUuCdCNc"
             },
@@ -1664,9 +1648,10 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> window"
                 },
                 "attribute": "light",
-                "value": "0",
+                "value": "30",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "wzKbxQnwNBiuWC4I"
             },
@@ -1775,10 +1760,15 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t5"
+          ]
         },
         "betterroofs": {
           "brMode": 0,
@@ -1803,7 +1793,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 8,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1820,7 +1810,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1857,13 +1847,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.wbdM43LrTVvnjLOG",
-                  "name": "Tile: wbdM43LrTVvnjLOG"
+                  "id": "tagger:t1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tcdJW8OqNUagZ0K8"
             },
@@ -1871,13 +1864,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Zof4Dgl4yyMsams9",
-                  "name": "Tile: Zof4Dgl4yyMsams9"
+                  "id": "tagger:t2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t2"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "QBOjRlGXeUT4dl5r"
             },
@@ -1885,13 +1881,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.nOnuYvuHdn3x7ywO",
-                  "name": "Tile: nOnuYvuHdn3x7ywO"
+                  "id": "tagger:t3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t3"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "NchXe15rHo6yeJhc"
             },
@@ -1899,13 +1898,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.rvgnUpq5BhAvCmje",
-                  "name": "Tile: rvgnUpq5BhAvCmje"
+                  "id": "tagger:t5",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t5"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "kvWDMObbfH4Hi1Qj"
             },
@@ -2012,34 +2014,6 @@
                 "rollmode": "roll"
               },
               "id": "Q8zjaNVA8GC1NWyt"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.MWbiCSiTTkpkXpqJ",
-                  "name": "Tile: MWbiCSiTTkpkXpqJ"
-                },
-                "attribute": "occlusion.mode",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "oMFh5KwcvDRckXJF"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Il8K3aJaKdQbGWqe",
-                  "name": "Tile: Il8K3aJaKdQbGWqe"
-                },
-                "attribute": "occlusion.mode",
-                "value": "2",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "yZZtIT0iVxPoyXlX"
             },
             {
               "action": "activate",
@@ -2215,13 +2189,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "SgfYePMInJqDiFqy"
             },
@@ -2242,27 +2219,13 @@
               "id": "IenU7LPUMninuShB"
             },
             {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:cabinroof",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinroof"
-                },
-                "attribute": "roof",
-                "value": "1",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "j2WGXmC7H1i4441j"
-            },
-            {
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "1",
@@ -2283,8 +2246,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.immz8rMJCccMZ9rd",
-                  "name": "Tile: immz8rMJCccMZ9rd"
+                  "id": "tagger:cabin",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabin"
                 },
                 "attribute": "alpha",
                 "value": "1",
@@ -2375,9 +2340,10 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> window"
                 },
                 "attribute": "sight",
-                "value": "0",
+                "value": "30",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "6MTuy9caW2ZMXrSA"
             },
@@ -2391,9 +2357,10 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> window"
                 },
                 "attribute": "light",
-                "value": "0",
+                "value": "30",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "ljgvvbOenoHVqBST"
             },
@@ -2438,10 +2405,15 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t4"
+          ]
         },
         "betterroofs": {
           "brMode": 0,
@@ -2466,7 +2438,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 7,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2483,7 +2455,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2520,13 +2492,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.Zof4Dgl4yyMsams9",
-                  "name": "Tile: Zof4Dgl4yyMsams9"
+                  "id": "tagger:t2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t2"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tcdJW8OqNUagZ0K8"
             },
@@ -2534,13 +2509,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.nOnuYvuHdn3x7ywO",
-                  "name": "Tile: nOnuYvuHdn3x7ywO"
+                  "id": "tagger:t3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t3"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "XyKTo2SkXrvAgcNj"
             },
@@ -2548,13 +2526,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.jxypvPQksuSKMVJD",
-                  "name": "Tile: jxypvPQksuSKMVJD"
+                  "id": "tagger:t4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t4"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "M5NJ04f98mXGtKGc"
             },
@@ -2562,13 +2543,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.rvgnUpq5BhAvCmje",
-                  "name": "Tile: rvgnUpq5BhAvCmje"
+                  "id": "tagger:t5",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t5"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "uDluxdRTuli32yfe"
             },
@@ -2624,8 +2608,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "select": "last",
                 "transition": "none",
@@ -2659,29 +2645,18 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "xyXH3OT7F9rhDcqv"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
-                },
-                "attribute": "alpha",
-                "value": "1",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "ajsAOwCFfPmb7H4m"
             },
             {
               "action": "alter",
@@ -2714,38 +2689,6 @@
                 "rollmode": "roll"
               },
               "id": "0VRsd0cTbavBo6mJ"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:cabinroof",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinroof"
-                },
-                "attribute": "roof",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "Zi8BSpql5hiRyKuz"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:clearing",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> clearing"
-                },
-                "attribute": "occlusion.mode",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "T8MesFe0gafQdmup"
             },
             {
               "action": "alter",
@@ -2900,10 +2843,15 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t1"
+          ]
         },
         "betterroofs": {
           "brMode": 0,
@@ -2928,7 +2876,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 6,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2945,7 +2893,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3095,10 +3043,15 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t7"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -3117,7 +3070,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 5,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3134,7 +3087,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3165,13 +3118,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.wbdM43LrTVvnjLOG",
-                  "name": "Tile: wbdM43LrTVvnjLOG"
+                  "id": "tagger:t1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tcdJW8OqNUagZ0K8"
             },
@@ -3179,13 +3135,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.nOnuYvuHdn3x7ywO",
-                  "name": "Tile: nOnuYvuHdn3x7ywO"
+                  "id": "tagger:t3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t3"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "l47W8V6siVJhBrjp"
             },
@@ -3193,13 +3152,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.jxypvPQksuSKMVJD",
-                  "name": "Tile: jxypvPQksuSKMVJD"
+                  "id": "tagger:t4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t4"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "0dvWUlJcMGCq7QYf"
             },
@@ -3207,13 +3169,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.rvgnUpq5BhAvCmje",
-                  "name": "Tile: rvgnUpq5BhAvCmje"
+                  "id": "tagger:t5",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t5"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "gd97SHoxEAEtOjCg"
             },
@@ -3245,13 +3210,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.eBlB0w6mSWgz2J5Q",
-                  "name": "Tile: eBlB0w6mSWgz2J5Q"
+                  "id": "tagger:ground2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ground2"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "0ZXuPtJXPTPGILEc"
             },
@@ -3286,38 +3254,6 @@
                 "rollmode": "roll"
               },
               "id": "eQN4T7pgPjf7PMvz"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:clearing",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> clearing"
-                },
-                "attribute": "occlusion.mode",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "2WA64p9TwgbIGLkf"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:cabinroof",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinroof"
-                },
-                "attribute": "roof",
-                "value": "0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "6ckfVa2hubXumppp"
             },
             {
               "action": "activate",
@@ -3499,10 +3435,15 @@
           "minrequired": 0,
           "chance": 50,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t2"
+          ]
         },
         "betterroofs": {
           "brMode": 0,
@@ -3527,7 +3468,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 4,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3565,7 +3506,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -3588,14 +3531,17 @@
             {
               "id": "88jLdg4jAaCr2KXy",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/Tent.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "cp7YsMnCoNxykmWs",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/FullTrail.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -3611,7 +3557,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 12,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3675,7 +3621,10 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -3713,7 +3662,7 @@
       "hidden": false,
       "locked": true,
       "occlusion": {
-        "mode": 0,
+        "mode": 1,
         "alpha": 0.25
       },
       "video": {
@@ -3751,14 +3700,17 @@
             {
               "id": "Ht8lZaH2q0SOHNl6",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/TentTop.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "ic2Q8zDBXJjixhxf",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -3812,11 +3764,12 @@
       "flags": {
         "tagger": {
           "tags": [
+            "cabinfgwall",
             "cabin",
             "clearing",
-            "rooftops",
             "cabintile",
-            "tops"
+            "tops",
+            "rooftops"
           ]
         },
         "monks-active-tiles": {
@@ -3839,7 +3792,7 @@
             {
               "id": "R9j8vcIxPONxew51",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/HuntersCabinWalls.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "tOp300WrujJRspch",
@@ -3849,9 +3802,12 @@
             {
               "id": "iL5cWqYARR3smhWj",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -3921,7 +3877,10 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "betterroofs": {
           "brMode": false,
@@ -3942,7 +3901,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 11,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4029,7 +3988,10 @@
           "minrequired": 0,
           "chance": 100,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -4208,6 +4170,7 @@
       "flags": {
         "tagger": {
           "tags": [
+            "cabinl",
             "cabin",
             "clearing"
           ]
@@ -4217,7 +4180,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -4226,7 +4191,10 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -4242,7 +4210,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 13,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4272,9 +4240,9 @@
       "flags": {
         "tagger": {
           "tags": [
+            "cabinroof",
             "cabin",
             "clearing",
-            "cabinroof",
             "rooftops",
             "cabintile",
             "tops"
@@ -4300,14 +4268,17 @@
             {
               "id": "zBTHehfsMohGa5SR",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/CabinRoof.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "8OQtmvv9KzZtyBoa",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "betterroofs": {
           "brMode": true,
@@ -4471,14 +4442,17 @@
             {
               "id": "zrm38orCLqX9Zmkw",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/FullTrailShadow.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "x7FdWZ0h3Dl6vAE5",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -4498,7 +4472,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 4,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4516,8 +4490,8 @@
       "hidden": false,
       "locked": true,
       "occlusion": {
-        "mode": 0,
-        "alpha": 1
+        "mode": 3,
+        "alpha": 0.5
       },
       "video": {
         "loop": true,
@@ -4559,7 +4533,10 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -4595,7 +4572,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4619,7 +4596,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 10,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4636,7 +4613,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4649,6 +4626,7 @@
       "flags": {
         "tagger": {
           "tags": [
+            "FallenTreeAmbush",
             "FallenTree"
           ]
         },
@@ -4657,7 +4635,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -4670,14 +4650,17 @@
             {
               "id": "ZJGlwARahzCzrXwP",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/FallenTree.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "Vyu62Vx54Ucy5XqJ",
               "name": "fa_battlemaps/Maps/2022/September/fa_winter-trail/Tiles/FallenTreeAmbush.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -4693,7 +4676,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 14,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4710,7 +4693,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4722,7 +4705,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t8"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
@@ -4744,13 +4729,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.4io4MhL6qpECaBwd",
-                  "name": "Tile: 4io4MhL6qpECaBwd"
+                  "id": "tagger:t8",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t8"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#000000' ? '#890101' : '#000000'",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "DaKyJhlBKNpTKnCN"
             },
@@ -4758,8 +4746,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Rsf9i3GEIDyMkH3r.Tile.KHCJf9VIIBS2PPoA",
-                  "name": "Tile: KHCJf9VIIBS2PPoA"
+                  "id": "tagger:FallenTreeAmbush",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> FallenTreeAmbush"
                 },
                 "select": "next",
                 "transition": "none",
@@ -4769,7 +4759,10 @@
               "id": "2vo5EEZ7MJbNowN7"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -4788,7 +4781,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 3,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4827,7 +4820,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -4847,7 +4842,10 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -4867,7 +4865,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 3,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4885,8 +4883,8 @@
       "hidden": false,
       "locked": true,
       "occlusion": {
-        "mode": 0,
-        "alpha": 0
+        "mode": 3,
+        "alpha": 0.5
       },
       "video": {
         "loop": true,
@@ -4927,7 +4925,10 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -4979,7 +4980,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4992,8 +4993,8 @@
       "flags": {
         "tagger": {
           "tags": [
-            "animation",
             "campl",
+            "animation",
             "clearing",
             "camp"
           ]
@@ -5025,7 +5026,10 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "betterroofs": {
           "brMode": false,
@@ -5035,7 +5039,7 @@
       },
       "x": 1911,
       "y": 2404,
-      "sort": 1,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5422,7 +5426,7 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
@@ -5436,6 +5440,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodCreaky",
       "_key": "!scenes.walls!Rsf9i3GEIDyMkH3r.lxl2yDyAJGaGWOWV"
     },
     {
@@ -5524,9 +5529,9 @@
         1700,
         2300
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 20,
       "dir": 0,
       "door": 0,
@@ -5540,7 +5545,7 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
@@ -5549,10 +5554,10 @@
         }
       },
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!Rsf9i3GEIDyMkH3r.lJkNpDufkahvHtab"
     },
@@ -10540,9 +10545,9 @@
         2444,
         3575
       ],
-      "light": 10,
-      "move": 20,
-      "sight": 10,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
       "sound": 10,
       "dir": 0,
       "door": 0,
@@ -10578,9 +10583,9 @@
         2387,
         3638
       ],
-      "light": 10,
-      "move": 20,
-      "sight": 10,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
       "sound": 10,
       "dir": 0,
       "door": 0,
@@ -10616,9 +10621,9 @@
         2444,
         3700
       ],
-      "light": 10,
-      "move": 20,
-      "sight": 10,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
       "sound": 10,
       "dir": 0,
       "door": 0,
@@ -10654,9 +10659,9 @@
         2500,
         3638
       ],
-      "light": 10,
-      "move": 20,
-      "sight": 10,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
       "sound": 10,
       "dir": 0,
       "door": 0,
@@ -10688,7 +10693,7 @@
   "playlist": null,
   "playlistSound": null,
   "journal": null,
-  "weather": "snow",
+  "weather": "blizzard",
   "flags": {
     "scene-packer": {
       "hash": "145d2201a2c3c5e32e798fc4f4d54219b43194cd",
@@ -10713,9 +10718,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1672866326505,
-    "modifiedTime": 1718542123213,
+    "modifiedTime": 1723946703582,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.Rsf9i3GEIDyMkH3r",
     "duplicateSource": null

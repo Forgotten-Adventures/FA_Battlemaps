@@ -5,7 +5,7 @@
   "navOrder": 0,
   "navName": "",
   "foreground": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Map/FGRuinedTemple.webp",
-  "thumb": "worlds/fatesting/assets/scenes/uDits2VAo1WXuCcw-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/uDits2VAo1WXuCcw-thumb.webp",
   "width": 2000,
   "height": 2800,
   "padding": 0.25,
@@ -64,7 +64,9 @@
       "hidden": true,
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "spookamb"
+          ]
         }
       },
       "elevation": 0,
@@ -78,12 +80,12 @@
       "walls": false,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.25,
         "angle": 360,
         "bright": 0,
         "coloration": 1,
         "dim": 20,
-        "luminosity": 0.5,
+        "luminosity": 0.4,
         "saturation": 0,
         "contrast": 0,
         "shadows": 0,
@@ -98,7 +100,7 @@
           "max": 1
         },
         "color": "#03fcf8",
-        "attenuation": 0.5,
+        "attenuation": 0.65,
         "negative": false,
         "priority": 0
       },
@@ -112,6 +114,43 @@
       },
       "elevation": 0,
       "_key": "!scenes.lights!uDits2VAo1WXuCcw.uACGXETNNfLoHaxh"
+    },
+    {
+      "_id": "7dI3p0aVaktDb48V",
+      "x": 2650,
+      "y": 1250,
+      "elevation": 0,
+      "rotation": 0,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 20.01,
+        "color": null,
+        "coloration": 1,
+        "dim": 40.01,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "hidden": false,
+      "flags": {},
+      "_key": "!scenes.lights!uDits2VAo1WXuCcw.7dI3p0aVaktDb48V"
     }
   ],
   "notes": [],
@@ -164,16 +203,20 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "spookamb"
+          ]
         }
       },
       "elevation": 0,
       "effects": {
         "base": {
-          "intensity": 5
+          "intensity": 5,
+          "type": ""
         },
         "muffled": {
-          "intensity": 5
+          "intensity": 5,
+          "type": ""
         }
       },
       "_key": "!scenes.sounds!uDits2VAo1WXuCcw.LuAU9xQAIaoVku99"
@@ -249,8 +292,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.XnyudIUMKC12mCLI",
-                  "name": "Tile: XnyudIUMKC12mCLI"
+                  "id": "tagger:t1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1"
                 },
                 "imgat": 1,
                 "files": [
@@ -266,7 +311,8 @@
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "OsLVbwBBbJH8TerR"
@@ -275,8 +321,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.N6e1nGxF3kp9wo7z",
-                  "name": "Tile: N6e1nGxF3kp9wo7z"
+                  "id": "tagger:t2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t2"
                 },
                 "imgat": 1,
                 "files": [
@@ -292,7 +340,8 @@
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "UpUIdwuIkGFOPwND"
@@ -301,13 +350,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.Thg34PpyU1MNv5O4",
-                  "name": "Tile: Thg34PpyU1MNv5O4"
+                  "id": "tagger:symbol",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> symbol"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "rZ97fPNqDTZN5Ox8"
             },
@@ -315,129 +367,35 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.TPsBq5J59q0lOPe7",
-                  "name": "Tile: TPsBq5J59q0lOPe7"
+                  "id": "tagger:symbol2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> symbol2"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "wnBb3x08pricCkrA"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "4MikT3byqFHsdm7T",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357652061
-                },
-                {
-                  "id": "UCo1fwtQesHGo69J",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357654513
-                },
-                {
-                  "id": "maN1GpAgwo6HFgvZ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357656835
-                },
-                {
-                  "id": "z2IHvoRnzTXzbbWR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358759655
-                },
-                {
-                  "id": "8dp6pLvJsUs5Xg4V",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360096620
-                },
-                {
-                  "id": "qrTfAdGKggAHbYHQ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360557775
-                },
-                {
-                  "id": "bZ13CrliYprvplTG",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360561998
-                },
-                {
-                  "id": "gNDyELmlyLPurb5p",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360562786
-                },
-                {
-                  "id": "rBrMsRlHG7ezm5uU",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360564826
-                },
-                {
-                  "id": "OyEKDGKbLhfRtyCJ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360574018
-                },
-                {
-                  "id": "atK7DN7Fd1LuMDa2",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362592584
-                },
-                {
-                  "id": "hE4fVYGgoWvpxEax",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445756949
-                },
-                {
-                  "id": "iL7qbb4VNlhRqB0b",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445758293
-                },
-                {
-                  "id": "4MJKlhYKtshGd0LZ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616265084
-                },
-                {
-                  "id": "BQ6WN0Oi79WtoLQo",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616269726
-                },
-                {
-                  "id": "IxoZI3RXkmxwvqEb",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559087852
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t1"
+          ]
         }
       },
       "texture": {
@@ -453,7 +411,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -496,8 +454,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.N6e1nGxF3kp9wo7z",
-                  "name": "Tile: N6e1nGxF3kp9wo7z"
+                  "id": "tagger:t2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t2"
                 },
                 "imgat": 1,
                 "files": [
@@ -513,7 +473,8 @@
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "VRTjSfGPEuCZtHbM"
@@ -522,8 +483,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.XnyudIUMKC12mCLI",
-                  "name": "Tile: XnyudIUMKC12mCLI"
+                  "id": "tagger:t1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1"
                 },
                 "imgat": 1,
                 "files": [
@@ -539,7 +502,8 @@
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "7RMK1AhCx05u9DKN"
@@ -548,13 +512,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.Thg34PpyU1MNv5O4",
-                  "name": "Tile: Thg34PpyU1MNv5O4"
+                  "id": "tagger:symbol",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> symbol"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "6vtNbf3CSjJLSTHd"
             },
@@ -562,159 +529,35 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.TPsBq5J59q0lOPe7",
-                  "name": "Tile: TPsBq5J59q0lOPe7"
+                  "id": "tagger:symbol2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> symbol2"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "nMyzpi2wE1rW3rVA"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "uW2oRKlZgj8wP4hN",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357650747
-                },
-                {
-                  "id": "Oze1HNLqlzUTP3tT",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357653653
-                },
-                {
-                  "id": "L8FKb1qoa5cjPwL7",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357655571
-                },
-                {
-                  "id": "35448AK3zCj1YmxR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357658108
-                },
-                {
-                  "id": "kTdNHJst93q0qGo5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358758052
-                },
-                {
-                  "id": "KyK7Q0VpqonNrEqS",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358761557
-                },
-                {
-                  "id": "UV0awJvEtHDE4awZ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360094487
-                },
-                {
-                  "id": "theXhrivy1PpOpmI",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360098094
-                },
-                {
-                  "id": "73wqJZdGC9vUo1DG",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360556484
-                },
-                {
-                  "id": "QoZ74g0OpNzMoCzY",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360559360
-                },
-                {
-                  "id": "D7Sp34WqdrEsm4SS",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360561308
-                },
-                {
-                  "id": "FIGKuLn8JnLAxSSt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360563622
-                },
-                {
-                  "id": "NTMhfksgF0o3nyne",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360572820
-                },
-                {
-                  "id": "Iu3cSwUI5AzZOYXg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360738099
-                },
-                {
-                  "id": "RlrDYlnFGxfcqoCD",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362591457
-                },
-                {
-                  "id": "J6a5WWjTgmU9Xc65",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362595100
-                },
-                {
-                  "id": "ff06wlGWSi4I8GLI",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445755496
-                },
-                {
-                  "id": "gv7zzeOzVggp21FM",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445760073
-                },
-                {
-                  "id": "inGyoCK98RRbBPL4",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616263822
-                },
-                {
-                  "id": "yJDNo3bF23NtIVut",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616267562
-                },
-                {
-                  "id": "dSmb4vxvLsYTmMMu",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559088599
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t2"
+          ]
         }
       },
       "texture": {
@@ -730,7 +573,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -773,10 +616,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
-                "activate": "toggle"
+                "activate": "toggle",
+                "collection": "tiles"
               },
               "id": "9GPChbEb2jpndYfX"
             },
@@ -784,13 +630,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "cahaGYBwkBRnXwp2"
             },
@@ -798,10 +647,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "q9924yy9GtEoMYHz"
             },
@@ -825,13 +677,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.zeUkZrMosN2etQhq",
-                  "name": "Tile: zeUkZrMosN2etQhq"
+                  "id": "tagger:t6",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t6"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "RWOGS2G7ZbIY2LSy"
             },
@@ -839,13 +694,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.od6UYlkZQK0Pcsfr",
-                  "name": "Tile: od6UYlkZQK0Pcsfr"
+                  "id": "tagger:t8",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t8"
                 },
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "8zvcHn0Ic2Y1inyY"
             },
@@ -853,13 +711,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.bpXSKVAN12DfJ3uN",
-                  "name": "Tile: bpXSKVAN12DfJ3uN"
+                  "id": "tagger:spookygrave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookygrave"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "OUypAGNZquFq2OPR"
             },
@@ -867,13 +728,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.FEh4TB9zwHjoKlAX",
-                  "name": "Tile: FEh4TB9zwHjoKlAX"
+                  "id": "tagger:spook",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spook"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "xRgtLPltWF2NlyE7"
             },
@@ -881,13 +745,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.dyZ7w65imkrHz6dy",
-                  "name": "Tile: dyZ7w65imkrHz6dy"
+                  "id": "tagger:t9",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t9"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Wan0aGie33tebnvt"
             },
@@ -895,35 +762,30 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientLight.xnmMNrFAXc1UhUev",
-                  "name": "AmbientLight: xnmMNrFAXc1UhUev"
+                  "id": "tagger:spookamb",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookamb"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "KjifzkeibeUQBvmN"
-            },
-            {
-              "action": "activate",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientSound.LuAU9xQAIaoVku99",
-                  "name": "AmbientSound: LuAU9xQAIaoVku99"
-                },
-                "activate": "deactivate"
-              },
-              "id": "N8sZXXNaVypop0vu"
             },
             {
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.aeqqUoy4IJ9YbwQJ",
-                  "name": "Tile: aeqqUoy4IJ9YbwQJ"
+                  "id": "tagger:t7",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t7"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "LLTFRUnvxX73DryT"
             },
@@ -998,10 +860,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.GogU21bRNQqDUxgv",
-                  "name": "Tile: GogU21bRNQqDUxgv"
+                  "id": "tagger:t10",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t10"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "N7TrBcpdCFHOTbUK"
             },
@@ -1014,202 +879,21 @@
               "id": "ixYE4GLNQ0cUnKRR"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "gwWps0pOVluKTfKS",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359786490
-                },
-                {
-                  "id": "AKmlOpBOE42bXaeW",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359789840
-                },
-                {
-                  "id": "BO4EzSP9BLZMkv9x",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359793136
-                },
-                {
-                  "id": "QAJN2YyvJlim5EzB",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359795398
-                },
-                {
-                  "id": "UHBDlxQ0959DYpjF",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360102280
-                },
-                {
-                  "id": "HvtFaH0V6tAgi1Gg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360103256
-                },
-                {
-                  "id": "X1N94A0prJwnfw8e",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360105198
-                },
-                {
-                  "id": "XgIaMGvZy9hXDPDb",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360105888
-                },
-                {
-                  "id": "KpcPZWG6pCnqyNH9",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360106480
-                },
-                {
-                  "id": "sJPd30fPlBisU77t",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360107030
-                },
-                {
-                  "id": "ZaXyjVaxAs0RB752",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360107959
-                },
-                {
-                  "id": "yOGh9BC6W5jngCk7",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360112980
-                },
-                {
-                  "id": "yDVGde65DYVcuPC0",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360114010
-                },
-                {
-                  "id": "359NrzbpVifXjQ3w",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360114587
-                },
-                {
-                  "id": "Y2FDTEA3sYLaFaY5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360116266
-                },
-                {
-                  "id": "YF0MdaSxgApt1utE",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360116966
-                },
-                {
-                  "id": "dVFF5JqTauNju16d",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360117964
-                },
-                {
-                  "id": "nLwr1JlR36ydVi6D",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360118648
-                },
-                {
-                  "id": "AoOg8eVb3JO8HBRT",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360655300
-                },
-                {
-                  "id": "gN16dFmigylvcSjK",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360658292
-                },
-                {
-                  "id": "eLLbN8GAsggTGqAc",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360734761
-                },
-                {
-                  "id": "dwtrz8cacF2tupDP",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360735428
-                },
-                {
-                  "id": "oumc9hU0a0g1WMq4",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642364985336
-                },
-                {
-                  "id": "nlms79iGlCvBXeVT",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642364986020
-                },
-                {
-                  "id": "sODSt0l3APsSp46C",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642364986844
-                },
-                {
-                  "id": "0489eM2Eu67Xcd8d",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642364987386
-                },
-                {
-                  "id": "vDQeJDSVcsTZgo6V",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616273299
-                },
-                {
-                  "id": "6VaiHgXVEJq9Cm1n",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717595576
-                },
-                {
-                  "id": "s4EMfCTNXQ939aZz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559081864
-                },
-                {
-                  "id": "exiIZvkLko9tD24O",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559082757
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t8"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -1228,7 +912,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1271,8 +955,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.IKYFBRuKtzgWNj3d",
-                  "name": "Tile: IKYFBRuKtzgWNj3d"
+                  "id": "tagger:statue",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> statue"
                 },
                 "imgat": 1,
                 "files": [
@@ -1297,8 +983,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.BrqXktfHnghjG5r7",
-                  "name": "Tile: BrqXktfHnghjG5r7"
+                  "id": "tagger:t3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t3"
                 },
                 "imgat": 1,
                 "files": [
@@ -1314,7 +1002,8 @@
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "uWXVumooTALIDY2q"
@@ -1323,8 +1012,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.DtEpxxs5VATCirw9",
-                  "name": "Tile: DtEpxxs5VATCirw9"
+                  "id": "tagger:t4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t4"
                 },
                 "imgat": 1,
                 "files": [
@@ -1340,106 +1031,28 @@
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "px2VePtb4qNFRBlG"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "TI1k85ecsfnrMN8C",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358762715
-                },
-                {
-                  "id": "xJ25dBeQ3KEXYJBV",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360099912
-                },
-                {
-                  "id": "3JtBZSqOZ0fU4kNe",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360560508
-                },
-                {
-                  "id": "8htStLCotw1kqn9m",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362596058
-                },
-                {
-                  "id": "AWGyXD4vTbqmYLlo",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365189843
-                },
-                {
-                  "id": "bbaamZYnurZLt5vJ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365204251
-                },
-                {
-                  "id": "WEDi6iOYHPP2Uc69",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365238447
-                },
-                {
-                  "id": "biYPCfijCexEUikp",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365478529
-                },
-                {
-                  "id": "ZXTUIfEgER9z4sUh",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365497287
-                },
-                {
-                  "id": "QDRzsFa2iBw9NEES",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616270876
-                },
-                {
-                  "id": "yHXx2iZrLXvqPYjX",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717594422
-                },
-                {
-                  "id": "26wj5AkssCCRSETn",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559084780
-                },
-                {
-                  "id": "48MuSo0zTnRna0d0",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559085893
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t3"
+          ]
         }
       },
       "texture": {
@@ -1455,7 +1068,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1498,8 +1111,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.IKYFBRuKtzgWNj3d",
-                  "name": "Tile: IKYFBRuKtzgWNj3d"
+                  "id": "tagger:statue",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> statue"
                 },
                 "imgat": 1,
                 "files": [
@@ -1524,8 +1139,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.BrqXktfHnghjG5r7",
-                  "name": "Tile: BrqXktfHnghjG5r7"
+                  "id": "tagger:t3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t3"
                 },
                 "imgat": 1,
                 "files": [
@@ -1541,7 +1158,8 @@
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "K81II8LlCTgZkyKr"
@@ -1550,8 +1168,10 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.DtEpxxs5VATCirw9",
-                  "name": "Tile: DtEpxxs5VATCirw9"
+                  "id": "tagger:t4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t4"
                 },
                 "imgat": 1,
                 "files": [
@@ -1567,76 +1187,28 @@
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "_file-list": "",
               "id": "bK7calxVd7P1sdlZ"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "e3snXeDfuhKjSeF1",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365203383
-                },
-                {
-                  "id": "IkeBdAaoZCPtaBYT",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365207599
-                },
-                {
-                  "id": "4sw1Ir81mDfIEJI7",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365477297
-                },
-                {
-                  "id": "CMaxztb5xRghA84M",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642365483301
-                },
-                {
-                  "id": "cN0cHLhjlr9t3M4k",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445753209
-                },
-                {
-                  "id": "1BhK8tUWPk0FfRuc",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445761287
-                },
-                {
-                  "id": "8Vv38hTPUCT5TUEl",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717592964
-                },
-                {
-                  "id": "iILXO8RUEBUZsxMI",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1645559083562
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t4"
+          ]
         }
       },
       "texture": {
@@ -1652,7 +1224,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1707,7 +1279,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 99,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1831,283 +1403,7 @@
               "id": "PHSF47sk4hB9ds8a"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "7jBnpuFKAaWaVx0F",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357978663
-                },
-                {
-                  "id": "1nZnjrrETfnjtlGR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357981538
-                },
-                {
-                  "id": "QlwFobfaOZI7ZElm",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357984673
-                },
-                {
-                  "id": "tWWX3nhDr4CjcjHb",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642357993868
-                },
-                {
-                  "id": "z47z4tHFSGvrKDFD",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358260381
-                },
-                {
-                  "id": "s04bqgoE33dmEG9h",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358261505
-                },
-                {
-                  "id": "v9tLt1VEWnNAOUpl",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358264632
-                },
-                {
-                  "id": "b1vYwW6uemFUw0BE",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642358265369
-                },
-                {
-                  "id": "0eg7MWeq7zR1K4Bb",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359507181
-                },
-                {
-                  "id": "6oDzRtm2Jogo6rg6",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359509910
-                },
-                {
-                  "id": "AEtzEYavnBn6Vgrt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359790784
-                },
-                {
-                  "id": "wUd5tYjOBMh0ItiV",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359792002
-                },
-                {
-                  "id": "5g6iELaVN0Qc3N3E",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359796220
-                },
-                {
-                  "id": "IxLb0o8qKdYMCoaR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642359797832
-                },
-                {
-                  "id": "yH5eXsQkRcxk4d2c",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360130262
-                },
-                {
-                  "id": "KqKQlrf83s9SIOIc",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360131724
-                },
-                {
-                  "id": "0wN5VpNOTipj6r7M",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360132457
-                },
-                {
-                  "id": "96S2tLCNE9rd1Js5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360135284
-                },
-                {
-                  "id": "GX7sELq7U7LC0ktc",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360434107
-                },
-                {
-                  "id": "p3ccjXkHORoyF1lt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360436777
-                },
-                {
-                  "id": "3t4iJZpERoxsQzgJ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360599608
-                },
-                {
-                  "id": "RyKCeIskMcnORD5J",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360602236
-                },
-                {
-                  "id": "evM9Grg3XzQjyHwe",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360619759
-                },
-                {
-                  "id": "19jTvJ9Wmrnw9Jls",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360622307
-                },
-                {
-                  "id": "WBPT8ga2xtUNL3Rw",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360659332
-                },
-                {
-                  "id": "SpYs1JQbc2PRfzIS",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360660110
-                },
-                {
-                  "id": "wW6hZt8K8fny0I5e",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360671698
-                },
-                {
-                  "id": "NLVjFsgXPeqlG7Uh",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360674853
-                },
-                {
-                  "id": "0owB6ehQ84IJ5eCN",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360702093
-                },
-                {
-                  "id": "GVPQZuOTq8088KCg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360705583
-                },
-                {
-                  "id": "A3GCSE2rWhlYgK7D",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360708155
-                },
-                {
-                  "id": "2fUzscIoETeBTf1o",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360723669
-                },
-                {
-                  "id": "63xrdXkpE3TDtAe2",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360726341
-                },
-                {
-                  "id": "UuGD6Un05tNQMr4h",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360731711
-                },
-                {
-                  "id": "5X386JSzkjFG8Ml6",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642364884371
-                },
-                {
-                  "id": "VNO4d328dqTBtJDs",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642364885377
-                },
-                {
-                  "id": "lodQlS0QkCpk7by8",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445750534
-                },
-                {
-                  "id": "DfRwsgOEXGTyZ5TM",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445751727
-                },
-                {
-                  "id": "TrbsjWMds0VqV4tj",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616201593
-                },
-                {
-                  "id": "TL9adhlp1CIWalCl",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616204337
-                },
-                {
-                  "id": "MCT1oXJk9nsNNpNF",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717597226
-                },
-                {
-                  "id": "RjdytjbFu42TVPel",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717598653
-                },
-                {
-                  "id": "3yxETR1O0pz2GHeR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717611646
-                },
-                {
-                  "id": "H7qFc2LSgEJNrLAQ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717613842
-                },
-                {
-                  "id": "epQjSu7lM0Hdphdk",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717620660
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
@@ -2124,7 +1420,10 @@
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/graveopen.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -2145,7 +1444,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 91,
+      "sort": 20,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2174,7 +1473,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "rubble4"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2190,9 +1491,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2208,7 +1512,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 19,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2237,7 +1541,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "rubble3"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2253,9 +1559,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2271,7 +1580,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 18,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2300,7 +1609,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "rubble1"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2316,9 +1627,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2334,7 +1648,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 89,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2363,7 +1677,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "rubble2"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2379,9 +1695,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2397,7 +1716,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 90,
+      "sort": 17,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2426,7 +1745,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "door"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2455,7 +1776,10 @@
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/Doorfallen.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2471,7 +1795,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 36,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2486,7 +1810,7 @@
       "x": 1375,
       "y": 2625,
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -2500,7 +1824,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "symbol2"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2516,9 +1842,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2534,7 +1863,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 98,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2549,7 +1878,7 @@
       "x": 1350,
       "y": 1125,
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": false,
       "occlusion": {
@@ -2563,7 +1892,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "symbol"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2579,9 +1910,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2597,7 +1931,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 93,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2626,7 +1960,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "statue"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -2655,7 +1991,10 @@
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/knightstatue.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2671,7 +2010,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 99,
+      "sort": 23,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2714,13 +2053,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ToGqvo4HJ8zQw5Kg",
-                  "name": "Tile: ToGqvo4HJ8zQw5Kg"
+                  "id": "tagger:rubble4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> rubble4"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "95TPneeXOKARhTMZ"
             },
@@ -2728,13 +2070,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.hMhwzx52Cbt8yAgd",
-                  "name": "Tile: hMhwzx52Cbt8yAgd"
+                  "id": "tagger:shadow4",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> shadow4"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "5AEXwnqVoHRvYvNx"
             },
@@ -2753,277 +2098,16 @@
               "id": "XEtltH3cznPnEhKC"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "wVxWfwerFvHrHTDu",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360909218
-                },
-                {
-                  "id": "m7HAZTDfsqJdhjO5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360946658
-                },
-                {
-                  "id": "UDLvN1TDgdSn11hL",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360949190
-                },
-                {
-                  "id": "2po2FE7jhdw3xszc",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360968807
-                },
-                {
-                  "id": "KHwjWXTzNBTyQIdb",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360972427
-                },
-                {
-                  "id": "Wgh2BpiScTm3uyFk",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360973809
-                },
-                {
-                  "id": "n96khFwCO10NCVQZ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360979240
-                },
-                {
-                  "id": "OP6oeVLjHVq1xkM2",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360983319
-                },
-                {
-                  "id": "jnHyPm1Fo41clKMk",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642360998999
-                },
-                {
-                  "id": "V1Q8Ofoao4fvxEcx",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361000709
-                },
-                {
-                  "id": "YV3VJfZ43cWHsr50",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361004806
-                },
-                {
-                  "id": "wt15uN9X9yzQUUA6",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361066472
-                },
-                {
-                  "id": "EtEx8ZV1ZMeQxHJH",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361069076
-                },
-                {
-                  "id": "o7T2W6a9wd1pDlu1",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361750570
-                },
-                {
-                  "id": "8RzZq9X0eOCvulzL",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361794500
-                },
-                {
-                  "id": "91Xlclh8wVI6Zguo",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361835042
-                },
-                {
-                  "id": "JIuvCd2xhu8KfHXg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361842215
-                },
-                {
-                  "id": "HD9EjgDTm8H566J5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361992865
-                },
-                {
-                  "id": "cZIR2gtMA0MHy81Z",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361995285
-                },
-                {
-                  "id": "EwLRGBXzr8qK98C5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362623868
-                },
-                {
-                  "id": "1uxkN5uOHGxYA7YI",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362626164
-                },
-                {
-                  "id": "vVP5RxXXnRmf8J5W",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362689773
-                },
-                {
-                  "id": "eDnx1Bxb607rwgRR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362692529
-                },
-                {
-                  "id": "h5fREE2d0NFj57BC",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362702984
-                },
-                {
-                  "id": "DpH1tGdDBynBlL8n",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362749550
-                },
-                {
-                  "id": "k7YXKCyg4O2iJvII",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445766296
-                },
-                {
-                  "id": "p2rt0zLXrTCY6P0I",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445780900
-                },
-                {
-                  "id": "Az45yimzDnCofuP2",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461883560
-                },
-                {
-                  "id": "xCGd89eeHiuzxnmo",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461892198
-                },
-                {
-                  "id": "HH8QsTctuR3lXPHC",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461928191
-                },
-                {
-                  "id": "PpirHpggWGJMqthS",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461930655
-                },
-                {
-                  "id": "2x3eTXITu4RFL0eo",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616218040
-                },
-                {
-                  "id": "GCcXASIP2jZl9WnG",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616219630
-                },
-                {
-                  "id": "FkjzMpsfH3sJApDn",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616221231
-                },
-                {
-                  "id": "Bbj0EcZb4LsUwKMR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616223582
-                },
-                {
-                  "id": "raE9ESUFnFl23ei3",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616224982
-                },
-                {
-                  "id": "YeCeQRAvTnW0fNAg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616254888
-                },
-                {
-                  "id": "yLOUepI3GvcrdPCw",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642714440488
-                },
-                {
-                  "id": "DzmERi21DElAio4O",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717413502
-                },
-                {
-                  "id": "FmmiwYkaCTgEfz2j",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717633683
-                },
-                {
-                  "id": "dDkzRrD0u7e5NaUK",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717641323
-                },
-                {
-                  "id": "1xOPUsfDkc1cUrLo",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717648253
-                },
-                {
-                  "id": "MfM413gofOobhsy2",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717651487
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -3045,7 +2129,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3087,13 +2171,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.qNdjdwnjeITp6V8q",
-                  "name": "Tile: qNdjdwnjeITp6V8q"
+                  "id": "tagger:rubble2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> rubble2"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "6xbE2ePzIPLTtY7y"
             },
@@ -3101,13 +2188,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.w2XGQEESgIEmpY8r",
-                  "name": "Tile: w2XGQEESgIEmpY8r"
+                  "id": "tagger:shadow3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> shadow3"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "7STHZfBt7OmWpg0K"
             },
@@ -3126,205 +2216,16 @@
               "id": "KCXl2wP7lZkuTHvn"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "M1AvvgctzhiW1Sxb",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361056756
-                },
-                {
-                  "id": "xWqnSHULuNYDMCeq",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361058508
-                },
-                {
-                  "id": "cJPJIB8sNADivDBt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361061542
-                },
-                {
-                  "id": "YplYBPEXlCyNueao",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361070356
-                },
-                {
-                  "id": "cAbsT3I4huXYF2vu",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361073322
-                },
-                {
-                  "id": "IQXeCcEALhe6HUmG",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361997371
-                },
-                {
-                  "id": "w2mfZUThoWwtv2w9",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361999901
-                },
-                {
-                  "id": "FPDQf7d7mMCxFMAg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362632362
-                },
-                {
-                  "id": "YjhuJgDx0hkHrJHE",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362635308
-                },
-                {
-                  "id": "h6K1UaO1rm7XJaNc",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362683755
-                },
-                {
-                  "id": "C02jvHFpdDWMyWN7",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362686395
-                },
-                {
-                  "id": "08D82skel0vMPT4V",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362754351
-                },
-                {
-                  "id": "E2CLzgh9B4oVQ3XJ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362756729
-                },
-                {
-                  "id": "ZE1Gpr0AbYS5YbnY",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445769204
-                },
-                {
-                  "id": "6VCLBn9kOuqbnyaV",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445781586
-                },
-                {
-                  "id": "wW53euq773jikSof",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461931793
-                },
-                {
-                  "id": "4xLOQwh0nRvGKks6",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461935239
-                },
-                {
-                  "id": "wlIEJ4pqy7Hr0lKz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616215418
-                },
-                {
-                  "id": "n8oDXlVVOyhBvc62",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616216692
-                },
-                {
-                  "id": "iFwSyvZDMFANZ0bQ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616257258
-                },
-                {
-                  "id": "ZqfOCtMRxtaWSfN9",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642616260222
-                },
-                {
-                  "id": "9IqBeaHcASGcL7Cp",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642714442279
-                },
-                {
-                  "id": "kttliY8NonxCzy0O",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717414868
-                },
-                {
-                  "id": "APmz2k9j5cjsW3gV",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717545202
-                },
-                {
-                  "id": "y7zI7bmTEmcugS8D",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717546208
-                },
-                {
-                  "id": "VYT82DNzu1j7ApKO",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717547052
-                },
-                {
-                  "id": "iCmZsLu7o6mOSKrX",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717548928
-                },
-                {
-                  "id": "dI4bnlnWs071TieD",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717552784
-                },
-                {
-                  "id": "i8LPIwwR92EZMJtA",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717557766
-                },
-                {
-                  "id": "m3fbwmWE1PbZAzHt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717624151
-                },
-                {
-                  "id": "CoUtdjYTdxjanmQB",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717626173
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -3346,7 +2247,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3388,13 +2289,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.dGaQKdALRnr8cfcd",
-                  "name": "Tile: dGaQKdALRnr8cfcd"
+                  "id": "tagger:rubble1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> rubble1"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Q5Sax2TRcl97oBgF"
             },
@@ -3402,13 +2306,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.PN0HDdwFBaDMfUts",
-                  "name": "Tile: PN0HDdwFBaDMfUts"
+                  "id": "tagger:shadow2",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> shadow2"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "MjEBH2fZ7tXpyGIF"
             },
@@ -3427,137 +2334,18 @@
               "id": "2rrnZhsMq0sPvIXK"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "y9SWPYiehAyCihvz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361171118
-                },
-                {
-                  "id": "JipV1ZNwiLSi9aWx",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361980001
-                },
-                {
-                  "id": "WTvOx67ooWa94RhV",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361985053
-                },
-                {
-                  "id": "V8iDjnyvX38KELyC",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361987331
-                },
-                {
-                  "id": "G2O2YhmAsXgNZI77",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361990055
-                },
-                {
-                  "id": "pinpFwnoUOUYzgsK",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362618335
-                },
-                {
-                  "id": "wjEXlPI2EBPySbjt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362620564
-                },
-                {
-                  "id": "erhwTWn4kl6zVNju",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362693934
-                },
-                {
-                  "id": "9NM48nhFmgbGjB52",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362698262
-                },
-                {
-                  "id": "KznZEu89eqpxiItz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445763572
-                },
-                {
-                  "id": "17YDboUR3eMoQ4ee",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445764713
-                },
-                {
-                  "id": "f9xUsDnbYL0dkX5v",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445773082
-                },
-                {
-                  "id": "LZv7Qn6sa8GQOFzS",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445779376
-                },
-                {
-                  "id": "DU7NVWmDLNfCkzRy",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461874846
-                },
-                {
-                  "id": "UQIT5ItcOwJ5oLsy",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642461949922
-                },
-                {
-                  "id": "iJRaNRxJpn9KLef0",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642714444243
-                },
-                {
-                  "id": "btnG5NUwpTzwPY1i",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717417310
-                },
-                {
-                  "id": "KzLrwpMqIGCZZxRg",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717564434
-                },
-                {
-                  "id": "VfCwjj9yF2pwdwa5",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717565946
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "icons/svg/cancel.svg",
@@ -3573,7 +2361,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3615,13 +2403,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.8TC1isYdANvHd8Ka",
-                  "name": "Tile: 8TC1isYdANvHd8Ka"
+                  "id": "tagger:rubble3",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> rubble3"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "5sejf7CFreieqX3d"
             },
@@ -3629,13 +2420,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.6CyQM0uPilmpGUXg",
-                  "name": "Tile: 6CyQM0uPilmpGUXg"
+                  "id": "tagger:shadow1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> shadow1"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "PKf3qaYSbYvjhSft"
             },
@@ -3654,185 +2448,18 @@
               "id": "flmA2HtyIXLeOAzP"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "18UocaM7JqIA7JUq",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361168020
-                },
-                {
-                  "id": "fMFnPrCjM70UCDtM",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361175571
-                },
-                {
-                  "id": "74ioiZW2iOWgHnZB",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361178692
-                },
-                {
-                  "id": "7m0lv5mMIoKdd2eG",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361963160
-                },
-                {
-                  "id": "D7FQfjWGMSSiCjEz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361967921
-                },
-                {
-                  "id": "uDNIdD8hJy8bC2Tf",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361971785
-                },
-                {
-                  "id": "hEiNQdY0BwCe4Xg2",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361975747
-                },
-                {
-                  "id": "Js07evitOdYXht2O",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362637642
-                },
-                {
-                  "id": "feEKgGf76ixACPyj",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362641492
-                },
-                {
-                  "id": "DA4urROPXIVN3a7G",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362642244
-                },
-                {
-                  "id": "ZnDrvGqQNvTQMZ2V",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362643072
-                },
-                {
-                  "id": "nX1pZO0kDONuXPsR",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362643788
-                },
-                {
-                  "id": "dLoMXSDWUWYWqpH8",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362647410
-                },
-                {
-                  "id": "p0KaXooYpysacNrd",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362648032
-                },
-                {
-                  "id": "fYAibT4rJ15oD74t",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362649608
-                },
-                {
-                  "id": "Sp73qTMbEnYYsgmk",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362650550
-                },
-                {
-                  "id": "dIvfaJAw2pdiIDSW",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362651936
-                },
-                {
-                  "id": "kTfPpPgPwO3YWl1q",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362653286
-                },
-                {
-                  "id": "ndn8wrrGGWcrv97y",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362654828
-                },
-                {
-                  "id": "89EsAdUhrhyO3Hco",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362655536
-                },
-                {
-                  "id": "p0LWIhzO4lkRTIsx",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642362657520
-                },
-                {
-                  "id": "u41AtM3ohTwVpOC3",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445770830
-                },
-                {
-                  "id": "ovz6GBnxsDm2tVdn",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445782708
-                },
-                {
-                  "id": "oAvSn8XTkout0jFO",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642714446193
-                },
-                {
-                  "id": "OB5N7GSO6EsmIWDv",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717418424
-                },
-                {
-                  "id": "MPLt6GSU09k5esO0",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717560694
-                },
-                {
-                  "id": "JFw0rhHjAFgpP7Oa",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642717562172
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "icons/svg/cancel.svg",
@@ -3848,7 +2475,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3904,8 +2531,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.rsgwUNpit3ObrsZL",
-                  "name": "Tile: rsgwUNpit3ObrsZL"
+                  "id": "tagger:door",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> door"
                 },
                 "imgat": 1,
                 "files": [
@@ -3934,213 +2563,33 @@
               "action": "changedoor",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Wall.IvuS2IjWtleM416M",
-                  "name": "Wall: IvuS2IjWtleM416M"
+                  "id": "tagger:doorwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> doorwall"
                 },
-                "state": "toggle"
+                "state": "nothing",
+                "type": "NONE",
+                "movement": "toggle",
+                "light": "toggle",
+                "sight": "toggle",
+                "sound": "toggle"
               },
               "id": "kIw5Zm3NuwK7bgGf"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Wall.IvuS2IjWtleM416M",
-                  "name": "Wall: IvuS2IjWtleM416M"
-                },
-                "attribute": "move",
-                "value": "={{entity.move}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "GDQstcqdw4eU93Hl"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Wall.IvuS2IjWtleM416M",
-                  "name": "Wall: IvuS2IjWtleM416M"
-                },
-                "attribute": "sight",
-                "value": "={{entity.sight}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "byIUG6DiKQ3FRsgJ"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Wall.IvuS2IjWtleM416M",
-                  "name": "Wall: IvuS2IjWtleM416M"
-                },
-                "attribute": "light",
-                "value": "={{entity.light}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "sSnWIBrRzpf7qn9j"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Wall.IvuS2IjWtleM416M",
-                  "name": "Wall: IvuS2IjWtleM416M"
-                },
-                "attribute": "sound",
-                "value": "={{entity.sound}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "rai6qY6na5vmThNr"
             }
           ],
-          "history": {
-            "": {
-              "tokenid": "",
-              "triggered": [
-                {
-                  "id": "y9SWPYiehAyCihvz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361171118
-                },
-                {
-                  "id": "Z4JbLSkzse0Ydlct",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361258136
-                },
-                {
-                  "id": "lgxGgnToAZQZX9Jy",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361259952
-                },
-                {
-                  "id": "QMO3n1c4w6fP3Jio",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361261230
-                },
-                {
-                  "id": "JrjNEtLNQHjqWmRi",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361262396
-                },
-                {
-                  "id": "AZCKHz7belW0jaEJ",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361264476
-                },
-                {
-                  "id": "RsHXosruMyWcJr57",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361339230
-                },
-                {
-                  "id": "nLSK4qKylPCC3GHz",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361575901
-                },
-                {
-                  "id": "tOpYF9QVqp24l5Vd",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361576619
-                },
-                {
-                  "id": "hPJ8W7rOb3yIj7vq",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361640492
-                },
-                {
-                  "id": "RUrbW9RLCVdlJodF",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361642890
-                },
-                {
-                  "id": "hGEz8DNomhodEUw1",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361667708
-                },
-                {
-                  "id": "8pHzDjGco2ROdxCt",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361678507
-                },
-                {
-                  "id": "suDtRkjeELQfrqc6",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361683299
-                },
-                {
-                  "id": "Sw7MPM8rq2QEs4ng",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361684033
-                },
-                {
-                  "id": "EU1eRhErUKu8a8bU",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361686669
-                },
-                {
-                  "id": "8OM2fOxVtxs5e1PI",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642361689683
-                },
-                {
-                  "id": "DFtHLv0K9eSee5L4",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445785288
-                },
-                {
-                  "id": "HVN8B14aWN5AIT9H",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1642445787248
-                },
-                {
-                  "id": "Zew8EK4PwjZcNOed",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1643840036108
-                },
-                {
-                  "id": "wdtIznbwHFFd7Gil",
-                  "who": "L1mdopzXrkWRdm2y",
-                  "how": "DoubleClick",
-                  "when": 1643840036793
-                }
-              ]
-            }
-          },
+          "history": {},
           "record": false,
           "usealpha": false,
           "pointer": true,
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "icons/svg/cancel.svg",
@@ -4156,7 +2605,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4199,10 +2648,15 @@
           "usealpha": false,
           "pointer": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "shadow4"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -4227,7 +2681,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4270,10 +2724,15 @@
           "usealpha": false,
           "pointer": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "shadow3"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -4298,7 +2757,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4341,10 +2800,15 @@
           "usealpha": false,
           "pointer": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "shadow2"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -4369,7 +2833,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4412,10 +2876,15 @@
           "usealpha": false,
           "pointer": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "shadow1"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -4440,7 +2909,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4468,7 +2937,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "spookygrave"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
@@ -4484,9 +2955,12 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -4502,7 +2976,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 92,
+      "sort": 21,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4550,14 +3024,17 @@
             {
               "id": "OrtYlu5fgMHGC08j",
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/spookspell.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "tY8hONGUkyAeRHwv",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": true
+              "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -4588,7 +3065,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4633,13 +3110,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "E6zkd5rknTrSquGs"
             },
@@ -4647,10 +3127,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "5g0num5A5cXZuWXe"
             },
@@ -4658,13 +3141,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.zeUkZrMosN2etQhq",
-                  "name": "Tile: zeUkZrMosN2etQhq"
+                  "id": "tagger:t6",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t6"
                 },
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "kVuSWnFr5CUgA4pC"
             },
@@ -4672,13 +3158,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.dyZ7w65imkrHz6dy",
-                  "name": "Tile: dyZ7w65imkrHz6dy"
+                  "id": "tagger:t9",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t9"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "f4Xi11FFdFU11sUr"
             },
@@ -4686,13 +3175,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.od6UYlkZQK0Pcsfr",
-                  "name": "Tile: od6UYlkZQK0Pcsfr"
+                  "id": "tagger:t8",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t8"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "sVPRE3qQ2plrtaoV"
             },
@@ -4700,13 +3192,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.aeqqUoy4IJ9YbwQJ",
-                  "name": "Tile: aeqqUoy4IJ9YbwQJ"
+                  "id": "tagger:t7",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t7"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Hz7QUcpL2Eyyhtct"
             },
@@ -4730,13 +3225,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.bpXSKVAN12DfJ3uN",
-                  "name": "Tile: bpXSKVAN12DfJ3uN"
+                  "id": "tagger:spookygrave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookygrave"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "rMZFyqDnL1a7nDiN"
             },
@@ -4744,13 +3242,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.FEh4TB9zwHjoKlAX",
-                  "name": "Tile: FEh4TB9zwHjoKlAX"
+                  "id": "tagger:spook",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spook"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "denx6GUgbgUjVM1Y"
             },
@@ -4758,23 +3259,15 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientLight.xnmMNrFAXc1UhUev",
-                  "name": "AmbientLight: xnmMNrFAXc1UhUev"
+                  "id": "tagger:spookamb",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookamb"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "9QA3gCTSbGtBvuFy"
-            },
-            {
-              "action": "activate",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientSound.LuAU9xQAIaoVku99",
-                  "name": "AmbientSound: LuAU9xQAIaoVku99"
-                },
-                "activate": "deactivate"
-              },
-              "id": "J1GZt9Dmj5tBgfyl"
             },
             {
               "action": "alter",
@@ -4847,10 +3340,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.GogU21bRNQqDUxgv",
-                  "name": "Tile: GogU21bRNQqDUxgv"
+                  "id": "tagger:t10",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t10"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "i2pHOqC3LJJhZkVY"
             },
@@ -4858,13 +3354,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.scQ7ljpt5sR4UGs2",
-                  "name": "Tile: scQ7ljpt5sR4UGs2"
+                  "id": "tagger:h",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> h"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "NdTN4g6CZHYScQC8"
             },
@@ -4879,10 +3378,15 @@
           ],
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t6"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -4901,7 +3405,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4947,13 +3451,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.dyZ7w65imkrHz6dy",
-                  "name": "Tile: dyZ7w65imkrHz6dy"
+                  "id": "tagger:t9",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t9"
                 },
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "XzIZxrf6Conx3D2N"
             },
@@ -4961,13 +3468,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.zeUkZrMosN2etQhq",
-                  "name": "Tile: zeUkZrMosN2etQhq"
+                  "id": "tagger:t6",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t6"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "bTnDLokRiuvygnO4"
             },
@@ -4975,13 +3485,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.od6UYlkZQK0Pcsfr",
-                  "name": "Tile: od6UYlkZQK0Pcsfr"
+                  "id": "tagger:t8",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t8"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "EomVCmkAUIg1FZZ7"
             },
@@ -4989,8 +3502,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "select": "first",
                 "transition": "none",
@@ -5003,8 +3518,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.FEh4TB9zwHjoKlAX",
-                  "name": "Tile: FEh4TB9zwHjoKlAX"
+                  "id": "tagger:spook",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spook"
                 },
                 "select": "first",
                 "transition": "none",
@@ -5100,13 +3617,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "PY16X2V9XACW0ITa"
             },
@@ -5114,10 +3634,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "wULLSKdJTBHyb5da"
             },
@@ -5125,13 +3648,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.aaGChKFphOsiDhrO",
-                  "name": "Tile: aaGChKFphOsiDhrO"
+                  "id": "tagger:t5",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t5"
                 },
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "O1pxI9oxwmIKh107"
             },
@@ -5139,13 +3665,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.aeqqUoy4IJ9YbwQJ",
-                  "name": "Tile: aeqqUoy4IJ9YbwQJ"
+                  "id": "tagger:t7",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t7"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "e1KBLmSKVMo6jb0G"
             },
@@ -5161,13 +3690,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.FEh4TB9zwHjoKlAX",
-                  "name": "Tile: FEh4TB9zwHjoKlAX"
+                  "id": "tagger:spook",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spook"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "fKZMh76ZucAXa8sn"
             },
@@ -5175,35 +3707,30 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientSound.LuAU9xQAIaoVku99",
-                  "name": "AmbientSound: LuAU9xQAIaoVku99"
+                  "id": "tagger:spookamb",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookamb"
                 },
-                "activate": "activate"
+                "activate": "activate",
+                "collection": "tiles"
               },
               "id": "zKkAJRV8frNf6r7J"
-            },
-            {
-              "action": "activate",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientLight.xnmMNrFAXc1UhUev",
-                  "name": "AmbientLight: xnmMNrFAXc1UhUev"
-                },
-                "activate": "activate"
-              },
-              "id": "z7E7rOv4q917oMvF"
             },
             {
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.bpXSKVAN12DfJ3uN",
-                  "name": "Tile: bpXSKVAN12DfJ3uN"
+                  "id": "tagger:spookygrave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookygrave"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "sMBa3fVqPC0kZtnw"
             },
@@ -5211,13 +3738,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "c5WgzAqvbYYN8oNg"
             },
@@ -5232,13 +3762,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.2",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "JvfZCK8WGsuIxCpS"
             },
@@ -5253,13 +3786,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.3",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "gCIop7RLtCKa6Tod"
             },
@@ -5274,13 +3810,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.4",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "CxZIikCzUtTXl3Lm"
             },
@@ -5295,13 +3834,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.5",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Fqdxbbc5bzchqBi5"
             },
@@ -5316,13 +3858,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.6",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "XzJD2mlENoxlAHSd"
             },
@@ -5337,13 +3882,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.7",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "UQTV1TZLpS2uQQL5"
             },
@@ -5358,13 +3906,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.8",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "cUwRxqoV069RVCs6"
             },
@@ -5379,13 +3930,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "0.9",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tIc1trZcnYEYQVhX"
             },
@@ -5400,13 +3954,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "1",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "mZ9HvNDHlizEHPHS"
             },
@@ -5414,10 +3971,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.GogU21bRNQqDUxgv",
-                  "name": "Tile: GogU21bRNQqDUxgv"
+                  "id": "tagger:t10",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t10"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "j9ZjN3GTWJerpEkJ"
             },
@@ -5425,23 +3985,31 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.scQ7ljpt5sR4UGs2",
-                  "name": "Tile: scQ7ljpt5sR4UGs2"
+                  "id": "tagger:h",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> h"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "EX2JknhWT5ctvpGO"
             }
           ],
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t9"
+          ]
         },
         "perfect-vision": {
           "lighting": ""
@@ -5460,7 +4028,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5519,7 +4087,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 35,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5578,7 +4146,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 34,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5627,7 +4195,10 @@
           "actions": [],
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -5643,7 +4214,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 22,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5698,14 +4269,17 @@
             {
               "id": "JA5RvHEqcmcOyqqi",
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/TreeShadow.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "9kDmgQwqpfRR0Dl0",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": true
+              "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -5730,7 +4304,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5769,7 +4343,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
@@ -5789,7 +4365,10 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -5809,7 +4388,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5837,7 +4416,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t7"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
@@ -5857,13 +4438,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.zeUkZrMosN2etQhq",
-                  "name": "Tile: zeUkZrMosN2etQhq"
+                  "id": "tagger:t6",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t6"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "y6CGZ8Y6HUeXWh4Q"
             },
@@ -5871,13 +4455,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.dyZ7w65imkrHz6dy",
-                  "name": "Tile: dyZ7w65imkrHz6dy"
+                  "id": "tagger:t9",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t9"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "314xjDPPFF9nLqCk"
             },
@@ -5885,13 +4472,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.od6UYlkZQK0Pcsfr",
-                  "name": "Tile: od6UYlkZQK0Pcsfr"
+                  "id": "tagger:t8",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t8"
                 },
                 "attribute": "texture.tint",
                 "value": "#890101",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "2y8ybAxMw1QXHmMA"
             },
@@ -5899,13 +4489,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.aeqqUoy4IJ9YbwQJ",
-                  "name": "Tile: aeqqUoy4IJ9YbwQJ"
+                  "id": "tagger:t7",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t7"
                 },
                 "attribute": "texture.tint",
                 "value": "#000000",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Of6LIBjnjf29QO11"
             },
@@ -5929,8 +4522,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.FEh4TB9zwHjoKlAX",
-                  "name": "Tile: FEh4TB9zwHjoKlAX"
+                  "id": "tagger:spook",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spook"
                 },
                 "select": "last",
                 "transition": "none",
@@ -5954,13 +4549,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.ZootMP861O1Knpsb",
-                  "name": "Tile: ZootMP861O1Knpsb"
+                  "id": "tagger:grave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> grave"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "ezDJuI2xFCw6Ut9i"
             },
@@ -6035,13 +4633,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.FEh4TB9zwHjoKlAX",
-                  "name": "Tile: FEh4TB9zwHjoKlAX"
+                  "id": "tagger:spook",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spook"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "uIfUJlQnAuz52ED1"
             },
@@ -6049,13 +4650,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.bpXSKVAN12DfJ3uN",
-                  "name": "Tile: bpXSKVAN12DfJ3uN"
+                  "id": "tagger:spookygrave",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookygrave"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Mmq64ACNsTdAYePD"
             },
@@ -6063,10 +4667,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientLight.xnmMNrFAXc1UhUev",
-                  "name": "AmbientLight: xnmMNrFAXc1UhUev"
+                  "id": "tagger:spookamb",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> spookamb"
                 },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "oCoIL48vtUMlWuC8"
             },
@@ -6074,21 +4681,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.AmbientSound.LuAU9xQAIaoVku99",
-                  "name": "AmbientSound: LuAU9xQAIaoVku99"
+                  "id": "tagger:t10",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t10"
                 },
-                "activate": "deactivate"
-              },
-              "id": "SjeFydtPWf3zytfC"
-            },
-            {
-              "action": "activate",
-              "data": {
-                "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.GogU21bRNQqDUxgv",
-                  "name": "Tile: GogU21bRNQqDUxgv"
-                },
-                "activate": "deactivate"
+                "activate": "deactivate",
+                "collection": "tiles"
               },
               "id": "5tkAnSFSUjrEniCF"
             },
@@ -6096,13 +4695,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.scQ7ljpt5sR4UGs2",
-                  "name": "Tile: scQ7ljpt5sR4UGs2"
+                  "id": "tagger:h",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> h"
                 },
                 "attribute": "alpha",
                 "value": "0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "tWlESgVUJka2RmJm"
             },
@@ -6117,7 +4719,10 @@
           ],
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -6136,7 +4741,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6151,7 +4756,7 @@
       "x": 500,
       "y": 700,
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -6184,19 +4789,22 @@
           "chance": 50,
           "actions": [],
           "allowpaused": false,
-          "fileindex": 0,
+          "fileindex": 1,
           "files": [
             {
               "id": "bqUkpIhTuNbhFrZg",
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/fog.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "R3NBRjMBMlW92vX4",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
-              "selected": true
+              "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -6208,7 +4816,7 @@
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/fog.webp",
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -6221,7 +4829,7 @@
         "alphaThreshold": 0.75
       },
       "elevation": 20,
-      "sort": 99,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6279,7 +4887,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 33,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6308,7 +4916,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t5"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
@@ -6328,13 +4938,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.aaGChKFphOsiDhrO",
-                  "name": "Tile: aaGChKFphOsiDhrO"
+                  "id": "tagger:t5",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t5"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#000000' ? '#890101' : '#000000'",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "ii82N4mN4nh1fUTs"
             },
@@ -6342,8 +4955,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "select": "next",
                 "transition": "none",
@@ -6356,20 +4971,26 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.jdIvJhOMRzbDkYf5",
-                  "name": "Tile: jdIvJhOMRzbDkYf5"
+                  "id": "tagger:mist",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> mist"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "rHz9UYUKPuS4g5O4"
             }
           ],
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "perfect-vision": {
           "lighting": ""
@@ -6388,7 +5009,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 101,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6417,14 +5038,18 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "t10"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": true,
@@ -6436,17 +5061,25 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.uDits2VAo1WXuCcw.Tile.scQ7ljpt5sR4UGs2",
-                  "name": "Tile: scQ7ljpt5sR4UGs2"
+                  "id": "tagger:h",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> h"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "nHlyFkpKPYUk2w7U"
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null,
+          "fileindex": 0,
+          "files": []
         }
       },
       "texture": {
@@ -6462,7 +5095,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6491,14 +5124,18 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "h"
+          ]
         },
         "monks-active-tiles": {
           "active": false,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -6518,7 +5155,10 @@
               "name": "fa_battlemaps/Maps/2022/May/fa_ruined-temple/Overlay/graveopeninteract.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -6534,7 +5174,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 37,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6610,7 +5250,7 @@
       },
       "x": 600,
       "y": 850,
-      "sort": 100,
+      "sort": 32,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6686,7 +5326,7 @@
       },
       "x": 2100,
       "y": 800,
-      "sort": 100,
+      "sort": 31,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6762,7 +5402,7 @@
       },
       "x": 2300,
       "y": 1800,
-      "sort": 100,
+      "sort": 25,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6838,7 +5478,7 @@
       },
       "x": 2200,
       "y": 3150,
-      "sort": 100,
+      "sort": 30,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6914,7 +5554,7 @@
       },
       "x": 650,
       "y": 3050,
-      "sort": 100,
+      "sort": 29,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6990,7 +5630,7 @@
       },
       "x": 1250,
       "y": 1100,
-      "sort": 100,
+      "sort": 28,
       "restrictions": {
         "light": false,
         "weather": false
@@ -7066,7 +5706,7 @@
       },
       "x": 1250,
       "y": 1650,
-      "sort": 100,
+      "sort": 24,
       "restrictions": {
         "light": false,
         "weather": false
@@ -7142,7 +5782,7 @@
       },
       "x": 1250,
       "y": 2450,
-      "sort": 100,
+      "sort": 27,
       "restrictions": {
         "light": false,
         "weather": false
@@ -7218,7 +5858,7 @@
       },
       "x": 750,
       "y": 1800,
-      "sort": 100,
+      "sort": 26,
       "restrictions": {
         "light": false,
         "weather": false
@@ -7284,7 +5924,7 @@
       },
       "x": 2529,
       "y": 1896,
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -7306,8 +5946,8 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "width": 253.6,
-      "height": 42.6,
+      "width": 254,
+      "height": 43,
       "_id": "uSnD6vV6Uu4EMsHf",
       "rotation": 0,
       "alpha": 1,
@@ -7323,7 +5963,11 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {},
+        "tagger": {
+          "tags": [
+            "t11"
+          ]
+        },
         "monks-active-tiles": {
           "active": true,
           "record": false,
@@ -7371,6 +6015,13 @@
               "id": "E1mIlGeoHkKxFNyu"
             },
             {
+              "action": "delay",
+              "data": {
+                "delay": "0.5"
+              },
+              "id": "mXxMwLlnfyoe6x5O"
+            },
+            {
               "action": "playanimation",
               "data": {
                 "entity": {
@@ -7385,12 +6036,15 @@
               "id": "XCIeetk0uQ77qyxJ"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2529,
       "y": 1918,
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -8065,14 +6719,17 @@
       "ds": 0,
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "doorwall"
+          ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
@@ -11983,6 +10640,78 @@
         "attenuation": false
       },
       "_key": "!scenes.walls!uDits2VAo1WXuCcw.69dm9zcO93hFMNpX"
+    },
+    {
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        2800,
+        1988,
+        2500,
+        1988
+      ],
+      "_id": "0uU2B69nC90Yn1t0",
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "flags": {},
+      "_key": "!scenes.walls!uDits2VAo1WXuCcw.0uU2B69nC90Yn1t0"
+    },
+    {
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        2788,
+        738,
+        2500,
+        738
+      ],
+      "_id": "iFMgDrH2HYYFviMc",
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "flags": {},
+      "_key": "!scenes.walls!uDits2VAo1WXuCcw.iFMgDrH2HYYFviMc"
+    },
+    {
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        2800,
+        1988,
+        2788,
+        738
+      ],
+      "_id": "IX0JfvRWifKUelU5",
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "flags": {},
+      "_key": "!scenes.walls!uDits2VAo1WXuCcw.IX0JfvRWifKUelU5"
     }
   ],
   "playlist": null,
@@ -16332,9 +15061,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1672850627158,
-    "modifiedTime": 1718542107388,
+    "modifiedTime": 1723948207094,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa_battlemaps.maps.uDits2VAo1WXuCcw",
     "duplicateSource": null

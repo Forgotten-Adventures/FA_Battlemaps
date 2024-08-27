@@ -18,7 +18,7 @@
   },
   "foreground": null,
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/N0c88IyE7hSyP12x-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/N0c88IyE7hSyP12x-thumb.webp",
   "width": 2200,
   "height": 1600,
   "padding": 0.25,
@@ -49,7 +49,7 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.45,
+        "alpha": 0.3,
         "angle": 360,
         "bright": 20,
         "coloration": 1,
@@ -69,11 +69,11 @@
           "max": 1
         },
         "color": "#8f410a",
-        "attenuation": 0.5,
+        "attenuation": 0.75,
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {
           "tags": [
@@ -92,7 +92,7 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.3,
         "angle": 360,
         "bright": 20,
         "coloration": 1,
@@ -112,11 +112,11 @@
           "max": 1
         },
         "color": "#8f410a",
-        "attenuation": 0.5,
+        "attenuation": 0.75,
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {
           "tags": [
@@ -135,7 +135,7 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.3,
         "angle": 360,
         "bright": 20,
         "coloration": 1,
@@ -155,11 +155,11 @@
           "max": 1
         },
         "color": "#8f410a",
-        "attenuation": 0.5,
+        "attenuation": 0.75,
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {
           "tags": [
@@ -178,7 +178,7 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.3,
         "angle": 360,
         "bright": 20,
         "coloration": 1,
@@ -198,11 +198,11 @@
           "max": 1
         },
         "color": "#8f410a",
-        "attenuation": 0.5,
+        "attenuation": 0.75,
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {
           "tags": [
@@ -221,7 +221,7 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.3,
         "angle": 360,
         "bright": 20,
         "coloration": 1,
@@ -241,11 +241,11 @@
           "max": 1
         },
         "color": "#8f410a",
-        "attenuation": 0.5,
+        "attenuation": 0.75,
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {
           "tags": [
@@ -256,45 +256,6 @@
       "_id": "U1fa6Ezw7v1nleu2",
       "elevation": 0,
       "_key": "!scenes.lights!N0c88IyE7hSyP12x.U1fa6Ezw7v1nleu2"
-    },
-    {
-      "_id": "7F338rpFafz8G3Fa",
-      "x": 1750,
-      "y": 1200,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 0.3,
-        "angle": 360,
-        "bright": 70,
-        "color": "#ff5a3d",
-        "coloration": 10,
-        "dim": 0,
-        "attenuation": 0.5,
-        "luminosity": 0.05,
-        "saturation": 0,
-        "contrast": 0.05,
-        "shadows": 0.35,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 1
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": true,
-      "flags": {
-        "tagger": {}
-      },
-      "elevation": 0,
-      "_key": "!scenes.lights!N0c88IyE7hSyP12x.7F338rpFafz8G3Fa"
     }
   ],
   "notes": [],
@@ -401,7 +362,7 @@
           ]
         }
       },
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -463,8 +424,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.N0c88IyE7hSyP12x.Tile.5HZ3ZxozYN15vCmV",
-                  "name": "Tile: 5HZ3ZxozYN15vCmV"
+                  "id": "tagger:Map",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Map"
                 },
                 "select": "next",
                 "transition": "none",
@@ -501,10 +464,13 @@
               "id": "IfMXinK2Amgstctv"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -545,7 +511,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 99,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -661,9 +627,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1675820602931,
-    "modifiedTime": 1718542231527,
+    "modifiedTime": 1723948174817,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.N0c88IyE7hSyP12x",
     "duplicateSource": null
@@ -697,8 +663,8 @@
     "cycle": true,
     "base": {
       "hue": 0,
-      "intensity": 0,
-      "luminosity": 0,
+      "intensity": 0.4,
+      "luminosity": -0.05,
       "saturation": 0,
       "shadows": 0
     },

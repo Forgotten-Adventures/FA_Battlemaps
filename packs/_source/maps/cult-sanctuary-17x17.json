@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2023/September/fa_6_cultsanctuary/Maps/FG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/a7VXlALQyhsdx3rR-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/a7VXlALQyhsdx3rR-thumb.webp",
   "width": 1700,
   "height": 1700,
   "padding": 0.25,
@@ -73,7 +73,7 @@
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {}
       },
@@ -428,7 +428,7 @@
       "_key": "!scenes.sounds!a7VXlALQyhsdx3rR.8nYBfpsVrRnCNe0H"
     },
     {
-      "path": "fa_battlemaps/Audio/C-Dungeon.mp3",
+      "path": "fa_battlemaps/Audio/C-Dungeon.ogg",
       "x": 1350,
       "y": 1300,
       "radius": 61.32,
@@ -476,7 +476,7 @@
         }
       },
       "repeat": false,
-      "hidden": true,
+      "hidden": false,
       "_id": "8oCSKUbyUU6cRj7Y",
       "elevation": 0,
       "effects": {
@@ -534,10 +534,10 @@
           "active": true,
           "record": false,
           "restriction": "all",
-          "controlled": "player",
+          "controlled": "all",
           "trigger": [
             "",
-            "manual"
+            "door"
           ],
           "allowpaused": false,
           "usealpha": false,
@@ -554,7 +554,8 @@
                   "id": "tagger:d1",
                   "match": "all",
                   "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> d1"
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> d1",
+                  "tag-name": "d1"
                 },
                 "select": "next",
                 "transition": "none",
@@ -573,12 +574,15 @@
             {
               "id": "hdMyXd7T47tYKelV",
               "name": "fa_battlemaps/Maps/2023/September/fa_6_cultsanctuary/Tiles/D1_O.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -628,10 +632,10 @@
           "active": true,
           "record": false,
           "restriction": "all",
-          "controlled": "player",
+          "controlled": "all",
           "trigger": [
             "",
-            "manual"
+            "door"
           ],
           "allowpaused": false,
           "usealpha": false,
@@ -667,12 +671,15 @@
             {
               "id": "qD6cQBOLVvjQHwcp",
               "name": "fa_battlemaps/Maps/2023/September/fa_6_cultsanctuary/Tiles/D2_O.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -938,7 +945,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1736,7 +1743,7 @@
     },
     {
       "texture": {
-        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "src": "fa_battlemaps/Maps/2023/September/fa_6_cultsanctuary/Tiles/L2.webp",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -1786,7 +1793,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -2058,7 +2065,7 @@
       "height": 800,
       "_id": "4y5agXTUlMnaABJM",
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": false,
       "occlusion": {
@@ -2095,7 +2102,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2160,7 +2167,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2225,7 +2232,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2290,7 +2297,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4281,6 +4288,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodHeavy",
       "_key": "!scenes.walls!a7VXlALQyhsdx3rR.z7F8W5zBf4Tp2sCO"
     },
     {
@@ -4320,6 +4328,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodHeavy",
       "_key": "!scenes.walls!a7VXlALQyhsdx3rR.P375yQWBHr3n1ep4"
     },
     {
@@ -4375,9 +4384,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1693518347271,
-    "modifiedTime": 1718542285335,
+    "modifiedTime": 1723948098318,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.a7VXlALQyhsdx3rR",
     "duplicateSource": null

@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2022/December/fa_wec-old-entrance/Maps/OldEntranceFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/Wo95wpq0Khb3SWma-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/Wo95wpq0Khb3SWma-thumb.webp",
   "width": 2400,
   "height": 2200,
   "padding": 0.25,
@@ -200,12 +200,15 @@
               "name": "fa_battlemaps/Maps/2022/December/fa_wec-old-entrance/Tiles/ArmoryDoor.webp",
               "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 1699,
       "y": 1900,
-      "sort": 98,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -328,12 +331,15 @@
               "id": "rbImUx0XucqxK7y9"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2300,
       "y": 1900,
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -373,8 +379,35 @@
         "autoplay": true,
         "volume": 0
       },
-      "flags": {},
-      "sort": 99,
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": false,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            ""
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 50,
+          "fileindex": -1,
+          "actions": [],
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "skeletons"
+          ]
+        }
+      },
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -415,9 +448,7 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "active": true,
           "record": false,
@@ -432,24 +463,30 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [
             {
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Wo95wpq0Khb3SWma.Tile.0un6xmGEz0XR6RDB",
-                  "name": "Tile: 0un6xmGEz0XR6RDB"
+                  "id": "tagger:skeletons",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> skeletons"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "kOWAbQ5kZEmDEyDD"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "elevation": 20,
@@ -515,7 +552,7 @@
         }
       },
       "_id": "zWsptQWfYTPYanJs",
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -578,7 +615,7 @@
         }
       },
       "_id": "5EjsA77w4FWMX5dF",
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2545,6 +2582,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!Wo95wpq0Khb3SWma.me6FmHrS8rGDmXz0"
     },
     {
@@ -2608,6 +2646,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!Wo95wpq0Khb3SWma.yHBvvpewwHBggoYA"
     },
     {
@@ -2696,9 +2735,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1670367692263,
-    "modifiedTime": 1718542221967,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.Wo95wpq0Khb3SWma",
     "duplicateSource": null
@@ -2727,7 +2766,7 @@
       "contrast": 0,
       "shadows": 0
     },
-    "darknessLevel": 0,
+    "darknessLevel": 0.4,
     "darknessLock": false,
     "cycle": true,
     "base": {

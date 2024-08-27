@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Maps/AlpinePassFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/FKBismGoWW5NexWi-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/FKBismGoWW5NexWi-thumb.webp",
   "width": 3200,
   "height": 4200,
   "padding": 0.25,
@@ -74,7 +74,7 @@
         "negative": false,
         "priority": 0
       },
-      "hidden": true,
+      "hidden": false,
       "flags": {
         "tagger": {
           "tags": [
@@ -123,9 +123,7 @@
           "rangeTop": null,
           "rangeBottom": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "_id": "ZxzoGs7MF8Afrz0x",
       "elevation": 0,
@@ -768,10 +766,10 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.55,
+        "alpha": 0.6,
         "angle": 360,
         "bright": 0,
-        "coloration": 1,
+        "coloration": 0,
         "dim": 7,
         "luminosity": 0.5,
         "saturation": 0,
@@ -798,9 +796,7 @@
           "rangeTop": null,
           "rangeBottom": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "_id": "BODE03b58XOAcM0t",
       "elevation": 0,
@@ -1120,6 +1116,45 @@
       "_id": "Oarpowi7r9QHCx06",
       "elevation": 0,
       "_key": "!scenes.lights!FKBismGoWW5NexWi.Oarpowi7r9QHCx06"
+    },
+    {
+      "_id": "BMpuU5QbR6OUm2qu",
+      "x": 3320,
+      "y": 2128,
+      "elevation": 0,
+      "rotation": 270,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.2,
+        "angle": 360,
+        "bright": 0,
+        "color": null,
+        "coloration": 0,
+        "dim": 6,
+        "attenuation": 1,
+        "luminosity": 0.4,
+        "saturation": 0.4,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": "fairy",
+          "speed": 2,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 0.7
+        }
+      },
+      "hidden": false,
+      "flags": {
+        "tagger": {}
+      },
+      "_key": "!scenes.lights!FKBismGoWW5NexWi.BMpuU5QbR6OUm2qu"
     }
   ],
   "notes": [],
@@ -1233,7 +1268,7 @@
       "x": 2600,
       "y": 3050,
       "radius": 150,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirts.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirts.ogg",
       "repeat": false,
       "volume": 0.35,
       "walls": false,
@@ -1268,7 +1303,7 @@
       "x": 3400,
       "y": 1700,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-River.mp3",
+      "path": "fa_battlemaps/Audio/C-River.ogg",
       "repeat": false,
       "volume": 0.2,
       "walls": false,
@@ -1405,7 +1440,7 @@
           ]
         }
       },
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1415,7 +1450,7 @@
     },
     {
       "texture": {
-        "src": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/Island.webp",
+        "src": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/IslandStatue.webp",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -1433,7 +1468,7 @@
       "height": 800,
       "_id": "VLzd0H3PXcaajn1M",
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -1448,7 +1483,7 @@
       "flags": {
         "tagger": {
           "tags": [
-            "Island"
+            "island"
           ]
         },
         "monks-active-tiles": {
@@ -1465,23 +1500,31 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 1,
           "actions": [],
           "files": [
             {
               "id": "Dt17D4IxAkc4nHDk",
               "name": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/Island.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "bXUaWJEpbp32OZLu",
               "name": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/IslandStatue.webp",
-              "selected": true
+              "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
-      "sort": 100,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1509,7 +1552,7 @@
       "height": 1100,
       "_id": "5AWLSnYHMZcG1Yoy",
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -1557,7 +1600,7 @@
           ]
         }
       },
-      "sort": 100,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1633,7 +1676,7 @@
           ]
         }
       },
-      "sort": 100,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1643,7 +1686,7 @@
     },
     {
       "texture": {
-        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "src": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/Statue.webp",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -1663,7 +1706,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1693,7 +1736,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -1737,7 +1780,7 @@
       "height": 300,
       "_id": "KAezGg1QHJavThVN",
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -1775,7 +1818,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1803,9 +1846,9 @@
       "height": 300,
       "_id": "zEZhG3SDs8pSa4IV",
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2055,7 +2098,7 @@
           "occlusionLinkSource": false
         }
       },
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2065,7 +2108,7 @@
     },
     {
       "texture": {
-        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "src": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/CabinRoof.webp",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -2085,7 +2128,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -2115,7 +2158,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -2128,10 +2171,13 @@
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "betterroofs": {
-          "brMode": false,
+          "brMode": true,
           "occlusionLinkId": "",
           "occlusionLinkSource": false
         }
@@ -2146,7 +2192,7 @@
     },
     {
       "texture": {
-        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "src": "fa_battlemaps/Maps/2023/February/fa_alpine-pass/Tiles/ChimneySmoke.webp",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -2166,7 +2212,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2196,7 +2242,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -2242,7 +2288,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2527,10 +2573,13 @@
               "id": "oXTwzlCYpy6VPITD"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2546,7 +2595,7 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": "#000000",
+        "tint": "#890101",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "fill",
@@ -2560,7 +2609,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -2829,10 +2878,13 @@
               "id": "muodZslj32lc4O5F"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2848,7 +2900,7 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": "#890101",
+        "tint": "#000000",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "fill",
@@ -2861,7 +2913,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3187,12 +3239,14 @@
                   "id": "tagger:Window",
                   "match": "all",
                   "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Window"
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Window",
+                  "tag-name": "Window"
                 },
                 "attribute": "sight",
-                "value": "0",
+                "value": "30",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "7AJ1pOXm4jACeQy9"
             },
@@ -3206,9 +3260,10 @@
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> Window"
                 },
                 "attribute": "light",
-                "value": "0",
+                "value": "30",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "EfUGiNuNA0QmcPuQ"
             },
@@ -3312,11 +3367,14 @@
               "id": "PCTFCbZJ0CiQvqy4"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "_id": "eayM5U38eU2bztzo",
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3345,7 +3403,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3678,11 +3736,14 @@
               "id": "8wJGq82EfjZZuct1"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "_id": "CCzn9rAeUBNrBB81",
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3712,7 +3773,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3775,10 +3836,13 @@
               "id": "E4mgXBgAjUY1r3h2"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3794,7 +3858,7 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": "#dedede",
+        "tint": "#000000",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "fill",
@@ -3808,7 +3872,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3825,7 +3889,7 @@
           ]
         },
         "monks-active-tiles": {
-          "active": false,
+          "active": true,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
@@ -3858,12 +3922,12 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "tagger:Island",
+                  "id": "tagger:island",
                   "match": "all",
                   "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Island"
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> island"
                 },
-                "select": "next",
+                "select": "2",
                 "transition": "none",
                 "speed": 1,
                 "loop": 1
@@ -3935,10 +3999,18 @@
               "id": "62Yxiv63xorlf6Ng"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3954,7 +4026,7 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": "#890101",
+        "tint": "#000000",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "fill",
@@ -3967,7 +4039,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -3980,7 +4052,7 @@
       "flags": {
         "tagger": {
           "tags": [
-            "Trigger7"
+            "Trigger6"
           ]
         },
         "monks-active-tiles": {
@@ -4017,10 +4089,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.FKBismGoWW5NexWi.Tile.B6StyWvMSqoX806H",
-                  "name": "Tile: B6StyWvMSqoX806H"
+                  "id": "tagger:Trigger7",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Trigger7"
                 },
-                "activate": "toggle"
+                "activate": "toggle",
+                "collection": "tiles"
               },
               "id": "gabwXiPt8uaav6OJ"
             },
@@ -4028,13 +4103,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.FKBismGoWW5NexWi.Tile.B6StyWvMSqoX806H",
-                  "name": "Tile: B6StyWvMSqoX806H"
+                  "id": "tagger:Trigger7",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Trigger7"
                 },
                 "attribute": "texture.tint",
                 "value": "='{{entity.texture.tint}}' == '#dedede' ? '#890101' : '#dedede'",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "TR7MuJGc5egxoKgY"
             },
@@ -4042,15 +4120,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "tagger:Island",
+                  "id": "tagger:island",
                   "match": "all",
                   "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Island"
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> island"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "Czt10TARgj0NUYcP"
             },
@@ -4058,10 +4137,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "tagger:Island",
+                  "id": "tagger:island",
                   "match": "all",
                   "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> Island"
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> island"
                 },
                 "select": "first",
                 "transition": "none",
@@ -4135,11 +4214,19 @@
               "id": "Dso3JffXowZN079u"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "_id": "brJvqcjAbOGBVyKD",
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4169,7 +4256,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4187,7 +4274,7 @@
           ]
         },
         "monks-active-tiles": {
-          "active": false,
+          "active": true,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
@@ -4245,10 +4332,13 @@
               "id": "VIFsQNlMFCyL3TSP"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 17,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4278,7 +4368,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4289,7 +4379,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 98,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4318,7 +4408,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4330,7 +4420,7 @@
       },
       "flags": {},
       "_id": "yLHEvrIaAdlMHRoQ",
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4359,7 +4449,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -4371,7 +4461,7 @@
       },
       "flags": {},
       "_id": "QM8x6yAbD89hPnVU",
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -8117,9 +8207,9 @@
         2700,
         4300
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8156,9 +8246,9 @@
         2700,
         4237
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8195,9 +8285,9 @@
         2700,
         4175
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 30,
+      "move": 20,
+      "sight": 30,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8221,9 +8311,9 @@
       },
       "threshold": {
         "light": null,
-        "sight": null,
-        "sound": null,
-        "attenuation": false
+        "sight": 10,
+        "sound": 10,
+        "attenuation": true
       },
       "_key": "!scenes.walls!FKBismGoWW5NexWi.IeKmfZiWhStX4Vjp"
     },
@@ -8235,9 +8325,9 @@
         2700,
         4100
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8274,9 +8364,9 @@
         2800,
         4100
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8313,9 +8403,9 @@
         2800,
         4000
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8352,9 +8442,9 @@
         2875,
         4000
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8391,9 +8481,9 @@
         2937,
         4000
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 30,
+      "move": 20,
+      "sight": 30,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8417,9 +8507,9 @@
       },
       "threshold": {
         "light": null,
-        "sight": null,
-        "sound": null,
-        "attenuation": false
+        "sight": 10,
+        "sound": 10,
+        "attenuation": true
       },
       "_key": "!scenes.walls!FKBismGoWW5NexWi.ct8cJnXlHfrVy2YZ"
     },
@@ -8431,9 +8521,9 @@
         3000,
         4000
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8470,12 +8560,12 @@
         3100,
         4000
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
-      "sound": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
       "dir": 0,
-      "door": 0,
+      "door": 1,
       "ds": 2,
       "flags": {
         "tagger": {
@@ -8515,9 +8605,9 @@
         3200,
         4000
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8554,9 +8644,9 @@
         3200,
         4300
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 20,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8633,9 +8723,9 @@
         1512,
         4437
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 10,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8671,9 +8761,9 @@
         1537,
         4487
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 10,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8709,9 +8799,9 @@
         1575,
         4462
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 10,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8747,9 +8837,9 @@
         1537,
         4425
       ],
-      "light": 0,
-      "move": 0,
-      "sight": 0,
+      "light": 20,
+      "move": 20,
+      "sight": 10,
       "sound": 0,
       "dir": 0,
       "door": 0,
@@ -8787,9 +8877,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1675825924661,
-    "modifiedTime": 1718542231438,
+    "modifiedTime": 1723948174817,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.FKBismGoWW5NexWi",
     "duplicateSource": null

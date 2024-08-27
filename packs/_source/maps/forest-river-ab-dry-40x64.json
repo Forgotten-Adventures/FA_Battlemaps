@@ -5,7 +5,7 @@
   "navOrder": 0,
   "navName": "",
   "foreground": "fa_battlemaps/Maps/2022/August/fa_forest-river-ab-dry/Maps/ForestRiver_AB_FG.webp",
-  "thumb": "worlds/fatesting/assets/scenes/bqw1efdtKWEQa1ga-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/bqw1efdtKWEQa1ga-thumb.webp",
   "width": 4000,
   "height": 6400,
   "padding": 0.25,
@@ -169,7 +169,7 @@
       "x": 2300,
       "y": 7300,
       "radius": 143.88,
-      "path": "fa_battlemaps/Audio/C-ForestDeep.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestDeep.ogg",
       "repeat": false,
       "volume": 0.1,
       "walls": true,
@@ -200,7 +200,7 @@
       "x": 2300,
       "y": 7350,
       "radius": 143.88,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.ogg",
       "repeat": false,
       "volume": 0.1,
       "walls": true,
@@ -299,7 +299,7 @@
       "x": 3000,
       "y": 3750,
       "radius": 165,
-      "path": "fa_battlemaps/Audio/C-ForestDeep.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestDeep.ogg",
       "repeat": false,
       "volume": 0.1,
       "walls": true,
@@ -330,7 +330,7 @@
       "x": 2950,
       "y": 3750,
       "radius": 165,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.ogg",
       "repeat": false,
       "volume": 0.1,
       "walls": true,
@@ -361,7 +361,7 @@
       "x": 2400,
       "y": 6300,
       "radius": 25,
-      "path": "fa_battlemaps/Audio/C-ForestDeep.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestDeep.ogg",
       "repeat": false,
       "volume": 0.05,
       "walls": true,
@@ -392,7 +392,7 @@
       "x": 2500,
       "y": 6300,
       "radius": 25,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.ogg",
       "repeat": false,
       "volume": 0.05,
       "walls": true,
@@ -423,7 +423,7 @@
       "x": 2950,
       "y": 6200,
       "radius": 25,
-      "path": "fa_battlemaps/Audio/C-ForestDeep.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestDeep.ogg",
       "repeat": false,
       "volume": 0.05,
       "walls": true,
@@ -454,7 +454,7 @@
       "x": 2950,
       "y": 6200,
       "radius": 25,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.ogg",
       "repeat": false,
       "volume": 0.05,
       "walls": true,
@@ -519,7 +519,7 @@
       "x": 2350,
       "y": 7300,
       "radius": 143.88,
-      "path": "fa_battlemaps/Audio/C-WindAndSand.mp3",
+      "path": "fa_battlemaps/Audio/C-WindAndSand.ogg",
       "repeat": false,
       "volume": 0.1,
       "walls": false,
@@ -550,7 +550,7 @@
       "x": 3000,
       "y": 3800,
       "radius": 165,
-      "path": "fa_battlemaps/Audio/C-WindAndSand.mp3",
+      "path": "fa_battlemaps/Audio/C-WindAndSand.ogg",
       "repeat": false,
       "volume": 0.1,
       "walls": false,
@@ -588,7 +588,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -631,7 +631,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -648,7 +648,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -669,13 +669,21 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "actions": []
+          "actions": [],
+          "name": "",
+          "allowpaused": false,
+          "vision": false,
+          "cooldown": null,
+          "fileindex": -1,
+          "files": []
         }
       },
       "texture": {
@@ -691,7 +699,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -708,7 +716,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -730,13 +738,21 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "actions": []
+          "actions": [],
+          "name": "",
+          "allowpaused": false,
+          "vision": false,
+          "cooldown": null,
+          "fileindex": -1,
+          "files": []
         }
       },
       "texture": {
@@ -752,7 +768,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -769,7 +785,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -813,7 +829,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -830,7 +846,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -874,7 +890,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -891,7 +907,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -934,7 +950,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -951,7 +967,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -994,7 +1010,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1011,7 +1027,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1055,7 +1071,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1072,7 +1088,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1190,6 +1206,36 @@
                   "id": "tagger:w00",
                   "name": "[Tagger] w00"
                 },
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 30 : 0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "pjd7cJiFocTXeIE7"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:w00",
+                  "name": "[Tagger] w00"
+                },
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 30 : 0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "xllrRu25qfR7M49e"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:w00",
+                  "name": "[Tagger] w00"
+                },
                 "attribute": "sound",
                 "value": "={{entity.sound}} == 0 ? 20 : 0",
                 "chatMessage": false,
@@ -1281,7 +1327,10 @@
           ],
           "allowpaused": false,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1297,7 +1346,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1314,7 +1363,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1431,7 +1480,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1448,7 +1497,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1565,7 +1614,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1582,7 +1631,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1657,7 +1706,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1674,7 +1723,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1791,7 +1840,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1808,7 +1857,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1852,7 +1901,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 99,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2206,7 +2255,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 89,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2247,7 +2296,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 80,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2490,11 +2539,12 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
@@ -2778,9 +2828,9 @@
         2300,
         6400
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 20,
       "dir": 0,
       "door": 0,
@@ -2793,18 +2843,19 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.fcrmkn6AJyAueb96"
     },
@@ -2816,9 +2867,9 @@
         3000,
         6400
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 20,
       "dir": 0,
       "door": 0,
@@ -2831,18 +2882,19 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.obBLt0PI5yOj0iCn"
     },
@@ -2854,9 +2906,9 @@
         2700,
         5900
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 20,
       "dir": 0,
       "door": 0,
@@ -2869,18 +2921,19 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.HDMEdtd2rnxyQNtv"
     },
@@ -2907,11 +2960,12 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
@@ -2920,6 +2974,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodCreaky",
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.1ZBTnI6J0z3GeuD5"
     },
     {
@@ -2945,11 +3000,12 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
@@ -2958,6 +3014,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodCreaky",
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.cSDgqlkUTqtH4im4"
     },
     {
@@ -2968,9 +3025,9 @@
         2537,
         6500
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 20,
       "dir": 0,
       "door": 0,
@@ -2983,18 +3040,19 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.RuN1OKf3dt77y0g8"
     },
@@ -3059,11 +3117,12 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
@@ -3135,18 +3194,19 @@
           ]
         },
         "monks-active-tiles": {
-          "entity": "",
+          "entity": {},
           "open": false,
           "close": false,
           "lock": false,
-          "secret": false
+          "secret": false,
+          "checklock": false
         }
       },
       "threshold": {
         "light": null,
         "sight": null,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!bqw1efdtKWEQa1ga.w3astAfpSw13IcaE"
     },
@@ -8442,9 +8502,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1672863935903,
-    "modifiedTime": 1718542123163,
+    "modifiedTime": 1723946703582,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.world.forgotten-adventures-battlemaps-11.2SvT1VEIESwjX1Od",
     "duplicateSource": null

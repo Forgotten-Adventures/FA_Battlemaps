@@ -18,7 +18,7 @@
   },
   "foreground": null,
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/t520YPkUPawUpqR1-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/t520YPkUPawUpqR1-thumb.webp",
   "width": 2100,
   "height": 3000,
   "padding": 0.25,
@@ -286,7 +286,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -322,17 +322,20 @@
             {
               "id": "t57WcWjz0Xaty8dE",
               "name": "fa_battlemaps/Maps/2022/December/fa_wec_dark-pool/Maps/DarkPoolBG.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "0wZKIf53fhRlE0VR",
               "name": "fa_battlemaps/Maps/2022/December/fa_wec_dark-pool/Maps/AltDarkPoolBG.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -405,7 +408,10 @@
               "name": "fa_battlemaps/Maps/2022/December/fa_wec_dark-pool/Maps/AltDarkPoolFG.webp",
               "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "elevation": 20,
@@ -448,8 +454,35 @@
         "autoplay": true,
         "volume": 0
       },
-      "flags": {},
-      "sort": 100,
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": -1,
+          "actions": [],
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "skeleton"
+          ]
+        }
+      },
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -479,7 +512,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -490,7 +523,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -518,7 +551,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -529,9 +562,7 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "active": true,
           "record": false,
@@ -627,12 +658,15 @@
               "id": "T1sDaFqX6QUPvJuz"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2701,
       "y": 827,
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -673,9 +707,7 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "active": true,
           "record": false,
@@ -690,24 +722,30 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [
             {
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.t520YPkUPawUpqR1.Tile.F0cTtG0cdslVuNaY",
-                  "name": "Tile: F0cTtG0cdslVuNaY"
+                  "id": "tagger:skeleton",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> skeleton"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "5m8lJ830OdVKpEpq"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "elevation": 20,
@@ -738,7 +776,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -751,7 +789,7 @@
       "flags": {},
       "x": 2700,
       "y": 900,
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -779,7 +817,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -852,12 +890,15 @@
               "id": "XCIeetk0uQ77qyxJ"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2699,
       "y": 922,
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -885,7 +926,7 @@
       "rotation": 0,
       "alpha": 0.35,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -933,7 +974,7 @@
       },
       "x": 1100,
       "y": 2600,
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -961,7 +1002,7 @@
       "rotation": 0,
       "alpha": 0.3,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1009,7 +1050,7 @@
       },
       "x": 1450,
       "y": 2250,
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1037,7 +1078,7 @@
       "rotation": 0,
       "alpha": 0.35,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1085,7 +1126,7 @@
       },
       "x": 1300,
       "y": 1800,
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1113,7 +1154,7 @@
       "rotation": 0,
       "alpha": 0.4,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1161,7 +1202,7 @@
       },
       "x": 1600,
       "y": 1800,
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1189,7 +1230,7 @@
       "rotation": 0,
       "alpha": 0.3,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1237,7 +1278,7 @@
       },
       "x": 1500,
       "y": 2450,
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1264,7 +1305,7 @@
       "rotation": 0,
       "alpha": 0.35,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1313,7 +1354,7 @@
       "x": 1550,
       "y": 1950,
       "_id": "C6Zebtl4RNtdx52w",
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1340,7 +1381,7 @@
       "rotation": 0,
       "alpha": 0.35,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1389,7 +1430,7 @@
       "x": 1350,
       "y": 2700,
       "_id": "IhsgLAIW0kAVtRnF",
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3995,9 +4036,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1670367767022,
-    "modifiedTime": 1718542221952,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.t520YPkUPawUpqR1",
     "duplicateSource": null

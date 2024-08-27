@@ -5,7 +5,7 @@
   "navOrder": 0,
   "navName": "",
   "foreground": null,
-  "thumb": "worlds/fatesting/assets/scenes/Ah4eK4PSMzfVO4LZ-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/Ah4eK4PSMzfVO4LZ-thumb.webp",
   "width": 8000,
   "height": 8000,
   "padding": 0.25,
@@ -106,7 +106,7 @@
       "x": 2500,
       "y": 5050,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-River.mp3",
+      "path": "fa_battlemaps/Audio/C-River.ogg",
       "repeat": false,
       "volume": 0.3,
       "walls": false,
@@ -141,7 +141,7 @@
       "x": 3400,
       "y": 6400,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-River.mp3",
+      "path": "fa_battlemaps/Audio/C-River.ogg",
       "repeat": false,
       "volume": 0.3,
       "walls": false,
@@ -176,7 +176,7 @@
       "x": 4200,
       "y": 7700,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-River.mp3",
+      "path": "fa_battlemaps/Audio/C-River.ogg",
       "repeat": false,
       "volume": 0.3,
       "walls": false,
@@ -211,7 +211,7 @@
       "x": 4550,
       "y": 9300,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-River.mp3",
+      "path": "fa_battlemaps/Audio/C-River.ogg",
       "repeat": false,
       "volume": 0.3,
       "walls": false,
@@ -277,7 +277,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -318,7 +318,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -359,7 +359,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -400,7 +400,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -924,38 +924,45 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "bbridge"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
               "id": "Rct6B1azl2TrSxqd",
               "name": "fa_battlemaps/Maps/2022/October/fa_highlands/Tiles/Bridge.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "C8NXP4WnCKUwZcRS",
               "name": "fa_battlemaps/Maps/2022/October/fa_highlands/Tiles/BrokenBridge.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_highlands/Tiles/BrokenBridge.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_highlands/Tiles/Bridge.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -967,7 +974,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -996,23 +1003,30 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "nest"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1028,7 +1042,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1045,7 +1059,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1069,7 +1083,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1086,7 +1100,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1100,7 +1114,9 @@
         "monks-active-tiles": {
           "active": true,
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "pointer": true,
           "actions": [
             {
@@ -1121,13 +1137,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Ah4eK4PSMzfVO4LZ.Tile.ilHQ7DYSryP3ECQw",
-                  "name": "Tile: ilHQ7DYSryP3ECQw"
+                  "id": "tagger:nest",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> nest"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "FG728zdjOmOaabu9"
             }
@@ -1139,12 +1158,13 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_highlands/Text/Nest.webp",
@@ -1159,7 +1179,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1176,7 +1196,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1207,8 +1227,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.Ah4eK4PSMzfVO4LZ.Tile.gm2sAx9wwynZBEor",
-                  "name": "Tile: gm2sAx9wwynZBEor"
+                  "id": "tagger:bbridge",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> bbridge"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
@@ -1228,7 +1250,9 @@
           ],
           "active": true,
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "pointer": true,
           "record": false,
           "restriction": "all",
@@ -1237,12 +1261,13 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_highlands/Text/BrokenBridge.webp",
@@ -1257,7 +1282,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1274,7 +1299,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1288,7 +1313,9 @@
         "monks-active-tiles": {
           "active": true,
           "controlled": "gm",
-          "trigger": "dblclick",
+          "trigger": [
+            "dblclick"
+          ],
           "pointer": true,
           "actions": [
             {
@@ -1309,13 +1336,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.Ah4eK4PSMzfVO4LZ.Tile.gm2sAx9wwynZBEor",
-                  "name": "Tile: gm2sAx9wwynZBEor"
+                  "id": "tagger:bbridge",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> bbridge"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "FG728zdjOmOaabu9"
             }
@@ -1327,12 +1357,13 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
-          "files": []
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "texture": {
         "src": "fa_battlemaps/Maps/2022/October/fa_highlands/Text/Bridge.webp",
@@ -1347,7 +1378,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -30427,9 +30458,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1672872856968,
-    "modifiedTime": 1718542208237,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.Ah4eK4PSMzfVO4LZ",
     "duplicateSource": null

@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2023/April/fa_thetoiletmap/Maps/FG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/H4jRgyvWcZjvMRft-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/H4jRgyvWcZjvMRft-thumb.webp",
   "width": 2400,
   "height": 2500,
   "padding": 0.25,
@@ -165,7 +165,7 @@
       "_key": "!scenes.sounds!H4jRgyvWcZjvMRft.dwphvMQS3xFgjh6Z"
     },
     {
-      "path": "fa_battlemaps/Audio/C-ElectricityNoise.mp3",
+      "path": "fa_battlemaps/Audio/C-ElectricityNoise.ogg",
       "x": 1900,
       "y": 1950,
       "radius": 21.66,
@@ -198,7 +198,7 @@
       "_key": "!scenes.sounds!H4jRgyvWcZjvMRft.Is6OQP36ycfMBEDr"
     },
     {
-      "path": "fa_battlemaps/Audio/C-ForestOutskirts.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirts.ogg",
       "x": 1800,
       "y": 1950,
       "radius": 89.75,
@@ -353,7 +353,7 @@
       "_key": "!scenes.sounds!H4jRgyvWcZjvMRft.36GYI3lGay6RaFj3"
     },
     {
-      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.ogg",
       "x": 1850,
       "y": 1950,
       "radius": 70,
@@ -444,7 +444,7 @@
           "files": []
         }
       },
-      "sort": 101,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -509,7 +509,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -537,7 +537,7 @@
       "height": 600,
       "_id": "QLFqOqoKmQPjmKwo",
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": false,
       "occlusion": {
@@ -574,7 +574,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -639,7 +639,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -704,7 +704,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -745,7 +745,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -844,7 +844,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1067,6 +1067,40 @@
               "action": "alter",
               "data": {
                 "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "sight",
+                "value": "30",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "o5EtF1VhGzCQDZhn"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "light",
+                "value": "30",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "EInHhEhyzsyIjHlg"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
                   "id": "tagger:t1w",
                   "match": "all",
                   "scene": "_active",
@@ -1172,8 +1206,12 @@
                 "item": {},
                 "actor": {},
                 "token": {},
-                "state": "close",
-                "type": "door"
+                "state": "CLOSED",
+                "type": "nothing",
+                "movement": "nothing",
+                "light": "nothing",
+                "sight": "nothing",
+                "sound": "nothing"
               },
               "id": "5QFOxKe5GT5bXKpl"
             },
@@ -1353,7 +1391,10 @@
           "minrequired": 0,
           "chance": 100,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -1361,7 +1402,7 @@
           ]
         }
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1583,6 +1624,40 @@
               "action": "alter",
               "data": {
                 "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "sight",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "tjGTUjh8j5uTYcsJ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "light",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "1l9y6oVJ9JeZ479j"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
                   "id": "tagger:t1w",
                   "match": "all",
                   "scene": "_active",
@@ -1796,8 +1871,12 @@
                 "item": {},
                 "actor": {},
                 "token": {},
-                "state": "close",
-                "type": "door"
+                "state": "CLOSED",
+                "type": "nothing",
+                "movement": "nothing",
+                "light": "nothing",
+                "sight": "nothing",
+                "sound": "nothing"
               },
               "id": "zgkv634r6YPG1cpS"
             },
@@ -1869,7 +1948,10 @@
           "minrequired": 0,
           "chance": 100,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -1878,7 +1960,7 @@
         }
       },
       "_id": "aYA4cxG4GcvFx0bv",
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2095,6 +2177,40 @@
                 "rollmode": "roll"
               },
               "id": "RBd5xdqXha3cnsTk"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "sight",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "4rdgW37RL2yjk0Xw"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "light",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "G55gIkSw7Tk2vJec"
             },
             {
               "action": "alter",
@@ -2364,7 +2480,10 @@
           "minrequired": 0,
           "chance": 100,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -2373,7 +2492,7 @@
         }
       },
       "_id": "HV4GPvxQ87OU7pcV",
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2590,6 +2709,41 @@
                 "rollmode": "roll"
               },
               "id": "ROvdOstZI3wMD9xP"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww"
+                },
+                "attribute": "light",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "nifZ8oUCyTLXV9MF"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww",
+                  "tag-name": "t1ww"
+                },
+                "attribute": "sight",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "dR4T2GR0BTF0Hs2j"
             },
             {
               "action": "alter",
@@ -2875,7 +3029,10 @@
           "minrequired": 0,
           "chance": 100,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -2884,7 +3041,7 @@
         }
       },
       "_id": "SFwT6EuTVBCrD47U",
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3101,6 +3258,42 @@
                 "rollmode": "roll"
               },
               "id": "OX4OKQKPeHKCru9E"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww",
+                  "tag-name": "t1ww"
+                },
+                "attribute": "sight",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "c4zOiN23ZHbAP6F8"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:t1ww",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> t1ww",
+                  "tag-name": "t1ww"
+                },
+                "attribute": "light",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "um4MbMgSmLYkH3jG"
             },
             {
               "action": "alter",
@@ -3370,7 +3563,10 @@
           "minrequired": 0,
           "chance": 100,
           "fileindex": 0,
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "tagger": {
           "tags": [
@@ -3379,7 +3575,7 @@
         }
       },
       "_id": "Bswo1LOKC5Nw0roY",
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3426,7 +3622,7 @@
           ]
         },
         "monks-active-tiles": {
-          "active": true,
+          "active": false,
           "record": false,
           "restriction": "all",
           "controlled": "all",
@@ -3462,7 +3658,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3546,7 +3742,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3574,7 +3770,7 @@
       "height": 100,
       "_id": "J7WCuTt6YqVHCNgC",
       "rotation": 45,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": false,
       "occlusion": {
@@ -3628,7 +3824,7 @@
           "occlusionLinkSource": false
         }
       },
-      "sort": 100,
+      "sort": 20,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3710,7 +3906,7 @@
         }
       },
       "_id": "znCCNby6Ra03kOPP",
-      "sort": 100,
+      "sort": 19,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3737,7 +3933,7 @@
       "width": 100,
       "height": 100,
       "rotation": 45,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": false,
       "occlusion": {
@@ -3792,7 +3988,7 @@
         }
       },
       "_id": "wyuNy3pfVVQ3v4C3",
-      "sort": 100,
+      "sort": 18,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3874,7 +4070,7 @@
         }
       },
       "_id": "Z7prXNU4Hte9XTGd",
-      "sort": 100,
+      "sort": 17,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3982,7 +4178,7 @@
       "width": 166,
       "height": 164,
       "rotation": 315,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": false,
       "occlusion": {
@@ -4037,7 +4233,7 @@
         }
       },
       "_id": "JbKyIhIQPyPVRmdn",
-      "sort": 100,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4908,7 +5104,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 99,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5776,10 +5972,10 @@
         3000,
         2187
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7378,10 +7574,10 @@
         1700,
         1900
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7416,10 +7612,10 @@
         1800,
         1900
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7454,10 +7650,10 @@
         1900,
         1900
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7492,10 +7688,10 @@
         2000,
         1900
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7530,10 +7726,10 @@
         1800,
         1900
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7568,10 +7764,10 @@
         1900,
         1900
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7606,10 +7802,10 @@
         1800,
         2200
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7644,10 +7840,10 @@
         1700,
         2200
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7682,10 +7878,10 @@
         1700,
         2100
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7720,10 +7916,10 @@
         2000,
         2100
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7758,10 +7954,10 @@
         2000,
         2000
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -7796,12 +7992,12 @@
         2000,
         2000
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
-      "door": 1,
+      "door": 0,
       "ds": 0,
       "flags": {
         "tagger": {
@@ -7830,6 +8026,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodCreaky",
       "_key": "!scenes.walls!H4jRgyvWcZjvMRft.fklZ7L0XYqoSYso7"
     },
     {
@@ -7841,7 +8038,7 @@
         2100
       ],
       "light": 0,
-      "move": 20,
+      "move": 0,
       "sight": 0,
       "sound": 0,
       "dir": 0,
@@ -7879,7 +8076,7 @@
         1964
       ],
       "light": 0,
-      "move": 20,
+      "move": 0,
       "sight": 0,
       "sound": 0,
       "dir": 0,
@@ -7901,10 +8098,10 @@
         }
       },
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!H4jRgyvWcZjvMRft.dM2VG0RXezlNFoXz"
     },
@@ -7916,10 +8113,10 @@
         2000,
         1921
       ],
-      "light": 20,
-      "move": 20,
-      "sight": 20,
-      "sound": 20,
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
@@ -8102,6 +8299,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodCreaky",
       "_key": "!scenes.walls!H4jRgyvWcZjvMRft.eR4zPsmUmQy8qdxo"
     }
   ],
@@ -8119,9 +8317,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1680110625824,
-    "modifiedTime": 1718542241282,
+    "modifiedTime": 1723948174817,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Scene.H4jRgyvWcZjvMRft",
     "duplicateSource": null

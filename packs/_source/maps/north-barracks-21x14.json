@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2022/December/fa_wec-north-barracks/Maps/NorthBarracksFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/KW6xQDSf59tJ0IHR-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/KW6xQDSf59tJ0IHR-thumb.webp",
   "width": 2100,
   "height": 1400,
   "padding": 0.25,
@@ -270,7 +270,10 @@
               "id": "6Hg2aUuPFmJQ7hz7"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         },
         "betterroofs": {
           "brMode": false,
@@ -280,7 +283,7 @@
       },
       "x": 1100,
       "y": 800,
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -544,12 +547,15 @@
               "name": "fa_battlemaps/Maps/2022/December/fa_wec-north-barracks/Tiles/NbarracksDoorOpen.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2000,
       "y": 800,
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -589,8 +595,35 @@
         "autoplay": true,
         "volume": 0
       },
-      "flags": {},
-      "sort": 100,
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": -1,
+          "actions": [],
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "ltile"
+          ]
+        }
+      },
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -681,13 +714,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.KW6xQDSf59tJ0IHR.Tile.5UVgZWqeMtFkUcRj",
-                  "name": "Tile: 5UVgZWqeMtFkUcRj"
+                  "id": "tagger:ltile",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> ltile"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "GYa1CEqjAEo8mz36"
             },
@@ -695,18 +731,24 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.KW6xQDSf59tJ0IHR.Tile.fmfGMYgCxUYBk5p9",
-                  "name": "Tile: fmfGMYgCxUYBk5p9"
+                  "id": "tagger:animation",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> animation"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "zTLQ0HU18po1cAOn"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 1676,
@@ -774,7 +816,7 @@
         }
       },
       "_id": "BNfLXNz2HYRN5eVP",
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -837,7 +879,7 @@
         }
       },
       "_id": "kYh9PbjI9270t0sU",
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -913,7 +955,7 @@
       },
       "x": 1620,
       "y": 912,
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -954,7 +996,7 @@
       "flags": {},
       "x": 2700,
       "y": 500,
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1060,7 +1102,7 @@
       },
       "x": 2700,
       "y": 523,
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1515,6 +1557,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!KW6xQDSf59tJ0IHR.A93DNgWOqpVCqdVw"
     },
     {
@@ -1722,6 +1765,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!KW6xQDSf59tJ0IHR.gRnXoRnDXVilKK80"
     },
     {
@@ -2026,9 +2070,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1670367785657,
-    "modifiedTime": 1718542221965,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.KW6xQDSf59tJ0IHR",
     "duplicateSource": null

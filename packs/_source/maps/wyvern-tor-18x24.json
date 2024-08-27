@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2023/September/fa_wyvern-tor/Maps/WyvernTorFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/1imvcuhQKxXydBEH-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/1imvcuhQKxXydBEH-thumb.webp",
   "width": 1800,
   "height": 2400,
   "padding": 0.25,
@@ -84,6 +84,45 @@
       },
       "elevation": 0,
       "_key": "!scenes.lights!1imvcuhQKxXydBEH.tcjp5YHd0xBT1qkP"
+    },
+    {
+      "_id": "BZ5novi7CGSJU29s",
+      "x": 1600,
+      "y": 1050,
+      "elevation": 0,
+      "rotation": 105,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.3,
+        "angle": 161,
+        "bright": 18.71,
+        "color": null,
+        "coloration": 1,
+        "dim": 37.42,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": "pulse",
+          "speed": 1,
+          "intensity": 2,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 0.65
+        }
+      },
+      "hidden": false,
+      "flags": {
+        "tagger": {}
+      },
+      "_key": "!scenes.lights!1imvcuhQKxXydBEH.BZ5novi7CGSJU29s"
     }
   ],
   "notes": [],
@@ -125,7 +164,7 @@
       "x": 1450,
       "y": 1850,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirts.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirts.ogg",
       "repeat": false,
       "volume": 0.15,
       "walls": false,
@@ -156,7 +195,7 @@
       "x": 1500,
       "y": 1850,
       "radius": 80,
-      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.mp3",
+      "path": "fa_battlemaps/Audio/C-ForestOutskirtsNight.ogg",
       "repeat": false,
       "volume": 0.25,
       "walls": false,
@@ -248,7 +287,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -314,7 +353,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -491,7 +530,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -578,6 +617,13 @@
               "id": "E1mIlGeoHkKxFNyu"
             },
             {
+              "action": "delay",
+              "data": {
+                "delay": "0.5"
+              },
+              "id": "MTRuKVg9wtB5eMVX"
+            },
+            {
               "action": "playanimation",
               "data": {
                 "entity": {
@@ -592,12 +638,15 @@
               "id": "XCIeetk0uQ77qyxJ"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2302,
       "y": 724,
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -638,7 +687,7 @@
       },
       "flags": {},
       "_id": "1XpY0yCbjfqCVMdE",
-      "sort": 99,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -709,7 +758,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1016,7 +1065,7 @@
       },
       "x": 984,
       "y": 1277,
-      "sort": 103,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1098,7 +1147,7 @@
       },
       "x": 700,
       "y": 1300,
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1180,7 +1229,7 @@
       },
       "x": 1200,
       "y": 1250,
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1262,7 +1311,7 @@
       },
       "x": 900,
       "y": 1550,
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1344,7 +1393,7 @@
       },
       "x": 800,
       "y": 1050,
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1426,7 +1475,7 @@
       "x": 1050,
       "y": 1000,
       "_id": "2J8KcNomwkI9K6L0",
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2449,8 +2498,8 @@
       "c": [
         1550,
         1175,
-        1556,
-        1156
+        1563,
+        1150
       ],
       "light": 20,
       "move": 20,
@@ -2471,8 +2520,8 @@
     {
       "_id": "9d3uzRAiiMfDukuC",
       "c": [
-        1556,
-        1156,
+        1563,
+        1150,
         1538,
         1156
       ],
@@ -5689,7 +5738,7 @@
       "c": [
         1638,
         925,
-        1656,
+        1663,
         938
       ],
       "light": 20,
@@ -5711,7 +5760,7 @@
     {
       "_id": "3k9DlNa8VBJlpvcq",
       "c": [
-        1656,
+        1663,
         938,
         1681,
         894
@@ -7446,9 +7495,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1695238299437,
-    "modifiedTime": 1718542285421,
+    "modifiedTime": 1723947037793,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.1imvcuhQKxXydBEH",
     "duplicateSource": null
@@ -7460,7 +7509,366 @@
   "ownership": {
     "default": 0
   },
-  "regions": [],
+  "regions": [
+    {
+      "name": "Region",
+      "_id": "YPZD5LPeQJd0pQQ8",
+      "color": "#28cc5e",
+      "shapes": [
+        {
+          "points": [
+            1319,
+            806,
+            1406,
+            806,
+            1419,
+            819,
+            1425,
+            850,
+            1406,
+            863,
+            1438,
+            875,
+            1463,
+            838,
+            1513,
+            844,
+            1525,
+            844,
+            1550,
+            850,
+            1581,
+            850,
+            1631,
+            869,
+            1644,
+            881,
+            1638,
+            925,
+            1663,
+            938,
+            1650,
+            966,
+            1572,
+            1131,
+            1563,
+            1150,
+            1538,
+            1156,
+            1525,
+            1181,
+            1519,
+            1213,
+            1494,
+            1263,
+            1444,
+            1275,
+            1406,
+            1281,
+            1400,
+            1294,
+            1394,
+            1325,
+            1363,
+            1400,
+            1344,
+            1413,
+            1300,
+            1419,
+            1288,
+            1425,
+            1275,
+            1469,
+            1281,
+            1494,
+            1275,
+            1519,
+            1256,
+            1531,
+            1213,
+            1544,
+            1213,
+            1581,
+            1206,
+            1606,
+            1188,
+            1613,
+            1156,
+            1613,
+            1156,
+            1644,
+            1175,
+            1681,
+            1163,
+            1725,
+            1144,
+            1788,
+            1088,
+            1856,
+            1063,
+            1850,
+            1063,
+            1869,
+            1050,
+            1894,
+            1050,
+            1906,
+            1069,
+            1913,
+            1069,
+            1969,
+            1056,
+            1988,
+            1044,
+            2038,
+            1031,
+            2063,
+            1000,
+            2075,
+            906,
+            2100,
+            838,
+            2113,
+            838,
+            2138,
+            831,
+            2150,
+            813,
+            2175,
+            794,
+            2194,
+            769,
+            2194,
+            756,
+            2181,
+            731,
+            2163,
+            713,
+            2125,
+            713,
+            2069,
+            719,
+            2056,
+            738,
+            2050,
+            744,
+            2038,
+            738,
+            1969,
+            744,
+            1938,
+            763,
+            1900,
+            756,
+            1863,
+            775,
+            1825,
+            831,
+            1769,
+            838,
+            1706,
+            869,
+            1663,
+            869,
+            1619,
+            856,
+            1613,
+            844,
+            1619,
+            850,
+            1638,
+            831,
+            1669,
+            838,
+            1688,
+            825,
+            1700,
+            813,
+            1719,
+            781,
+            1725,
+            750,
+            1719,
+            731,
+            1719,
+            725,
+            1731,
+            725,
+            1756,
+            688,
+            1775,
+            663,
+            1806,
+            606,
+            1863,
+            588,
+            1863,
+            575,
+            1856,
+            550,
+            1781,
+            544,
+            1750,
+            550,
+            1725,
+            575,
+            1700,
+            569,
+            1675,
+            550,
+            1625,
+            550,
+            1581,
+            556,
+            1563,
+            575,
+            1550,
+            600,
+            1456,
+            619,
+            1444,
+            625,
+            1425,
+            619,
+            1394,
+            619,
+            1356,
+            650,
+            1306,
+            644,
+            1269,
+            650,
+            1225,
+            669,
+            1200,
+            694,
+            1181,
+            731,
+            1169,
+            750,
+            1144,
+            769,
+            1113,
+            775,
+            1081,
+            806,
+            1044,
+            838,
+            1013,
+            894,
+            1013,
+            950,
+            969,
+            1000,
+            875,
+            1038,
+            850,
+            1063,
+            844,
+            1088,
+            850,
+            1125,
+            838,
+            1156,
+            844,
+            1181,
+            856,
+            1188,
+            838,
+            1200,
+            819,
+            1213,
+            794,
+            1250,
+            788,
+            1294,
+            781
+          ],
+          "type": "polygon",
+          "hole": false
+        },
+        {
+          "type": "polygon",
+          "points": [
+            1575,
+            1162.5,
+            1562.5,
+            1100,
+            1550,
+            1075,
+            1575,
+            1012.5,
+            1600,
+            975,
+            1625,
+            962.5,
+            1700,
+            925,
+            1750,
+            1025,
+            1737.5,
+            1037.5,
+            1737.5,
+            1050
+          ],
+          "hole": true
+        }
+      ],
+      "elevation": {
+        "bottom": null,
+        "top": null
+      },
+      "behaviors": [
+        {
+          "name": "Adjust Darkness Level",
+          "type": "adjustDarknessLevel",
+          "_id": "2aJHHj0IsqDYmu1s",
+          "system": {
+            "mode": 2,
+            "modifier": 0.7
+          },
+          "disabled": false,
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.330",
+            "systemId": "dnd5e",
+            "systemVersion": "3.3.1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!scenes.regions.behaviors!1imvcuhQKxXydBEH.YPZD5LPeQJd0pQQ8.2aJHHj0IsqDYmu1s"
+        },
+        {
+          "name": "Suppress Weather",
+          "type": "suppressWeather",
+          "_id": "lXDhmnyTU9yLtH8m",
+          "system": {},
+          "disabled": false,
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.330",
+            "systemId": "dnd5e",
+            "systemVersion": "3.3.1",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!scenes.regions.behaviors!1imvcuhQKxXydBEH.YPZD5LPeQJd0pQQ8.lXDhmnyTU9yLtH8m"
+        }
+      ],
+      "visibility": 0,
+      "locked": false,
+      "flags": {
+        "tagger": {}
+      },
+      "_key": "!scenes.regions!1imvcuhQKxXydBEH.YPZD5LPeQJd0pQQ8"
+    }
+  ],
   "environment": {
     "globalLight": {
       "luminosity": 0,

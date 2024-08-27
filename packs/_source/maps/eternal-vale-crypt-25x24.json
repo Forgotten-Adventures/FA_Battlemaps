@@ -1,7 +1,6 @@
 {
   "name": "Eternal Vale Crypt [25x24]",
   "navigation": false,
-  "navOrder": 0,
   "navName": "",
   "background": {
     "src": "fa_battlemaps/Maps/2024/January/fa_eternalvalecrypt/Maps/BG.webp",
@@ -18,7 +17,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2024/January/fa_eternalvalecrypt/Maps/FG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/iovGR4Ej0VStK9Ub-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/iovGR4Ej0VStK9Ub-thumb.webp",
   "width": 2500,
   "height": 2400,
   "padding": 0.25,
@@ -261,7 +260,7 @@
   "notes": [],
   "sounds": [
     {
-      "path": "fa_battlemaps/Audio/C-Dungeon.mp3",
+      "path": "fa_battlemaps/Audio/C-Dungeon.ogg",
       "x": 1900,
       "y": 1800,
       "radius": 90,
@@ -292,7 +291,7 @@
       "_key": "!scenes.sounds!iovGR4Ej0VStK9Ub.F4LUM88DRkYrcV2Y"
     },
     {
-      "path": "fa_battlemaps/Audio/C-Torch.mp3",
+      "path": "fa_battlemaps/Audio/C-Torch.ogg",
       "x": 2650,
       "y": 1050,
       "radius": 35,
@@ -360,7 +359,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -544,7 +543,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -610,7 +609,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -676,7 +675,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -742,7 +741,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -808,7 +807,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -873,7 +872,7 @@
           "files": []
         }
       },
-      "sort": 99,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1440,7 +1439,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1584,7 +1583,7 @@
         }
       },
       "_id": "wg7u2vtZojMdmeHC",
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1728,7 +1727,7 @@
         }
       },
       "_id": "YiOxE5TeisXtcQ5V",
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -6911,23 +6910,172 @@
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
-    "createdTime": 1705186387148,
-    "modifiedTime": 1718542304481,
-    "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.iovGR4Ej0VStK9Ub",
-    "duplicateSource": null
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "3.3.1",
+    "createdTime": 1722551704171,
+    "modifiedTime": 1724725689472,
+    "lastModifiedBy": "dnd5ebuilder0000"
   },
   "_id": "iovGR4Ej0VStK9Ub",
-  "active": false,
   "folder": null,
-  "sort": 0,
   "ownership": {
     "default": 0
   },
-  "regions": [],
+  "regions": [
+    {
+      "name": "StairsBottom",
+      "color": "#cc2886",
+      "shapes": [
+        {
+          "type": "rectangle",
+          "x": 2800,
+          "y": 900,
+          "width": 100,
+          "height": 100,
+          "rotation": 0,
+          "hole": false
+        }
+      ],
+      "_id": "yRQlmtd1CPzbFzQu",
+      "elevation": {
+        "bottom": null,
+        "top": null
+      },
+      "behaviors": [
+        {
+          "name": "Teleport Token",
+          "type": "teleportToken",
+          "_id": "foN9ON8uqIn3tE8a",
+          "system": {
+            "destination": "Scene.7AfJWdqCv9sLxGV9.Region.PZA9DqLU2yfOQccT",
+            "choice": true
+          },
+          "disabled": false,
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "dnd5e",
+            "systemVersion": "3.3.1",
+            "createdTime": 1724688852099,
+            "modifiedTime": 1724725478104,
+            "lastModifiedBy": "04Es7PR0IRsjnij5"
+          },
+          "_key": "!scenes.regions.behaviors!iovGR4Ej0VStK9Ub.yRQlmtd1CPzbFzQu.foN9ON8uqIn3tE8a"
+        }
+      ],
+      "visibility": 0,
+      "locked": false,
+      "flags": {
+        "tagger": {}
+      },
+      "_key": "!scenes.regions!iovGR4Ej0VStK9Ub.yRQlmtd1CPzbFzQu"
+    },
+    {
+      "name": "StairsBottom2",
+      "color": "#c2cc28",
+      "shapes": [
+        {
+          "type": "rectangle",
+          "x": 1000,
+          "y": 1612.5,
+          "width": 100,
+          "height": 75,
+          "rotation": 0,
+          "hole": false
+        }
+      ],
+      "_id": "apYa1aytBg172cXy",
+      "elevation": {
+        "bottom": null,
+        "top": null
+      },
+      "behaviors": [
+        {
+          "name": "Teleport Token",
+          "type": "teleportToken",
+          "_id": "fNTkDXcU33SwQIDo",
+          "system": {
+            "destination": "Scene.7AfJWdqCv9sLxGV9.Region.xZMiKRUIhyFmQVtw",
+            "choice": true
+          },
+          "disabled": false,
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "dnd5e",
+            "systemVersion": "3.3.1",
+            "createdTime": 1724725496042,
+            "modifiedTime": 1724725541350,
+            "lastModifiedBy": "04Es7PR0IRsjnij5"
+          },
+          "_key": "!scenes.regions.behaviors!iovGR4Ej0VStK9Ub.apYa1aytBg172cXy.fNTkDXcU33SwQIDo"
+        }
+      ],
+      "visibility": 0,
+      "locked": false,
+      "flags": {
+        "tagger": {}
+      },
+      "_key": "!scenes.regions!iovGR4Ej0VStK9Ub.apYa1aytBg172cXy"
+    },
+    {
+      "name": "StairsBoittom3",
+      "color": "#28cc89",
+      "shapes": [
+        {
+          "type": "rectangle",
+          "x": 1712.5,
+          "y": 2812.5,
+          "width": 87.5,
+          "height": 75,
+          "rotation": 0,
+          "hole": false
+        }
+      ],
+      "_id": "PaglmEXBZ9sdQx6Q",
+      "elevation": {
+        "bottom": null,
+        "top": null
+      },
+      "behaviors": [
+        {
+          "name": "Teleport Token",
+          "type": "teleportToken",
+          "_id": "WL9sBDk2P1jUQNd0",
+          "system": {
+            "destination": "Scene.7AfJWdqCv9sLxGV9.Region.LmN6u6E2hhHXjjRY",
+            "choice": true
+          },
+          "disabled": false,
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "dnd5e",
+            "systemVersion": "3.3.1",
+            "createdTime": 1724725465367,
+            "modifiedTime": 1724725569510,
+            "lastModifiedBy": "04Es7PR0IRsjnij5"
+          },
+          "_key": "!scenes.regions.behaviors!iovGR4Ej0VStK9Ub.PaglmEXBZ9sdQx6Q.WL9sBDk2P1jUQNd0"
+        }
+      ],
+      "visibility": 0,
+      "locked": false,
+      "flags": {
+        "tagger": {}
+      },
+      "_key": "!scenes.regions!iovGR4Ej0VStK9Ub.PaglmEXBZ9sdQx6Q"
+    }
+  ],
   "environment": {
     "globalLight": {
       "luminosity": 0,
@@ -6971,5 +7119,8 @@
       "unexplored": null
     }
   },
+  "active": false,
+  "navOrder": 0,
+  "sort": 100000,
   "_key": "!scenes!iovGR4Ej0VStK9Ub"
 }

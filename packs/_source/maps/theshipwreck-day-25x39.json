@@ -5,7 +5,7 @@
   "navOrder": 0,
   "navName": "",
   "foreground": null,
-  "thumb": "worlds/fatesting/assets/scenes/qcuBND7YkXXIJhPj-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/qcuBND7YkXXIJhPj-thumb.webp",
   "width": 2500,
   "height": 3900,
   "padding": 0.25,
@@ -447,7 +447,7 @@
       "x": 1950,
       "y": 2950,
       "radius": 125.5,
-      "path": "fa_battlemaps/Audio/Sea-Waves.mp3",
+      "path": "fa_battlemaps/Audio/Sea-Waves.ogg",
       "repeat": false,
       "volume": 0.3,
       "walls": true,
@@ -577,7 +577,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 1,
           "actions": [],
           "files": [
             {
@@ -594,7 +594,7 @@
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Maps/ShipwreckBG.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Maps/ShipwreckBG2.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -606,7 +606,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -634,15 +634,15 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "active": true,
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -651,7 +651,10 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -682,7 +685,7 @@
       "x": 900,
       "y": 2100,
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -705,16 +708,21 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -730,7 +738,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -769,14 +777,16 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 2,
           "actions": [],
           "files": [
             {
@@ -794,11 +804,14 @@
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Shiphull3.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Shiphull1.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Shiphull3.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -810,7 +823,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 17,
       "restrictions": {
         "light": false,
         "weather": false
@@ -849,14 +862,16 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 2,
           "actions": [],
           "files": [
             {
@@ -874,11 +889,14 @@
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat3.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat1.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat3.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -890,7 +908,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 22,
       "restrictions": {
         "light": false,
         "weather": false
@@ -929,14 +947,16 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 1,
           "actions": [],
           "files": [
             {
@@ -949,11 +969,14 @@
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat5.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat4.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/boat5.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -965,7 +988,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 21,
       "restrictions": {
         "light": false,
         "weather": false
@@ -980,7 +1003,7 @@
       "x": 1000,
       "y": 1500,
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": true,
       "occlusion": {
@@ -1003,7 +1026,9 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
@@ -1016,14 +1041,17 @@
             {
               "id": "Ab8X8gGDB2YPJG0e",
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Chest.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "zmjcDmnrq7TMT6zv",
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/ChestOpen.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1039,7 +1067,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 20,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1199,7 +1227,10 @@
               "id": "ah1LyAbAJ9NJ0VMn"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1215,7 +1246,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1375,7 +1406,10 @@
               "id": "SLe5gjLdLtQ8QVTS"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1391,7 +1425,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1553,7 +1587,10 @@
               "id": "OvdfFpLNdqPOpiqX"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1569,7 +1606,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1681,7 +1718,10 @@
               "id": "gwNSihMwNdY2Kp3q"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1697,7 +1737,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1809,7 +1849,10 @@
               "id": "TzgaV02kM9N0jgqT"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1825,7 +1868,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1937,7 +1980,10 @@
               "id": "WPzI6j2jVz4qc04d"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -1953,7 +1999,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2065,7 +2111,10 @@
               "id": "biuMwwZm1CSBGIy2"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2081,7 +2130,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2182,7 +2231,10 @@
               "id": "TivKWdJ66ON4Ddi5"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2198,7 +2250,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2239,7 +2291,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 99,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2280,7 +2332,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2321,7 +2373,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2362,7 +2414,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2403,7 +2455,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2504,7 +2556,10 @@
               "id": "4vsF9vDHIBts7ltK"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
@@ -2520,7 +2575,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2559,14 +2614,16 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 2,
           "actions": [],
           "files": [
             {
@@ -2584,11 +2641,14 @@
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat3.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat1.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat3.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -2600,7 +2660,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 19,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2639,31 +2699,36 @@
           "record": false,
           "restriction": "all",
           "controlled": "gm",
-          "trigger": "enter",
+          "trigger": [
+            "enter"
+          ],
           "allowpaused": false,
           "usealpha": false,
           "pointer": false,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 0,
+          "fileindex": 1,
           "actions": [],
           "files": [
             {
               "id": "3dA4oRYMihuWambw",
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat4.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "VnRimF7GbwWartd6",
               "name": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat5.webp",
-              "selected": true
+              "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat4.webp",
+        "src": "fa_battlemaps/Maps/2022/October/fa_the-shipwreck-day/Tiles/Wreckedboat5.webp",
         "tint": "#ffffff",
         "scaleX": 1,
         "scaleY": 1,
@@ -2675,7 +2740,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "sort": 100,
+      "sort": 18,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2735,7 +2800,7 @@
               "id": "nIWmgdCjk7v7qTWR"
             }
           ],
-          "active": true,
+          "active": false,
           "restriction": "all",
           "controlled": "gm",
           "trigger": "dblclick",
@@ -4050,9 +4115,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1672873155931,
-    "modifiedTime": 1718542208298,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.qcuBND7YkXXIJhPj",
     "duplicateSource": null

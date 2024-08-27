@@ -1,6 +1,6 @@
 {
   "name": "The Old Mill [25x30]",
-  "navigation": true,
+  "navigation": false,
   "navOrder": 0,
   "navName": "",
   "background": {
@@ -18,7 +18,7 @@
   },
   "foreground": null,
   "foregroundElevation": 20,
-  "thumb": "worlds/forgotten-adventures/assets/scenes/GwZXf8IgOkdNVTJu-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/GwZXf8IgOkdNVTJu-thumb.webp",
   "width": 5000,
   "height": 6000,
   "padding": 0.25,
@@ -40,7 +40,127 @@
   },
   "tokenVision": true,
   "drawings": [],
-  "tokens": [],
+  "tokens": [
+    {
+      "flags": {
+        "tagger": {},
+        "autorotate": {
+          "enabled": null,
+          "offset": null
+        },
+        "dnd5e": {
+          "tokenRing": {
+            "effects": 1
+          }
+        }
+      },
+      "name": "Akra",
+      "displayName": 30,
+      "width": 1,
+      "height": 1,
+      "lockRotation": false,
+      "rotation": 198.43494882292202,
+      "actorLink": true,
+      "disposition": 1,
+      "displayBars": 40,
+      "bar1": {
+        "attribute": "attributes.hp"
+      },
+      "bar2": {
+        "attribute": "attributes.ac.value"
+      },
+      "alpha": 1,
+      "light": {
+        "alpha": 1,
+        "angle": 360,
+        "bright": 0,
+        "coloration": 1,
+        "dim": 0,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "speed": 5,
+          "intensity": 5,
+          "type": null,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        },
+        "color": null,
+        "attenuation": 0.5,
+        "negative": false,
+        "priority": 0
+      },
+      "texture": {
+        "src": "systems/dnd5e/tokens/heroes/ClericDragonborn.webp",
+        "tint": "#ffffff",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "contain",
+        "alphaThreshold": 0.75
+      },
+      "sight": {
+        "angle": 360,
+        "enabled": true,
+        "range": 5,
+        "brightness": 0,
+        "visionMode": "basic",
+        "color": null,
+        "attenuation": 0.1,
+        "saturation": 0,
+        "contrast": 0
+      },
+      "detectionModes": [],
+      "appendNumber": false,
+      "prependAdjective": false,
+      "hexagonalShape": 0,
+      "occludable": {
+        "radius": 0
+      },
+      "ring": {
+        "enabled": false,
+        "colors": {
+          "ring": null,
+          "background": null
+        },
+        "effects": 0,
+        "subject": {
+          "scale": 1,
+          "texture": null
+        }
+      },
+      "actorId": "7xsP86XcpwLJd7Je",
+      "hidden": false,
+      "sort": 0,
+      "_id": "WKcPx6mdwMwNrlaB",
+      "delta": {
+        "_id": "6Ks25Upyfsx2v6eT",
+        "system": {},
+        "items": [],
+        "effects": [],
+        "flags": {},
+        "name": null,
+        "type": null,
+        "img": null,
+        "_key": "!scenes.tokens.delta!GwZXf8IgOkdNVTJu.WKcPx6mdwMwNrlaB.6Ks25Upyfsx2v6eT"
+      },
+      "x": 3800,
+      "y": 3400,
+      "elevation": 0,
+      "locked": false,
+      "_regions": [],
+      "_key": "!scenes.tokens!GwZXf8IgOkdNVTJu.WKcPx6mdwMwNrlaB"
+    }
+  ],
   "lights": [
     {
       "x": 3884,
@@ -49,10 +169,10 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.25,
+        "alpha": 0.5,
         "angle": 360,
         "bright": 10,
-        "color": "#191200",
+        "color": "#7f4a14",
         "coloration": 1,
         "dim": 15,
         "attenuation": 0.5,
@@ -84,279 +204,6 @@
       "_id": "LJvyZdPXBHKiKJZC",
       "elevation": 0,
       "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.LJvyZdPXBHKiKJZC"
-    },
-    {
-      "x": 4200,
-      "y": 2800,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 200,
-        "color": null,
-        "coloration": 1,
-        "dim": 200,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "jB7L0oMC9WSa4JN2",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.jB7L0oMC9WSa4JN2"
-    },
-    {
-      "x": 3200,
-      "y": 2800,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 200,
-        "color": null,
-        "coloration": 1,
-        "dim": 200,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "xImbai5CkpMd9xQK",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.xImbai5CkpMd9xQK"
-    },
-    {
-      "x": 4200,
-      "y": 3800,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 200,
-        "color": null,
-        "coloration": 1,
-        "dim": 200,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "IIuyy8jDTBFITsQK",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.IIuyy8jDTBFITsQK"
-    },
-    {
-      "x": 3200,
-      "y": 3800,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 200,
-        "color": null,
-        "coloration": 1,
-        "dim": 200,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "ktR7vzSBu8TLiTiD",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.ktR7vzSBu8TLiTiD"
-    },
-    {
-      "x": 3900,
-      "y": 2700,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 15,
-        "color": null,
-        "coloration": 1,
-        "dim": 15,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "qPS4cF929s077Mzg",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.qPS4cF929s077Mzg"
-    },
-    {
-      "x": 4300,
-      "y": 3100,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 15,
-        "color": null,
-        "coloration": 1,
-        "dim": 15,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "KY3nbvWSiLr7DrGT",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.KY3nbvWSiLr7DrGT"
-    },
-    {
-      "x": 3500,
-      "y": 6400,
-      "rotation": 0,
-      "walls": true,
-      "vision": false,
-      "config": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 25,
-        "color": null,
-        "coloration": 1,
-        "dim": 25,
-        "attenuation": 0.5,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "type": null,
-          "speed": 5,
-          "intensity": 5,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 0.7
-        },
-        "negative": false,
-        "priority": 0
-      },
-      "hidden": false,
-      "flags": {
-        "tagger": {}
-      },
-      "_id": "TsEgmaiRaqwCm1hi",
-      "elevation": 0,
-      "_key": "!scenes.lights!GwZXf8IgOkdNVTJu.TsEgmaiRaqwCm1hi"
     }
   ],
   "notes": [],
@@ -862,7 +709,7 @@
           "files": []
         }
       },
-      "sort": 7,
+      "sort": 16,
       "restrictions": {
         "light": false,
         "weather": false
@@ -928,7 +775,7 @@
           "files": []
         }
       },
-      "sort": 4,
+      "sort": 13,
       "restrictions": {
         "light": false,
         "weather": false
@@ -994,7 +841,7 @@
           "files": []
         }
       },
-      "sort": 8,
+      "sort": 18,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1234,7 +1081,7 @@
           "files": []
         }
       },
-      "sort": 6,
+      "sort": 15,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1521,7 +1368,7 @@
           ]
         }
       },
-      "sort": 22,
+      "sort": 20,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1725,7 +1572,7 @@
           "files": []
         }
       },
-      "sort": 21,
+      "sort": 19,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1910,7 +1757,7 @@
       },
       "flags": {},
       "_id": "1hEyn0AMI2xPcqDN",
-      "sort": 3,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1933,9 +1780,9 @@
         "alphaThreshold": 0.75
       },
       "x": 6400,
-      "y": 1700,
+      "y": 1600,
       "width": 600,
-      "height": 900,
+      "height": 1100,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
@@ -1951,7 +1798,7 @@
       },
       "flags": {},
       "_id": "tE8FyVnfMmnTPjr0",
-      "sort": 5,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1973,10 +1820,10 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "x": 6477,
-      "y": 2962,
-      "width": 503,
-      "height": 102,
+      "x": 6427,
+      "y": 2958,
+      "width": 593.4,
+      "height": 108.4,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
@@ -2046,7 +1893,7 @@
         }
       },
       "_id": "nBRDlVMVtonIUjOs",
-      "sort": 10,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2068,10 +1915,10 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "x": 6400,
-      "y": 2300,
-      "width": 600,
-      "height": 100,
+      "x": 6369,
+      "y": 2336,
+      "width": 668.5,
+      "height": 122.6,
       "_id": "umTyOQh0PIaFkBst",
       "rotation": 0,
       "alpha": 1,
@@ -2141,7 +1988,7 @@
           "files": []
         }
       },
-      "sort": 20,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2163,10 +2010,10 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "x": 6400,
-      "y": 2200,
-      "width": 600,
-      "height": 100,
+      "x": 6356,
+      "y": 2212,
+      "width": 667.4,
+      "height": 109.2,
       "_id": "TXAwCOgmJnA9ehua",
       "rotation": 0,
       "alpha": 1,
@@ -2304,7 +2151,7 @@
           "files": []
         }
       },
-      "sort": 19,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2326,7 +2173,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "x": 6400,
+      "x": 6397,
       "y": 2100,
       "width": 600,
       "height": 100,
@@ -2415,7 +2262,7 @@
           "files": []
         }
       },
-      "sort": 18,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2835,7 +2682,7 @@
           "files": []
         }
       },
-      "sort": 17,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2858,7 +2705,7 @@
         "alphaThreshold": 0.75
       },
       "x": 6400,
-      "y": 1800,
+      "y": 1758,
       "width": 600,
       "height": 100,
       "_id": "Tb4AVTQugQcbLQD8",
@@ -3232,7 +3079,7 @@
           "files": []
         }
       },
-      "sort": 16,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3695,7 +3542,7 @@
           "files": []
         }
       },
-      "sort": 15,
+      "sort": 14,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3736,7 +3583,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 14,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3803,7 +3650,7 @@
           "files": []
         }
       },
-      "sort": 13,
+      "sort": 21,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3825,7 +3672,7 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "x": 6404,
+      "x": 6418,
       "y": 2761,
       "width": 600,
       "height": 100,
@@ -3898,7 +3745,7 @@
           "files": []
         }
       },
-      "sort": 12,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3939,7 +3786,7 @@
       },
       "flags": {},
       "_id": "VMjMf6n2BLnwSSX5",
-      "sort": 2,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -3961,8 +3808,8 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "x": 6400,
-      "y": 2400,
+      "x": 6392,
+      "y": 2475,
       "width": 600,
       "height": 100,
       "_id": "2xmZ1kwgL0YX1rQW",
@@ -4048,7 +3895,7 @@
           "files": []
         }
       },
-      "sort": 11,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4114,7 +3961,7 @@
           "files": []
         }
       },
-      "sort": 1,
+      "sort": 17,
       "restrictions": {
         "light": false,
         "weather": false
@@ -4180,7 +4027,7 @@
           "files": []
         }
       },
-      "sort": 9,
+      "sort": 22,
       "restrictions": {
         "light": false,
         "weather": false
@@ -5879,9 +5726,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.3.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1722697135248,
-    "modifiedTime": 1723035856587,
+    "modifiedTime": 1723947134594,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
@@ -5897,7 +5744,7 @@
   "environment": {
     "globalLight": {
       "luminosity": 0,
-      "enabled": false,
+      "enabled": true,
       "darkness": {
         "max": 1,
         "min": 0

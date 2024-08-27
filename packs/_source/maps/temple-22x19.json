@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Maps/TempleFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/OWVjH4NO3jFfTRBd-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/OWVjH4NO3jFfTRBd-thumb.webp",
   "width": 2200,
   "height": 1900,
   "padding": 0.25,
@@ -338,7 +338,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 1
@@ -415,7 +415,10 @@
               "id": "GYa1CEqjAEo8mz36"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "_id": "PY7Cdy25ZTeQo78X",
@@ -446,7 +449,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 1
@@ -483,8 +486,10 @@
               "action": "tileimage",
               "data": {
                 "entity": {
-                  "id": "Scene.OWVjH4NO3jFfTRBd.Tile.sD4hy5xAEYWRPT6k",
-                  "name": "Tile: sD4hy5xAEYWRPT6k"
+                  "id": "tagger:PriestRoomDoor",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> PriestRoomDoor"
                 },
                 "select": "next",
                 "transition": "none",
@@ -536,7 +541,10 @@
               "id": "GYa1CEqjAEo8mz36"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2130,
@@ -572,7 +580,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -602,12 +610,15 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 50,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 5,
       "restrictions": {
         "light": false,
         "weather": false
@@ -667,12 +678,15 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 4,
       "restrictions": {
         "light": false,
         "weather": false
@@ -700,7 +714,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 1
@@ -711,9 +725,7 @@
         "volume": 0
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "active": true,
           "record": false,
@@ -748,10 +760,13 @@
               "action": "activate",
               "data": {
                 "entity": {
-                  "id": "Scene.sHhGAk8nxzSZAUIe.Tile.uVJ6cdgtSQvptL5w",
-                  "name": "Tile: uVJ6cdgtSQvptL5w"
+                  "id": "tagger:lighttrigger",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> lighttrigger"
                 },
-                "activate": "toggle"
+                "activate": "toggle",
+                "collection": "tiles"
               },
               "id": "M2uTeJ4KeQYPSIRC"
             },
@@ -788,13 +803,16 @@
               "action": "alter",
               "data": {
                 "entity": {
-                  "id": "Scene.OWVjH4NO3jFfTRBd.Tile.GYCKogMnf2czHuBK",
-                  "name": "Tile: GYCKogMnf2czHuBK"
+                  "id": "tagger:collapse",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> collapse"
                 },
                 "attribute": "alpha",
                 "value": "={{entity.alpha}} == 0 ? 1 : 0",
                 "chatMessage": false,
-                "rollmode": "roll"
+                "rollmode": "roll",
+                "collection": "tokens"
               },
               "id": "qcTxWC6X7vroAlOH"
             },
@@ -828,7 +846,10 @@
               "id": "rsGnDzYq87B8jA18"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 1350,
@@ -863,9 +884,9 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
-        "mode": 1,
+        "mode": 0,
         "alpha": 1
       },
       "video": {
@@ -899,14 +920,17 @@
             {
               "id": "nREODXcTB828UDLU",
               "name": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Tiles/Room19_WebOverlay_10x12.webp",
-              "selected": false
+              "selected": true
             },
             {
               "id": "mFdu7EbxRiRYZI4Q",
               "name": "modules/fa-battlemaps/images/Transparent.webp",
               "selected": false
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "elevation": 20,
@@ -951,7 +975,9 @@
       },
       "flags": {
         "tagger": {
-          "tags": ""
+          "tags": [
+            "collapse"
+          ]
         },
         "monks-active-tiles": {
           "active": true,
@@ -969,10 +995,13 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
-      "sort": 100,
+      "sort": 3,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1000,7 +1029,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1107,12 +1136,15 @@
               "name": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Tiles/preistdoorlight.webp",
               "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 2000,
       "y": 1100,
-      "sort": 100,
+      "sort": 6,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1140,7 +1172,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1241,12 +1273,15 @@
               "name": "fa_battlemaps/Maps/2022/December/fa_waveechocave/Tiles/templedoorleft.webp",
               "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 1200,
       "y": 1700,
-      "sort": 100,
+      "sort": 8,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1274,7 +1309,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1376,12 +1411,15 @@
               "name": "fa_battlemaps/Maps/2022/December/fa_waveechocave/Tiles/templedoorright.webp",
               "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 1400,
       "y": 1700,
-      "sort": 100,
+      "sort": 7,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1413,7 +1451,7 @@
       "hidden": false,
       "locked": true,
       "occlusion": {
-        "mode": 1,
+        "mode": 0,
         "alpha": 1
       },
       "video": {
@@ -1421,7 +1459,30 @@
         "autoplay": true,
         "volume": 0
       },
-      "flags": {},
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": -1,
+          "actions": [],
+          "files": []
+        },
+        "tagger": {}
+      },
       "elevation": 20,
       "sort": 100,
       "restrictions": {
@@ -1454,7 +1515,7 @@
       "hidden": false,
       "locked": true,
       "occlusion": {
-        "mode": 1,
+        "mode": 0,
         "alpha": 1
       },
       "video": {
@@ -1462,7 +1523,30 @@
         "autoplay": true,
         "volume": 0
       },
-      "flags": {},
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": -1,
+          "actions": [],
+          "files": []
+        },
+        "tagger": {}
+      },
       "elevation": 20,
       "sort": 100,
       "restrictions": {
@@ -1526,7 +1610,7 @@
           "files": []
         }
       },
-      "sort": 100,
+      "sort": 10,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1567,7 +1651,7 @@
         "volume": 0
       },
       "flags": {},
-      "sort": 100,
+      "sort": 9,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1577,7 +1661,7 @@
     },
     {
       "texture": {
-        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "src": "fa_battlemaps/Animations/Fire_Brazier_A1_01.webm",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -1595,7 +1679,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1626,7 +1710,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -1644,7 +1728,7 @@
       },
       "x": 1350,
       "y": 1336,
-      "sort": 100,
+      "sort": 12,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1654,7 +1738,7 @@
     },
     {
       "texture": {
-        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "src": "fa_battlemaps/Animations/Fire_Brazier_A1_01.webm",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -1703,7 +1787,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 1,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -1721,7 +1805,7 @@
       },
       "x": 2099,
       "y": 1041,
-      "sort": 100,
+      "sort": 11,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1749,7 +1833,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1762,7 +1846,7 @@
       "flags": {},
       "x": 2800,
       "y": 600,
-      "sort": 100,
+      "sort": 1,
       "restrictions": {
         "light": false,
         "weather": false
@@ -1868,7 +1952,7 @@
       },
       "x": 2800,
       "y": 620,
-      "sort": 100,
+      "sort": 2,
       "restrictions": {
         "light": false,
         "weather": false
@@ -2323,6 +2407,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!OWVjH4NO3jFfTRBd.66zH6iV4jXcjudmg"
     },
     {
@@ -2770,6 +2855,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!OWVjH4NO3jFfTRBd.YaYTKiZxpNdnS6DX"
     },
     {
@@ -2947,6 +3033,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "stoneBasic",
       "_key": "!scenes.walls!OWVjH4NO3jFfTRBd.uHmX2EYVENtFNRWC"
     },
     {
@@ -3535,9 +3622,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1670367878343,
-    "modifiedTime": 1718542221977,
+    "modifiedTime": 1723946803705,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.OWVjH4NO3jFfTRBd",
     "duplicateSource": null

@@ -18,7 +18,7 @@
   },
   "foreground": "fa_battlemaps/Maps/2024/February/fa_feyforest/Maps/FeyForestFG.webp",
   "foregroundElevation": 20,
-  "thumb": "worlds/fatesting/assets/scenes/tZrnvmEkkEyMGYs5-thumb.webp",
+  "thumb": "modules/fa-battlemaps/assets/scenes/tZrnvmEkkEyMGYs5-thumb.webp",
   "width": 3000,
   "height": 2000,
   "padding": 0.25,
@@ -2801,11 +2801,11 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.35,
         "angle": 360,
         "bright": 0,
         "color": "#878787",
-        "coloration": 1,
+        "coloration": 0,
         "dim": 11.53,
         "attenuation": 0.5,
         "luminosity": 0,
@@ -2843,11 +2843,11 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.35,
         "angle": 360,
         "bright": 0,
         "color": "#878787",
-        "coloration": 1,
+        "coloration": 0,
         "dim": 11.53,
         "attenuation": 0.5,
         "luminosity": 0,
@@ -2886,11 +2886,11 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.35,
         "angle": 360,
         "bright": 0,
         "color": "#878787",
-        "coloration": 1,
+        "coloration": 0,
         "dim": 11.53,
         "attenuation": 0.5,
         "luminosity": 0,
@@ -2929,11 +2929,11 @@
       "walls": true,
       "vision": false,
       "config": {
-        "alpha": 0.5,
+        "alpha": 0.35,
         "angle": 360,
         "bright": 0,
         "color": "#878787",
-        "coloration": 1,
+        "coloration": 0,
         "dim": 11.53,
         "attenuation": 0.5,
         "luminosity": 0,
@@ -3059,9 +3059,9 @@
       "x": 2150,
       "y": 1450,
       "radius": 50,
-      "easing": false,
+      "easing": true,
       "walls": true,
-      "volume": 0.55,
+      "volume": 0.2,
       "darkness": {
         "min": 0,
         "max": 1
@@ -3079,7 +3079,8 @@
       "elevation": 0,
       "effects": {
         "base": {
-          "intensity": 5
+          "intensity": 5,
+          "type": "highpass"
         },
         "muffled": {
           "intensity": 5
@@ -3094,15 +3095,13 @@
       "radius": 98.73,
       "easing": false,
       "walls": true,
-      "volume": 0.15,
+      "volume": 0.13,
       "darkness": {
         "min": 0,
         "max": 1
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "_id": "Cm9JW5EAWXT5Ux4h",
       "repeat": false,
@@ -3110,7 +3109,8 @@
       "elevation": 0,
       "effects": {
         "base": {
-          "intensity": 5
+          "intensity": 5,
+          "type": ""
         },
         "muffled": {
           "intensity": 5
@@ -3131,9 +3131,7 @@
         "max": 1
       },
       "flags": {
-        "tagger": {
-          "tags": ""
-        }
+        "tagger": {}
       },
       "_id": "OexrEUEr5AmdZvwq",
       "repeat": false,
@@ -3141,7 +3139,8 @@
       "elevation": 0,
       "effects": {
         "base": {
-          "intensity": 5
+          "intensity": 5,
+          "type": "highpass"
         },
         "muffled": {
           "intensity": 5
@@ -4434,7 +4433,7 @@
     },
     {
       "texture": {
-        "src": "fa_battlemaps/Maps/2024/February/fa_feyforest/Tiles/LongGrass.webp",
+        "src": "fa_battlemaps/Maps/2024/February/fa_feyforest/Tiles/Pond.webp",
         "scaleX": 1,
         "scaleY": 1,
         "offsetX": 0,
@@ -4489,7 +4488,7 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": 3,
+          "fileindex": 0,
           "actions": [],
           "files": [
             {
@@ -6354,6 +6353,13 @@
               "id": "E1mIlGeoHkKxFNyu"
             },
             {
+              "action": "delay",
+              "data": {
+                "delay": "1"
+              },
+              "id": "sggFWwX6p8vCqDSQ"
+            },
+            {
               "action": "playanimation",
               "data": {
                 "entity": {
@@ -6368,7 +6374,10 @@
               "id": "XCIeetk0uQ77qyxJ"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
         }
       },
       "x": 3862,
@@ -16111,9 +16120,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
+    "coreVersion": "12.330",
     "createdTime": 1708628633947,
-    "modifiedTime": 1718542304492,
+    "modifiedTime": 1723947037793,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.tZrnvmEkkEyMGYs5",
     "duplicateSource": null
@@ -16146,10 +16155,10 @@
     "darknessLock": false,
     "cycle": true,
     "base": {
-      "hue": 0,
-      "intensity": 0,
-      "luminosity": 0,
-      "saturation": 0,
+      "hue": 0.8,
+      "intensity": 0.15,
+      "luminosity": 0.1,
+      "saturation": 0.2,
       "shadows": 0
     },
     "dark": {
