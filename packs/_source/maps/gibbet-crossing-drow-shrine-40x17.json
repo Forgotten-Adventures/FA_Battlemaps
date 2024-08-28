@@ -1,0 +1,4593 @@
+{
+  "name": "Gibbet Crossing - Drow Shrine [40x17]",
+  "navigation": false,
+  "navOrder": 0,
+  "navName": "",
+  "background": {
+    "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Maps/GibbetCrossingDrowShrineBG.webp",
+    "scaleX": 1,
+    "scaleY": 1,
+    "offsetX": 0,
+    "offsetY": 0,
+    "rotation": 0,
+    "tint": "#ffffff",
+    "anchorX": 0,
+    "anchorY": 0,
+    "fit": "fill",
+    "alphaThreshold": 0
+  },
+  "foreground": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Maps/GibbetCrossingDrowShrineFG.webp",
+  "foregroundElevation": 20,
+  "thumb": "modules/fa-battlemaps/assets/scenes/F6HYvjsaDaFgm7RL-thumb.webp",
+  "width": 4000,
+  "height": 1700,
+  "padding": 0.25,
+  "initial": {
+    "x": null,
+    "y": null,
+    "scale": null
+  },
+  "backgroundColor": "#000000",
+  "grid": {
+    "type": 1,
+    "size": 100,
+    "color": "#000000",
+    "alpha": 0.2,
+    "distance": 5,
+    "units": "ft",
+    "style": "solidLines",
+    "thickness": 1
+  },
+  "tokenVision": true,
+  "drawings": [],
+  "tokens": [],
+  "lights": [],
+  "notes": [],
+  "sounds": [
+    {
+      "path": "fa_battlemaps/Audio/ambientloop.ogg",
+      "x": 2850,
+      "y": 1450,
+      "radius": 130,
+      "easing": false,
+      "walls": false,
+      "volume": 0.1,
+      "darkness": {
+        "min": 0,
+        "max": 1
+      },
+      "flags": {
+        "tagger": {
+          "tags": ""
+        }
+      },
+      "repeat": false,
+      "hidden": false,
+      "_id": "8G9VLh3kK2GJj6Ig",
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
+      "_key": "!scenes.sounds!F6HYvjsaDaFgm7RL.8G9VLh3kK2GJj6Ig"
+    },
+    {
+      "path": "fa_battlemaps/Audio/CaveAmbience.ogg",
+      "x": 2900,
+      "y": 1450,
+      "radius": 130,
+      "easing": false,
+      "walls": false,
+      "volume": 0.15,
+      "darkness": {
+        "min": 0,
+        "max": 1
+      },
+      "flags": {
+        "tagger": {
+          "tags": ""
+        }
+      },
+      "repeat": false,
+      "hidden": false,
+      "_id": "73KlfkboJlenPODs",
+      "elevation": 0,
+      "effects": {
+        "base": {
+          "intensity": 5
+        },
+        "muffled": {
+          "intensity": 5
+        }
+      },
+      "_key": "!scenes.sounds!F6HYvjsaDaFgm7RL.73KlfkboJlenPODs"
+    }
+  ],
+  "templates": [],
+  "tiles": [
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door31.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 2300,
+      "y": 1400,
+      "width": 300,
+      "height": 200,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "anchor",
+              "data": {
+                "tag": "_doorlock",
+                "stop": true
+              },
+              "id": "th36tKQRkdAaRsSk"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:cabinet",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinet"
+                },
+                "select": "next",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "Ws1SsQN3iQUEomHb"
+            },
+            {
+              "action": "anchor",
+              "data": {
+                "tag": "_dooropen",
+                "stop": true
+              },
+              "id": "15yXw5b11JDlhzkC"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "20",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "rAppMjVjrOtOdTms"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "20",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "lBdYYanVbB6XuOur"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "20",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "XM0hoc71WqRSl2wo"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dtile22",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dtile22"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "1",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "Ap3EQGCS4HHVL1d2"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:cabinet",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinet"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "YUiJv9pxwZuY4MGn"
+            },
+            {
+              "action": "anchor",
+              "data": {
+                "tag": "_doorclose",
+                "stop": true
+              },
+              "id": "JP4lBw2u6XcSqFhX"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dtile22",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dtile22"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "ljEp7NxrM2cghKi2"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "QZljmxOG915PK6gl"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "rrZGAh4lSceFJuQ2"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "GbPB5QdeszineNSk"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:cabinet",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> cabinet"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "E2VerFW2Qd1Gm0oh"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "tagger": {
+          "tags": [
+            "dtile22"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "WzpWNaRX9Akph40Y",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.WzpWNaRX9Akph40Y"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door32.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 2300,
+      "y": 1600,
+      "width": 300,
+      "height": 200,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "anchor",
+              "data": {
+                "tag": "_doorlock",
+                "stop": true
+              },
+              "id": "th36tKQRkdAaRsSk"
+            },
+            {
+              "action": "anchor",
+              "data": {
+                "tag": "_dooropen",
+                "stop": true
+              },
+              "id": "15yXw5b11JDlhzkC"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "20",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "rAppMjVjrOtOdTms"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "20",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "lBdYYanVbB6XuOur"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "20",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "XM0hoc71WqRSl2wo"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dtile22",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dtile22"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "1",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "Ap3EQGCS4HHVL1d2"
+            },
+            {
+              "action": "anchor",
+              "data": {
+                "tag": "_doorclose",
+                "stop": true
+              },
+              "id": "JP4lBw2u6XcSqFhX"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dtile22",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dtile22"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "ljEp7NxrM2cghKi2"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "QZljmxOG915PK6gl"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "rrZGAh4lSceFJuQ2"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall50",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall50"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "GbPB5QdeszineNSk"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "tagger": {
+          "tags": [
+            "dtile22"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "Uw9h6eXxVhSv8vNM",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.Uw9h6eXxVhSv8vNM"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Cabinet1.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 2400,
+      "y": 1300,
+      "width": 200,
+      "height": 400,
+      "rotation": 0,
+      "alpha": 1,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "tagger": {
+          "tags": [
+            "cabinet"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        },
+        "monks-active-tiles": {
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            ""
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 100,
+          "fileindex": 0,
+          "actions": [],
+          "files": [
+            {
+              "id": "XNyrRo7BEyU6V5Xr",
+              "name": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Cabinet1.webp",
+              "selected": true
+            },
+            {
+              "id": "nf4xdXP7MnoIbjqo",
+              "name": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Cabinet2.webp",
+              "selected": false
+            }
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        }
+      },
+      "_id": "skvRcOsRxcbGO7bH",
+      "sort": 102,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.skvRcOsRxcbGO7bH"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door33.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 2500,
+      "y": 900,
+      "width": 300,
+      "height": 300,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "sz5zp5604Z1KR6g0"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall28",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall28"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "g2GQdSPx0F7TT8NJ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall28",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall28"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yhOqAd17pDcIvHfQ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall28",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall28"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "06bUb8antwBL3Q7E"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": []
+        },
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "s4AkpJ9CXrHtkIMb",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.s4AkpJ9CXrHtkIMb"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door34.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 2800,
+      "y": 900,
+      "width": 300,
+      "height": 300,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "sz5zp5604Z1KR6g0"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall29",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall29"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "g2GQdSPx0F7TT8NJ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall29",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall29"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yhOqAd17pDcIvHfQ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall29",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall29"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "06bUb8antwBL3Q7E"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": []
+        },
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "6En4fttzUP0bBhle",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.6En4fttzUP0bBhle"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door36.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 3700,
+      "y": 900,
+      "width": 200,
+      "height": 300,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "sz5zp5604Z1KR6g0"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "g2GQdSPx0F7TT8NJ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yhOqAd17pDcIvHfQ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "06bUb8antwBL3Q7E"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "dtile24"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "YJeqNYTQYw7lUEtD",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.YJeqNYTQYw7lUEtD"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door37.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 3900,
+      "y": 900,
+      "width": 200,
+      "height": 300,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "sz5zp5604Z1KR6g0"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "g2GQdSPx0F7TT8NJ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yhOqAd17pDcIvHfQ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "06bUb8antwBL3Q7E"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "dtile25"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "VdEcgK1e2wpTMOO6",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.VdEcgK1e2wpTMOO6"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/April/fa_gibbetcrossing_drowshrine/Tiles/Doors/Door35.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "x": 4100,
+      "y": 1500,
+      "width": 300,
+      "height": 200,
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "controlled": "all",
+          "trigger": [
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "sz5zp5604Z1KR6g0"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall30",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall30"
+                },
+                "collection": "tokens",
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "g2GQdSPx0F7TT8NJ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall30",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall30"
+                },
+                "collection": "tokens",
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yhOqAd17pDcIvHfQ"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:dwall30",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> dwall30"
+                },
+                "collection": "tokens",
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "06bUb8antwBL3Q7E"
+            }
+          ],
+          "record": false,
+          "restriction": "all",
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 50,
+          "fileindex": 0,
+          "files": []
+        },
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_id": "QNLTUFPpC5JtkvBu",
+      "sort": 100,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "elevation": 0,
+      "_key": "!scenes.tiles!F6HYvjsaDaFgm7RL.QNLTUFPpC5JtkvBu"
+    }
+  ],
+  "walls": [
+    {
+      "_id": "BXXHCuZwz3nI2Hcc",
+      "c": [
+        1650,
+        700,
+        1000,
+        700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.BXXHCuZwz3nI2Hcc"
+    },
+    {
+      "_id": "Jx2JHjEvCSSJKURW",
+      "c": [
+        1756,
+        700,
+        2000,
+        700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Jx2JHjEvCSSJKURW"
+    },
+    {
+      "_id": "8irML5pg7WVUVeIO",
+      "c": [
+        2000,
+        700,
+        2000,
+        500
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.8irML5pg7WVUVeIO"
+    },
+    {
+      "_id": "ZM3S5k79unEwEhkH",
+      "c": [
+        1800,
+        1100,
+        1800,
+        700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ZM3S5k79unEwEhkH"
+    },
+    {
+      "_id": "9vZaqn6QyVYHUOzR",
+      "c": [
+        1600,
+        1100,
+        1600,
+        700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.9vZaqn6QyVYHUOzR"
+    },
+    {
+      "_id": "Frko4QzZ65LHQ20a",
+      "c": [
+        1194,
+        1100,
+        1600,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Frko4QzZ65LHQ20a"
+    },
+    {
+      "_id": "DDzYenir8YnZj7Rv",
+      "c": [
+        1200,
+        1900,
+        1194,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.DDzYenir8YnZj7Rv"
+    },
+    {
+      "_id": "E9Z2Fs3cc3qzsKbS",
+      "c": [
+        1500,
+        1900,
+        1200,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.E9Z2Fs3cc3qzsKbS"
+    },
+    {
+      "_id": "skgWovweaTIyXqeJ",
+      "c": [
+        1894,
+        1900,
+        2200,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.skgWovweaTIyXqeJ"
+    },
+    {
+      "_id": "dA6mbW8INmiofdvo",
+      "c": [
+        2200,
+        1700,
+        2200,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.dA6mbW8INmiofdvo"
+    },
+    {
+      "_id": "Imj9pqPOwgVCg3iv",
+      "c": [
+        2400,
+        1700,
+        2200,
+        1700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Imj9pqPOwgVCg3iv"
+    },
+    {
+      "_id": "G9ORS9WXDDnoQAiY",
+      "c": [
+        2400,
+        1900,
+        2400,
+        1700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.G9ORS9WXDDnoQAiY"
+    },
+    {
+      "_id": "FhtCG7yokDUZWXAB",
+      "c": [
+        3250,
+        1900,
+        2400,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.FhtCG7yokDUZWXAB"
+    },
+    {
+      "_id": "q0og2Er1G84vxkEc",
+      "c": [
+        2400,
+        1506,
+        2400,
+        706
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.q0og2Er1G84vxkEc"
+    },
+    {
+      "_id": "tSQq56uZQOGE6QC9",
+      "c": [
+        2200,
+        1506,
+        2400,
+        1506
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.tSQq56uZQOGE6QC9"
+    },
+    {
+      "_id": "xWSokYIuLG3fcTbw",
+      "c": [
+        2200,
+        1100,
+        2200,
+        1506
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.xWSokYIuLG3fcTbw"
+    },
+    {
+      "_id": "p8LbWFDlhrat4yEk",
+      "c": [
+        1800,
+        1100,
+        2200,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.p8LbWFDlhrat4yEk"
+    },
+    {
+      "_id": "MAFqXHoQ73gqR8EY",
+      "c": [
+        2600,
+        1100,
+        2400,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.MAFqXHoQ73gqR8EY"
+    },
+    {
+      "_id": "pEvuFap83KWY1PDa",
+      "c": [
+        2900,
+        1100,
+        2706,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.pEvuFap83KWY1PDa"
+    },
+    {
+      "_id": "9xNbHYoQUaRtoM23",
+      "c": [
+        3200,
+        700,
+        2400,
+        706
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.9xNbHYoQUaRtoM23"
+    },
+    {
+      "_id": "AdNrlnTy4L0CWAxR",
+      "c": [
+        2800,
+        1100,
+        2800,
+        700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.AdNrlnTy4L0CWAxR"
+    },
+    {
+      "_id": "o2Xoy9urm8dWBPJC",
+      "c": [
+        3000,
+        1100,
+        3813,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.o2Xoy9urm8dWBPJC"
+    },
+    {
+      "_id": "TNy3oNHBzaYm8tRp",
+      "c": [
+        3200,
+        700,
+        3200,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.TNy3oNHBzaYm8tRp"
+    },
+    {
+      "_id": "nYHs7KyVMohtwuIl",
+      "c": [
+        3988,
+        1100,
+        4200,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.nYHs7KyVMohtwuIl"
+    },
+    {
+      "_id": "hi382p9Ioytci8BL",
+      "c": [
+        4200,
+        1550,
+        4200,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.hi382p9Ioytci8BL"
+    },
+    {
+      "_id": "TncaDJ6Yug0Rd7M5",
+      "c": [
+        4200,
+        1650,
+        4200,
+        1906
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.TncaDJ6Yug0Rd7M5"
+    },
+    {
+      "_id": "ZpgAi2S74OYrarCK",
+      "c": [
+        3750,
+        1906,
+        4200,
+        1906
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ZpgAi2S74OYrarCK"
+    },
+    {
+      "_id": "H0U5YbDc9BaP7OmN",
+      "c": [
+        4400,
+        1700,
+        4200,
+        1700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.H0U5YbDc9BaP7OmN"
+    },
+    {
+      "_id": "rKBYgqNsVqbrH4X7",
+      "c": [
+        4400,
+        1900,
+        4400,
+        1700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.rKBYgqNsVqbrH4X7"
+    },
+    {
+      "_id": "sEsAMcns9lpoC6sv",
+      "c": [
+        4800,
+        1900,
+        4400,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.sEsAMcns9lpoC6sv"
+    },
+    {
+      "_id": "5N7ukbBw8loI3nt9",
+      "c": [
+        4800,
+        1500,
+        4800,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.5N7ukbBw8loI3nt9"
+    },
+    {
+      "_id": "h437XovhnnDBrM7h",
+      "c": [
+        4200,
+        1500,
+        4800,
+        1500
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.h437XovhnnDBrM7h"
+    },
+    {
+      "_id": "PqwK3QvL9pGqgEFB",
+      "c": [
+        3900,
+        1100,
+        3813,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 1,
+      "ds": 0,
+      "flags": {
+        "tagger": {},
+        "monks-active-tiles": {
+          "entity": {
+            "id": "tagger:dtile24",
+            "match": "all",
+            "scene": "_active",
+            "name": "<i class=\"fas fa-tag fa-sm\"></i> dtile24"
+          },
+          "open": true,
+          "close": true,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.PqwK3QvL9pGqgEFB"
+    },
+    {
+      "_id": "U1tXcE7915jSf6jg",
+      "c": [
+        3900,
+        1100,
+        3988,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 1,
+      "ds": 0,
+      "flags": {
+        "tagger": {},
+        "monks-active-tiles": {
+          "entity": {
+            "id": "tagger:dtile25",
+            "match": "all",
+            "scene": "_active",
+            "name": "<i class=\"fas fa-tag fa-sm\"></i> dtile25"
+          },
+          "open": true,
+          "close": true,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.U1tXcE7915jSf6jg"
+    },
+    {
+      "_id": "4zV3CTjlInoQ3dNT",
+      "c": [
+        2900,
+        1100,
+        3000,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 1,
+      "ds": 0,
+      "flags": {
+        "monks-active-tiles": {
+          "entity": {
+            "id": "within",
+            "name": "Tiles under Door"
+          },
+          "open": true,
+          "close": true
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.4zV3CTjlInoQ3dNT"
+    },
+    {
+      "_id": "EU8wZh7v7K70thos",
+      "c": [
+        2600,
+        1100,
+        2706,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 1,
+      "ds": 0,
+      "flags": {
+        "monks-active-tiles": {
+          "entity": {
+            "id": "within",
+            "name": "Tiles under Door"
+          },
+          "open": true,
+          "close": true
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.EU8wZh7v7K70thos"
+    },
+    {
+      "_id": "xevNUeeRd460HVKl",
+      "c": [
+        2400,
+        1700,
+        2400,
+        1506
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 1,
+      "ds": 2,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "door1"
+          ]
+        },
+        "monks-active-tiles": {
+          "entity": {
+            "id": "within",
+            "name": "Tiles under Door"
+          },
+          "open": true,
+          "close": true,
+          "lock": true,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.xevNUeeRd460HVKl"
+    },
+    {
+      "_id": "KFXi9zks7DKWxB8e",
+      "c": [
+        4200,
+        1650,
+        4200,
+        1550
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 1,
+      "ds": 0,
+      "flags": {
+        "tagger": {},
+        "monks-active-tiles": {
+          "entity": {
+            "id": "within",
+            "name": "Tiles under Door"
+          },
+          "open": true,
+          "close": true,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.KFXi9zks7DKWxB8e"
+    },
+    {
+      "_id": "6RLF09jEFLxE5Szw",
+      "c": [
+        1650,
+        700,
+        1756,
+        700
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 2,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "doorSound": "stoneBasic",
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.6RLF09jEFLxE5Szw"
+    },
+    {
+      "_id": "iXrS89b6bwoZCyQE",
+      "c": [
+        3019,
+        500,
+        3031,
+        513
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.iXrS89b6bwoZCyQE"
+    },
+    {
+      "_id": "v5qZFEih2R7XPfBo",
+      "c": [
+        3031,
+        513,
+        3044,
+        525
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.v5qZFEih2R7XPfBo"
+    },
+    {
+      "_id": "pgk9Ng8ceWqda4WN",
+      "c": [
+        3044,
+        525,
+        3081,
+        594
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.pgk9Ng8ceWqda4WN"
+    },
+    {
+      "_id": "SuPh6FJL4dYlQ3e8",
+      "c": [
+        3081,
+        594,
+        3100,
+        606
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.SuPh6FJL4dYlQ3e8"
+    },
+    {
+      "_id": "KHpr3KJwZ4qRmxB3",
+      "c": [
+        3100,
+        606,
+        3169,
+        600
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.KHpr3KJwZ4qRmxB3"
+    },
+    {
+      "_id": "EWVy6vXlyMzAwIHM",
+      "c": [
+        3169,
+        600,
+        3225,
+        581
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.EWVy6vXlyMzAwIHM"
+    },
+    {
+      "_id": "9AEWganREz4wDgzs",
+      "c": [
+        3225,
+        581,
+        3238,
+        581
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.9AEWganREz4wDgzs"
+    },
+    {
+      "_id": "Ezdb6TnoQjGqkpUt",
+      "c": [
+        3238,
+        581,
+        3250,
+        588
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Ezdb6TnoQjGqkpUt"
+    },
+    {
+      "_id": "Q2d9oI39malv1q0E",
+      "c": [
+        3250,
+        588,
+        3269,
+        613
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Q2d9oI39malv1q0E"
+    },
+    {
+      "_id": "GmzOgFgtqdSSZ9XF",
+      "c": [
+        3269,
+        613,
+        3269,
+        650
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.GmzOgFgtqdSSZ9XF"
+    },
+    {
+      "_id": "tw9glgHTKPrdhGBH",
+      "c": [
+        3269,
+        650,
+        3275,
+        669
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.tw9glgHTKPrdhGBH"
+    },
+    {
+      "_id": "zOF28L4LJhZffsKE",
+      "c": [
+        3275,
+        669,
+        3306,
+        688
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.zOF28L4LJhZffsKE"
+    },
+    {
+      "_id": "F60Rgw17edMTie5O",
+      "c": [
+        3306,
+        688,
+        3369,
+        719
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.F60Rgw17edMTie5O"
+    },
+    {
+      "_id": "4ohNvhKuhSA7cBDh",
+      "c": [
+        3369,
+        719,
+        3400,
+        744
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.4ohNvhKuhSA7cBDh"
+    },
+    {
+      "_id": "sT3rgopfIFisljnJ",
+      "c": [
+        3400,
+        744,
+        3438,
+        756
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.sT3rgopfIFisljnJ"
+    },
+    {
+      "_id": "ZQGFI8GhUbCw391C",
+      "c": [
+        3438,
+        756,
+        3450,
+        769
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ZQGFI8GhUbCw391C"
+    },
+    {
+      "_id": "KWUkHE73Xi7TqVQy",
+      "c": [
+        3450,
+        769,
+        3463,
+        781
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.KWUkHE73Xi7TqVQy"
+    },
+    {
+      "_id": "ITzBzE6HRPxHB2UA",
+      "c": [
+        3463,
+        781,
+        3469,
+        813
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ITzBzE6HRPxHB2UA"
+    },
+    {
+      "_id": "64oEaXfCQjOArYXx",
+      "c": [
+        3469,
+        813,
+        3488,
+        838
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.64oEaXfCQjOArYXx"
+    },
+    {
+      "_id": "ryooUfTbHuLUi7D4",
+      "c": [
+        3488,
+        838,
+        3544,
+        875
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ryooUfTbHuLUi7D4"
+    },
+    {
+      "_id": "ckroWbv67gJQgKMF",
+      "c": [
+        3544,
+        875,
+        3563,
+        881
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ckroWbv67gJQgKMF"
+    },
+    {
+      "_id": "LD1bx7jCSJQQsNoU",
+      "c": [
+        3563,
+        881,
+        3619,
+        881
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.LD1bx7jCSJQQsNoU"
+    },
+    {
+      "_id": "3iZWJ5NEMJl90s40",
+      "c": [
+        3619,
+        881,
+        3638,
+        869
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.3iZWJ5NEMJl90s40"
+    },
+    {
+      "_id": "7lifremEUkCFCSzU",
+      "c": [
+        3638,
+        869,
+        3656,
+        850
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.7lifremEUkCFCSzU"
+    },
+    {
+      "_id": "VP5clCCjQVYZDRXJ",
+      "c": [
+        3656,
+        850,
+        3681,
+        838
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.VP5clCCjQVYZDRXJ"
+    },
+    {
+      "_id": "bQZkD4YeJxY3vZaL",
+      "c": [
+        3681,
+        838,
+        3706,
+        838
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.bQZkD4YeJxY3vZaL"
+    },
+    {
+      "_id": "ZqV0McdPA2xzaPa2",
+      "c": [
+        3706,
+        838,
+        3763,
+        869
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ZqV0McdPA2xzaPa2"
+    },
+    {
+      "_id": "ZiCKvPTnBPuLiTfy",
+      "c": [
+        3763,
+        869,
+        3775,
+        888
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ZiCKvPTnBPuLiTfy"
+    },
+    {
+      "_id": "GdnMCtnajZpolDqN",
+      "c": [
+        3775,
+        888,
+        3775,
+        900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.GdnMCtnajZpolDqN"
+    },
+    {
+      "_id": "4z11F3y8O8UU8m9u",
+      "c": [
+        3775,
+        900,
+        3775,
+        925
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.4z11F3y8O8UU8m9u"
+    },
+    {
+      "_id": "GqT5nNYnhN5QILP3",
+      "c": [
+        3775,
+        925,
+        3769,
+        956
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.GqT5nNYnhN5QILP3"
+    },
+    {
+      "_id": "dcRXbJ0Kg5wttuYK",
+      "c": [
+        3769,
+        956,
+        3775,
+        1044
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.dcRXbJ0Kg5wttuYK"
+    },
+    {
+      "_id": "4Nxtk8tCJfKZnvm9",
+      "c": [
+        3775,
+        1044,
+        3781,
+        1063
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.4Nxtk8tCJfKZnvm9"
+    },
+    {
+      "_id": "bZZ6UEKsgi6jCjBV",
+      "c": [
+        3781,
+        1063,
+        3794,
+        1088
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.bZZ6UEKsgi6jCjBV"
+    },
+    {
+      "_id": "ysOHAVD3Ckgr8ngj",
+      "c": [
+        3794,
+        1088,
+        3794,
+        1100
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ysOHAVD3Ckgr8ngj"
+    },
+    {
+      "_id": "QnfUEXxmvE8MZgUq",
+      "c": [
+        4025,
+        1094,
+        4025,
+        1063
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.QnfUEXxmvE8MZgUq"
+    },
+    {
+      "_id": "yAzdGzCqgwjwIT3g",
+      "c": [
+        4025,
+        1063,
+        4019,
+        994
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.yAzdGzCqgwjwIT3g"
+    },
+    {
+      "_id": "wMnkw3trOch1a1k5",
+      "c": [
+        4019,
+        994,
+        4025,
+        963
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.wMnkw3trOch1a1k5"
+    },
+    {
+      "_id": "0jHQqOUz0j25lFPc",
+      "c": [
+        4025,
+        963,
+        4019,
+        931
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.0jHQqOUz0j25lFPc"
+    },
+    {
+      "_id": "mFCKpGzf0bY5pd2c",
+      "c": [
+        4019,
+        931,
+        4069,
+        938
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.mFCKpGzf0bY5pd2c"
+    },
+    {
+      "_id": "BQOcxskQTFP6IMFX",
+      "c": [
+        4069,
+        938,
+        4100,
+        938
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.BQOcxskQTFP6IMFX"
+    },
+    {
+      "_id": "GOwhWfukD3eR53OP",
+      "c": [
+        4100,
+        938,
+        4194,
+        906
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.GOwhWfukD3eR53OP"
+    },
+    {
+      "_id": "u71uH4dlew0XzZ5n",
+      "c": [
+        4194,
+        906,
+        4219,
+        894
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.u71uH4dlew0XzZ5n"
+    },
+    {
+      "_id": "y2VJRR6fmsw0sLLO",
+      "c": [
+        4219,
+        894,
+        4238,
+        894
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.y2VJRR6fmsw0sLLO"
+    },
+    {
+      "_id": "1kqv1XPTaMWoaqVe",
+      "c": [
+        4238,
+        894,
+        4269,
+        900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.1kqv1XPTaMWoaqVe"
+    },
+    {
+      "_id": "xfNRzIbe4Ss4xtaP",
+      "c": [
+        4269,
+        900,
+        4288,
+        913
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.xfNRzIbe4Ss4xtaP"
+    },
+    {
+      "_id": "wADtdDklmsypzlH9",
+      "c": [
+        4288,
+        913,
+        4313,
+        938
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.wADtdDklmsypzlH9"
+    },
+    {
+      "_id": "3bADkFxFiQwu2vRH",
+      "c": [
+        4313,
+        938,
+        4356,
+        963
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.3bADkFxFiQwu2vRH"
+    },
+    {
+      "_id": "d41ANoWml8xAT7RK",
+      "c": [
+        4356,
+        963,
+        4394,
+        969
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.d41ANoWml8xAT7RK"
+    },
+    {
+      "_id": "UiOxueZMKwltymQK",
+      "c": [
+        4394,
+        969,
+        4463,
+        975
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.UiOxueZMKwltymQK"
+    },
+    {
+      "_id": "AB7kXVhG9G2CE7il",
+      "c": [
+        4463,
+        975,
+        4494,
+        969
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.AB7kXVhG9G2CE7il"
+    },
+    {
+      "_id": "OTWx3k9ob5hpqkr2",
+      "c": [
+        4494,
+        969,
+        4519,
+        963
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.OTWx3k9ob5hpqkr2"
+    },
+    {
+      "_id": "Wad1mHDEpIMSixNy",
+      "c": [
+        4519,
+        963,
+        4550,
+        938
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Wad1mHDEpIMSixNy"
+    },
+    {
+      "_id": "UpKJRSrGegDiNHKQ",
+      "c": [
+        4550,
+        938,
+        4569,
+        931
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.UpKJRSrGegDiNHKQ"
+    },
+    {
+      "_id": "xhwaYri7GY4jUL2g",
+      "c": [
+        4569,
+        931,
+        4600,
+        925
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.xhwaYri7GY4jUL2g"
+    },
+    {
+      "_id": "Cv2O1N0kDwy7XJW1",
+      "c": [
+        4600,
+        925,
+        4663,
+        925
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Cv2O1N0kDwy7XJW1"
+    },
+    {
+      "_id": "Z2IulcSHlFhQaFX0",
+      "c": [
+        4663,
+        925,
+        4675,
+        925
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Z2IulcSHlFhQaFX0"
+    },
+    {
+      "_id": "704cd7hT3Gl63AAq",
+      "c": [
+        4675,
+        925,
+        4700,
+        950
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.704cd7hT3Gl63AAq"
+    },
+    {
+      "_id": "xDsXYMLNyDztiyYA",
+      "c": [
+        4700,
+        950,
+        4731,
+        963
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.xDsXYMLNyDztiyYA"
+    },
+    {
+      "_id": "ddUTalD9lGrd7dg2",
+      "c": [
+        4731,
+        963,
+        4794,
+        981
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ddUTalD9lGrd7dg2"
+    },
+    {
+      "_id": "aFyMTXxtwmlcoSzD",
+      "c": [
+        4794,
+        981,
+        4869,
+        988
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.aFyMTXxtwmlcoSzD"
+    },
+    {
+      "_id": "d2I5K7q1pOvh0Kvd",
+      "c": [
+        4869,
+        988,
+        4925,
+        994
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.d2I5K7q1pOvh0Kvd"
+    },
+    {
+      "_id": "lBuQxPOchZyuGLHT",
+      "c": [
+        4925,
+        994,
+        4963,
+        988
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.lBuQxPOchZyuGLHT"
+    },
+    {
+      "_id": "jAZOYsfKH4Cw95rq",
+      "c": [
+        4963,
+        988,
+        5000,
+        981
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.jAZOYsfKH4Cw95rq"
+    },
+    {
+      "_id": "lmfQA0DEwNH1scbH",
+      "c": [
+        1875,
+        1963,
+        1894,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.lmfQA0DEwNH1scbH"
+    },
+    {
+      "_id": "B9dZskkx0yGy1bVi",
+      "c": [
+        1800,
+        2019,
+        1875,
+        1963
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.B9dZskkx0yGy1bVi"
+    },
+    {
+      "_id": "X9wTo7GmqV4JuZBZ",
+      "c": [
+        1719,
+        2044,
+        1800,
+        2019
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.X9wTo7GmqV4JuZBZ"
+    },
+    {
+      "_id": "xIPLDXiN7oHJRgeo",
+      "c": [
+        1619,
+        2031,
+        1719,
+        2044
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.xIPLDXiN7oHJRgeo"
+    },
+    {
+      "_id": "OZgaSf9qxzWyg5om",
+      "c": [
+        1550,
+        1981,
+        1619,
+        2031
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.OZgaSf9qxzWyg5om"
+    },
+    {
+      "_id": "EUOUPxtWHC4tyRSu",
+      "c": [
+        1550,
+        1981,
+        1500,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.EUOUPxtWHC4tyRSu"
+    },
+    {
+      "_id": "EngVoMCsy3sJGih7",
+      "c": [
+        3300,
+        1988,
+        3250,
+        1900
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.EngVoMCsy3sJGih7"
+    },
+    {
+      "_id": "avJgSFoBbT25QDh2",
+      "c": [
+        3394,
+        2031,
+        3306,
+        1988
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.avJgSFoBbT25QDh2"
+    },
+    {
+      "_id": "BB6BjZwhFx2d3Y3B",
+      "c": [
+        3506,
+        2050,
+        3394,
+        2031
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.BB6BjZwhFx2d3Y3B"
+    },
+    {
+      "_id": "lqzLpe8cY1DydhpY",
+      "c": [
+        3625,
+        2025,
+        3506,
+        2050
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.lqzLpe8cY1DydhpY"
+    },
+    {
+      "_id": "IwlZGXikS82UYYtV",
+      "c": [
+        3700,
+        1975,
+        3625,
+        2025
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.IwlZGXikS82UYYtV"
+    },
+    {
+      "_id": "FDzcOZwtkmf8NA6C",
+      "c": [
+        3750,
+        1906,
+        3700,
+        1975
+      ],
+      "light": 20,
+      "move": 20,
+      "sight": 20,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.FDzcOZwtkmf8NA6C"
+    },
+    {
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        1000,
+        500,
+        5000,
+        500
+      ],
+      "_id": "0aSOzXmK0teUCNMk",
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.0aSOzXmK0teUCNMk"
+    },
+    {
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        5000,
+        500,
+        5000,
+        2200
+      ],
+      "_id": "taAEbPhPBo11hm5H",
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.taAEbPhPBo11hm5H"
+    },
+    {
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        5000,
+        2200,
+        1000,
+        2200
+      ],
+      "_id": "HBGnYdAH8EIcGFsD",
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.HBGnYdAH8EIcGFsD"
+    },
+    {
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "light": 20,
+      "sight": 20,
+      "sound": 20,
+      "move": 20,
+      "c": [
+        1000,
+        2200,
+        1000,
+        500
+      ],
+      "_id": "Jl48XZx4wYEADB5b",
+      "flags": {},
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.Jl48XZx4wYEADB5b"
+    },
+    {
+      "_id": "edPufiChYHVRcqYG",
+      "c": [
+        2587,
+        1012,
+        2600,
+        1100
+      ],
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "dwall28"
+          ]
+        },
+        "monks-active-tiles": {
+          "entity": {
+            "id": "within",
+            "name": "Tiles under Door"
+          },
+          "open": true,
+          "close": true,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.edPufiChYHVRcqYG"
+    },
+    {
+      "_id": "NxKR59rYpFuBTrR4",
+      "c": [
+        2900,
+        1012,
+        2900,
+        1100
+      ],
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "dwall29"
+          ]
+        },
+        "monks-active-tiles": {
+          "entity": {
+            "id": "within",
+            "name": "Tiles under Door"
+          },
+          "open": true,
+          "close": true,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.NxKR59rYpFuBTrR4"
+    },
+    {
+      "_id": "2nX8jJYXqoDjK67S",
+      "c": [
+        2487,
+        1500,
+        2400,
+        1500
+      ],
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "dwall50"
+          ]
+        },
+        "monks-active-tiles": {
+          "entity": {},
+          "open": false,
+          "close": false,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.2nX8jJYXqoDjK67S"
+    },
+    {
+      "_id": "ONug5Wh6VfEhbUqX",
+      "c": [
+        2487,
+        1700,
+        2400,
+        1700
+      ],
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "dwall50"
+          ]
+        },
+        "monks-active-tiles": {
+          "entity": {},
+          "open": false,
+          "close": false,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.ONug5Wh6VfEhbUqX"
+    },
+    {
+      "_id": "TQaNlczxlIXvlLFq",
+      "c": [
+        4300,
+        1550,
+        4200,
+        1550
+      ],
+      "light": 0,
+      "move": 0,
+      "sight": 0,
+      "sound": 20,
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "dwall30"
+          ]
+        },
+        "monks-active-tiles": {
+          "entity": {},
+          "open": false,
+          "close": false,
+          "lock": false,
+          "checklock": false,
+          "secret": false
+        }
+      },
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "_key": "!scenes.walls!F6HYvjsaDaFgm7RL.TQaNlczxlIXvlLFq"
+    }
+  ],
+  "playlist": null,
+  "playlistSound": null,
+  "journal": null,
+  "journalEntryPage": null,
+  "weather": "",
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.4.1",
+    "coreVersion": "12.330",
+    "createdTime": 1714263361206,
+    "modifiedTime": 1723947134594,
+    "lastModifiedBy": "dnd5ebuilder0000",
+    "compendiumSource": "Compendium.fa-battlemaps.maps.F6HYvjsaDaFgm7RL",
+    "duplicateSource": null
+  },
+  "_id": "F6HYvjsaDaFgm7RL",
+  "active": false,
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "regions": [],
+  "environment": {
+    "globalLight": {
+      "luminosity": 0,
+      "enabled": false,
+      "darkness": {
+        "max": 1,
+        "min": 0
+      },
+      "alpha": 0.5,
+      "bright": false,
+      "color": null,
+      "coloration": 1,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0
+    },
+    "darknessLevel": 0.45,
+    "darknessLock": false,
+    "cycle": true,
+    "base": {
+      "hue": 0,
+      "intensity": 0,
+      "luminosity": 0,
+      "saturation": 0,
+      "shadows": 0
+    },
+    "dark": {
+      "hue": 0.7138888888888889,
+      "intensity": 0,
+      "luminosity": -0.25,
+      "saturation": 0,
+      "shadows": 0
+    }
+  },
+  "fog": {
+    "exploration": true,
+    "reset": 1714263361204,
+    "overlay": null,
+    "colors": {
+      "explored": null,
+      "unexplored": null
+    }
+  },
+  "_key": "!scenes!F6HYvjsaDaFgm7RL"
+}

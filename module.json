@@ -4,27 +4,20 @@
   "description": "<p>This Module contains battlemaps from Forgotten Adventures, fully integrated for use with Foundry VTT. Featuring extra capabilities using Monk's Active Tile Triggers and Tagger for truly dynamic scenes!</p><p>You can support the creation of our battlemaps on <a href=\"https://www.patreon.com/FA_Battlemaps\">Patreon!</a> </p><p>A gallery of our work can be found on the <a href=\"https://www.forgotten-adventures.net/battlemaps\">website</a>.</p><p> Join our <a href=\"https://discord.gg/6KSJz6p\">Discord server</a> for any further questions.</p>",
   "authors": [
     {
-      "name": "Forgotten Adventures"
+      "name": "Forgotten Adventures",
+      "url": "https://www.forgotten-adventures.net/"
     }
   ],
   "url": "https://www.forgotten-adventures.net/",
   "flags": {},
-  "version": "1.0.67",
-  "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "12",
+  "version": "1.1.0",
   "compatibility": {
-    "minimum": "10",
-    "verified": "12",
-    "maximum": "12"
+    "minimum": "12",
+    "verified": "12"
   },
   "scripts": [],
-  "esmodules": [
-    "./scripts/shim.js",
-    "./scripts/fa-battlemaps.js"
-  ],
-  "styles": [
-    "styles/main.css"
-  ],
+  "esmodules": ["./scripts/shim.js", "./scripts/fa-battlemaps.js"],
+  "styles": ["styles/main.css"],
   "languages": [
     {
       "lang": "en",
@@ -36,26 +29,11 @@
     {
       "name": "maps",
       "label": "Forgotten Adventures Battlemaps",
-      "path": "/packs/maps.db",
-      "type": "Scene",
-      "private": true
+      "path": "packs/maps",
+      "type": "Scene"
     }
   ],
   "system": [],
-  "dependencies": [
-    {
-      "id": "tagger",
-      "name": "tagger",
-      "manifest": "https://github.com/fantasycalendar/FoundryVTT-Tagger/releases/latest/download/module.json",
-      "type": "module"
-    },
-    {
-      "id": "monks-active-tiles",
-      "name": "monks-active-tiles",
-      "manifest": "https://github.com/ironmonk88/monks-active-tiles/releases/latest/download/module.json",
-      "type": "module"
-    }
-  ],
   "relationships": {
     "requires": [
       {
