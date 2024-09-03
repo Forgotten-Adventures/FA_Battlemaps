@@ -55,7 +55,10 @@ Module Settings allow you to
 ![ModuleSettings2](ModuleSettings2.jpg)
 
 ## Changelog:
+_____________
 
+v1.1.01
+* Added new map
 _____________
 v1.1.0
 * Added ability to modify the download path for map assets.
