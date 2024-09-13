@@ -56,7 +56,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
-
+v1.1.3
+* Added new map
+_____________
 v1.1.2
 * Further improved compatibility with TheRipper93's [Media Optimizer](https://theripper93.com/module/media-optimizer).
 _____________
