@@ -606,8 +606,8 @@ class FADownloader extends FormApplication {
   static FILE_STATUS_PROCESSING = 'Processing';
   static FILE_STATUS_ERRORED = 'Errored';
 
-  // Track whether the media optimizer filename slugify setting should be enabled after the downloads are complete.
-  shouldEnableMediaOptimizer = false;
+  // Track what value to set the media optimizer config value to when we are done.
+  mediaOptimizerConfigValue = undefined;
 
   constructor(battlemapId, object = {}, options = {}) {
     super(object, options);
@@ -726,40 +726,36 @@ class FADownloader extends FormApplication {
         this.status = game.i18n.format('FABattlemaps.DownloaderStatusDownloading', {
           count: files?.size,
         });
-        this.disableMediaOptimizer().then(() => {
-          this.downloader.Process(battlemapId, Array.from(files.values()), this.remappedFiles)
-            .then(() => {
-              this.onComplete();
-            });
-        });
+        this.disableMediaOptimizer();
+        this.downloader.Process(battlemapId, Array.from(files.values()), this.remappedFiles)
+          .then(() => {
+            this.onComplete();
+          });
       });
   }
 
   /**
-   * Disable media optimizer if it is enabled.
+   * Disable media optimizer using the method available in v3.0.1 of media-optimizer.
    * We don't want the files to be converted when they are uploaded as they are already decently optimized.
    */
-  async disableMediaOptimizer() {
-    if (!game.modules.get('media-optimizer')?.active) {
-      return;
+  disableMediaOptimizer() {
+    // Record the current value of the media optimizer config so we can restore it later
+    if (typeof CONFIG.SUPPRESS_MEDIA_OPTIMIZER !== 'undefined') {
+      this.mediaOptimizerConfigValue = CONFIG.SUPPRESS_MEDIA_OPTIMIZER;
     }
 
-    if (game.settings.get("media-optimizer", "enabled")) {
-      this.shouldEnableMediaOptimizer = true;
-      await game.settings.set("media-optimizer", "enabled", false);
-    }
+    CONFIG.SUPPRESS_MEDIA_OPTIMIZER = true;
   }
 
   /**
    * Enable media optimizer if it was disabled by this module.
    */
-  async enableMediaOptimizer() {
-    if (!game.modules.get('media-optimizer')?.active) {
-      return;
-    }
-
-    if (this.shouldEnableMediaOptimizer) {
-      await game.settings.set("media-optimizer", "enabled", true);
+  enableMediaOptimizer() {
+    if (this.mediaOptimizerConfigValue !== undefined) {
+      CONFIG.SUPPRESS_MEDIA_OPTIMIZER = this.mediaOptimizerConfigValue;
+      this.mediaOptimizerConfigValue = undefined;
+    } else {
+      delete CONFIG.SUPPRESS_MEDIA_OPTIMIZER;
     }
   }
 
@@ -837,7 +833,7 @@ class FADownloader extends FormApplication {
       this.render(false);
     }, 0);
 
-    await this.enableMediaOptimizer();
+    this.enableMediaOptimizer();
 
     await FADownloader.handleExistingScene(this.battlemap.name, '', async (sceneId, sceneName) => {
       let diff = {};
