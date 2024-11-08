@@ -57,7 +57,7 @@ Module Settings allow you to
 ## Changelog:
 _____________
 v1.1.7
-fix: suppress media optimizer
+- fix: suppress media optimizer
 _____________
 v1.1.6
 * Added new maps
