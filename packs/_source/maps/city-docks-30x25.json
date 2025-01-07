@@ -2289,7 +2289,7 @@
       "hidden": false,
       "locked": true,
       "restrictions": {
-        "light": false,
+        "light": true,
         "weather": false
       },
       "video": {
@@ -2315,11 +2315,16 @@
           "minrequired": 0,
           "cooldown": null,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
           "files": []
         },
-        "tagger": {}
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
       },
       "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.mbs4pX5897ydYTaX"
     },
@@ -2353,7 +2358,7 @@
       "hidden": false,
       "locked": true,
       "restrictions": {
-        "light": false,
+        "light": true,
         "weather": false
       },
       "video": {
@@ -2422,7 +2427,7 @@
       "hidden": false,
       "locked": true,
       "restrictions": {
-        "light": false,
+        "light": true,
         "weather": false
       },
       "video": {
@@ -2448,11 +2453,16 @@
           "minrequired": 0,
           "cooldown": null,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
           "files": []
         },
-        "tagger": {}
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
       },
       "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.0yOnmhbxA0qHuFyL"
     },
@@ -2486,7 +2496,7 @@
       "hidden": false,
       "locked": true,
       "restrictions": {
-        "light": false,
+        "light": true,
         "weather": false
       },
       "video": {
@@ -2512,11 +2522,16 @@
           "minrequired": 0,
           "cooldown": null,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
           "files": []
         },
-        "tagger": {}
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
       },
       "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.duGjOmW50Fqg3nsl"
     },
@@ -2678,7 +2693,7 @@
       "hidden": false,
       "locked": false,
       "restrictions": {
-        "light": false,
+        "light": true,
         "weather": true
       },
       "video": {
@@ -2708,7 +2723,12 @@
           "actions": [],
           "files": []
         },
-        "tagger": {}
+        "tagger": {},
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
       },
       "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.anHh7s2pZZmCeVB9"
     },
@@ -2806,7 +2826,7 @@
       },
       "_id": "5CdvkXuXeLsJ9DJY",
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": false,
       "restrictions": {
@@ -3632,7 +3652,7 @@
         "alpha": 0
       },
       "_id": "bZt1EZ451Gu2xAxC",
-      "rotation": 0,
+      "rotation": 30,
       "alpha": 0,
       "hidden": false,
       "locked": false,
@@ -4472,12 +4492,34 @@
                 "rollmode": "roll"
               },
               "id": "c3GztfNLyUSYfC4a"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:marketlight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> marketlight"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "1",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "fLWnKCwYRJMG50yL"
             }
           ],
           "files": [],
           "name": "",
           "vision": false,
           "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 66,
@@ -4641,6 +4683,23 @@
               "id": "keLcbmIaHPmr2UGP"
             },
             {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:marketlight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> marketlight"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "iqRN3w3iAzZplhzt"
+            },
+            {
               "action": "activate",
               "data": {
                 "entity": {
@@ -4659,6 +4718,11 @@
           "name": "",
           "vision": false,
           "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 65,
@@ -5202,7 +5266,7 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": "#000000",
+        "tint": "#890101",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "fill",
@@ -5435,7 +5499,7 @@
                 "chatMessage": false,
                 "rollmode": "roll"
               },
-              "id": "1Vyik70skwS8W2Wx"
+              "id": "mqlZBBeg6PNypOMh"
             },
             {
               "action": "alter",
@@ -5567,12 +5631,65 @@
                 "activate": "deactivate"
               },
               "id": "YwSGBAG8kO0MjqW4"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:treelight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> treelight"
+                },
+                "select": "first",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "5l4Ufp0z5gD4WHC5"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:statuelight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> statuelight"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "KrRRz9KORuwbEAuK"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:fountainlight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> fountainlight"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "AhYeZ6lE1REbxtw6"
             }
           ],
           "files": [],
           "name": "",
           "vision": false,
           "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 58,
@@ -5718,7 +5835,7 @@
                 "chatMessage": false,
                 "rollmode": "roll"
               },
-              "id": "8VHgKdbXIkEE5TyF"
+              "id": "VW42XPg6INhF20k7"
             },
             {
               "action": "alter",
@@ -5735,7 +5852,7 @@
                 "chatMessage": false,
                 "rollmode": "roll"
               },
-              "id": "27jp7oSNCGYQZZjt"
+              "id": "sftwpyTG7AXwNcgh"
             },
             {
               "action": "alter",
@@ -5806,54 +5923,6 @@
               "id": "pfaRyZnrkTXaJBan"
             },
             {
-              "action": "tileimage",
-              "data": {
-                "entity": {
-                  "id": "tagger:statue",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> statue"
-                },
-                "select": "first",
-                "transition": "none",
-                "speed": 1,
-                "loop": 1
-              },
-              "id": "ilDpyoj8mvt4VViF"
-            },
-            {
-              "action": "tileimage",
-              "data": {
-                "entity": {
-                  "id": "tagger:fountain",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> fountain"
-                },
-                "select": "last",
-                "transition": "none",
-                "speed": 1,
-                "loop": 1
-              },
-              "id": "wpbFMZcdPokATotX"
-            },
-            {
-              "action": "tileimage",
-              "data": {
-                "entity": {
-                  "id": "tagger:tree",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> tree"
-                },
-                "select": "last",
-                "transition": "none",
-                "speed": 1,
-                "loop": 1
-              },
-              "id": "0bOOmzkcKSp559SC"
-            },
-            {
               "action": "activate",
               "data": {
                 "entity": {
@@ -5866,12 +5935,65 @@
                 "activate": "activate"
               },
               "id": "kq84UdHJMDIVfTwC"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:statuelight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> statuelight"
+                },
+                "select": "first",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "QEbxuu8ZN7uBjVwD"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:fountainlight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> fountainlight"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "ugOwOhPsixstqiVj"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:treelight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> treelight"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "P5JF5jujzxuLGXti"
             }
           ],
           "files": [],
           "name": "",
           "vision": false,
           "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 58,
@@ -5968,7 +6090,7 @@
                 "chatMessage": false,
                 "rollmode": "roll"
               },
-              "id": "GxRNrIIoUSnz7YET"
+              "id": "3fes4LUriBkuFpcI"
             },
             {
               "action": "alter",
@@ -5985,7 +6107,7 @@
                 "chatMessage": false,
                 "rollmode": "roll"
               },
-              "id": "nJKzC60LOVWjhrEq"
+              "id": "XAuM3na8eOlt6HRw"
             },
             {
               "action": "alter",
@@ -6117,12 +6239,65 @@
                 "activate": "activate"
               },
               "id": "zhLs7xgCA032YuQS"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:fountainlight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> fountainlight"
+                },
+                "select": "first",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "ccjqali8pYEORPXt"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:statuelight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> statuelight"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "Bd17PM8ZbHt2hDy7"
+            },
+            {
+              "action": "tileimage",
+              "data": {
+                "entity": {
+                  "id": "tagger:treelight",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> treelight"
+                },
+                "select": "last",
+                "transition": "none",
+                "speed": 1,
+                "loop": 1
+              },
+              "id": "P4DZH5gPE167kU45"
             }
           ],
           "files": [],
           "name": "",
           "vision": false,
           "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 58,
@@ -6334,6 +6509,11 @@
           "tags": [
             "tree"
           ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.dfX2e1XY9zDddAsJ"
@@ -6591,7 +6771,7 @@
       "y": 1810,
       "width": 31,
       "height": 25,
-      "rotation": 0,
+      "rotation": 75,
       "alpha": 1,
       "hidden": false,
       "locked": false,
@@ -7798,7 +7978,7 @@
             {
               "action": "playsound",
               "data": {
-                "audiofile": "fa_battlemaps/Audio/coinbag.wav",
+                "audiofile": "fa_battlemaps/Audio/coinbag.ogg",
                 "audiofor": "trigger",
                 "volume": 0.4,
                 "loop": false,
@@ -7831,6 +8011,11 @@
           "name": "",
           "vision": false,
           "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "elevation": 20,
@@ -9028,6 +9213,60 @@
                   "who": "n8PgfmmM3QVyMxNn",
                   "how": "dblclick",
                   "when": 1735095655521
+                },
+                {
+                  "id": "JKHqmSIRJ1ADgLj7",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736198902166
+                },
+                {
+                  "id": "0AJ1BSzQctyyBLaQ",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736198904268
+                },
+                {
+                  "id": "VUJHo6AerjYwcIfF",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199079932
+                },
+                {
+                  "id": "s1EaJgR4ZffXAjAk",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199082001
+                },
+                {
+                  "id": "hgZWiQHvbB6zBlBz",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199151068
+                },
+                {
+                  "id": "rAUrsnz2UOAOWi7i",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199152862
+                },
+                {
+                  "id": "vzwfU9QgDIkNC76k",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199174821
+                },
+                {
+                  "id": "Ra3hACLgg4YwpM4j",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199177144
+                },
+                {
+                  "id": "QouJANSPXeIGxKXG",
+                  "who": "n8PgfmmM3QVyMxNn",
+                  "how": "dblclick",
+                  "when": 1736199180784
                 }
               ]
             }
@@ -9074,7 +9313,7 @@
       },
       "_id": "w3JbGXOh2ay8EbW6",
       "rotation": 0,
-      "alpha": 0,
+      "alpha": 1,
       "hidden": false,
       "locked": false,
       "restrictions": {
@@ -9142,7 +9381,7 @@
       },
       "_id": "TJxXGYF9RaDhzRib",
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
       "locked": false,
       "restrictions": {
@@ -9172,7 +9411,7 @@
           "minrequired": 0,
           "cooldown": null,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
           "files": []
         },
@@ -9180,9 +9419,530 @@
           "tags": [
             "crates1b"
           ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.TJxXGYF9RaDhzRib"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2100,
+      "y": 1800,
+      "width": 600,
+      "height": 600,
+      "elevation": 0,
+      "sort": 73,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "v8L6dLAUAS2ZTptU",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 1,
+          "actions": [],
+          "files": [
+            {
+              "id": "XYj3j2ub7VFs2iZq",
+              "name": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight1Fountain.webp",
+              "selected": false
+            },
+            {
+              "id": "MOijHgWXWCshoONM",
+              "name": "modules/fa-battlemaps/images/Transparent.webp",
+              "selected": true
+            }
+          ]
+        },
+        "tagger": {
+          "tags": [
+            "fountainlight",
+            "marketlight",
+            "marketlight1"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.v8L6dLAUAS2ZTptU"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight1Statue.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2100,
+      "y": 1800,
+      "width": 600,
+      "height": 600,
+      "elevation": 0,
+      "sort": 74,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "RJenTTeHdDVsjqEP",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 0,
+          "actions": [],
+          "files": [
+            {
+              "id": "cJOBUmWSTLSdhRq1",
+              "name": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight1Statue.webp",
+              "selected": true
+            },
+            {
+              "id": "xQUniB6IyqzZHr4b",
+              "name": "modules/fa-battlemaps/images/Transparent.webp",
+              "selected": false
+            }
+          ]
+        },
+        "tagger": {
+          "tags": [
+            "statuelight",
+            "marketlight",
+            "marketlight1"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.RJenTTeHdDVsjqEP"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2100,
+      "y": 1800,
+      "width": 600,
+      "height": 600,
+      "elevation": 0,
+      "sort": 75,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "Yk5NTdykAqijZZY6",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 1,
+          "actions": [],
+          "files": [
+            {
+              "id": "e7ZwfmCvx8IyVLvS",
+              "name": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight1Tree.webp",
+              "selected": false
+            },
+            {
+              "id": "wG9BLg7kO1YNf0TH",
+              "name": "modules/fa-battlemaps/images/Transparent.webp",
+              "selected": true
+            }
+          ]
+        },
+        "tagger": {
+          "tags": [
+            "treelight",
+            "marketlight",
+            "marketlight1"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.Yk5NTdykAqijZZY6"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2400,
+      "y": 1500,
+      "width": 600,
+      "height": 600,
+      "elevation": 0,
+      "sort": 76,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "XAAbzj0qsNvgXtse",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 1,
+          "actions": [],
+          "files": [
+            {
+              "id": "o730bf6IEP7fg4UP",
+              "name": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight2Fountain.webp",
+              "selected": false
+            },
+            {
+              "id": "9kug2zueGMBCpO5Z",
+              "name": "modules/fa-battlemaps/images/Transparent.webp",
+              "selected": true
+            }
+          ]
+        },
+        "tagger": {
+          "tags": [
+            "fountainlight",
+            "marketlight",
+            "marketlight2"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.XAAbzj0qsNvgXtse"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight2Statue.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2400,
+      "y": 1500,
+      "width": 600,
+      "height": 600,
+      "elevation": 0,
+      "sort": 77,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "TZViS9zE0UfVPeqB",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 0,
+          "actions": [],
+          "files": [
+            {
+              "id": "hXZxhkskorK9aHU4",
+              "name": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight2Statue.webp",
+              "selected": true
+            },
+            {
+              "id": "SXL6xpuluoziaHyy",
+              "name": "modules/fa-battlemaps/images/Transparent.webp",
+              "selected": false
+            }
+          ]
+        },
+        "tagger": {
+          "tags": [
+            "statuelight",
+            "marketlight",
+            "marketlight2"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.TZViS9zE0UfVPeqB"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2400,
+      "y": 1500,
+      "width": 600,
+      "height": 600,
+      "elevation": 0,
+      "sort": 78,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "12W149H3GjD2Kein",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "enter"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 1,
+          "actions": [],
+          "files": [
+            {
+              "id": "eOWHHmblCewpiOFj",
+              "name": "fa_battlemaps/Maps/2024/December/fa_citydocks/Tiles/Lights/MarketLight2Tree.webp",
+              "selected": false
+            },
+            {
+              "id": "BwXaj8BLavJEA8NI",
+              "name": "modules/fa-battlemaps/images/Transparent.webp",
+              "selected": true
+            }
+          ]
+        },
+        "tagger": {
+          "tags": [
+            "treelight",
+            "marketlight",
+            "marketlight2"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        }
+      },
+      "_key": "!scenes.tiles!QfVCeWX8cH4elJHc.12W149H3GjD2Kein"
     }
   ],
   "walls": [
@@ -9689,30 +10449,6 @@
         "tagger": {}
       },
       "_key": "!scenes.walls!QfVCeWX8cH4elJHc.4JRJmFdL3ZoTfQ17"
-    },
-    {
-      "light": 10,
-      "sight": 10,
-      "sound": 10,
-      "move": 20,
-      "c": [
-        1900,
-        2988,
-        1900,
-        3000
-      ],
-      "_id": "nf8YxmIMCZyKdRAD",
-      "dir": 0,
-      "door": 0,
-      "ds": 0,
-      "threshold": {
-        "light": null,
-        "sight": null,
-        "sound": null,
-        "attenuation": false
-      },
-      "flags": {},
-      "_key": "!scenes.walls!QfVCeWX8cH4elJHc.nf8YxmIMCZyKdRAD"
     },
     {
       "light": 10,
@@ -10489,6 +11225,30 @@
         "tagger": {}
       },
       "_key": "!scenes.walls!QfVCeWX8cH4elJHc.bd6JNWqCKGw4l1Ky"
+    },
+    {
+      "light": 10,
+      "sight": 10,
+      "sound": 10,
+      "move": 20,
+      "c": [
+        1900,
+        2988,
+        1900,
+        3000
+      ],
+      "_id": "nf8YxmIMCZyKdRAD",
+      "dir": 0,
+      "door": 0,
+      "ds": 0,
+      "threshold": {
+        "light": null,
+        "sight": null,
+        "sound": null,
+        "attenuation": false
+      },
+      "flags": {},
+      "_key": "!scenes.walls!QfVCeWX8cH4elJHc.nf8YxmIMCZyKdRAD"
     }
   ],
   "playlist": null,
@@ -10504,7 +11264,7 @@
     "systemId": "dnd5e",
     "systemVersion": "3.3.1",
     "createdTime": 1735202443826,
-    "modifiedTime": 1735202443826,
+    "modifiedTime": 1736254965726,
     "lastModifiedBy": "dnd5ebuilder0000"
   },
   "active": false,
