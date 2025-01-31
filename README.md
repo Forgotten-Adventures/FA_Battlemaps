@@ -56,6 +56,10 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.1.13
+* Added new maps
+* Cragmaw Hideout [30x20] fix update
+_____________
 v1.1.12
 * Hotfix update
 _____________
