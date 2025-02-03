@@ -20,7 +20,10 @@ const PACK_DEST = "packs";
 const PACK_SRC = "packs/_source";
 
 // eslint-disable-next-line
-const argv = yargs(hideBin(process.argv)).command(packageCommand()).help().alias("help", "h").argv;
+const argv = yargs(hideBin(process.argv))
+  .command(packageCommand())
+  .help().alias("help", "h")
+  .argv;
 
 // eslint-disable-next-line
 function packageCommand() {
@@ -74,7 +77,10 @@ function cleanPackEntry(data, { clearSourceId = true, ownership = 0 } = {}) {
     data.ownership = { default: ownership };
   }
   if (data.ownership) data.ownership = { default: ownership };
-  if (clearSourceId) delete data.flags?.core?.sourceId;
+  if ( clearSourceId ) {
+    delete data._stats?.compendiumSource;
+    delete data.flags?.core?.sourceId;
+  }
   delete data.flags?.importSource;
   delete data.flags?.exportSource;
   if (data._stats?.lastModifiedBy) data._stats.lastModifiedBy = "dnd5ebuilder0000";
