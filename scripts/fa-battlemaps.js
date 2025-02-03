@@ -149,10 +149,7 @@ Hooks.once('init', () => {
   FABattlemaps.initialize();
 });
 Hooks.on('preCreateScene', (scene, data, options) => {
-  if (scene.getFlag('core', 'sourceId')
-      ?.match(/Compendium.fa_battlemaps.maps/) ||
-    scene.getFlag('core', 'sourceId')
-      ?.match(/Compendium.fa-battlemaps.maps/)) {
+  if ((scene._stats?.compendiumSource ?? scene.getFlag('core', 'sourceId'))?.match(/Compendium.fa-battlemaps.maps/)) {
     options.keepId = true;
     options.keepEmbeddedIds = true;
   }
@@ -638,7 +635,7 @@ class FADownloader extends FormApplication {
 
     const moduleVersion = game.modules.get(FABattlemaps.ID).version ?? game.modules.get(FABattlemaps.ID).data.version;
     const mapVersion = this.battlemap.version || '1.0.18';
-    if (isNewerVersion(mapVersion, moduleVersion)) {
+    if (foundry.utils.isNewerVersion(mapVersion, moduleVersion)) {
       this.wrongVersion = game.i18n.format('FABattlemaps.DownloaderStatusWrongVersion', {version: mapVersion});
       this.status = game.i18n.localize('FABattlemaps.DownloaderStatusWrongVersionShort');
       return;
