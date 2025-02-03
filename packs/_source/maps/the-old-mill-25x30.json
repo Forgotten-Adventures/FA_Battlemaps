@@ -40,127 +40,7 @@
   },
   "tokenVision": true,
   "drawings": [],
-  "tokens": [
-    {
-      "flags": {
-        "tagger": {},
-        "autorotate": {
-          "enabled": null,
-          "offset": null
-        },
-        "dnd5e": {
-          "tokenRing": {
-            "effects": 1
-          }
-        }
-      },
-      "name": "Akra",
-      "displayName": 30,
-      "width": 1,
-      "height": 1,
-      "lockRotation": false,
-      "rotation": 198.43494882292202,
-      "actorLink": true,
-      "disposition": 1,
-      "displayBars": 40,
-      "bar1": {
-        "attribute": "attributes.hp"
-      },
-      "bar2": {
-        "attribute": "attributes.ac.value"
-      },
-      "alpha": 1,
-      "light": {
-        "alpha": 1,
-        "angle": 360,
-        "bright": 0,
-        "coloration": 1,
-        "dim": 0,
-        "luminosity": 0.5,
-        "saturation": 0,
-        "contrast": 0,
-        "shadows": 0,
-        "animation": {
-          "speed": 5,
-          "intensity": 5,
-          "type": null,
-          "reverse": false
-        },
-        "darkness": {
-          "min": 0,
-          "max": 1
-        },
-        "color": null,
-        "attenuation": 0.5,
-        "negative": false,
-        "priority": 0
-      },
-      "texture": {
-        "src": "systems/dnd5e/tokens/heroes/ClericDragonborn.webp",
-        "tint": "#ffffff",
-        "scaleX": 1,
-        "scaleY": 1,
-        "offsetX": 0,
-        "offsetY": 0,
-        "rotation": 0,
-        "anchorX": 0.5,
-        "anchorY": 0.5,
-        "fit": "contain",
-        "alphaThreshold": 0.75
-      },
-      "sight": {
-        "angle": 360,
-        "enabled": true,
-        "range": 5,
-        "brightness": 0,
-        "visionMode": "basic",
-        "color": null,
-        "attenuation": 0.1,
-        "saturation": 0,
-        "contrast": 0
-      },
-      "detectionModes": [],
-      "appendNumber": false,
-      "prependAdjective": false,
-      "hexagonalShape": 0,
-      "occludable": {
-        "radius": 0
-      },
-      "ring": {
-        "enabled": false,
-        "colors": {
-          "ring": null,
-          "background": null
-        },
-        "effects": 0,
-        "subject": {
-          "scale": 1,
-          "texture": null
-        }
-      },
-      "actorId": "7xsP86XcpwLJd7Je",
-      "hidden": false,
-      "sort": 0,
-      "_id": "WKcPx6mdwMwNrlaB",
-      "delta": {
-        "_id": "6Ks25Upyfsx2v6eT",
-        "system": {},
-        "items": [],
-        "effects": [],
-        "flags": {},
-        "name": null,
-        "type": null,
-        "img": null,
-        "_key": "!scenes.tokens.delta!GwZXf8IgOkdNVTJu.WKcPx6mdwMwNrlaB.6Ks25Upyfsx2v6eT"
-      },
-      "x": 3800,
-      "y": 3400,
-      "elevation": 0,
-      "locked": false,
-      "_regions": [],
-      "_key": "!scenes.tokens!GwZXf8IgOkdNVTJu.WKcPx6mdwMwNrlaB"
-    }
-  ],
+  "tokens": [],
   "lights": [
     {
       "x": 3884,
@@ -530,7 +410,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -607,7 +487,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -673,7 +553,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -739,7 +619,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -805,7 +685,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -871,7 +751,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -904,7 +784,15 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "elevation": 20,
@@ -937,9 +825,9 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
-        "mode": 1,
+        "mode": 0,
         "alpha": 0
       },
       "video": {
@@ -985,34 +873,28 @@
                 "loop": 1
               },
               "id": "ntRqJUjQAyXRdDsC"
-            },
-            {
-              "action": "playsound",
-              "data": {
-                "audiofile": "fa_battlemaps/Audio/C-Hatch.mp3",
-                "audiofor": "all",
-                "volume": 0.1,
-                "loop": false,
-                "fade": 0.25,
-                "scenerestrict": false,
-                "prevent": false,
-                "playlist": true
-              },
-              "id": "Qj0WN2dIRA4LxaK2"
             }
           ],
           "files": [
             {
               "id": "kD8Pyy6kCeMFTgsK",
               "name": "fa_battlemaps/Maps/2024/August/fa_theoldmill/Tiles/Doors/DoorClosed.webp",
-              "selected": true
+              "selected": false
             },
             {
               "id": "kMIsAqomgVWki1NB",
               "name": "fa_battlemaps/Maps/2024/August/fa_theoldmill/Tiles/Doors/DoorOpen.webp",
-              "selected": false
+              "selected": true
             }
-          ]
+          ],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "elevation": 20,
@@ -1045,7 +927,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1111,7 +993,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -1188,7 +1070,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -1320,7 +1202,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1397,7 +1279,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -1537,7 +1419,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1602,7 +1484,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -1679,7 +1561,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1745,7 +1627,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1786,7 +1668,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1827,7 +1709,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 1
@@ -1850,7 +1732,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
@@ -1923,7 +1805,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -1946,7 +1828,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
@@ -2018,7 +1900,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -2041,7 +1923,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
@@ -2181,7 +2063,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -2204,7 +2086,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
@@ -2292,7 +2174,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -2319,7 +2201,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
@@ -2673,13 +2555,25 @@
                   "scene": "_active",
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> DoorWall"
                 },
-                "state": "open",
-                "type": "secret"
+                "state": "nothing",
+                "type": "NONE",
+                "movement": "NONE",
+                "light": "NONE",
+                "sight": "NONE",
+                "sound": "NONE"
               },
               "id": "JyJGZst3twWB4n59"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 11,
@@ -2712,7 +2606,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -2739,7 +2633,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
@@ -3070,13 +2964,25 @@
                   "scene": "_active",
                   "name": "<i class=\"fas fa-tag fa-sm\"></i> DoorWall"
                 },
-                "state": "close",
-                "type": "door"
+                "state": "CLOSED",
+                "type": "DOOR",
+                "movement": "NORMAL",
+                "light": "NORMAL",
+                "sight": "NORMAL",
+                "sound": "NORMAL"
               },
               "id": "yPQrp1dC0TYVedtW"
             }
           ],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "sort": 7,
@@ -3108,7 +3014,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3374,7 +3280,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3440,9 +3346,9 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
-        "mode": 1,
+        "mode": 0,
         "alpha": 0
       },
       "video": {
@@ -3473,7 +3379,15 @@
           "chance": 100,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "elevation": 20,
@@ -3506,7 +3420,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3572,7 +3486,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3611,9 +3525,9 @@
       "height": 200,
       "_id": "4LXUgwqt8NPAkvEO",
       "rotation": 0,
-      "alpha": 1,
+      "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3666,7 +3580,7 @@
         "offsetX": 0,
         "offsetY": 0,
         "rotation": 0,
-        "tint": "#000000",
+        "tint": "#890101",
         "anchorX": 0.5,
         "anchorY": 0.5,
         "fit": "fill",
@@ -3680,7 +3594,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3703,7 +3617,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 50,
@@ -3774,7 +3688,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3816,7 +3730,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3839,7 +3753,7 @@
           ],
           "allowpaused": false,
           "usealpha": false,
-          "pointer": false,
+          "pointer": true,
           "pertoken": false,
           "minrequired": 0,
           "chance": 50,
@@ -3925,7 +3839,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -3991,7 +3905,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -4057,7 +3971,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -4122,7 +4036,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 0,
         "alpha": 0
@@ -4295,7 +4209,7 @@
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -4328,7 +4242,15 @@
           "chance": 50,
           "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": true,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "elevation": 20,
@@ -4361,7 +4283,7 @@
       "rotation": 0,
       "alpha": 0,
       "hidden": false,
-      "locked": false,
+      "locked": true,
       "occlusion": {
         "mode": 1,
         "alpha": 0
@@ -4392,9 +4314,17 @@
           "pertoken": false,
           "minrequired": 0,
           "chance": 100,
-          "fileindex": -1,
+          "fileindex": 0,
           "actions": [],
-          "files": []
+          "files": [],
+          "name": "",
+          "vision": false,
+          "cooldown": null
+        },
+        "betterroofs": {
+          "brMode": true,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
         }
       },
       "elevation": 20,
@@ -4703,19 +4633,19 @@
         3200,
         3400
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
       "flags": {},
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!GwZXf8IgOkdNVTJu.i4nOtJtijiraaI8t"
     },
@@ -4727,19 +4657,19 @@
         3800,
         2800
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
       "flags": {},
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!GwZXf8IgOkdNVTJu.vWfU4PIqGnwzJvta"
     },
@@ -4751,19 +4681,19 @@
         4200,
         3400
       ],
-      "light": 0,
+      "light": 30,
       "move": 20,
-      "sight": 0,
+      "sight": 30,
       "sound": 0,
       "dir": 0,
       "door": 0,
       "ds": 0,
       "flags": {},
       "threshold": {
-        "light": null,
-        "sight": null,
+        "light": 10,
+        "sight": 10,
         "sound": null,
-        "attenuation": false
+        "attenuation": true
       },
       "_key": "!scenes.walls!GwZXf8IgOkdNVTJu.tSjJeZEskKNrOuym"
     },
@@ -4808,6 +4738,7 @@
         "sound": null,
         "attenuation": false
       },
+      "doorSound": "woodCreaky",
       "_key": "!scenes.walls!GwZXf8IgOkdNVTJu.u245m1HADsQAhVd7"
     },
     {
@@ -5726,9 +5657,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "2.3.1",
-    "coreVersion": "12.330",
+    "coreVersion": "12.331",
     "createdTime": 1722697135248,
-    "modifiedTime": 1723947134594,
+    "modifiedTime": 1738098442442,
     "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": null,
     "duplicateSource": null

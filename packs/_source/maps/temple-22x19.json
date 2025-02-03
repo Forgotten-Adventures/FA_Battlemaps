@@ -1,7 +1,6 @@
 {
   "name": "Temple [22x19]",
   "navigation": false,
-  "navOrder": 0,
   "navName": "",
   "background": {
     "src": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Maps/TempleBG.webp",
@@ -1159,291 +1158,6 @@
     },
     {
       "texture": {
-        "src": "fa_battlemaps/Maps/2022/December/fa_waveechocave/Tiles/templedoorleft.webp",
-        "scaleX": 1,
-        "scaleY": 1,
-        "offsetX": 0,
-        "offsetY": 0,
-        "rotation": 0,
-        "tint": "#ffffff",
-        "anchorX": 0.5,
-        "anchorY": 0.5,
-        "fit": "fill",
-        "alphaThreshold": 0.75
-      },
-      "width": 200,
-      "height": 300,
-      "_id": "VvQKDUtpitvBhkjX",
-      "rotation": 0,
-      "alpha": 0,
-      "hidden": false,
-      "locked": true,
-      "occlusion": {
-        "mode": 0,
-        "alpha": 1
-      },
-      "video": {
-        "loop": true,
-        "autoplay": true,
-        "volume": 0
-      },
-      "flags": {
-        "tagger": {
-          "tags": [
-            "TempleDoorLeft"
-          ]
-        },
-        "monks-active-tiles": {
-          "active": true,
-          "record": false,
-          "restriction": "all",
-          "controlled": "all",
-          "trigger": [
-            "manual"
-          ],
-          "allowpaused": false,
-          "usealpha": false,
-          "pointer": false,
-          "pertoken": false,
-          "minrequired": 0,
-          "chance": 100,
-          "fileindex": 0,
-          "actions": [
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tile",
-                  "name": "This Tile"
-                },
-                "attribute": "alpha",
-                "value": "={{entity.alpha}} == 0 ? 1 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "ibmAsnhIb4lTocVl"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:templedoorleftwall",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorleftwall"
-                },
-                "attribute": "move",
-                "value": "={{entity.move}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "IM6dOCvnZTmswq0s"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:templedoorleftwall",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorleftwall"
-                },
-                "attribute": "sight",
-                "value": "={{entity.sight}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "FkljF3vl2yTVIKuv"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:templedoorleftwall",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorleftwall"
-                },
-                "attribute": "light",
-                "value": "={{entity.light}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "rHcvOgzUEaKzRji3"
-            }
-          ],
-          "files": [
-            {
-              "id": "8wRmxnuyvoMaEkjn",
-              "name": "fa_battlemaps/Maps/2022/December/fa_waveechocave/Tiles/templedoorleft.webp",
-              "selected": true
-            }
-          ],
-          "name": "",
-          "vision": false,
-          "cooldown": null
-        },
-        "betterroofs": {
-          "brMode": false,
-          "occlusionLinkId": "",
-          "occlusionLinkSource": false
-        }
-      },
-      "x": 1200,
-      "y": 1700,
-      "sort": 8,
-      "restrictions": {
-        "light": false,
-        "weather": false
-      },
-      "elevation": 0,
-      "_key": "!scenes.tiles!OWVjH4NO3jFfTRBd.VvQKDUtpitvBhkjX"
-    },
-    {
-      "texture": {
-        "src": "fa_battlemaps/Maps/2022/December/fa_waveechocave/Tiles/templedoorright.webp",
-        "scaleX": 1,
-        "scaleY": 1,
-        "offsetX": 0,
-        "offsetY": 0,
-        "rotation": 0,
-        "tint": "#ffffff",
-        "anchorX": 0.5,
-        "anchorY": 0.5,
-        "fit": "fill",
-        "alphaThreshold": 0.75
-      },
-      "width": 100,
-      "height": 300,
-      "_id": "0YgX8dSQ6yGtUVHT",
-      "rotation": 0,
-      "alpha": 0,
-      "hidden": false,
-      "locked": true,
-      "occlusion": {
-        "mode": 0,
-        "alpha": 1
-      },
-      "video": {
-        "loop": true,
-        "autoplay": true,
-        "volume": 0
-      },
-      "flags": {
-        "tagger": {
-          "tags": [
-            "TempleDoorRight"
-          ]
-        },
-        "monks-active-tiles": {
-          "active": true,
-          "record": false,
-          "restriction": "all",
-          "controlled": "all",
-          "trigger": [
-            "",
-            "manual"
-          ],
-          "allowpaused": false,
-          "usealpha": false,
-          "pointer": false,
-          "pertoken": false,
-          "minrequired": 0,
-          "chance": 100,
-          "fileindex": 0,
-          "actions": [
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tile",
-                  "name": "This Tile"
-                },
-                "attribute": "alpha",
-                "value": "={{entity.alpha}} == 0 ? 1 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "D94hz1TM1cfSTeIr"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:templedoorrightwall",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorrightwall"
-                },
-                "attribute": "move",
-                "value": "={{entity.move}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "yh4dh7xdLX6q6yKK"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:templedoorrightwall",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorrightwall"
-                },
-                "attribute": "sight",
-                "value": "={{entity.sight}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "yf5XApyVBKm7zbZD"
-            },
-            {
-              "action": "alter",
-              "data": {
-                "entity": {
-                  "id": "tagger:templedoorrightwall",
-                  "match": "all",
-                  "scene": "_active",
-                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorrightwall"
-                },
-                "attribute": "light",
-                "value": "={{entity.light}} == 0 ? 20 : 0",
-                "chatMessage": false,
-                "rollmode": "roll"
-              },
-              "id": "1z6YROhY4JDf02tM"
-            }
-          ],
-          "files": [
-            {
-              "id": "8Bzml2WXgOnh4MAL",
-              "name": "fa_battlemaps/Maps/2022/December/fa_waveechocave/Tiles/templedoorright.webp",
-              "selected": true
-            }
-          ],
-          "name": "",
-          "vision": false,
-          "cooldown": null
-        },
-        "betterroofs": {
-          "brMode": false,
-          "occlusionLinkId": "",
-          "occlusionLinkSource": false
-        }
-      },
-      "x": 1400,
-      "y": 1700,
-      "sort": 7,
-      "restrictions": {
-        "light": false,
-        "weather": false
-      },
-      "elevation": 0,
-      "_key": "!scenes.tiles!OWVjH4NO3jFfTRBd.0YgX8dSQ6yGtUVHT"
-    },
-    {
-      "texture": {
         "src": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Tiles/Room19_CorridorWebOverlay_11x4.webp",
         "scaleX": 1,
         "scaleY": 1,
@@ -1974,6 +1688,306 @@
       },
       "elevation": 0,
       "_key": "!scenes.tiles!OWVjH4NO3jFfTRBd.foReASqKg0AhL32W"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Tiles/templedoorright.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 1400,
+      "y": 1700,
+      "width": 100,
+      "height": 300,
+      "elevation": 0,
+      "sort": 104,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "BNoqsq4MuPEdfQW8",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": true,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "active": true,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "",
+            "door"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll",
+                "collection": "tokens"
+              },
+              "id": "D94hz1TM1cfSTeIr"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:templedoorrightwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorrightwall"
+                },
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yh4dh7xdLX6q6yKK"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:templedoorrightwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorrightwall"
+                },
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "yf5XApyVBKm7zbZD"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:templedoorrightwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorrightwall"
+                },
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "1z6YROhY4JDf02tM"
+            }
+          ],
+          "name": "",
+          "record": false,
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 0,
+          "files": []
+        },
+        "tagger": {
+          "tags": [
+            "TempleDoorRight"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        },
+        "tile-scroll": {
+          "enableScroll": false,
+          "scrollDirection": 0,
+          "enableRotate": false,
+          "scrollSpeed": 1,
+          "repeatx": 1,
+          "repeaty": 1,
+          "pivotx": 0.5,
+          "pivoty": 0.5,
+          "offsetx": 0,
+          "offsety": 0,
+          "parallax": 0
+        }
+      },
+      "_key": "!scenes.tiles!OWVjH4NO3jFfTRBd.BNoqsq4MuPEdfQW8"
+    },
+    {
+      "texture": {
+        "src": "fa_battlemaps/Maps/2022/December/fa_wec-temple/Tiles/templedoorleft.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 1200,
+      "y": 1700,
+      "width": 200,
+      "height": 300,
+      "elevation": 0,
+      "sort": 105,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "_id": "176QlYo5WoeWV0TY",
+      "rotation": 0,
+      "alpha": 0,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "tagger": {
+          "tags": [
+            "TempleDoorLeft"
+          ]
+        },
+        "monks-active-tiles": {
+          "active": true,
+          "restriction": "all",
+          "controlled": "all",
+          "trigger": [
+            "manual"
+          ],
+          "actions": [
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tile",
+                  "name": "This Tile"
+                },
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "ibmAsnhIb4lTocVl"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:templedoorleftwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorleftwall"
+                },
+                "attribute": "move",
+                "value": "={{entity.move}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "IM6dOCvnZTmswq0s"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:templedoorleftwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorleftwall"
+                },
+                "attribute": "sight",
+                "value": "={{entity.sight}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "FkljF3vl2yTVIKuv"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:templedoorleftwall",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> templedoorleftwall"
+                },
+                "attribute": "light",
+                "value": "={{entity.light}} == 0 ? 20 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "rHcvOgzUEaKzRji3"
+            }
+          ],
+          "name": "",
+          "record": false,
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": false,
+          "vision": false,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 50,
+          "fileindex": -1,
+          "files": []
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        },
+        "tile-scroll": {
+          "enableScroll": false,
+          "scrollDirection": 0,
+          "enableRotate": false,
+          "scrollSpeed": 1,
+          "repeatx": 1,
+          "repeaty": 1,
+          "pivotx": 0.5,
+          "pivoty": 0.5,
+          "offsetx": 0,
+          "offsety": 0,
+          "parallax": 0
+        }
+      },
+      "_key": "!scenes.tiles!OWVjH4NO3jFfTRBd.176QlYo5WoeWV0TY"
     }
   ],
   "walls": [
@@ -2401,13 +2415,13 @@
       "door": 1,
       "ds": 0,
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "entity": {
-            "id": "Scene.OWVjH4NO3jFfTRBd.Tile.sD4hy5xAEYWRPT6k",
-            "name": "Tile: sD4hy5xAEYWRPT6k"
+            "id": "tagger:PriestRoomDoor",
+            "name": "<i class=\"fas fa-tag fa-sm\"></i> PriestRoomDoor",
+            "match": "all",
+            "scene": "_active"
           },
           "open": true,
           "close": true,
@@ -2849,13 +2863,13 @@
       "door": 1,
       "ds": 0,
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "entity": {
-            "id": "Scene.OWVjH4NO3jFfTRBd.Tile.0YgX8dSQ6yGtUVHT",
-            "name": "Tile: 0YgX8dSQ6yGtUVHT"
+            "id": "tagger:TempleDoorRight",
+            "name": "<i class=\"fas fa-tag fa-sm\"></i> TempleDoorRight",
+            "match": "all",
+            "scene": "_active"
           },
           "open": true,
           "close": true,
@@ -3027,13 +3041,13 @@
       "door": 1,
       "ds": 0,
       "flags": {
-        "tagger": {
-          "tags": ""
-        },
+        "tagger": {},
         "monks-active-tiles": {
           "entity": {
-            "id": "Scene.OWVjH4NO3jFfTRBd.Tile.VvQKDUtpitvBhkjX",
-            "name": "Tile: VvQKDUtpitvBhkjX"
+            "id": "tagger:TempleDoorLeft",
+            "name": "<i class=\"fas fa-tag fa-sm\"></i> TempleDoorLeft",
+            "match": "all",
+            "scene": "_active"
           },
           "open": true,
           "close": true,
@@ -3635,19 +3649,17 @@
   "weather": "",
   "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.4.1",
-    "coreVersion": "12.331",
-    "createdTime": 1670367878343,
-    "modifiedTime": 1726011981337,
-    "lastModifiedBy": "dnd5ebuilder0000",
     "compendiumSource": "Compendium.fa-battlemaps.maps.OWVjH4NO3jFfTRBd",
-    "duplicateSource": null
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.1.2",
+    "createdTime": 1738259787244,
+    "modifiedTime": 1738279102540,
+    "lastModifiedBy": "dnd5ebuilder0000"
   },
   "_id": "OWVjH4NO3jFfTRBd",
-  "active": false,
   "folder": null,
-  "sort": 0,
   "ownership": {
     "default": 0
   },
@@ -3695,5 +3707,8 @@
       "unexplored": null
     }
   },
+  "active": false,
+  "navOrder": 0,
+  "sort": 200000,
   "_key": "!scenes!OWVjH4NO3jFfTRBd"
 }
