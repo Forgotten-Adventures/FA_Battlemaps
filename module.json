@@ -1,5 +1,5 @@
 {
-  "name": "fa-battlemaps",
+  "id": "fa-battlemaps",
   "title": "Forgotten Adventures Battlemaps",
   "description": "<p>This Module contains battlemaps from Forgotten Adventures, fully integrated for use with Foundry VTT. Featuring extra capabilities using Monk's Active Tile Triggers and Tagger for truly dynamic scenes!</p><p>You can support the creation of our battlemaps on <a href=\"https://www.patreon.com/FA_Battlemaps\">Patreon!</a> </p><p>A gallery of our work can be found on the <a href=\"https://www.forgotten-adventures.net/battlemaps\">website</a>.</p><p> Join our <a href=\"https://discord.gg/6KSJz6p\">Discord server</a> for any further questions.</p>",
   "authors": [
@@ -13,7 +13,7 @@
   "version": "1.1.15",
   "compatibility": {
     "minimum": "12",
-    "verified": "12"
+    "verified": "13"
   },
   "scripts": [],
   "esmodules": ["./scripts/shim.js", "./scripts/fa-battlemaps.js"],
@@ -33,7 +33,15 @@
       "type": "Scene"
     }
   ],
-  "system": [],
+  "packFolders": [
+    {
+      "name": "Forgotten Adventures",
+      "sorting": "a",
+      "packs": [
+        "maps"
+      ]
+    }
+  ],
   "relationships": {
     "requires": [
       {
