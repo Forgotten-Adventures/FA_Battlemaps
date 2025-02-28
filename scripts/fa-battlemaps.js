@@ -4,6 +4,7 @@
 
 import { libWrapper } from './shim.js';
 
+const { DialogV2 } = foundry.applications.api
 const baseURL = `https://api.forgotten-adventures.net`;
 
 //Helpers
@@ -101,7 +102,7 @@ Hooks.once('init', () => {
     ...args
   ) {
     const contextOptions = wrapped(...args);
-    if (this.collection.metadata.package !== FABattlemaps.ID || this.collection.documentName !== 'Scene') {
+    if ((this.collection.metadata.package !== FABattlemaps.ID && this.collection.metadata.packageName !== FABattlemaps.ID) || this.collection.documentName !== 'Scene') {
       // The compendium doesn't belong to this module, or it's not a Scene compendium
       return contextOptions;
     }
@@ -112,7 +113,7 @@ Hooks.once('init', () => {
       if (option.name === 'COMPENDIUM.ImportEntry') {
         option.callback = li => {
           const collection = game.collections.get(this.collection.documentName);
-          const id = li.data('document-id');
+          const id = li?.dataset?.entryId ?? li.data('document-id');
           return FADownloader.handleExistingScene('', id, async (sceneId, sceneName) => {
             const battlemap = Object.values(game.faBattlemaps.battlemaps)
               .find(battlemap => battlemap.name === sceneName);
@@ -138,10 +139,13 @@ Hooks.once('init', () => {
     if (!game.user.isGM) {
       return contextOptions;
     }
-    const i = contextOptions.findIndex(c => c.name === 'COMPENDIUM.ImportAll');
+    const i = contextOptions.findIndex(c => (c.name === 'COMPENDIUM.ImportAll' || c.name === 'COMPENDIUM.ImportAll.Option'));
     // Limit importAll to only work for compendiums that do not belong to FA Battlemaps
     contextOptions[i].condition = li => {
-      return li.data('pack') !== 'fa-battlemaps.maps';
+      if (li?.dataset?.pack) {
+        return li.dataset.pack !== 'fa-battlemaps.maps' && game.packs.get(li.dataset.pack)?.documentName !== "Adventure";
+      }
+      return li.data('pack') !== 'fa-battlemaps.maps' && game.packs.get(li.data("pack"))?.documentName !== "Adventure";
     };
     return contextOptions;
   }, 'WRAPPER');
@@ -155,10 +159,11 @@ Hooks.on('preCreateScene', (scene, data, options) => {
   }
 });
 Hooks.on('renderSidebarTab', async (app, html) => {
+  // v12
   if (game.user.isGM && (app?.id ?? app?.options?.id) === 'scenes' && game.settings.get(FABattlemaps.ID, 'sidebar-button')) {
     html.find('.fa-battlemaps')
       .remove();
-    const button = $('<button class="fa-battlemaps"><i class="fas fa-battlemaps"></i> FA Battlemaps</button>');
+    const button = $(`<button class="fa-battlemaps"><i class="fas fa-map"></i> ${game.i18n.localize("FABattlemaps.FABattlemaps")}</button>`);
     button.on('click', () => {
       new FABattlemaps().render(true);
     });
@@ -166,10 +171,32 @@ Hooks.on('renderSidebarTab', async (app, html) => {
       .append(button);
   }
 });
+Hooks.on('renderSceneDirectory', async (app, html) => {
+  // v13
+  html = html instanceof HTMLElement ? html : html[0];
+  const button = document.createElement("button");
+  button.type = "button";
+  button.classList.add("fa-battlemaps");
+  button.innerHTML = `
+      <i class="fas fa-map" inert></i>
+      ${game.i18n.localize("FABattlemaps.FABattlemaps")}
+    `;
+  button.addEventListener("click", event => (new FABattlemaps()).render(true));
+
+  let headerActions = html.querySelector(".header-actions");
+  headerActions.append(button);
+});
 
 Hooks.on('renderCompendium', async function (e) {
-  let packCode = e.metadata.id || e.metadata.package + '.' + e.metadata.name;
-  if (packCode === 'fa-battlemaps.maps') {
+  let shouldShow;
+  // V13 changed the way the id is stored
+  if (e.id) { // v13
+    shouldShow = e.id === 'fa-battlemaps.maps';
+  } else { // v12
+    shouldShow = (e.metadata.id ?? e.metadata.package + '.' + e.metadata.name) === 'fa-battlemaps.maps';
+  }
+
+  if (shouldShow) {
     // Render the fancy battlemap list rather than the boring compendium one
     new FABattlemaps().render(true);
     return e.close({ force: true });
@@ -410,21 +437,25 @@ class FABattlemaps extends FormApplication {
     const patreonURL = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=${FABattlemaps.SETTINGS.clientID}&redirect_uri=${callback}&scope=identity&state=${uuiDv4}`;
     window.open(patreonURL, '_blank');
 
-    game.faBattlemaps.auth.dialog = new Dialog({
-      title: game.i18n.localize('FABattlemaps.PatreonLoginWaitTitle'),
-      content: `<p>${game.i18n.localize('FABattlemaps.PatreonLoginWaitContent')}</p>`,
-      buttons: {
-        close: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize('Close'),
-          callback: () => {
-          },
-        },
+    game.faBattlemaps.auth.dialog = new DialogV2({
+      window: {
+        title: game.i18n.localize('FABattlemaps.PatreonLoginWaitTitle'),
       },
-      default: 'close',
+      content: `<p>${game.i18n.localize('FABattlemaps.PatreonLoginWaitContent')}</p>`,
+      modal: true,
+      buttons: [
+        {
+          close: {
+            action: 'close',
+            icon: 'fas fa-times',
+            label: 'Close',
+            default: true,
+          },
+        }
+      ],
       rejectClose: false,
     });
-    game.faBattlemaps.auth.dialog.render(true);
+    game.faBattlemaps.auth.dialog.render({ force: true });
 
     const parent = this;
     game.faBattlemaps.auth.iteration = 0;
@@ -791,34 +822,29 @@ class FADownloader extends FormApplication {
 
     const existingScene = game.scenes.getName(sceneName) || game.scenes.get(sceneId);
     if (existingScene) {
-      new Dialog({
-        title: game.i18n.format('FABattlemaps.ImportExistsTitle', {
-          name: sceneName,
-        }),
+      const replaceExisting = await DialogV2.confirm({
+        yes: {
+          label: game.i18n.localize('FABattlemaps.ImportYes'),
+        },
+        no: {
+          label: game.i18n.localize('FABattlemaps.ImportNo'),
+        },
+        window: {
+          title: game.i18n.format('FABattlemaps.ImportExistsTitle', {
+            name: sceneName,
+          }),
+        },
         content: `<h2>${game.i18n.localize('FABattlemaps.ImportExistsContent1')}</h2>` +
           `<p>${game.i18n.format('FABattlemaps.ImportExistsContent2', {
             name: sceneName,
           })}</p>` +
           `<p>${game.i18n.localize('FABattlemaps.ImportExistsContent3')}</p>`,
-        buttons: {
-          yes: {
-            icon: '<i class="fas fa-check"></i>',
-            label: game.i18n.localize('FABattlemaps.ImportYes'),
-            callback: async () => {
-              await existingScene.delete();
-              callback(sceneId, sceneName);
-            },
-          },
-          close: {
-            icon: '<i class="fas fa-times"></i>',
-            label: game.i18n.localize('FABattlemaps.ImportNo'),
-            callback: () => {
-            },
-          },
-        },
-        default: 'yes',
-        rejectClose: false,
-      }).render(true);
+        modal: true
+      });
+      if (replaceExisting) {
+        await existingScene.delete();
+        callback(sceneId, sceneName);
+      }
     } else {
       callback(sceneId, sceneName);
     }
@@ -854,15 +880,14 @@ class FADownloader extends FormApplication {
       setTimeout(() => {
         this.close({ force: true });
         ui.sidebar.activateTab('scenes');
-        Dialog.prompt({
-          title: game.i18n.localize('FABattlemaps.WindowTitle'),
+        DialogV2.prompt({
+          window: {
+            title: game.i18n.localize('FABattlemaps.WindowTitle'),
+          },
           content: `<p>${game.i18n.format('FABattlemaps.ImportComplete', {
             name: this.battlemap.name,
           })}</p>`,
-          label: game.i18n.localize('Close'),
-          callback: () => {
-          },
-          rejectClose: false,
+          modal: true
         });
       }, 0);
     });
