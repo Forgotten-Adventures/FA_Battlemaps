@@ -56,6 +56,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.1.24
+* Added new map
+_____________
 v1.1.23
 * Added new maps
 * Fix for Roadside Inn
