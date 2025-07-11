@@ -56,6 +56,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.1.28
+* Added new maps
+_____________
 v1.1.27
 * City Theatre [40x50] Hotfix update
 _____________
