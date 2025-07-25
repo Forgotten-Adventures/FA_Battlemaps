@@ -4748,6 +4748,49 @@
       },
       "_id": "mPjPuCUSOC9xjLEv",
       "_key": "!scenes.lights!vzVMkmtAXhDlmmlU.mPjPuCUSOC9xjLEv"
+    },
+    {
+      "x": 2558,
+      "y": 2429,
+      "rotation": 0,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "alpha": 0.6,
+        "angle": 360,
+        "bright": 7.95,
+        "color": "#ef6c01",
+        "coloration": 1,
+        "dim": 15.91,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": "torch",
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        },
+        "negative": false,
+        "priority": 0
+      },
+      "hidden": true,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "light"
+          ]
+        }
+      },
+      "elevation": 0,
+      "_id": "IzjLE9RQJzbDGgQX",
+      "_key": "!scenes.lights!vzVMkmtAXhDlmmlU.IzjLE9RQJzbDGgQX"
     }
   ],
   "notes": [],
@@ -15017,8 +15060,8 @@
         "fit": "fill",
         "alphaThreshold": 0.75
       },
-      "width": 50,
-      "height": 100,
+      "width": 66,
+      "height": 191,
       "rotation": 0,
       "alpha": 1,
       "hidden": false,
@@ -15089,8 +15132,8 @@
           "files": []
         }
       },
-      "x": 2600,
-      "y": 2750,
+      "x": 2530,
+      "y": 2326,
       "_id": "vj4oIwzOWOkJpUCF",
       "elevation": 20,
       "sort": 103,
@@ -16760,6 +16803,103 @@
       },
       "elevation": 0,
       "_key": "!scenes.tiles!vzVMkmtAXhDlmmlU.3I8BZEEbn55L0kvK"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "scaleX": 1,
+        "scaleY": 1,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "fit": "fill",
+        "alphaThreshold": 0.75
+      },
+      "width": 50,
+      "height": 100,
+      "rotation": 0,
+      "alpha": 1,
+      "hidden": false,
+      "locked": false,
+      "occlusion": {
+        "mode": 1,
+        "alpha": 1
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "tagger": {
+          "tags": [
+            "lighttrigger"
+          ]
+        },
+        "betterroofs": {
+          "brMode": false,
+          "occlusionLinkId": "",
+          "occlusionLinkSource": false
+        },
+        "monks-active-tiles": {
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "gm",
+          "trigger": [
+            "dblclick"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "chance": 100,
+          "fileindex": 0,
+          "actions": [
+            {
+              "action": "activate",
+              "data": {
+                "entity": {
+                  "id": "within",
+                  "name": "Tiles within Tile"
+                },
+                "collection": "lights",
+                "activate": "toggle"
+              },
+              "id": "WF5VCR81awEh4xQO"
+            },
+            {
+              "action": "playsound",
+              "data": {
+                "audiofile": "fa_battlemaps/Audio/flameblowout.ogg",
+                "audiofor": "all",
+                "volume": 0.5,
+                "loop": false,
+                "fade": 0.25,
+                "scenerestrict": false,
+                "prevent": true,
+                "playlist": true
+              },
+              "id": "nGIfWOczOyMbrcWx"
+            }
+          ],
+          "files": []
+        }
+      },
+      "x": 2600,
+      "y": 2750,
+      "elevation": 20,
+      "sort": 103,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "_id": "XgwD1SeMv1fWm4xA",
+      "_key": "!scenes.tiles!vzVMkmtAXhDlmmlU.XgwD1SeMv1fWm4xA"
     }
   ],
   "walls": [
@@ -25629,7 +25769,7 @@
     "systemVersion": "2.4.1",
     "coreVersion": "12.343",
     "createdTime": 1693310055623,
-    "modifiedTime": 1748467355423,
+    "modifiedTime": 1753411240085,
     "lastModifiedBy": "dnd5ebuilder0000",
     "duplicateSource": null
   },
