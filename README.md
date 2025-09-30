@@ -56,6 +56,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.1.36
+* Added new maps
+_____________
 v1.1.35
 * Added new maps
 * Fix support for opening compendium viewer
