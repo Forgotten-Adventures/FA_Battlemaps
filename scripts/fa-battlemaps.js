@@ -191,7 +191,7 @@ Hooks.on('renderCompendium', async function (e) {
   let shouldShow;
   // V13 changed the way the id is stored
   if (e.id) { // v13
-    shouldShow = e.id === 'compendium-fa-battlemaps_maps' || 'compendium-fa-battlemaps.maps' || e.id === 'fa-battlemaps.maps';
+    shouldShow = e.id === 'compendium-fa-battlemaps_maps' || e.id === 'compendium-fa-battlemaps.maps' || e.id === 'fa-battlemaps.maps';
   } else { // v12
     shouldShow = (e.metadata.id ?? e.metadata.package + '.' + e.metadata.name) === 'fa-battlemaps.maps';
   }
