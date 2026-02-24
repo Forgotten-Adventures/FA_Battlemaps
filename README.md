@@ -56,6 +56,10 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.1.50
+* Added new map
+* Caravan Road 44x25 hotfix
+_____________
 v1.1.49
 * Added new map
 _____________
