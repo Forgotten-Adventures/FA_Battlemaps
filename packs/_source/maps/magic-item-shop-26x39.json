@@ -804,6 +804,92 @@
         "tagger": {}
       },
       "_key": "!scenes.lights!fnMgT99RkGITShA6.lkaaQ35Np7C5xL9m"
+    },
+    {
+      "x": 1736,
+      "y": 4126,
+      "elevation": 0,
+      "rotation": 0,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 22.35,
+        "color": null,
+        "coloration": 1,
+        "dim": 44.7,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "hidden": false,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "l1"
+          ]
+        }
+      },
+      "_id": "504NmCzH0g5jT3hd",
+      "_key": "!scenes.lights!fnMgT99RkGITShA6.504NmCzH0g5jT3hd"
+    },
+    {
+      "x": 2264,
+      "y": 4127,
+      "elevation": 0,
+      "rotation": 0,
+      "walls": true,
+      "vision": false,
+      "config": {
+        "negative": false,
+        "priority": 0,
+        "alpha": 0.5,
+        "angle": 360,
+        "bright": 22.35,
+        "color": null,
+        "coloration": 1,
+        "dim": 44.7,
+        "attenuation": 0.5,
+        "luminosity": 0.5,
+        "saturation": 0,
+        "contrast": 0,
+        "shadows": 0,
+        "animation": {
+          "type": null,
+          "speed": 5,
+          "intensity": 5,
+          "reverse": false
+        },
+        "darkness": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      "hidden": false,
+      "flags": {
+        "tagger": {
+          "tags": [
+            "l1"
+          ]
+        }
+      },
+      "_id": "WDKQtzrZ5jWS7Zix",
+      "_key": "!scenes.lights!fnMgT99RkGITShA6.WDKQtzrZ5jWS7Zix"
     }
   ],
   "notes": [],
@@ -3213,7 +3299,7 @@
       "x": 1100,
       "y": 2200,
       "width": 1800,
-      "height": 1900,
+      "height": 2000,
       "elevation": 0,
       "sort": 14,
       "occlusion": {
@@ -6490,6 +6576,230 @@
         }
       },
       "_key": "!scenes.tiles!fnMgT99RkGITShA6.56STUJnHuBBPTwM8"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 1708,
+      "y": 4099,
+      "width": 50,
+      "height": 50,
+      "elevation": 0,
+      "sort": 49,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "rotation": 0,
+      "alpha": 1,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "gm",
+          "trigger": [
+            "",
+            "dblclick"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": true,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 0,
+          "actions": [
+            {
+              "action": "activate",
+              "data": {
+                "entity": {
+                  "id": "tagger:l1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> l1"
+                },
+                "collection": "tiles",
+                "activate": "toggle"
+              },
+              "id": "6QtHmitl8QvuUpMK"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:l1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> l1"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "Yload6fLgsYSGORj"
+            },
+            {
+              "action": "playsound",
+              "data": {
+                "audiofile": "fa_battlemaps/Audio/candleblowout.ogg",
+                "audiofor": "everyone",
+                "volume": 1,
+                "loop": false,
+                "fade": 0.25,
+                "scenerestrict": false,
+                "prevent": false,
+                "delay": false,
+                "playlist": true
+              },
+              "id": "lNm5fHkXbUJgxkwZ"
+            }
+          ],
+          "files": []
+        },
+        "tagger": {}
+      },
+      "_id": "5T6sv2VyNlZvqJNn",
+      "_key": "!scenes.tiles!fnMgT99RkGITShA6.5T6sv2VyNlZvqJNn"
+    },
+    {
+      "texture": {
+        "src": "modules/fa-battlemaps/images/Transparent.webp",
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "x": 2246,
+      "y": 4100,
+      "width": 50,
+      "height": 50,
+      "elevation": 0,
+      "sort": 49,
+      "occlusion": {
+        "mode": 0,
+        "alpha": 0
+      },
+      "rotation": 0,
+      "alpha": 1,
+      "hidden": false,
+      "locked": false,
+      "restrictions": {
+        "light": false,
+        "weather": false
+      },
+      "video": {
+        "loop": true,
+        "autoplay": true,
+        "volume": 0
+      },
+      "flags": {
+        "monks-active-tiles": {
+          "name": "",
+          "active": true,
+          "record": false,
+          "restriction": "all",
+          "controlled": "gm",
+          "trigger": [
+            "",
+            "dblclick"
+          ],
+          "allowpaused": false,
+          "usealpha": false,
+          "pointer": true,
+          "vision": true,
+          "pertoken": false,
+          "minrequired": 0,
+          "cooldown": null,
+          "chance": 100,
+          "fileindex": 0,
+          "actions": [
+            {
+              "action": "activate",
+              "data": {
+                "entity": {
+                  "id": "tagger:l1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> l1"
+                },
+                "collection": "tiles",
+                "activate": "toggle"
+              },
+              "id": "6QtHmitl8QvuUpMK"
+            },
+            {
+              "action": "alter",
+              "data": {
+                "entity": {
+                  "id": "tagger:l1",
+                  "match": "all",
+                  "scene": "_active",
+                  "name": "<i class=\"fas fa-tag fa-sm\"></i> l1"
+                },
+                "collection": "tokens",
+                "attribute": "alpha",
+                "value": "={{entity.alpha}} == 0 ? 1 : 0",
+                "chatMessage": false,
+                "rollmode": "roll"
+              },
+              "id": "Yload6fLgsYSGORj"
+            },
+            {
+              "action": "playsound",
+              "data": {
+                "audiofile": "fa_battlemaps/Audio/candleblowout.ogg",
+                "audiofor": "everyone",
+                "volume": 1,
+                "loop": false,
+                "fade": 0.25,
+                "scenerestrict": false,
+                "prevent": false,
+                "delay": false,
+                "playlist": true
+              },
+              "id": "lNm5fHkXbUJgxkwZ"
+            }
+          ],
+          "files": []
+        },
+        "tagger": {}
+      },
+      "_id": "LIxLfGvIs308dwDW",
+      "_key": "!scenes.tiles!fnMgT99RkGITShA6.LIxLfGvIs308dwDW"
     }
   ],
   "walls": [
@@ -10394,7 +10704,7 @@
     "systemId": "dnd5e",
     "systemVersion": "4.0.4",
     "createdTime": 1776785284989,
-    "modifiedTime": 1776785284989,
+    "modifiedTime": 1779056049439,
     "lastModifiedBy": "dnd5ebuilder0000"
   },
   "active": false,
