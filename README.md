@@ -56,6 +56,10 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.1.58
+* Added new map
+* Magic Item Shop 26x39 tile update
+_____________
 v1.1.57
 * Added new map
 _____________
