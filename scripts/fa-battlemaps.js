@@ -2,58 +2,62 @@
  * Forgotten Adventures Patron Download Module
  */
 
-import { libWrapper } from './shim.js';
+import { libWrapper } from "./shim.js";
 
-const { DialogV2 } = foundry.applications.api
+const { DialogV2 } = foundry.applications.api;
 const baseURL = `https://api.forgotten-adventures.net`;
 
 //Helpers
-Handlebars.registerHelper('ifeq', function (a, b, options) {
+Handlebars.registerHelper("ifeq", function (a, b, options) {
   if (a == b) {
     return options.fn(this);
   }
   return options.inverse(this);
 });
-Handlebars.registerHelper('facontains', function (needle, haystack, options) {
+Handlebars.registerHelper("facontains", function (needle, haystack, options) {
   needle = Handlebars.escapeExpression(needle);
   haystack = Handlebars.escapeExpression(haystack);
-  if (typeof needle === 'string') {
-    needle = needle.split(',')
-      .map(str => str.trim())
-      .filter(s => s);
+  if (typeof needle === "string") {
+    needle = needle
+      .split(",")
+      .map((str) => str.trim())
+      .filter((s) => s);
   }
-  if (typeof haystack === 'string') {
-    haystack = haystack.split(',')
-      .map(str => str.trim())
-      .filter(s => s);
+  if (typeof haystack === "string") {
+    haystack = haystack
+      .split(",")
+      .map((str) => str.trim())
+      .filter((s) => s);
   }
   if (!options.hash.exact) {
-    if (haystack.includes('all')) {
+    if (haystack.includes("all")) {
       return options.fn(this);
     }
-    return haystack.every(val => needle.map(str => str.slugify())
-      .includes(val)) ?
-      options.fn(this) :
-      options.inverse(this);
+    return haystack.every((val) =>
+      needle.map((str) => str.slugify()).includes(val),
+    )
+      ? options.fn(this)
+      : options.inverse(this);
   }
-  return haystack.some(val => needle.map(str => str.slugify())
-    .includes(val)) ?
-    options.fn(this) :
-    options.inverse(this);
+  return haystack.some((val) =>
+    needle.map((str) => str.slugify()).includes(val),
+  )
+    ? options.fn(this)
+    : options.inverse(this);
 });
-Handlebars.registerHelper('slugify', function (value) {
+Handlebars.registerHelper("slugify", (value) => {
   return value.slugify();
 });
-Handlebars.registerHelper('faFindById', function (needle, haystack) {
-  return haystack.find(val => val.id === needle);
+Handlebars.registerHelper("faFindById", (needle, haystack) => {
+  return haystack.find((val) => val.id === needle);
 });
-Handlebars.registerHelper('breaklines', function(text) {
+Handlebars.registerHelper("breaklines", (text) => {
   text = Handlebars.Utils.escapeExpression(text);
-  text = text.replace(/(\r\n|\n|\r)/gm, '<br>');
+  text = text.replace(/(\r\n|\n|\r)/gm, "<br>");
   return new Handlebars.SafeString(text);
 });
-Handlebars.registerHelper('escape', function(variable) {
-  return variable?.replace(/(['"])/g, '\\$1');
+Handlebars.registerHelper("escape", (variable) => {
+  return variable?.replace(/(['"])/g, "\\$1");
 });
 
 /**
@@ -69,12 +73,12 @@ function HumanFileSize(bytes, si = true, dp = 1) {
   const thresh = si ? 1000 : 1024;
 
   if (Math.abs(bytes) < thresh) {
-    return bytes + ' B';
+    return `${bytes} B`;
   }
 
   const units = si
-    ? ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
-    : ['KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB'];
+    ? ["kB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"]
+    : ["KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
   let u = -1;
   const r = 10 ** dp;
 
@@ -84,54 +88,93 @@ function HumanFileSize(bytes, si = true, dp = 1) {
   } while (
     Math.round(Math.abs(bytes) * r) / r >= thresh &&
     u < units.length - 1
-    );
+  );
 
-  return bytes.toFixed(dp) + ' ' + units[u];
+  return `${bytes.toFixed(dp)} ${units[u]}`;
 }
 
-Handlebars.registerHelper('HumanFileSize', function (options) {
+Handlebars.registerHelper("HumanFileSize", (options) => {
   return HumanFileSize(options.hash.bytes, options.hash.si, options.hash.dp);
 });
 
 /**
  * Once the game has initialized, set up our module
  */
-Hooks.once('init', () => {
-  libWrapper.register(FABattlemaps.ID, 'Compendium.prototype._getEntryContextOptions', function (
-    wrapped,
-    ...args
-  ) {
+Hooks.once("init", () => {
+  const compendiumImportEntryWrapper = function (li) {
+    const collection = game.collections.get(this.collection.documentName);
+    const id = li?.dataset?.entryId ?? li.data("document-id");
+    return FADownloader.handleExistingScene(
+      "",
+      id,
+      async (sceneId, sceneName) => {
+        const battlemap = Object.values(game.faBattlemaps.battlemaps).find(
+          (battlemap) => battlemap.name === sceneName,
+        );
+        if (!battlemap) {
+          return await collection.importFromCompendium(
+            this.collection,
+            sceneId,
+            {},
+            { keepId: true },
+          );
+        }
+        new FABattlemaps().render(true);
+        setTimeout(() => {
+          new FADownloader(battlemap.id).render(true);
+        }, 500);
+      },
+    );
+  };
+  const compendiumGetEntryContextOptionsWrapper = function (wrapped, ...args) {
     const contextOptions = wrapped(...args);
-    if ((this.collection.metadata.package !== FABattlemaps.ID && this.collection.metadata.packageName !== FABattlemaps.ID) || this.collection.documentName !== 'Scene') {
+    if (
+      (this.collection.metadata.package !== FABattlemaps.ID &&
+        this.collection.metadata.packageName !== FABattlemaps.ID) ||
+      this.collection.documentName !== "Scene"
+    ) {
       // The compendium doesn't belong to this module, or it's not a Scene compendium
       return contextOptions;
     }
     if (!Object.values(game.faBattlemaps.battlemaps).length) {
-      new FABattlemaps();
+      new FABattlemaps().render();
     }
+    const compendiumApp = this;
     for (const option of contextOptions) {
-      if (option.name === 'COMPENDIUM.ImportEntry') {
-        option.callback = li => {
-          const collection = game.collections.get(this.collection.documentName);
-          const id = li?.dataset?.entryId ?? li.data('document-id');
-          return FADownloader.handleExistingScene('', id, async (sceneId, sceneName) => {
-            const battlemap = Object.values(game.faBattlemaps.battlemaps)
-              .find(battlemap => battlemap.name === sceneName);
-            if (!battlemap) {
-              return await collection.importFromCompendium(this.collection, sceneId, {}, { keepId: true });
-            }
-            new FABattlemaps().render(true);
-            setTimeout(() => {
-              new FADownloader(battlemap.id).render(true);
-            }, 500);
-          });
-        };
+      const label = option.label ?? option.name;
+      if (label === "COMPENDIUM.ImportEntry") {
+        if (typeof option.callback === "function") {
+          option.callback = (li) => {
+            compendiumImportEntryWrapper.call(compendiumApp, li);
+          };
+        }
+        if (typeof option.onClick === "function") {
+          option.onClick = (_event, li) => {
+            compendiumImportEntryWrapper.call(compendiumApp, li);
+          };
+        }
       }
     }
     return contextOptions;
-  }, 'WRAPPER');
+  };
 
-  libWrapper.register(FABattlemaps.ID, 'CompendiumDirectory.prototype._getEntryContextOptions', function (
+  if (game.release.generation >= 13) {
+    libWrapper.register(
+      FABattlemaps.ID,
+      "foundry.applications.sidebar.apps.Compendium.prototype._getEntryContextOptions",
+      compendiumGetEntryContextOptionsWrapper,
+      "WRAPPER",
+    );
+  } else {
+    libWrapper.register(
+      FABattlemaps.ID,
+      "Compendium.prototype._getEntryContextOptions",
+      compendiumGetEntryContextOptionsWrapper,
+      "WRAPPER",
+    );
+  }
+
+  const compendiumDirectoryGetEntryContextOptionsWrapper = function (
     wrapped,
     ...args
   ) {
@@ -139,39 +182,75 @@ Hooks.once('init', () => {
     if (!game.user.isGM) {
       return contextOptions;
     }
-    const i = contextOptions.findIndex(c => (c.name === 'COMPENDIUM.ImportAll' || c.name === 'COMPENDIUM.ImportAll.Option'));
+    const i = contextOptions.findIndex((c) => {
+      const label = c.label ?? c.name;
+      return (
+        label === "COMPENDIUM.ImportAll" ||
+        label === "COMPENDIUM.ImportAll.Option"
+      );
+    });
     // Limit importAll to only work for compendiums that do not belong to FA Battlemaps
-    contextOptions[i].condition = li => {
+    contextOptions[i].condition = (li) => {
       if (li?.dataset?.pack) {
-        return li.dataset.pack !== 'fa-battlemaps.maps' && game.packs.get(li.dataset.pack)?.documentName !== "Adventure";
+        return (
+          li.dataset.pack !== "fa-battlemaps.maps" &&
+          game.packs.get(li.dataset.pack)?.documentName !== "Adventure"
+        );
       }
-      return li.data('pack') !== 'fa-battlemaps.maps' && game.packs.get(li.data("pack"))?.documentName !== "Adventure";
+      return (
+        li.data("pack") !== "fa-battlemaps.maps" &&
+        game.packs.get(li.data("pack"))?.documentName !== "Adventure"
+      );
     };
     return contextOptions;
-  }, 'WRAPPER');
+  };
+
+  if (game.release.generation >= 13) {
+    libWrapper.register(
+      FABattlemaps.ID,
+      "foundry.applications.sidebar.tabs.CompendiumDirectory.prototype._getEntryContextOptions",
+      compendiumDirectoryGetEntryContextOptionsWrapper,
+      "WRAPPER",
+    );
+  } else {
+    libWrapper.register(
+      FABattlemaps.ID,
+      "CompendiumDirectory.prototype._getEntryContextOptions",
+      compendiumDirectoryGetEntryContextOptionsWrapper,
+      "WRAPPER",
+    );
+  }
 
   FABattlemaps.initialize();
 });
-Hooks.on('preCreateScene', (scene, data, options) => {
-  if ((scene._stats?.compendiumSource ?? scene.getFlag('core', 'sourceId'))?.match(/Compendium.fa-battlemaps.maps/)) {
+Hooks.on("preCreateScene", (scene, _data, options) => {
+  if (
+    (
+      scene._stats?.compendiumSource ?? scene.getFlag("core", "sourceId")
+    )?.match(/Compendium.fa-battlemaps.maps/)
+  ) {
     options.keepId = true;
     options.keepEmbeddedIds = true;
   }
 });
-Hooks.on('renderSidebarTab', async (app, html) => {
+Hooks.on("renderSidebarTab", async (app, html) => {
   // v12
-  if (game.user.isGM && (app?.id ?? app?.options?.id) === 'scenes' && game.settings.get(FABattlemaps.ID, 'sidebar-button')) {
-    html.find('.fa-battlemaps')
-      .remove();
-    const button = $(`<button class="fa-battlemaps"><i class="fas fa-map"></i> ${game.i18n.localize("FABattlemaps.FABattlemaps")}</button>`);
-    button.on('click', () => {
+  if (
+    game.user.isGM &&
+    (app?.id ?? app?.options?.id) === "scenes" &&
+    game.settings.get(FABattlemaps.ID, "sidebar-button")
+  ) {
+    html.find(".fa-battlemaps").remove();
+    const button = $(
+      `<button class="fa-battlemaps"><i class="fas fa-map"></i> ${game.i18n.localize("FABattlemaps.FABattlemaps")}</button>`,
+    );
+    button.on("click", () => {
       new FABattlemaps().render(true);
     });
-    html.find('.directory-footer')
-      .append(button);
+    html.find(".directory-footer").append(button);
   }
 });
-Hooks.on('renderSceneDirectory', async (app, html) => {
+Hooks.on("renderSceneDirectory", async (_app, html) => {
   // v13
   html = html instanceof HTMLElement ? html : html[0];
   const button = document.createElement("button");
@@ -181,19 +260,27 @@ Hooks.on('renderSceneDirectory', async (app, html) => {
       <i class="fas fa-map" inert></i>
       ${game.i18n.localize("FABattlemaps.FABattlemaps")}
     `;
-  button.addEventListener("click", event => (new FABattlemaps()).render(true));
+  button.addEventListener("click", (_event) => new FABattlemaps().render(true));
 
   let headerActions = html.querySelector(".header-actions");
   headerActions.append(button);
 });
 
-Hooks.on('renderCompendium', async function (e) {
+Hooks.on("renderCompendium", async (e) => {
   let shouldShow;
   // V13 changed the way the id is stored
-  if (e.id) { // v13
-    shouldShow = e.id === 'compendium-fa-battlemaps_maps' || e.id === 'compendium-fa-battlemaps.maps' || e.id === 'fa-battlemaps.maps';
-  } else { // v12
-    shouldShow = (e.metadata.id ?? e.metadata.package + '.' + e.metadata.name) === 'fa-battlemaps.maps';
+  if (e.id) {
+    // v13
+    shouldShow =
+      e.id === "Compendium-fa-battlemaps_maps" ||
+      e.id === "compendium-fa-battlemaps_maps" ||
+      e.id === "compendium-fa-battlemaps.maps" ||
+      e.id === "fa-battlemaps.maps";
+  } else {
+    // v12
+    shouldShow =
+      (e.metadata.id ?? `${e.metadata.package}.${e.metadata.name}`) ===
+      "fa-battlemaps.maps";
   }
 
   if (shouldShow) {
@@ -204,7 +291,7 @@ Hooks.on('renderCompendium', async function (e) {
 });
 
 class FABattlemaps extends FormApplication {
-  static ID = 'fa-battlemaps';
+  static ID = "fa-battlemaps";
 
   static TEMPLATES = {
     main: `modules/${this.ID}/templates/main.hbs`,
@@ -214,13 +301,14 @@ class FABattlemaps extends FormApplication {
   };
 
   static SETTINGS = {
-    clientID: 'NKDhTqQyf4i2ylsM6JQ1JFxNmjGFShGSwe5wHqbeypvI0JnNt-WcbFLrLDLj6-ey',
-    defaultDownloadPath: 'fa_battlemaps',
-    downloadPath: 'fa_battlemaps',
+    clientID:
+      "NKDhTqQyf4i2ylsM6JQ1JFxNmjGFShGSwe5wHqbeypvI0JnNt-WcbFLrLDLj6-ey",
+    defaultDownloadPath: "fa_battlemaps",
+    downloadPath: "fa_battlemaps",
   };
   STATE = {
-    selectedTags: ['all'],
-    filterState: '',
+    selectedTags: ["all"],
+    filterState: "",
     faId: null,
   };
 
@@ -230,29 +318,39 @@ class FABattlemaps extends FormApplication {
     this.loading = true;
 
     Promise.allSettled([this.loadTags(), this.loadMaps()])
-      .then(results => {
+      .then((results) => {
         if (!results[0]?.value) {
-          const existingTags = JSON.parse(localStorage.getItem(`${FABattlemaps.ID}.cache-tags`));
+          const existingTags = JSON.parse(
+            localStorage.getItem(`${FABattlemaps.ID}.cache-tags`),
+          );
           if (existingTags?.length) {
-            console.error(`${FABattlemaps.ID} | ${game.i18n.localize('FABattlemaps.LoadErrorFallbackTags')}`);
+            console.error(
+              `${FABattlemaps.ID} | ${game.i18n.localize("FABattlemaps.LoadErrorFallbackTags")}`,
+            );
             game.faBattlemaps.tags = new Set(existingTags);
           }
         }
         if (!results[1]?.value) {
-          const existingMaps = JSON.parse(localStorage.getItem(`${FABattlemaps.ID}.cache-maps`));
+          const existingMaps = JSON.parse(
+            localStorage.getItem(`${FABattlemaps.ID}.cache-maps`),
+          );
           if (existingMaps?.length) {
-            console.error(`${FABattlemaps.ID} | ${game.i18n.localize('FABattlemaps.LoadErrorFallbackMaps')}`);
+            console.error(
+              `${FABattlemaps.ID} | ${game.i18n.localize("FABattlemaps.LoadErrorFallbackMaps")}`,
+            );
             game.faBattlemaps.battlemaps = existingMaps;
           }
         }
       })
       .finally(() => {
         for (const tag of game.faBattlemaps.tags) {
-          if (['All', 'Free', 'Premium'].includes(tag)) {
+          if (["All", "Free", "Premium"].includes(tag)) {
             continue;
           }
           // Remove any tag that doesn't have a battlemap associated with it
-          if (!game.faBattlemaps.battlemaps.some((map) => map.tags.includes(tag))) {
+          if (
+            !game.faBattlemaps.battlemaps.some((map) => map.tags.includes(tag))
+          ) {
             game.faBattlemaps.tags.delete(tag);
           }
         }
@@ -266,7 +364,10 @@ class FABattlemaps extends FormApplication {
     const tags = await this.getTags();
     if (tags?.length) {
       game.faBattlemaps.tags = new Set(tags);
-      localStorage.setItem(`${FABattlemaps.ID}.cache-tags`, JSON.stringify(tags));
+      localStorage.setItem(
+        `${FABattlemaps.ID}.cache-tags`,
+        JSON.stringify(tags),
+      );
       return true;
     }
     return false;
@@ -276,89 +377,100 @@ class FABattlemaps extends FormApplication {
     const battlemaps = await this.getBattlemaps();
     if (battlemaps?.length) {
       game.faBattlemaps.battlemaps = battlemaps;
-      localStorage.setItem(`${FABattlemaps.ID}.cache-maps`, JSON.stringify(battlemaps));
+      localStorage.setItem(
+        `${FABattlemaps.ID}.cache-maps`,
+        JSON.stringify(battlemaps),
+      );
       return true;
     }
     return false;
   }
 
   static initialize() {
-    loadTemplates(Object.values(FABattlemaps.TEMPLATES));
+    const templatesToLoad = Object.values(FABattlemaps.TEMPLATES);
+    if (game.release.generation >= 13) {
+      foundry.applications.handlebars.loadTemplates(templatesToLoad);
+    } else {
+      loadTemplates(Object.values(FABattlemaps.TEMPLATES));
+    }
 
-    game.settings.registerMenu(FABattlemaps.ID, 'show-asset-downloader', {
-      name: game.i18n.localize('FABattlemaps.ShowAssetDownloaderName'),
-      label: game.i18n.localize('FABattlemaps.ShowAssetDownloaderLabel'),
-      hint: game.i18n.localize('FABattlemaps.ShowAssetDownloaderHint'),
-      icon: 'fas fa-cloud-download-alt',
+    game.settings.registerMenu(FABattlemaps.ID, "show-asset-downloader", {
+      name: game.i18n.localize("FABattlemaps.ShowAssetDownloaderName"),
+      label: game.i18n.localize("FABattlemaps.ShowAssetDownloaderLabel"),
+      hint: game.i18n.localize("FABattlemaps.ShowAssetDownloaderHint"),
+      icon: "fas fa-cloud-download-alt",
       type: FABattlemaps,
       restricted: true,
     });
 
-    game.settings.register(FABattlemaps.ID, 'user-id', {
-      scope: 'client',
+    game.settings.register(FABattlemaps.ID, "user-id", {
+      scope: "client",
       type: String,
-      default: '',
+      default: "",
     });
 
-    game.settings.register(FABattlemaps.ID, 'hq', {
-      name: game.i18n.localize('FABattlemaps.HighQualityMapsName'),
-      hint: game.i18n.localize('FABattlemaps.HighQualityMapsHint'),
-      scope: 'client',
+    game.settings.register(FABattlemaps.ID, "hq", {
+      name: game.i18n.localize("FABattlemaps.HighQualityMapsName"),
+      hint: game.i18n.localize("FABattlemaps.HighQualityMapsHint"),
+      scope: "client",
       config: true,
       type: Boolean,
       restricted: true,
       default: false,
     });
 
-    game.settings.register(FABattlemaps.ID, 'sidebar-button', {
-      name: game.i18n.localize('FABattlemaps.ShowSidebarButtonName'),
-      hint: game.i18n.localize('FABattlemaps.ShowSidebarButtonHint'),
-      scope: 'client',
+    game.settings.register(FABattlemaps.ID, "sidebar-button", {
+      name: game.i18n.localize("FABattlemaps.ShowSidebarButtonName"),
+      hint: game.i18n.localize("FABattlemaps.ShowSidebarButtonHint"),
+      scope: "client",
       config: true,
       type: Boolean,
       restricted: true,
       default: true,
     });
 
-    game.settings.register(FABattlemaps.ID, 'download-path', {
-      name: game.i18n.localize('FABattlemaps.DownloadPath'),
-      hint: game.i18n.localize('FABattlemaps.DownloadPathHint'),
-      scope: 'world',
+    game.settings.register(FABattlemaps.ID, "download-path", {
+      name: game.i18n.localize("FABattlemaps.DownloadPath"),
+      hint: game.i18n.localize("FABattlemaps.DownloadPathHint"),
+      scope: "world",
       type: String,
       default: FABattlemaps.SETTINGS.defaultDownloadPath,
       config: true,
       restricted: true,
-      onChange: value => {
+      onChange: (value) => {
         if (!value) {
           value = FABattlemaps.SETTINGS.defaultDownloadPath;
-          game.settings.set(FABattlemaps.ID, 'download-path', value);
+          game.settings.set(FABattlemaps.ID, "download-path", value);
         }
 
         if (value !== FABattlemaps.SETTINGS.defaultDownloadPath) {
           // Replace any backslashes with forward slashes
-          value = value.replace(/\\/g, '/');
+          value = value.replace(/\\/g, "/");
           // Trim any leading or trailing slashes
-          value = value.replace(/^\/|\/$/g, '');
+          value = value.replace(/^\/|\/$/g, "");
 
-          if (value !== game.settings.get(FABattlemaps.ID, 'download-path')) {
-            game.settings.set(FABattlemaps.ID, 'download-path', value);
+          if (value !== game.settings.get(FABattlemaps.ID, "download-path")) {
+            game.settings.set(FABattlemaps.ID, "download-path", value);
           }
         }
 
         FABattlemaps.SETTINGS.downloadPath = value;
-      }
+      },
     });
 
-    let uuiDv4 = game.settings.get(FABattlemaps.ID, 'user-id');
+    const uuiDv4 = game.settings.get(FABattlemaps.ID, "user-id");
     if (!uuiDv4) {
-      game.settings.set(FABattlemaps.ID, 'user-id', FABattlemaps.UUIDv4());
+      game.settings.set(FABattlemaps.ID, "user-id", FABattlemaps.UUIDv4());
     }
 
-    FABattlemaps.SETTINGS.downloadPath = game.settings.get(FABattlemaps.ID, 'download-path');
+    FABattlemaps.SETTINGS.downloadPath = game.settings.get(
+      FABattlemaps.ID,
+      "download-path",
+    );
 
     game.faBattlemaps = {
       battlemaps: [],
-      tags: new Set(['All', 'Free', 'Premium']),
+      tags: new Set(["All", "Free", "Premium"]),
       user: {
         has_free: true,
       },
@@ -375,8 +487,11 @@ class FABattlemaps extends FormApplication {
    * @returns {string}
    */
   static UUIDv4() {
-    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16),
+    return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+      (
+        c ^
+        (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+      ).toString(16),
     );
   }
 
@@ -386,15 +501,18 @@ class FABattlemaps extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       closeOnSubmit: false,
-      id: 'fa-battlemaps',
-      classes: ['fa-battlemaps'],
+      id: "fa-battlemaps",
+      classes: ["fa-battlemaps"],
       submitOnClose: false,
       template: FABattlemaps.TEMPLATES.main,
-      title: game.i18n.localize('FABattlemaps.WindowTitle'),
+      title: game.i18n.localize("FABattlemaps.WindowTitle"),
       userId: game.userId,
       resizable: true,
       height: window.innerHeight - 150,
-      width: Math.max(670, Math.min(Math.floor(((window.innerWidth * 0.8) - 220) / 220) * 220, 1100)),
+      width: Math.max(
+        670,
+        Math.min(Math.floor((window.innerWidth * 0.8 - 220) / 220) * 220, 1100),
+      ),
       scrollY: [".u-section"],
     });
   }
@@ -403,12 +521,13 @@ class FABattlemaps extends FormApplication {
     event.preventDefault();
 
     // Cycle the userId to "log out"
-    await game.settings.set(FABattlemaps.ID, 'user-id', FABattlemaps.UUIDv4());
+    await game.settings.set(FABattlemaps.ID, "user-id", FABattlemaps.UUIDv4());
 
-    this.html.find('.u-login')
-      .removeClass('u-login-connected')
-      .addClass('u-icon-desaturate')
-      .attr('title', null);
+    this.html
+      .find(".u-login")
+      .removeClass("u-login-connected")
+      .addClass("u-icon-desaturate")
+      .attr("title", null);
     game.faBattlemaps.user = {
       has_free: true,
     };
@@ -424,7 +543,7 @@ class FABattlemaps extends FormApplication {
       game.faBattlemaps.auth.dialog = null;
     }
 
-    let uuiDv4 = game.settings.get(FABattlemaps.ID, 'user-id');
+    let uuiDv4 = game.settings.get(FABattlemaps.ID, "user-id");
     if (uuiDv4) {
       if (await this.checkPatreonStatus(uuiDv4)) {
         return;
@@ -432,45 +551,43 @@ class FABattlemaps extends FormApplication {
     }
 
     uuiDv4 = FABattlemaps.UUIDv4();
-    await game.settings.set(FABattlemaps.ID, 'user-id', uuiDv4);
+    await game.settings.set(FABattlemaps.ID, "user-id", uuiDv4);
     const callback = `${baseURL}/api/v1/patreon`;
     const patreonURL = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=${FABattlemaps.SETTINGS.clientID}&redirect_uri=${callback}&scope=identity&state=${uuiDv4}`;
-    window.open(patreonURL, '_blank');
+    window.open(patreonURL, "_blank");
 
     game.faBattlemaps.auth.dialog = new DialogV2({
       window: {
-        title: game.i18n.localize('FABattlemaps.PatreonLoginWaitTitle'),
+        title: game.i18n.localize("FABattlemaps.PatreonLoginWaitTitle"),
       },
-      content: `<p>${game.i18n.localize('FABattlemaps.PatreonLoginWaitContent')}</p>`,
+      content: `<p>${game.i18n.localize("FABattlemaps.PatreonLoginWaitContent")}</p>`,
       modal: true,
       buttons: [
         {
           close: {
-            action: 'close',
-            icon: 'fas fa-times',
-            label: 'Close',
+            action: "close",
+            icon: "fas fa-times",
+            label: "Close",
             default: true,
           },
-        }
+        },
       ],
       rejectClose: false,
     });
     game.faBattlemaps.auth.dialog.render({ force: true });
 
-    const parent = this;
     game.faBattlemaps.auth.iteration = 0;
-    game.faBattlemaps.auth.timer = setInterval(async function () {
+    game.faBattlemaps.auth.timer = setInterval(async () => {
       // stop after 2 minutes maximum
       if (game.faBattlemaps.auth.iteration > 60) {
         clearInterval(game.faBattlemaps.auth.timer);
         game.faBattlemaps.auth.dialog.close({ force: true });
         game.faBattlemaps.auth.dialog = null;
         Dialog.prompt({
-          title: game.i18n.localize('FABattlemaps.PatreonLoginTimeoutTitle'),
-          content: `<p>${game.i18n.localize('FABattlemaps.PatreonLoginTimeoutContent')}</p>`,
-          label: game.i18n.localize('Close'),
-          callback: () => {
-          },
+          title: game.i18n.localize("FABattlemaps.PatreonLoginTimeoutTitle"),
+          content: `<p>${game.i18n.localize("FABattlemaps.PatreonLoginTimeoutContent")}</p>`,
+          label: game.i18n.localize("Close"),
+          callback: () => {},
           rejectClose: false,
         });
         return;
@@ -478,7 +595,7 @@ class FABattlemaps extends FormApplication {
 
       game.faBattlemaps.auth.iteration++;
 
-      if (await parent.checkPatreonStatus(uuiDv4)) {
+      if (await this.checkPatreonStatus(uuiDv4)) {
         clearInterval(game.faBattlemaps.auth.timer);
         game.faBattlemaps.auth.dialog.close({ force: true });
         game.faBattlemaps.auth.dialog = null;
@@ -492,16 +609,20 @@ class FABattlemaps extends FormApplication {
       if (response && response.status === 200) {
         const json = await response.json();
         if (!json?.error && json?.expires_in > 0) {
-          this.html.find('.u-login')
-            .removeClass('u-icon-desaturate')
-            .addClass('u-login-connected')
-            .attr('title', game.i18n.localize('FABattlemaps.PatreonLogout'));
+          this.html
+            .find(".u-login")
+            .removeClass("u-icon-desaturate")
+            .addClass("u-login-connected")
+            .attr("title", game.i18n.localize("FABattlemaps.PatreonLogout"));
           game.faBattlemaps.user = json;
           return true;
         }
       }
     } catch (e) {
-      console.log(`${FABattlemaps.ID} | ${game.i18n.localize('FABattlemaps.PatreonLoginStatusError')} |`, e);
+      console.log(
+        `${FABattlemaps.ID} | ${game.i18n.localize("FABattlemaps.PatreonLoginStatusError")} |`,
+        e,
+      );
     }
     return false;
   }
@@ -510,22 +631,26 @@ class FABattlemaps extends FormApplication {
     event.preventDefault();
 
     const tagId = event.currentTarget.id;
-    if (tagId === 'all') {
-      this.STATE.selectedTags = ['all'];
+    if (tagId === "all") {
+      this.STATE.selectedTags = ["all"];
     } else {
       if (this.STATE.selectedTags.includes(tagId)) {
-        this.STATE.selectedTags = this.STATE.selectedTags.filter((tag) => tag !== tagId);
+        this.STATE.selectedTags = this.STATE.selectedTags.filter(
+          (tag) => tag !== tagId,
+        );
       } else {
         this.STATE.selectedTags.push(tagId);
       }
 
       // Remove the all tag if there are other tags
       if (this.STATE.selectedTags.length > 1) {
-        this.STATE.selectedTags = this.STATE.selectedTags.filter(tag => tag !== 'all');
+        this.STATE.selectedTags = this.STATE.selectedTags.filter(
+          (tag) => tag !== "all",
+        );
       }
 
       if (!this.STATE.selectedTags.length) {
-        this.STATE.selectedTags = ['all'];
+        this.STATE.selectedTags = ["all"];
       }
     }
     this.render(false);
@@ -534,7 +659,7 @@ class FABattlemaps extends FormApplication {
   selectPreview(event) {
     event.preventDefault();
 
-    const faId = $(event.currentTarget).closest('.u-gallery-item').data('faId');
+    const faId = $(event.currentTarget).closest(".u-gallery-item").data("faId");
     if (faId) {
       this.STATE.faId = faId;
     }
@@ -552,7 +677,8 @@ class FABattlemaps extends FormApplication {
     event.stopPropagation();
 
     const target = $(event.currentTarget);
-    const faId = target.data('faId') || target.closest('.u-gallery-item').data('faId');
+    const faId =
+      target.data("faId") || target.closest(".u-gallery-item").data("faId");
     if (!faId) {
       return;
     }
@@ -567,24 +693,33 @@ class FABattlemaps extends FormApplication {
     this.html = html;
     super.activateListeners(html);
 
-    html.on('click', '.u-login:not(.u-login-connected)', this.patreonLogin.bind(this));
-    html.on('click', '.u-login-connected', this.patreonLogout.bind(this));
-    html.on('click', '.u-tags button', this.selectTag.bind(this));
-    html.on('click', '.u-gallery-item:not(.u-download)', this.selectPreview.bind(this));
-    html.on('click', '.u-download', this.download.bind(this));
-    html.on('click', '.u-back-gallery', this.resetPreview.bind(this));
+    html.on(
+      "click",
+      ".u-login:not(.u-login-connected)",
+      this.patreonLogin.bind(this),
+    );
+    html.on("click", ".u-login-connected", this.patreonLogout.bind(this));
+    html.on("click", ".u-tags button", this.selectTag.bind(this));
+    html.on(
+      "click",
+      ".u-gallery-item:not(.u-download)",
+      this.selectPreview.bind(this),
+    );
+    html.on("click", ".u-download", this.download.bind(this));
+    html.on("click", ".u-back-gallery", this.resetPreview.bind(this));
 
-    const uuiDv4 = game.settings.get(FABattlemaps.ID, 'user-id') || FABattlemaps.UUIDv4();
+    const uuiDv4 =
+      game.settings.get(FABattlemaps.ID, "user-id") || FABattlemaps.UUIDv4();
     this.checkPatreonStatus(uuiDv4);
   }
 
   /**
    * @override
    */
-  async getData(options) {
+  async getData(_options) {
     // Utilise a promise to give a small amount of time for the data to be loaded in the background
     // but show the loading screen after 250ms if we are still waiting.
-    await new Promise(resolve => {
+    await new Promise((resolve) => {
       if (!this.loading) {
         resolve();
       } else {
@@ -595,22 +730,24 @@ class FABattlemaps extends FormApplication {
       loading: this.loading,
       maps: game.faBattlemaps.battlemaps,
       state: this.STATE,
-      tags: Array.from(game.faBattlemaps.tags)
-        .map(tag => ({
-          value: tag.slugify(),
-          label: tag,
-        })),
+      tags: Array.from(game.faBattlemaps.tags).map((tag) => ({
+        value: tag.slugify(),
+        label: tag,
+      })),
     };
   }
 
   async getTags() {
     try {
       const response = await fetch(`${baseURL}/api/v1/battlemaps/tags`, {
-        method: 'GET',
+        method: "GET",
       });
       return await response.json();
     } catch (e) {
-      console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.TagGetFailed')}`, e);
+      console.error(
+        `${FABattlemaps.ID} - ${game.i18n.localize("FABattlemaps.TagGetFailed")}`,
+        e,
+      );
       return [];
     }
   }
@@ -618,21 +755,24 @@ class FABattlemaps extends FormApplication {
   async getBattlemaps() {
     try {
       const response = await fetch(`${baseURL}/api/v1/battlemaps/list`, {
-        method: 'GET',
+        method: "GET",
       });
       return await response.json();
     } catch (e) {
-      console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.BattlemapsGetFailed')}`, e);
+      console.error(
+        `${FABattlemaps.ID} - ${game.i18n.localize("FABattlemaps.BattlemapsGetFailed")}`,
+        e,
+      );
       return [];
     }
   }
 }
 
 class FADownloader extends FormApplication {
-  static FILE_STATUS_DOWNLOADED = 'Downloaded';
-  static FILE_STATUS_PENDING = 'Pending';
-  static FILE_STATUS_PROCESSING = 'Processing';
-  static FILE_STATUS_ERRORED = 'Errored';
+  static FILE_STATUS_DOWNLOADED = "Downloaded";
+  static FILE_STATUS_PENDING = "Pending";
+  static FILE_STATUS_PROCESSING = "Processing";
+  static FILE_STATUS_ERRORED = "Errored";
 
   // Track what value to set the media optimizer config value to when we are done.
   mediaOptimizerConfigValue = undefined;
@@ -641,34 +781,49 @@ class FADownloader extends FormApplication {
     super(object, options);
 
     if (battlemapId) {
-      this.battlemap = game.faBattlemaps.battlemaps.find(battlemap => battlemap.id === battlemapId);
+      this.battlemap = game.faBattlemaps.battlemaps.find(
+        (battlemap) => battlemap.id === battlemapId,
+      );
       if (!this.battlemap) {
-        this.error = game.i18n.localize('FABattlemaps.BattlemapNotFound');
+        this.error = game.i18n.localize("FABattlemaps.BattlemapNotFound");
         return;
       }
     }
 
-    this.hq = game.settings.get(FABattlemaps.ID, 'hq');
-    this.status = game.i18n.localize('FABattlemaps.DownloaderStatusLoading');
+    this.hq = game.settings.get(FABattlemaps.ID, "hq");
+    this.status = game.i18n.localize("FABattlemaps.DownloaderStatusLoading");
     this.files = new Map();
     this.remappedFiles = new Map();
     this.error = null;
-    this.loggedIn = !!game.settings.get(FABattlemaps.ID, 'user-id') && (game.faBattlemaps.user.expires_in || 0) > 0;
-    this.authorised = !!game.settings.get(FABattlemaps.ID, 'user-id') && (
-      (this.battlemap.access === 'Free' && !!game.faBattlemaps.user.has_free) ||
-      (this.battlemap.access === 'Premium' && !!game.faBattlemaps.user.has_premium)
-    );
+    this.loggedIn =
+      !!game.settings.get(FABattlemaps.ID, "user-id") &&
+      (game.faBattlemaps.user.expires_in || 0) > 0;
+    this.authorised =
+      !!game.settings.get(FABattlemaps.ID, "user-id") &&
+      ((this.battlemap.access === "Free" &&
+        !!game.faBattlemaps.user.has_free) ||
+        (this.battlemap.access === "Premium" &&
+          !!game.faBattlemaps.user.has_premium));
 
     if (!this.authorised) {
-      this.status = game.i18n.localize('FABattlemaps.DownloaderStatusAuthError');
+      this.status = game.i18n.localize(
+        "FABattlemaps.DownloaderStatusAuthError",
+      );
       return;
     }
 
-    const moduleVersion = game.modules.get(FABattlemaps.ID).version ?? game.modules.get(FABattlemaps.ID).data.version;
-    const mapVersion = this.battlemap.version || '1.0.18';
+    const moduleVersion =
+      game.modules.get(FABattlemaps.ID).version ??
+      game.modules.get(FABattlemaps.ID).data.version;
+    const mapVersion = this.battlemap.version || "1.0.18";
     if (foundry.utils.isNewerVersion(mapVersion, moduleVersion)) {
-      this.wrongVersion = game.i18n.format('FABattlemaps.DownloaderStatusWrongVersion', {version: mapVersion});
-      this.status = game.i18n.localize('FABattlemaps.DownloaderStatusWrongVersionShort');
+      this.wrongVersion = game.i18n.format(
+        "FABattlemaps.DownloaderStatusWrongVersion",
+        { version: mapVersion },
+      );
+      this.status = game.i18n.localize(
+        "FABattlemaps.DownloaderStatusWrongVersionShort",
+      );
       return;
     }
 
@@ -688,31 +843,53 @@ class FADownloader extends FormApplication {
         let lastModified = new Date();
         if (data.fileDetails.file.lastModified) {
           const d = new Date(data.fileDetails.file.lastModified);
-          if (d instanceof Date && !isNaN(d)) {
+          if (d instanceof Date && !Number.isNaN(d)) {
             lastModified = d;
           }
         }
         try {
           if (data.fileDetails.file.isHQ) {
             // Rename the file to the standard one so that the maps still work
-            data.fileDetails.file.path = data.fileDetails.file.path.replace('/Maps_HQ/', '/Maps/');
+            data.fileDetails.file.path = data.fileDetails.file.path.replace(
+              "/Maps_HQ/",
+              "/Maps/",
+            );
           }
 
-          if (FABattlemaps.SETTINGS.downloadPath !== FABattlemaps.SETTINGS.defaultDownloadPath) {
-            data.fileDetails.file.path = this.remapFilePath(data.fileDetails.file.path);
-            data.fileDetails.filePath = this.remapFilePath(data.fileDetails.filePath);
+          if (
+            FABattlemaps.SETTINGS.downloadPath !==
+            FABattlemaps.SETTINGS.defaultDownloadPath
+          ) {
+            data.fileDetails.file.path = this.remapFilePath(
+              data.fileDetails.file.path,
+            );
+            data.fileDetails.filePath = this.remapFilePath(
+              data.fileDetails.filePath,
+            );
           }
 
-          const folder = data.fileDetails.file.path.substring(0, data.fileDetails.file.path.lastIndexOf('/'));
-          const filename = data.fileDetails.file.path.split('/').pop();
-          await FADownloader.uploadFile(new File([data.blob], filename, {
-            type: data.blob.type,
-            lastModified: lastModified,
-          }), folder);
+          const folder = data.fileDetails.file.path.substring(
+            0,
+            data.fileDetails.file.path.lastIndexOf("/"),
+          );
+          const filename = data.fileDetails.file.path.split("/").pop();
+          await FADownloader.uploadFile(
+            new File([data.blob], filename, {
+              type: data.blob.type,
+              lastModified: lastModified,
+            }),
+            folder,
+          );
         } catch (e) {
-          console.error(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.UploadFailed', {
-            file: data.fileDetails.file.path,
-          })}`, e);
+          console.error(
+            `${FABattlemaps.ID} - ${game.i18n.format(
+              "FABattlemaps.UploadFailed",
+              {
+                file: data.fileDetails.file.path,
+              },
+            )}`,
+            e,
+          );
         }
       },
       onFileExists: (data) => {
@@ -732,7 +909,8 @@ class FADownloader extends FormApplication {
         if (!file) {
           return;
         }
-        const significantChange = (data.percentComplete - file.percentComplete) > 5;
+        const significantChange =
+          data.percentComplete - file.percentComplete > 5;
         file.status = FADownloader.FILE_STATUS_PROCESSING;
         file.percentComplete = data.percentComplete || 0;
         if (significantChange) {
@@ -741,25 +919,28 @@ class FADownloader extends FormApplication {
       },
     });
 
-    this.getFiles()
-      .then(files => {
-        this.files = files;
-        if (!files?.size) {
-          this.error = true;
-          this.status = game.i18n.localize('FABattlemaps.BattlemapsListFailed');
-          return this.render(false);
-        }
-        this.render(false);
+    this.getFiles().then((files) => {
+      this.files = files;
+      if (!files?.size) {
+        this.error = true;
+        this.status = game.i18n.localize("FABattlemaps.BattlemapsListFailed");
+        return this.render(false);
+      }
+      this.render(false);
 
-        this.status = game.i18n.format('FABattlemaps.DownloaderStatusDownloading', {
+      this.status = game.i18n.format(
+        "FABattlemaps.DownloaderStatusDownloading",
+        {
           count: files?.size,
+        },
+      );
+      this.disableMediaOptimizer();
+      this.downloader
+        .Process(battlemapId, Array.from(files.values()), this.remappedFiles)
+        .then(() => {
+          this.onComplete();
         });
-        this.disableMediaOptimizer();
-        this.downloader.Process(battlemapId, Array.from(files.values()), this.remappedFiles)
-          .then(() => {
-            this.onComplete();
-          });
-      });
+    });
   }
 
   /**
@@ -768,7 +949,7 @@ class FADownloader extends FormApplication {
    */
   disableMediaOptimizer() {
     // Record the current value of the media optimizer config so we can restore it later
-    if (typeof CONFIG.SUPPRESS_MEDIA_OPTIMIZER !== 'undefined') {
+    if (typeof CONFIG.SUPPRESS_MEDIA_OPTIMIZER !== "undefined") {
       this.mediaOptimizerConfigValue = CONFIG.SUPPRESS_MEDIA_OPTIMIZER;
     }
 
@@ -802,7 +983,9 @@ class FADownloader extends FormApplication {
    */
   static async handleExistingScene(sceneName, sceneId, callback) {
     const pack = game.packs.get(`${FABattlemaps.ID}.maps`);
-    const sceneIndex = pack.index.find(i => i._id === sceneId || i.name === sceneName);
+    const sceneIndex = pack.index.find(
+      (i) => i._id === sceneId || i.name === sceneName,
+    );
     if (!sceneId) {
       sceneId = sceneIndex?._id;
     }
@@ -810,36 +993,44 @@ class FADownloader extends FormApplication {
       sceneName = sceneIndex?.name;
     }
     if (!sceneId) {
-      return ui.notifications.error(game.i18n.format('FABattlemaps.ImportNotFound', {
-        name: sceneName,
-      }), { permanent: true });
+      return ui.notifications.error(
+        game.i18n.format("FABattlemaps.ImportNotFound", {
+          name: sceneName,
+        }),
+        { permanent: true },
+      );
     }
     if (!sceneName) {
-      return ui.notifications.error(game.i18n.format('FABattlemaps.ImportNotFound', {
-        name: sceneId,
-      }), { permanent: true });
+      return ui.notifications.error(
+        game.i18n.format("FABattlemaps.ImportNotFound", {
+          name: sceneId,
+        }),
+        { permanent: true },
+      );
     }
 
-    const existingScene = game.scenes.getName(sceneName) || game.scenes.get(sceneId);
+    const existingScene =
+      game.scenes.getName(sceneName) || game.scenes.get(sceneId);
     if (existingScene) {
       const replaceExisting = await DialogV2.confirm({
         yes: {
-          label: game.i18n.localize('FABattlemaps.ImportYes'),
+          label: game.i18n.localize("FABattlemaps.ImportYes"),
         },
         no: {
-          label: game.i18n.localize('FABattlemaps.ImportNo'),
+          label: game.i18n.localize("FABattlemaps.ImportNo"),
         },
         window: {
-          title: game.i18n.format('FABattlemaps.ImportExistsTitle', {
+          title: game.i18n.format("FABattlemaps.ImportExistsTitle", {
             name: sceneName,
           }),
         },
-        content: `<h2>${game.i18n.localize('FABattlemaps.ImportExistsContent1')}</h2>` +
-          `<p>${game.i18n.format('FABattlemaps.ImportExistsContent2', {
+        content:
+          `<h2>${game.i18n.localize("FABattlemaps.ImportExistsContent1")}</h2>` +
+          `<p>${game.i18n.format("FABattlemaps.ImportExistsContent2", {
             name: sceneName,
           })}</p>` +
-          `<p>${game.i18n.localize('FABattlemaps.ImportExistsContent3')}</p>`,
-        modal: true
+          `<p>${game.i18n.localize("FABattlemaps.ImportExistsContent3")}</p>`,
+        modal: true,
       });
       if (replaceExisting) {
         await existingScene.delete();
@@ -851,67 +1042,89 @@ class FADownloader extends FormApplication {
   }
 
   async onComplete() {
-    this.status = game.i18n.localize('FABattlemaps.DownloaderStatusComplete');
+    this.status = game.i18n.localize("FABattlemaps.DownloaderStatusComplete");
     setTimeout(() => {
       this.render(false);
     }, 0);
 
     this.enableMediaOptimizer();
 
-    await FADownloader.handleExistingScene(this.battlemap.name, '', async (sceneId, sceneName) => {
-      let diff = {};
-      if (FABattlemaps.SETTINGS.downloadPath !== FABattlemaps.SETTINGS.defaultDownloadPath && this.remappedFiles.size) {
-        // Replace the download path in the scene data
-        const compendiumScene = await game.packs.get('fa-battlemaps.maps').getDocument(sceneId);
-        const original = compendiumScene.toJSON();
-        let replacementData = JSON.stringify(original);
-        for (const [originalPath, newPath] of this.remappedFiles) {
-          replacementData = replacementData.replaceAll(originalPath, newPath);
+    await FADownloader.handleExistingScene(
+      this.battlemap.name,
+      "",
+      async (sceneId, _sceneName) => {
+        let diff = {};
+        if (
+          FABattlemaps.SETTINGS.downloadPath !==
+            FABattlemaps.SETTINGS.defaultDownloadPath &&
+          this.remappedFiles.size
+        ) {
+          // Replace the download path in the scene data
+          const compendiumScene = await game.packs
+            .get("fa-battlemaps.maps")
+            .getDocument(sceneId);
+          const original = compendiumScene.toJSON();
+          let replacementData = JSON.stringify(original);
+          for (const [originalPath, newPath] of this.remappedFiles) {
+            replacementData = replacementData.replaceAll(originalPath, newPath);
+          }
+          diff = foundry.utils.diffObject(
+            original,
+            JSON.parse(replacementData),
+          );
         }
-        diff = foundry.utils.diffObject(original, JSON.parse(replacementData));
-      }
-      await game.scenes.importFromCompendium(game.packs.get('fa-battlemaps.maps'), sceneId, diff, { keepId: true });
-      const scene = game.scenes.get(sceneId);
-      if (scene) {
-        // Generate thumbnail
-        const thumb = await scene.createThumbnail();
-        await scene.update({"thumb": thumb.thumb});
-      }
-      setTimeout(() => {
-        this.close({ force: true });
-        ui.sidebar.activateTab('scenes');
-        DialogV2.prompt({
-          window: {
-            title: game.i18n.localize('FABattlemaps.WindowTitle'),
-          },
-          content: `<p>${game.i18n.format('FABattlemaps.ImportComplete', {
-            name: this.battlemap.name,
-          })}</p>`,
-          modal: true
-        });
-      }, 0);
-    });
+        await game.scenes.importFromCompendium(
+          game.packs.get("fa-battlemaps.maps"),
+          sceneId,
+          diff,
+          { keepId: true },
+        );
+        const scene = game.scenes.get(sceneId);
+        if (scene) {
+          // Generate thumbnail
+          const thumb = await scene.createThumbnail();
+          await scene.update({ thumb: thumb.thumb });
+        }
+        setTimeout(() => {
+          this.close({ force: true });
+          if (game.release.generation >= 13) {
+            ui.sidebar.changeTab("scenes", "primary");
+          } else {
+            ui.sidebar.activateTab("scenes");
+          }
+          DialogV2.prompt({
+            window: {
+              title: game.i18n.localize("FABattlemaps.WindowTitle"),
+            },
+            content: `<p>${game.i18n.format("FABattlemaps.ImportComplete", {
+              name: this.battlemap.name,
+            })}</p>`,
+            modal: true,
+          });
+        }, 0);
+      },
+    );
   }
 
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       id: `fa-battlemaps-downloader-${Math.floor(Math.random() * 1000)}`,
-      classes: ['fa-battlemaps'],
+      classes: ["fa-battlemaps"],
       width: 700,
-      height: 'auto',
+      height: "auto",
       closeOnSubmit: false,
       submitOnClose: false,
       template: FABattlemaps.TEMPLATES.mapDownload,
-      title: game.i18n.localize('FABattlemaps.WindowTitle'),
+      title: game.i18n.localize("FABattlemaps.WindowTitle"),
       resizable: true,
-      scrollY: ['.u-section'],
+      scrollY: [".u-section"],
     });
   }
 
   /**
    * @override
    */
-  async getData(options) {
+  async getData(_options) {
     return {
       battlemap: foundry.utils.mergeObject(this.battlemap, {
         files: Array.from(this.files.values()),
@@ -931,18 +1144,30 @@ class FADownloader extends FormApplication {
     super.activateListeners(html);
   }
 
-  static IsUsingTheForge = (typeof ForgeVTT !== 'undefined' && ForgeVTT.usingTheForge);
+  static IsUsingTheForge =
+    typeof ForgeVTT !== "undefined" && ForgeVTT.usingTheForge;
+
+  static get FilePicker() {
+    return game.release.generation >= 13
+      ? foundry.applications.apps.FilePicker.implementation
+      : FilePicker;
+  }
 
   async getFiles() {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    const battlemapFiles = await FADownloader.getBattlemapFiles(this.battlemap.id);
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const battlemapFiles = await FADownloader.getBattlemapFiles(
+      this.battlemap.id,
+    );
     const mergedFiles = new Map();
 
     const animationFiles = battlemapFiles?.files?.animations || [];
     const audioFiles = battlemapFiles?.files?.audio || [];
     const imageFiles = battlemapFiles?.files?.images || [];
     if (!animationFiles.length && !audioFiles.length && !imageFiles.length) {
-      console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.BattlemapsListFailed')}`, battlemapFiles);
+      console.error(
+        `${FABattlemaps.ID} - ${game.i18n.localize("FABattlemaps.BattlemapsListFailed")}`,
+        battlemapFiles,
+      );
       return mergedFiles;
     }
     for (const file of animationFiles.concat(audioFiles.concat(imageFiles))) {
@@ -959,17 +1184,20 @@ class FADownloader extends FormApplication {
 
   static async getBattlemapFiles(battlemapId) {
     try {
-      const userId = game.settings.get(FABattlemaps.ID, 'user-id');
+      const userId = game.settings.get(FABattlemaps.ID, "user-id");
       let url = `${baseURL}/api/v1/battlemaps/list-files/${battlemapId}?userId=${userId}`;
-      if (game.settings.get(FABattlemaps.ID, 'hq')) {
-        url += '&hq=true';
+      if (game.settings.get(FABattlemaps.ID, "hq")) {
+        url += "&hq=true";
       }
       const response = await fetch(url, {
-        method: 'GET',
+        method: "GET",
       });
       return await response.json();
     } catch (e) {
-      console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.BattlemapsListFailed')}`, e);
+      console.error(
+        `${FABattlemaps.ID} - ${game.i18n.localize("FABattlemaps.BattlemapsListFailed")}`,
+        e,
+      );
       return {
         files: {},
       };
@@ -978,13 +1206,19 @@ class FADownloader extends FormApplication {
 
   static async getFileDetails(battlemapId, file) {
     try {
-      const userId = game.settings.get(FABattlemaps.ID, 'user-id');
-      const response = await fetch(`${baseURL}/api/v1/battlemaps/get-file/${battlemapId}/${encodeURIComponent(file.path)}?userId=${userId}`, {
-        method: 'GET',
-      });
+      const userId = game.settings.get(FABattlemaps.ID, "user-id");
+      const response = await fetch(
+        `${baseURL}/api/v1/battlemaps/get-file/${battlemapId}/${encodeURIComponent(file.path)}?userId=${userId}`,
+        {
+          method: "GET",
+        },
+      );
       return await response.json();
     } catch (e) {
-      console.error(`${FABattlemaps.ID} - ${game.i18n.localize('FABattlemaps.GetFileDetailsFailed')}`, e);
+      console.error(
+        `${FABattlemaps.ID} - ${game.i18n.localize("FABattlemaps.GetFileDetailsFailed")}`,
+        e,
+      );
       return {};
     }
   }
@@ -992,7 +1226,7 @@ class FADownloader extends FormApplication {
   static async fileExists(file) {
     const path = foundry.utils.encodeURL(file.path);
     try {
-      const parentFolder = await FilePicker.browse(
+      const parentFolder = await FADownloader.FilePicker.browse(
         FADownloader.getFilePickerSource(path),
         path,
         Object.assign(FADownloader.getFilePickerOptions(path), {
@@ -1001,36 +1235,49 @@ class FADownloader extends FormApplication {
       );
       if (parentFolder.files.includes(path)) {
         // Check the filesize
-        const response = await fetch(path, { method: 'HEAD' });
-        return Number(response.headers.get('content-length')) === file.size;
+        const response = await fetch(path, { method: "HEAD" });
+        return Number(response.headers.get("content-length")) === file.size;
       }
       return false;
-    } catch (e) {
+    } catch (_e) {
       return false;
     }
   }
 
   static async createFolderRecursive(path) {
     const source = FADownloader.getFilePickerSource(path);
-    if (source === 's3') {
+    if (source === "s3") {
       // No need to create folders on S3 as they are automatically created.
       return;
     }
 
     const options = FADownloader.getFilePickerOptions(path);
-    const folders = path.split('/');
-    let curFolder = '';
+    const folders = path.split("/");
+    let curFolder = "";
     for (const f of folders) {
-      const parentFolder = await FilePicker.browse(source, curFolder, options);
-      curFolder += (curFolder.length > 0 ? '/' : '') + f;
+      const parentFolder = await FADownloader.FilePicker.browse(
+        source,
+        curFolder,
+        options,
+      );
+      curFolder += (curFolder.length > 0 ? "/" : "") + f;
       const dirs = parentFolder.dirs.map((d) => decodeURIComponent(d));
       if (!dirs.includes(decodeURIComponent(curFolder))) {
         try {
-          console.log(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.ImportCreatingFolder', {
-            folder: curFolder,
-          })}`);
-          await FilePicker.createDirectory(source, curFolder, options);
-        } catch (e) {
+          console.log(
+            `${FABattlemaps.ID} - ${game.i18n.format(
+              "FABattlemaps.ImportCreatingFolder",
+              {
+                folder: curFolder,
+              },
+            )}`,
+          );
+          await FADownloader.FilePicker.createDirectory(
+            source,
+            curFolder,
+            options,
+          );
+        } catch (_e) {
           // Concurrency means there's a decent change we try to create the folder at the same time. Ignore the error.
         }
       }
@@ -1039,7 +1286,10 @@ class FADownloader extends FormApplication {
 
   static async uploadFile(file, folderPath, options = {}) {
     const source = FADownloader.getFilePickerSource(folderPath);
-    options = Object.assign(FADownloader.getFilePickerOptions(folderPath), options);
+    options = Object.assign(
+      FADownloader.getFilePickerOptions(folderPath),
+      options,
+    );
     await FADownloader.createFolderRecursive(folderPath);
 
     const { bucket, keyPrefix } = foundry.utils.parseS3URL(folderPath);
@@ -1048,10 +1298,24 @@ class FADownloader extends FormApplication {
       folderPath = keyPrefix;
     }
 
-    if (typeof ForgeVTT != 'undefined' && ForgeVTT.usingTheForge) {
-      return await ForgeVTT_FilePicker.upload(source, folderPath, file, options, { notify: false });
+    if (typeof ForgeVTT !== "undefined" && ForgeVTT.usingTheForge) {
+      return await ForgeVTT_FilePicker.upload(
+        source,
+        folderPath,
+        file,
+        options,
+        { notify: false },
+      );
     } else {
-      return await FilePicker.upload(source, folderPath, file, options, { notify: false });
+      return await FADownloader.FilePicker.upload(
+        source,
+        folderPath,
+        file,
+        options,
+        {
+          notify: false,
+        },
+      );
     }
   }
 
@@ -1060,30 +1324,30 @@ class FADownloader extends FormApplication {
       FADownloader.IsUsingTheForge &&
       target.startsWith(ForgeVTT.ASSETS_LIBRARY_URL_PREFIX)
     ) {
-      return 'forgevtt';
+      return "forgevtt";
     }
 
     try {
-      if (FilePicker.matchS3URL(target)) {
-        return 's3';
+      if (FADownloader.FilePicker.matchS3URL(target)) {
+        return "s3";
       }
-    } catch (e) {
+    } catch (_e) {
       // NOOP
     }
 
-    return 'data';
+    return "data";
   }
 
   static getFilePickerOptions(target) {
-    let options = {};
+    const options = {};
     let bucket;
     try {
       // Check for s3 matches
-      const s3Match = FilePicker.matchS3URL(target);
+      const s3Match = FADownloader.FilePicker.matchS3URL(target);
       if (s3Match) {
         bucket = s3Match.groups.bucket;
       }
-    } catch (e) {
+    } catch (_e) {
       // NOOP
     }
     if (bucket) {
@@ -1112,7 +1376,10 @@ class FADownloader extends FormApplication {
    * @return {string}
    */
   static ReplaceFilePath(path) {
-    return path.replace(new RegExp(`^${FABattlemaps.SETTINGS.defaultDownloadPath}\/`), `${FABattlemaps.SETTINGS.downloadPath}/`);
+    return path.replace(
+      new RegExp(`^${FABattlemaps.SETTINGS.defaultDownloadPath}\/`),
+      `${FABattlemaps.SETTINGS.downloadPath}/`,
+    );
   }
 }
 
@@ -1125,12 +1392,9 @@ class ConcurrentDownloader {
    */
   constructor({
     concurrency = 5,
-    onDownloaded = async () => {
-    },
-    onFileExists = () => {
-    },
-    onProgress = () => {
-    },
+    onDownloaded = async () => {},
+    onFileExists = () => {},
+    onProgress = () => {},
   } = {}) {
     this.running = 0;
     this.concurrency = concurrency;
@@ -1138,7 +1402,7 @@ class ConcurrentDownloader {
     this.reject = null;
     /**
      * The function to call each time a download completes.
-     * @type {function(ProgressDownloaded): void}
+     * @type {async function(ProgressDownloaded): void}
      */
     this.onDownloaded = onDownloaded;
     /**
@@ -1192,15 +1456,23 @@ class ConcurrentDownloader {
       }
 
       const resolveAsset = async (iterator) => {
-        for (let [, file] of iterator) {
+        for (const [, file] of iterator) {
           // Check both the modified path, and also the original path
-          if (FABattlemaps.SETTINGS.downloadPath !== FABattlemaps.SETTINGS.defaultDownloadPath) {
+          if (
+            FABattlemaps.SETTINGS.downloadPath !==
+            FABattlemaps.SETTINGS.defaultDownloadPath
+          ) {
             const alternateFile = foundry.utils.deepClone(file);
             alternateFile.path = FADownloader.ReplaceFilePath(file.path);
             if (await FADownloader.fileExists(alternateFile)) {
-              console.log(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.UploadAlreadyExists', {
-                file: alternateFile.path.replace(/ /g, '%20'),
-              })}`);
+              console.log(
+                `${FABattlemaps.ID} - ${game.i18n.format(
+                  "FABattlemaps.UploadAlreadyExists",
+                  {
+                    file: alternateFile.path.replace(/ /g, "%20"),
+                  },
+                )}`,
+              );
               remappedFiles.set(file.path, alternateFile.path);
               this.onFileExists({
                 path: file.path,
@@ -1211,9 +1483,14 @@ class ConcurrentDownloader {
             }
           }
           if (await FADownloader.fileExists(file)) {
-            console.log(`${FABattlemaps.ID} - ${game.i18n.format('FABattlemaps.UploadAlreadyExists', {
-              file: file.path.replace(/ /g, '%20'),
-            })}`);
+            console.log(
+              `${FABattlemaps.ID} - ${game.i18n.format(
+                "FABattlemaps.UploadAlreadyExists",
+                {
+                  file: file.path.replace(/ /g, "%20"),
+                },
+              )}`,
+            );
             this.onFileExists({
               path: file.path,
               percentComplete: 100,
@@ -1221,7 +1498,10 @@ class ConcurrentDownloader {
             });
             continue;
           }
-          const fileDetails = await FADownloader.getFileDetails(battlemapId, file);
+          const fileDetails = await FADownloader.getFileDetails(
+            battlemapId,
+            file,
+          );
           if (!fileDetails?.url) {
             this.onFileExists({
               path: file.path,
@@ -1246,10 +1526,9 @@ class ConcurrentDownloader {
         .fill(iterator)
         .map(resolveAsset);
 
-      Promise.allSettled(workers)
-        .then(() => {
-          return this.resolve();
-        });
+      Promise.allSettled(workers).then(() => {
+        return this.resolve();
+      });
     });
   }
 
@@ -1262,12 +1541,12 @@ class ConcurrentDownloader {
   async _download(fileDetails) {
     return new Promise((resolve, reject) => {
       const oReq = new XMLHttpRequest();
-      oReq.responseType = 'blob';
+      oReq.responseType = "blob";
 
       let speed = null;
       let previousLoaded = 0;
       const TIME_CONSTANT = 5;
-      oReq.addEventListener('progress', (e) => {
+      oReq.addEventListener("progress", (e) => {
         let percentComplete = 0;
         // Only able to compute progress information if the total size is known
         if (e.lengthComputable && e.total) {
@@ -1279,6 +1558,7 @@ class ConcurrentDownloader {
         } else {
           speed += (e.loaded - previousLoaded - speed) / TIME_CONSTANT;
         }
+        previousLoaded = e.loaded;
 
         this.onProgress({
           fileDetails,
@@ -1287,7 +1567,7 @@ class ConcurrentDownloader {
           complete: false,
         });
       });
-      oReq.addEventListener('load', () => {
+      oReq.addEventListener("load", () => {
         this.onProgress({
           fileDetails,
           percentComplete: 100,
@@ -1296,13 +1576,13 @@ class ConcurrentDownloader {
         });
         resolve(oReq.response);
       });
-      oReq.addEventListener('error', (e) => {
+      oReq.addEventListener("error", (e) => {
         reject(e);
       });
-      oReq.addEventListener('abort', (e) => {
+      oReq.addEventListener("abort", (e) => {
         reject(e);
       });
-      oReq.open('GET', fileDetails.url);
+      oReq.open("GET", fileDetails.url);
       oReq.send();
     });
   }
