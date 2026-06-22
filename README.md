@@ -56,6 +56,13 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.2.2
+* The Manor House Levels - hotfix upade
+_____________
+v1.2.0
+* added The Manor House, The Villa House, Decrepit Estate, and Desert Slums levels version
+* update for v14
+_____________
 v1.1.60
 * Added new map
 _____________
