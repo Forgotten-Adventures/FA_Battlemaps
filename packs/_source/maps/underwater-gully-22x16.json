@@ -3,31 +3,15 @@
   "navigation": false,
   "navOrder": 0,
   "navName": "",
-  "background": {
-    "src": "fa_battlemaps/Maps/2023/February/fa_underwatergully/maps/UnderWaterGullyBG.webp",
-    "scaleX": 1,
-    "scaleY": 1,
-    "offsetX": 0,
-    "offsetY": 0,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "anchorX": 0,
-    "anchorY": 0,
-    "fit": "fill",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": 20,
-  "thumb": "modules/fa-battlemaps/assets/scenes/vjVUQQQ6JewIXlBv-thumb.webp",
+  "thumb": "worlds/working-space/assets/scenes/thumb-K2vfBSl27IjUfI-kMQ0Crg.webp",
   "width": 2200,
   "height": 1600,
   "padding": 0.5,
   "initial": {
     "x": 2371,
     "y": 1571,
-    "scale": 0.6929760598037895
+    "scale": 0.693
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 1,
     "size": 100,
@@ -79,6 +63,8 @@
         "tagger": {}
       },
       "elevation": 0,
+      "levels": [],
+      "locked": false,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.05oZY5GiBo2HWA8A"
     },
     {
@@ -118,6 +104,8 @@
       },
       "_id": "yL0pUPPHV7IuEohi",
       "elevation": 0,
+      "levels": [],
+      "locked": false,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.yL0pUPPHV7IuEohi"
     },
     {
@@ -157,6 +145,8 @@
         "tagger": {}
       },
       "elevation": 0,
+      "levels": [],
+      "locked": false,
       "_key": "!scenes.lights!vjVUQQQ6JewIXlBv.nzRcPCb2H3g6xXqf"
     }
   ],
@@ -191,10 +181,11 @@
           "intensity": 5
         }
       },
+      "levels": [],
+      "locked": false,
       "_key": "!scenes.sounds!vjVUQQQ6JewIXlBv.oCfvV0X7MpCcNA7I"
     }
   ],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -220,6 +211,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.tRwcmRfTR2dlhY75"
     },
     {
@@ -245,6 +237,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.CVG6orFBETlkV46Z"
     },
     {
@@ -270,6 +263,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.dG1wF5c31guV3BE5"
     },
     {
@@ -295,6 +289,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!vjVUQQQ6JewIXlBv.ZdgLnC3isNlaHBeY"
     }
   ],
@@ -312,10 +307,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "2.4.1",
-    "coreVersion": "13.350",
-    "createdTime": 1675813116043,
-    "modifiedTime": 1723948174817,
+    "systemVersion": "5.3.3",
+    "coreVersion": "14.364",
+    "createdTime": 1781849490241,
+    "modifiedTime": 1781849490241,
     "lastModifiedBy": "dnd5ebuilder0000",
     "duplicateSource": null,
     "exportSource": null
@@ -363,13 +358,60 @@
     }
   },
   "fog": {
-    "exploration": true,
-    "reset": 1675813116039,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
-  "_key": "!scenes!vjVUQQQ6JewIXlBv"
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Underwater Gully [22x16]",
+      "background": {
+        "color": "#000000",
+        "src": "fa_battlemaps/Maps/2023/February/fa_underwatergully/maps/UnderWaterGullyBG.webp",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "elevation": {
+        "top": 20,
+        "bottom": 0
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {},
+      "_key": "!scenes.levels!vjVUQQQ6JewIXlBv.defaultLevel0000"
+    }
+  ],
+  "shiftX": 0,
+  "shiftY": 0,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "_key": "!scenes!vjVUQQQ6JewIXlBv",
+  "templates": []
 }

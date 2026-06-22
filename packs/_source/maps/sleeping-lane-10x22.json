@@ -3,22 +3,7 @@
   "navigation": false,
   "navOrder": 0,
   "navName": "",
-  "background": {
-    "src": "fa_battlemaps/Maps/2024/June/fa_sleepinglane/Maps/BG.jpg",
-    "scaleX": 1,
-    "scaleY": 1,
-    "offsetX": 0,
-    "offsetY": 0,
-    "rotation": 0,
-    "tint": "#ffffff",
-    "anchorX": 0,
-    "anchorY": 0,
-    "fit": "fill",
-    "alphaThreshold": 0
-  },
-  "foreground": null,
-  "foregroundElevation": 20,
-  "thumb": "modules/fa-battlemaps/assets/scenes/Bnailn0H5Ul0qeXt-thumb.webp",
+  "thumb": "worlds/working-space/assets/scenes/thumb-2Ob6RCBM5k6vYurEDSNipA.webp",
   "width": 1000,
   "height": 2200,
   "padding": 0.25,
@@ -27,7 +12,6 @@
     "y": null,
     "scale": null
   },
-  "backgroundColor": "#000000",
   "grid": {
     "type": 1,
     "size": 100,
@@ -73,6 +57,8 @@
           "intensity": 5
         }
       },
+      "levels": [],
+      "locked": false,
       "_key": "!scenes.sounds!Bnailn0H5Ul0qeXt.BRm39saKH6MUTBda"
     },
     {
@@ -104,10 +90,11 @@
           "intensity": 5
         }
       },
+      "levels": [],
+      "locked": false,
       "_key": "!scenes.sounds!Bnailn0H5Ul0qeXt.f9OMZNq1bWmFcJRe"
     }
   ],
-  "templates": [],
   "tiles": [],
   "walls": [
     {
@@ -133,6 +120,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.nN2uxneRpgCS4C0G"
     },
     {
@@ -158,6 +146,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.fBs8EM7570POFcxK"
     },
     {
@@ -183,6 +172,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.sXHdSCjYF8gp7oTQ"
     },
     {
@@ -208,6 +198,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.8tSxtMxENS79yEQV"
     },
     {
@@ -233,6 +224,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.s6SFHOa2X65iC7zc"
     },
     {
@@ -258,6 +250,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.kRfLctzqhCQDRP1K"
     },
     {
@@ -283,6 +276,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.isFc6yQ1cKwMn7PS"
     },
     {
@@ -308,6 +302,7 @@
         "attenuation": false
       },
       "animation": null,
+      "levels": [],
       "_key": "!scenes.walls!Bnailn0H5Ul0qeXt.lNcEavkl2fA3hPjm"
     }
   ],
@@ -319,10 +314,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "2.4.1",
-    "coreVersion": "13.350",
-    "createdTime": 1718373244853,
-    "modifiedTime": 1723947134594,
+    "systemVersion": "5.3.3",
+    "coreVersion": "14.364",
+    "createdTime": 1781850044242,
+    "modifiedTime": 1781850044242,
     "lastModifiedBy": "dnd5ebuilder0000",
     "duplicateSource": null,
     "exportSource": null
@@ -370,13 +365,60 @@
     }
   },
   "fog": {
-    "exploration": true,
-    "reset": 1718373244852,
-    "overlay": null,
     "colors": {
       "explored": null,
       "unexplored": null
-    }
+    },
+    "mode": 1
   },
-  "_key": "!scenes!Bnailn0H5Ul0qeXt"
+  "levels": [
+    {
+      "_id": "defaultLevel0000",
+      "name": "Sleeping Lane [10x22]",
+      "background": {
+        "color": "#000000",
+        "src": "fa_battlemaps/Maps/2024/June/fa_sleepinglane/Maps/BG.jpg",
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "elevation": {
+        "top": 20,
+        "bottom": 0
+      },
+      "foreground": {
+        "src": null,
+        "tint": "#ffffff",
+        "alphaThreshold": 0.75
+      },
+      "fog": {
+        "src": null
+      },
+      "textures": {
+        "anchorX": 0.5,
+        "anchorY": 0.5,
+        "offsetX": 0,
+        "offsetY": 0,
+        "fit": "fill",
+        "scaleX": 1,
+        "scaleY": 1,
+        "rotation": 0
+      },
+      "visibility": {
+        "levels": []
+      },
+      "sort": 0,
+      "flags": {},
+      "_key": "!scenes.levels!Bnailn0H5Ul0qeXt.defaultLevel0000"
+    }
+  ],
+  "shiftX": 0,
+  "shiftY": 0,
+  "initialLevel": "defaultLevel0000",
+  "transition": {
+    "type": null,
+    "duration": 1500,
+    "activeOnly": false
+  },
+  "_key": "!scenes!Bnailn0H5Ul0qeXt",
+  "templates": []
 }
