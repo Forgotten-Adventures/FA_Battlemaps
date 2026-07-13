@@ -56,6 +56,9 @@ Module Settings allow you to
 
 ## Changelog:
 _____________
+v1.2.21
+* Added new maps
+_____________
 v1.2.2
 * The Manor House Levels - hotfix upade
 _____________
