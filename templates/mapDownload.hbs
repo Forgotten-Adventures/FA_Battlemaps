@@ -1,4 +1,4 @@
-<div>
+<div class="u-main">
     <section class="u-clearfix u-section" data-fa-id="{{battlemap.id}}">
         <form autocomplete="off">
             {{#unless authorised}}
@@ -43,7 +43,7 @@
                                             <i class="fa fa-times"></i>
                                         {{/ifeq}}
                                     </div>
-                                    <div class="u-file-name">{{file.path}}</div>
+                                    <div class="u-file-name" title="{{file.path}}"><span class="u-file-dir">{{file.dir}}</span><span class="u-file-base">{{file.base}}</span></div>
                                     <div class="u-file-size">{{#HumanFileSize bytes=file.size}}{{/HumanFileSize}}</div>
                                     <div class="u-progress-bar">
                                         <div class="u-progress-bar-inner" style="width:{{file.percentComplete}}%"></div>
