@@ -1,6 +1,21 @@
 .fa-battlemaps .window-content {
     background: #141414;
     color: #EDEDED;
+    padding: 8px;
+    line-height: normal;
+}
+
+/* Undo AppV2 core element styles to keep the original look */
+.fa-battlemaps h4 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: normal;
+    color: #EDEDED;
+}
+
+/* AppV2 part root; keep header/section/footer as flex children */
+.fa-battlemaps .u-main {
+    display: contents;
 }
 
 .fa-battlemaps img {
@@ -8,6 +23,7 @@
 }
 
 .u-section {
+    flex: 1;
     min-height: 400px;
     overflow-y: auto;
 }
@@ -127,6 +143,9 @@
     flex: 1 1 0;
     background: #141414;
     color: #EDEDED;
+    text-align: center;
+    padding: 1px 3px;
+    line-height: normal;
 }
 
 .u-svg-content {
@@ -154,6 +173,9 @@
     text-decoration: none;
     width: auto;
     border: 0;
+    border-radius: 3px;
+    line-height: 28px;
+    margin: 0 1px;
 }
 
 .u-tags .u-btn.u-btn-active {
@@ -207,16 +229,16 @@
 }
 
 .u-gallery-item .u-gallery-back-slide {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center -25px;
-    overflow: hidden;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center -25px;
     aspect-ratio: 1.7;
     transition: all 500ms ease 0s;
 }
 
 .u-gallery-item:hover .u-gallery-back-slide {
-    background-position: bottom;
+    object-position: center bottom;
 }
 
 .u-gallery-item .u-tier {
@@ -272,6 +294,7 @@
 }
 
 .u-preview .u-action {
+    width: 100%;
     background-color: #7f1200;
     color: #EDEDED;
     font-size: 1.5rem;
@@ -355,12 +378,36 @@
     color: #0b7c12;
 }
 
+.u-file-status {
+    flex-shrink: 0;
+}
+
 .u-file-name {
-    flex-grow: 1;
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    white-space: nowrap;
+}
+
+.u-file-dir,
+.u-file-base {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+.u-file-dir {
+    flex: 0 100000 auto;
+}
+
+.u-file-base {
+    flex: 0 1 auto;
 }
 
 .u-file-size {
     justify-self: end;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .u-progress-bar {

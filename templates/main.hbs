@@ -1,8 +1,10 @@
+<div class="u-main">
 <header class="u-header">
     <div class="u-sheet">
         <a href="https://www.patreon.com/FA_Battlemaps" target="_blank" class="u-logo"
            title="{{localize "FABattlemaps.WindowTitle"}}"></a>
-        <div class="u-login u-icon-desaturate"></div>
+        <div class="u-login {{#if connected}}u-login-connected{{else}}u-icon-desaturate{{/if}}" data-action="patreon"
+             {{#if connected}}title="{{localize "FABattlemaps.PatreonLogout"}}"{{/if}}></div>
     </div>
 </header>
 <section class="u-clearfix u-section">
@@ -30,7 +32,7 @@
                     <h4 class="u-text-default">{{localize "FABattlemaps.Tags"}}</h4>
                     <div class="u-tags">
                         {{#each tags}}
-                            <button class="u-btn{{#facontains value ../state.selectedTags
+                            <button type="button" data-action="selectTag" class="u-btn{{#facontains value ../state.selectedTags
                                                               exact=true}} u-btn-active{{/facontains}}"
                                     id="{{value}}">{{label}}</button>
                         {{/each}}
@@ -64,48 +66,4 @@
           title="{{localize "FABattlemaps.Title"}}"></a>
     </p>
 </footer>
-
-<script type="text/javascript">
-    function faDebounce(func, wait) {
-        let timeout;
-        return function () {
-            const context = this,
-                    args = arguments;
-            const later = function () {
-                timeout = null;
-                func.apply(context, args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-
-    function filterMaps() {
-        const filter = document.getElementById('faFilter')
-                .value
-                .toLowerCase()
-                .split(' ');
-        const maps = document.getElementsByClassName('u-gallery-item');
-        for (let i = 0; i < maps.length; i++) {
-            const map = maps[i];
-            const name = map.getAttribute('data-name')
-                    .toLowerCase();
-            const tags = map.getAttribute('data-tags')
-                    .split(',')
-                    .map(str => str.trim().slugify())
-                    .filter(s => s);
-            const keywords = map.getAttribute('data-keywords')
-                    .split(',')
-                    .map(str => str.trim().slugify())
-                    .filter(s => s);
-            if (filter.every(f => name.includes(f) || tags.some(str => str.includes(f)) || keywords.some(str => str.includes(f)))) {
-                map.style.display = 'block';
-            } else {
-                map.style.display = 'none';
-            }
-        }
-    }
-
-    $('#faFilter').on('keyup', faDebounce(filterMaps, 150));
-    $('#faFilter').on('search', filterMaps);
-</script>
+</div>

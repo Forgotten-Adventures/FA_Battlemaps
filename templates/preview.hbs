@@ -3,11 +3,11 @@
 </div>
 <div class="u-preview">
     <div class="u-actions">
-        <button class="u-action u-back-gallery">{{localize "FABattlemaps.BackToGallery"}}</button>
+        <button type="button" class="u-action u-back-gallery" data-action="resetPreview">{{localize "FABattlemaps.BackToGallery"}}</button>
         {{#ifeq data.access "Free"}}
-        <button class="u-action u-download free" data-fa-id="{{data.id}}">{{localize "FABattlemaps.FreeDownload"}}</button>
+        <button type="button" class="u-action u-download free" data-action="download" data-fa-id="{{data.id}}">{{localize "FABattlemaps.FreeDownload"}}</button>
         {{else}}
-        <button class="u-action u-download premium" data-fa-id="{{data.id}}">{{localize "FABattlemaps.PremiumDownload"}}</button>
+        <button type="button" class="u-action u-download premium" data-action="download" data-fa-id="{{data.id}}">{{localize "FABattlemaps.PremiumDownload"}}</button>
         {{/ifeq}}
     </div>
     <div class="u-description">
@@ -35,11 +35,11 @@
 {{/if}}
 <div class="u-preview">
     <div class="u-actions">
-        <button class="u-action u-back-gallery">{{localize "FABattlemaps.BackToGallery"}}</button>
+        <button type="button" class="u-action u-back-gallery" data-action="resetPreview">{{localize "FABattlemaps.BackToGallery"}}</button>
         {{#ifeq data.access "Free"}}
-            <button class="u-action u-download free" data-fa-id="{{data.id}}">{{localize "FABattlemaps.FreeDownload"}}</button>
+            <button type="button" class="u-action u-download free" data-action="download" data-fa-id="{{data.id}}">{{localize "FABattlemaps.FreeDownload"}}</button>
         {{else}}
-            <button class="u-action u-download premium" data-fa-id="{{data.id}}">{{localize "FABattlemaps.PremiumDownload"}}</button>
+            <button type="button" class="u-action u-download premium" data-action="download" data-fa-id="{{data.id}}">{{localize "FABattlemaps.PremiumDownload"}}</button>
         {{/ifeq}}
     </div>
 </div>
